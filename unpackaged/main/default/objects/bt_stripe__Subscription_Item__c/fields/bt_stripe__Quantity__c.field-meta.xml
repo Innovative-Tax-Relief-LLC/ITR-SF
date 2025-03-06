@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Quantity__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The quantity of the plan to which the customer should be subscribed.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The quantity of the plan to which the customer should be subscribed.</inlineHelpText>
+    <label>Quantity</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

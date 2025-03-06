@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ensure_Tax_Debt_Is_Populated</fullName>
+    <active>false</active>
+    <description>The tax debt of a lead must be populated.</description>
+    <errorConditionFormula>AND(
+    ISBLANK(Total_Tax_Debt__c),
+    $Profile.Name = &quot;ITR Dialer&quot;
+)</errorConditionFormula>
+    <errorMessage>The tax debt of a lead must be populated.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Up_To__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Up to and including to this quantity will be contained in the tier.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Up to and including to this quantity will be contained in the tier.</inlineHelpText>
+    <label>Up To</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

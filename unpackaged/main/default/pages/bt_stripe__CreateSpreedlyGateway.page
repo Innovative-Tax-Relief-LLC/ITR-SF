@@ -1,0 +1,146 @@
+<apex:page docType="html-5.0" standardController="bt_stripe__Payment_Gateway__c" extensions="bt_stripe.CreateSpreedlyGatewayController" action="{!validate}">
+
+	<c:BT_Common /> <!-- includes common html and javascript we use in all our VF Pages & Components -->
+
+	<!-- setting max-width here to it doesn't stretch across the entire screen on desktops - this also keeps it looking good for mobile -->
+	<apex:outputpanel layout="block" style="max-width:620px;margin:auto;padding:10px;">
+
+		<!-- put in an outer container so we can easily hide everything -->
+		<div id="outerContainer" style="padding:0px;">
+			<article class="slds-card">
+				<div class="slds-card__header slds-grid">
+					<header class="slds-media slds-media_center slds-has-flexi-truncate">
+						<div class="slds-media__figure">
+							<span class="slds-icon_container slds-icon-custom-custom41" title="gateway">
+								<svg class="slds-icon slds-icon_small" aria-hidden="true">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/custom-sprite/svg/symbols.svg#custom41')}"></use>
+								</svg>
+								<span class="slds-assistive-text">gateway</span>
+							</span>
+						</div>
+						<div class="slds-media__body">
+							<h2 class="slds-card__header-title">
+								<span>Create Spreedly Gateway</span>
+							</h2>
+						</div>
+					</header>
+				</div>
+				<div class="slds-card__body slds-card__body_inner">
+					<apex:form id="theForm" styleClass="formSpreedly">
+						<apex:inputHidden value="{!errorMessage}" id="status" />
+						<apex:inputHidden value="{!bt_stripe__Payment_Gateway__c.bt_stripe__Spreedly_Environment_Key__c}"/>
+						<apex:inputHidden value="{!bt_stripe__Payment_Gateway__c.bt_stripe__Test_Mode__c}"/>
+						<apex:inputHidden value="{!bt_stripe__Payment_Gateway__c.bt_stripe__Access_Token__c}"/>
+						<apex:inputHidden value="{!bt_stripe__Payment_Gateway__c.Id}"/>
+
+						<apex:actionFunction name="createGateway" action="{!createSpreedlyGateway}" rerender="status" oncomplete="allDone()"></apex:actionFunction>
+						<apex:actionFunction name="loadGatewayAttributes" action="{!gatewayChanged}" rerender="spreedlyForm,status" oncomplete="dataLoadDone()"></apex:actionFunction>
+						<apex:actionFunction name="authModeChanged" action="{!gatewayModeChanged}" rerender="spreedlyForm,status" oncomplete="dataLoadDone()"></apex:actionFunction>
+
+						<apex:outputPanel id="spreedlyForm" rendered="{!error == false}" >
+							<!-- here we will show all the possible values for capture -->
+							<div class="slds-form-element slds-p-bottom_small">
+								<label class="slds-form-element__label" for="combobox-id-1">Gateway</label>
+								<div class="slds-form-element__control">
+									<apex:selectList size="1" value="{!selectedGateway}" onchange="loadGatewayAttributesJS();">
+										<apex:selectOptions value="{!gatewayList}"></apex:selectOptions>
+									</apex:selectList>
+								</div>
+							</div>
+
+							<apex:outputPanel rendered="{!NOT(ISNULL(gatewayAuthModes)) && gatewayAuthModes.size > 1}" >
+								<div class="slds-form-element slds-p-bottom_small">
+									<label class="slds-form-element__label" for="combobox-id-1">Auth Mode</label>
+									<div class="slds-form-element__control">
+										<apex:selectList size="1" value="{!selectedAuthMode}" onchange="authModeChangedJS()">
+											<apex:selectOptions value="{!gatewayAuthModes}"></apex:selectOptions>
+										</apex:selectList>
+									</div>
+								</div>
+							</apex:outputPanel>
+							<apex:repeat value="{!gatewayFieldlabels}" var="fieldKey" >
+								<div class="slds-form-element slds-p-bottom_small">
+									<label class="slds-form-element__label" for="combobox-id-1">{!gatewayFieldlabels[fieldKey]}</label>
+									<div class="slds-form-element__control">
+										<apex:input value="{!gatewayFieldValues[fieldKey]}"  styleClass="slds-input"  />
+									</div>
+								</div>
+							</apex:repeat>
+						</apex:outputPanel>
+					</apex:form>
+				</div>
+				<footer class="slds-card__footer">
+					<apex:outputPanel rendered="{!error == false}">
+						<button id="actionButton" class="slds-button slds-button--brand slds-not-selected" aria-live="assertive" onclick="createGatewayJS()">
+							<span class="slds-text-not-selected">Create</span>
+						</button>
+					</apex:outputPanel>
+
+					<button id="back" class="slds-button slds-button_neutral slds-not-selected " aria-live="assertive" onclick="navigateTo('{!bt_stripe__Payment_Gateway__c.Id}')">
+						<span class="slds-text-not-selected">Return To Record</span>
+					</button>
+				</footer>
+			</article>
+		</div>
+	</apex:outputpanel>
+
+	<script>
+	window.onload = function() {
+		if ({!error}) { // this attribute is Boolean - false positive on Reflected/Stored XSS
+			showErrorToast("{!JSENCODE(errorMessage)}");
+		}
+	};
+
+
+	function createGatewayJS() {
+		var form = document.querySelector('.formSpreedly');
+		var plainInputsValid = true;
+		Array.prototype.forEach.call(form.querySelectorAll('.slds-input'), function(input) {
+			if (!input.value) {
+				plainInputsValid = false;
+				input.style.border ="1px solid red";
+				return;
+			} else {
+				input.style.border ="";
+			}
+		});
+
+		if (!plainInputsValid) {
+			showErrorToast('Please fill in all the login fields.')
+			return;
+		}
+
+		toggleSpinner(); // show spinner
+		// this next method is a apex:actionFunction
+		createGateway(); // this method calls allDone() when it's complete
+
+		return false;
+	}
+
+	function loadGatewayAttributesJS() {
+		toggleSpinner(); // show spinner
+		loadGatewayAttributes();
+		return true;
+	}
+
+	function authModeChangedJS() {
+		toggleSpinner(); // show spinner
+		authModeChanged();
+	}
+
+	function dataLoadDone() {
+		toggleSpinner(); // hide spinner
+	}
+
+	function allDone() {
+		toggleSpinner(); // hide spinner
+		document.getElementById('actionButton').style.display = 'none'; // hide button
+		var error = document.getElementById('{!$Component.theForm.status}').value;
+		if (error) {
+			showErrorToast(error);
+		} else { // success!
+			showSuccessToast('Spreedly gateway create successfully', '{!bt_stripe__Payment_Gateway__c.Id}');
+		}
+	}
+	</script>
+</apex:page>

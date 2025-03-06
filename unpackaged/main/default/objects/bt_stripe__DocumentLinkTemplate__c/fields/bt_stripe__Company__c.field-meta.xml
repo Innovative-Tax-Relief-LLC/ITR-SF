@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Company__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The Company or entity related to this Invoice.</description>
+    <inlineHelpText>The Company or entity related to this Invoice.</inlineHelpText>
+    <label>Company Info</label>
+    <referenceTo>bt_stripe__Company__c</referenceTo>
+    <relationshipLabel>Document Link</relationshipLabel>
+    <relationshipName>Document_Links</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Contact_Bucket_Account__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <inlineHelpText>When the Contact Account Rule field = Bucket Account, new Contacts without a matching account will be added to this Account.</inlineHelpText>
+    <label>Contact Bucket Account</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Relationship Settings</relationshipLabel>
+    <relationshipName>Relationship_Settings</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

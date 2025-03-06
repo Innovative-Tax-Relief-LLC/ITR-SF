@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Lead__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <inlineHelpText>The Salesforce Lead related to this Gateway Customer. (Optional)</inlineHelpText>
+    <label>Lead</label>
+    <referenceTo>Lead</referenceTo>
+    <relationshipLabel>Payment Gateway Customers</relationshipLabel>
+    <relationshipName>Payment_Gateway_Customers</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

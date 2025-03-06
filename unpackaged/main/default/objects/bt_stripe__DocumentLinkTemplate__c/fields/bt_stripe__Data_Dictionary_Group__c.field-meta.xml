@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Data_Dictionary_Group__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Lookup to the Data Dictionary Group containing the Data Dictionary Entries with translated labels.</description>
+    <inlineHelpText>Select the appropriate Data Dictionary Group containing the translated override values for the chosen Display Language.</inlineHelpText>
+    <label>Data Dictionary Group</label>
+    <referenceTo>bt_stripe__Data_Dictionary_Group__c</referenceTo>
+    <relationshipLabel>DocumentLink Template</relationshipLabel>
+    <relationshipName>DocumentLink_Template</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,33 @@
+<apex:page showHeader="true" sidebar="true" controller="bt_stripe.AdminPageController">
+	<c:BT_Common />
+	<apex:includeLightning />
+
+	<style type="text/css">
+		.float {
+			position: fixed;
+			bottom: 20px;
+			right: 95px;
+		}
+	</style>
+
+
+	<div id="lDiv" />
+	<script>
+		var nameSpacePrefix = '{!JSENCODE(nameSpacePrefix)}';
+		if (nameSpacePrefix == '') {
+			nameSpacePrefix = 'c';
+		}
+		$Lightning.use(nameSpacePrefix + ':AdminPage_lout', function () {
+			$Lightning.createComponent(nameSpacePrefix + ':AdminPage', {}, 'lDiv', function (cmp) { });
+		});
+
+		document.addEventListener("BTReferEmailSuccess", function (event) {
+			showSuccessToast('The message has been sent successfully.','');
+		});
+
+		document.addEventListener("BTReferEmailError", function (event) {
+			var errorMessage = event.detail.error;
+			showErrorToast(errorMessage);
+		});
+	</script>
+</apex:page>

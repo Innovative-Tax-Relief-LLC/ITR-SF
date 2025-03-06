@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Status__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The overall status of this Schedule. The status &#39;Generate&#39; is a technical value, used only to create Transactions once. Other statuses (except Draft) are set automatically.</description>
+    <inlineHelpText>The overall status of this Schedule. The status &#39;Generate&#39; is a technical value, used only to create Transactions once. Other statuses (except Draft) are set automatically.</inlineHelpText>
+    <label>Schedule Status</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Draft</fullName>
+                <default>false</default>
+                <label>Draft</label>
+            </value>
+            <value>
+                <fullName>Generate</fullName>
+                <default>false</default>
+                <label>Generate</label>
+            </value>
+            <value>
+                <fullName>Future</fullName>
+                <default>false</default>
+                <label>Future</label>
+            </value>
+            <value>
+                <fullName>Active</fullName>
+                <default>false</default>
+                <label>Active</label>
+            </value>
+            <value>
+                <fullName>Completed</fullName>
+                <default>false</default>
+                <label>Completed</label>
+            </value>
+            <value>
+                <fullName>Canceled</fullName>
+                <default>false</default>
+                <label>Canceled</label>
+            </value>
+            <value>
+                <fullName>Failed</fullName>
+                <default>false</default>
+                <label>Failed</label>
+            </value>
+            <value>
+                <fullName>Canceled and Refunded</fullName>
+                <default>false</default>
+                <label>Canceled and Refunded</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

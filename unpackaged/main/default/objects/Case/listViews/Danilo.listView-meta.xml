@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Danilo</fullName>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>NAME</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>CASES.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CASES.SUBJECT</field>
+        <operation>contains</operation>
+        <value>TI Follow Up</value>
+    </filters>
+    <filters>
+        <field>OWNER_NAME</field>
+        <operation>notContain</operation>
+        <value>Case</value>
+    </filters>
+    <filters>
+        <field>OWNER_NAME</field>
+        <operation>notContain</operation>
+        <value>Bernice</value>
+    </filters>
+    <filters>
+        <field>OWNER_NAME</field>
+        <operation>notContain</operation>
+        <value>Jornan</value>
+    </filters>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Case Completed,Case Completed Successful,Closed,Case Closed,Case Completed Failed</value>
+    </filters>
+    <label>Open TI Cases with Wrong Case Owner</label>
+    <sharedTo>
+        <group>Case_Managers</group>
+    </sharedTo>
+</ListView>

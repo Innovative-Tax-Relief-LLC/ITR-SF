@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Disable_Charge_Receipt_Default__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>If checked, Send receipt checkbox on transaction will not be checked by default.</description>
+    <inlineHelpText>If checked, Send receipt checkbox on transaction will not be checked by default.</inlineHelpText>
+    <label>Disable Charge Receipt Default</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

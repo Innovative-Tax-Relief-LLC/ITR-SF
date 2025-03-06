@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Revenue_Officer_Contact_information__c</fullName>
+    <inlineHelpText>Contact information as name phone number of the RO on this case</inlineHelpText>
+    <label>Revenue Officer Contact information</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>TextArea</type>
+</CustomField>

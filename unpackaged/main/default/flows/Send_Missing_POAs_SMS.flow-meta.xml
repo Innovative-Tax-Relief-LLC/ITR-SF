@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <decisions>
+        <name>Stage_and_sub_stage_still_the_same_Check_24_hrs_later</name>
+        <label>Stage and sub stage still the same? Check 24 hrs later</label>
+        <locationX>446</locationX>
+        <locationY>276</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>yes_24_hrs_later</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Agreements</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Sub_Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Missing POAs</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account.PersonMobilePhone</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>send_2nd_sms</targetReference>
+            </connector>
+            <label>yes 24 hrs later</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Stage_and_sub_stage_still_the_same_Check_48_hrs_later</name>
+        <label>Stage and sub stage still the same? Check 48 hrs later</label>
+        <locationX>974</locationX>
+        <locationY>276</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_48_hrs_later</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Agreements</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Sub_Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Missing POAs</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account.PersonMobilePhone</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>send_3nd_sms</targetReference>
+            </connector>
+            <label>Check 48 hrs later</label>
+        </rules>
+    </decisions>
+    <description>To Send Missing POAs sms reminders to clients</description>
+    <environments>Default</environments>
+    <interviewLabel>Send Missing POAs SMS {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Send Missing POAs SMS</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_sms_record</name>
+        <label>Create sms record</label>
+        <locationX>50</locationX>
+        <locationY>276</locationY>
+        <inputAssignments>
+            <field>opportunity__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>smagicinteract__Automation_Key_Reference__c</field>
+            <value>
+                <stringValue>PA-000006</stringValue>
+            </value>
+        </inputAssignments>
+        <object>smagicinteract__Converse_App_Task__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>send_2nd_sms</name>
+        <label>send 2nd sms</label>
+        <locationX>314</locationX>
+        <locationY>384</locationY>
+        <inputAssignments>
+            <field>opportunity__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>smagicinteract__Automation_Key_Reference__c</field>
+            <value>
+                <stringValue>PA-000007</stringValue>
+            </value>
+        </inputAssignments>
+        <object>smagicinteract__Converse_App_Task__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>send_3nd_sms</name>
+        <label>send 3nd sms</label>
+        <locationX>842</locationX>
+        <locationY>384</locationY>
+        <inputAssignments>
+            <field>opportunity__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>smagicinteract__Automation_Key_Reference__c</field>
+            <value>
+                <stringValue>PA-000008</stringValue>
+            </value>
+        </inputAssignments>
+        <object>smagicinteract__Converse_App_Task__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <start>
+        <locationX>386</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Create_sms_record</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Agreements</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Sub_Stage__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Missing POAs</stringValue>
+            </value>
+        </filters>
+        <object>Opportunity</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <scheduledPaths>
+            <name>Path_2</name>
+            <connector>
+                <targetReference>Stage_and_sub_stage_still_the_same_Check_24_hrs_later</targetReference>
+            </connector>
+            <label>Path 2</label>
+            <offsetNumber>24</offsetNumber>
+            <offsetUnit>Hours</offsetUnit>
+            <timeSource>RecordTriggerEvent</timeSource>
+        </scheduledPaths>
+        <scheduledPaths>
+            <name>Path_3</name>
+            <connector>
+                <targetReference>Stage_and_sub_stage_still_the_same_Check_48_hrs_later</targetReference>
+            </connector>
+            <label>Path 3</label>
+            <offsetNumber>48</offsetNumber>
+            <offsetUnit>Hours</offsetUnit>
+            <timeSource>RecordTriggerEvent</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

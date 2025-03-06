@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Hide_Currency_Field__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <inlineHelpText>If checked, the Currency field will be hidden and the default Currency value will be used in the Mobile Payments app</inlineHelpText>
+    <label>Hide Currency Field</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

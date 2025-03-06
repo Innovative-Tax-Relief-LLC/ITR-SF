@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X2T_Opportunity_Created_Automatically__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This fields prevents the duplication of 2T Opportunity</description>
+    <label>2T Opportunity Created Automatically?</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

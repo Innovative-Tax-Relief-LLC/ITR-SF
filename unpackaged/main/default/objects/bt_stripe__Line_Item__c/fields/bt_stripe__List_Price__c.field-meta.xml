@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__List_Price__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The list price for this Line Item, automatically populated once the Product is selected and the record is saved.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The list price for this Line Item, automatically populated once the Product is selected and the record is saved.</inlineHelpText>
+    <label>List Unit Price</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

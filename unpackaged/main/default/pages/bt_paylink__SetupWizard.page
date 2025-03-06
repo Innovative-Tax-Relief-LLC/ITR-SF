@@ -1,0 +1,41 @@
+<apex:page showHeader="true" sidebar="false" controller="bt_paylink.SetupWizardController" standardStylesheets="false" docType="html-5.0" applyHtmlTag="true">
+	<apex:includeLightning />
+
+	<style type="text/css">
+	body {
+	margin: 0px;
+	}
+	html body.sfdcBody,.noSidebarCell {
+	margin: 0px;
+	padding: 0px;
+	}
+	</style>
+
+	<div id="lDiv"/>
+	<script>
+	var nameSpacePrefix = '{!JSENCODE(nameSpacePrefix)}';
+	if (nameSpacePrefix === '') {
+		nameSpacePrefix = 'c';
+	}
+
+	$Lightning.use(nameSpacePrefix + ':SetupWizardLtngApp', function() {
+		$Lightning.createComponent(nameSpacePrefix + ':SetupWizard',{},
+			'lDiv',
+			function(cmp) {
+				$A.eventService.addHandler({
+					event: 'force:navigateToURL',
+					handler: function(event) {
+						if ((typeof sforce != 'undefined') && sforce && (!!sforce.one)) {
+							// VF page in S1 or Lightning Exp
+							sforce.one.navigateToURL(event.getParam('url'));
+						} else {
+							// VF page in Classic
+							window.location = event.getParam('url');
+						}
+					}
+				});
+			}
+		);
+	});
+	</script>
+</apex:page>

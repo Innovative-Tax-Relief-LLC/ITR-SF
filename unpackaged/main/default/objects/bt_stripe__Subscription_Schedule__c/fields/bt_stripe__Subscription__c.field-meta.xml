@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Subscription__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>Subscription managed by the subscription schedule.</description>
+    <inlineHelpText>Subscription managed by the subscription schedule.</inlineHelpText>
+    <label>Subscription</label>
+    <referenceTo>bt_stripe__Subscription2__c</referenceTo>
+    <relationshipLabel>Subscription Schedules</relationshipLabel>
+    <relationshipName>Subscription_Schedules</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

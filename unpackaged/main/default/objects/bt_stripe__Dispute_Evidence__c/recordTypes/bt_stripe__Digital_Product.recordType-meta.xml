@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Digital_Product</fullName>
+    <active>true</active>
+    <description>Access to software, files, or digital experiences. For example: apps, SaaS, MP3s, digitally-delivered tickets.</description>
+    <label>Digital Product</label>
+</RecordType>

@@ -1,0 +1,184 @@
+<apex:page showHeader="true" sidebar="true" standardController="bt_stripe__Payment_Gateway__c" extensions="bt_stripe.PaymentGateway_SyncController">
+
+	<c:BT_Common /> <!-- includes common html and javascript we use in all our VF Pages & Components -->
+
+	<apex:outputpanel layout="block" style="max-width:90%;margin:auto;padding:10px;">
+
+		<!-- put in an outer container so we can easily hide everything -->
+		<div id="outerContainer" style="padding:0px;">
+			<article class="slds-card">
+				<div class="slds-card__header slds-grid">
+					<header class="slds-media slds-media_center slds-has-flexi-truncate">
+						<div class="slds-media__figure">
+							<span class="slds-icon_container slds-icon-custom-custom41" title="transaction">
+								<svg class="slds-icon slds-icon_small" aria-hidden="true">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/action-sprite/svg/symbols.svg#quote')}"></use>
+								</svg>
+								<span class="slds-assistive-text">Sync</span>
+							</span>
+						</div>
+						<div class="slds-media__body">
+							<h2 class="slds-card__header-title">
+								<span>Sync Data From Stripe</span>
+							</h2>
+						</div>
+					</header>
+				</div>
+				<div class="slds-card__body slds-card__body_inner">
+					<apex:form >
+					<div class="slds-vertical-tabs">
+						<ul class="slds-vertical-tabs__nav" role="tablist" aria-orientation="vertical">
+							<li id="first_tab_li" class="slds-vertical-tabs__nav-item slds-is-active" title="Core" role="presentation">
+								<a class="slds-vertical-tabs__link" onclick="showTab('first_tab',this)" href="javascript:void(0)" role="tab" tabindex="0" aria-selected="true" aria-controls="slds-vertical-tabs-0" id="slds-vertical-tabs-0__nav">
+									<span class="slds-vertical-tabs__left-icon"></span>
+									<span class="slds-truncate" title="Core">Core</span>
+									<span class="slds-vertical-tabs__right-icon"></span>
+								</a>
+							</li>
+							<li id="second_tab_li" class="slds-vertical-tabs__nav-item" title="Billing" role="presentation">
+								<a onclick="showTab('second_tab',this)" class="slds-vertical-tabs__link" href="javascript:void(0)" role="tab" tabindex="-1" aria-selected="false" aria-controls="slds-vertical-tabs-1" id="slds-vertical-tabs-1__nav">
+									<span class="slds-vertical-tabs__left-icon"></span>
+									<span class="slds-truncate" title="Billing">Billing</span>
+									<span class="slds-vertical-tabs__right-icon"></span>
+								</a>
+							</li>
+							<li id="third_tab_li" class="slds-vertical-tabs__nav-item" title="Connect" role="presentation">
+								<a onclick="showTab('third_tab',this)" class="slds-vertical-tabs__link" href="javascript:void(0)" role="tab" tabindex="-1" aria-selected="false" aria-controls="slds-vertical-tabs-2" id="slds-vertical-tabs-2__nav">
+								<span class="slds-vertical-tabs__left-icon"></span>
+								<span class="slds-truncate" title="Connect">Connect</span>
+								<span class="slds-vertical-tabs__right-icon"></span>
+								</a>
+							</li>
+						</ul>
+						<div class="slds-vertical-tabs__content slds-show" id="first_tab" role="tabpanel" aria-labelledby="slds-vertical-tabs-0__nav">
+							<div class="slds-text-longform">
+								<table>
+								<tr>
+									<td>From:</td>
+									<td><apex:inputField value="{!forStart.bt_stripe__Processed_Date__c}"/></td>
+								</tr>
+								<tr>
+									<td>To:</td>
+									<td><apex:inputField value="{!forEnd.bt_stripe__Processed_Date__c}"/></td>
+								</tr>
+								</table>
+
+								<p/>
+								<p/>
+
+								<apex:commandButton styleClass="slds-button slds-button--brand slds-not-selected" value="Customers"
+									action="{!fireCustomerSync}" onclick="doAction()" oncomplete="allDone('Customer')"/>
+								<apex:commandButton styleClass="slds-button slds-button--brand slds-not-selected" value="Payment Methods"
+									action="{!syncPaymentMethods}" onclick="doAction()" oncomplete="allDone('Payment Method')" />
+								<apex:commandButton styleClass="slds-button slds-button--brand slds-not-selected" value="Charges/Refund"
+									action="{!fireTransactionSync}" onclick="doAction()" oncomplete="allDone('Charges')" />
+								<apex:commandButton styleClass="slds-button slds-button--brand slds-not-selected" value="Payouts"
+									action="{!syncPayouts}" onclick="doAction()" oncomplete="allDone('Payout')"/>
+							</div>
+						</div>
+						<div class="slds-vertical-tabs__content slds-hide" id="second_tab" role="tabpanel" aria-labelledby="slds-vertical-tabs-1__nav">
+							<div class="slds-text-longform">
+								<apex:commandButton styleClass="slds-button slds-button--brand slds-not-selected" value="Products"
+									action="{!syncProducts}" onclick="doAction()" oncomplete="allDone('Product')" />
+								<apex:commandButton styleClass="slds-button slds-button--brand slds-not-selected" value="Prices"
+									action="{!syncPrices}" onclick="doAction()" oncomplete="allDone('Price')" />
+								<apex:commandButton styleClass="slds-button slds-button--brand slds-not-selected" value="Coupons"
+									action="{!syncCoupons}" onclick="doAction()" oncomplete="allDone('Coupon')" />
+								<apex:commandButton styleClass="slds-button slds-button--brand slds-not-selected" value="Subscriptions"
+									action="{!syncSubscriptions}" onclick="doAction()" oncomplete="allDone('Subscription')" />
+								<apex:commandButton styleClass="slds-button slds-button--brand slds-not-selected" value="Invoices"
+									action="{!syncInvoices}" onclick="doAction()" oncomplete="allDone('Invoice')" />
+								<apex:commandButton styleClass="slds-button slds-button--brand slds-not-selected" value="Upcoming Invoices"
+									action="{!syncUpcomingInvoices}" onclick="doAction()" oncomplete="allDone('Upcoming Invoice Amount')" />
+								<apex:commandButton styleClass="slds-button slds-button--brand slds-not-selected" value="Usage"
+									action="{!syncUsage}" onclick="doAction()" oncomplete="allDone('Usage')" />
+							</div>
+						</div>
+						<div class="slds-vertical-tabs__content slds-hide" id="third_tab" role="tabpanel" aria-labelledby="slds-vertical-tabs-2__nav">
+							<div class="slds-text-longform">
+								<table>
+								<tr>
+									<td>From:</td>
+									<td><apex:inputField value="{!forStart2.bt_stripe__Processed_Date__c}"/></td>
+								</tr>
+								<tr>
+									<td>To:</td>
+									<td><apex:inputField value="{!forEnd2.bt_stripe__Processed_Date__c}"/></td>
+								</tr>
+								</table>
+
+								<p/>
+								<p/>
+								<apex:commandButton styleClass="slds-button slds-button--brand slds-not-selected" value="Connected Accounts"
+									action="{!syncConnectedAccounts}" onclick="doAction()" oncomplete="allDone('Connected Account')" />
+								<apex:commandButton styleClass="slds-button slds-button--brand slds-not-selected" value="Connected Account Owners"
+									action="{!syncConnectedAccountsOwners}" onclick="doAction()" oncomplete="allDone('Connected Account Owner')" />
+								<apex:commandButton styleClass="slds-button slds-button--brand slds-not-selected" value="Transfers"
+									action="{!syncTransfers}" onclick="doAction()" oncomplete="allDone('Transfer')" />
+							</div>
+						</div>
+					</div>
+					</apex:form>
+				</div>
+				<footer class="slds-card__footer">
+					<button id="back" class="slds-button slds-button_neutral slds-not-selected " aria-live="assertive" onclick="navigateTo('{!Payment_Gateway__c.Id}')">
+						<span class="slds-text-not-selected">Return</span>
+					</button>
+				</footer>
+			</article>
+		</div>
+	</apex:outputpanel>
+	<script>
+	function showTab(tabName, element) {
+		if (tabName == 'first_tab') {
+			document.getElementById('second_tab_li').classList.remove('slds-is-active');
+			document.getElementById('third_tab_li').classList.remove('slds-is-active');
+			document.getElementById('first_tab_li').classList.add('slds-is-active');
+
+			document.getElementById('second_tab').classList.remove('slds-show');
+			document.getElementById('second_tab').classList.add('slds-hide');
+
+			document.getElementById('third_tab').classList.remove('slds-show');
+			document.getElementById('third_tab').classList.add('slds-hide');
+
+			document.getElementById('first_tab').classList.remove('slds-hide');
+			document.getElementById('first_tab').classList.add('slds-show');
+		} else if (tabName=='second_tab') {
+			document.getElementById('first_tab_li').classList.remove('slds-is-active');
+			document.getElementById('third_tab_li').classList.remove('slds-is-active');
+			document.getElementById('second_tab_li').classList.add('slds-is-active');
+
+			document.getElementById('first_tab').classList.remove('slds-show');
+			document.getElementById('first_tab').classList.add('slds-hide');
+
+			document.getElementById('third_tab').classList.remove('slds-show');
+			document.getElementById('third_tab').classList.add('slds-hide');
+
+			document.getElementById('second_tab').classList.remove('slds-hide');
+			document.getElementById('second_tab').classList.add('slds-show');
+		} else { // third tab
+			document.getElementById('first_tab_li').classList.remove('slds-is-active');
+			document.getElementById('second_tab_li').classList.remove('slds-is-active');
+			document.getElementById('third_tab_li').classList.add('slds-is-active');
+
+			document.getElementById('first_tab').classList.remove('slds-show');
+			document.getElementById('first_tab').classList.add('slds-hide');
+
+			document.getElementById('second_tab').classList.remove('slds-show');
+			document.getElementById('second_tab').classList.add('slds-hide');
+
+			document.getElementById('third_tab').classList.remove('slds-hide');
+			document.getElementById('third_tab').classList.add('slds-show');
+		}
+	}
+
+	function doAction() {
+		toggleSpinner();
+	}
+
+	function allDone(calledFrom) {
+		toggleSpinner(); // hide spinner
+		showSuccessToast(calledFrom +' Sync has been started', '{!Payment_Gateway__c.Id}');
+	}
+	</script>
+</apex:page>

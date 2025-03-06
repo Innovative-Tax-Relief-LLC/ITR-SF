@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tax_Prep_and_Negotiation_Case</fullName>
+    <active>true</active>
+    <businessProcess>Tax Prep and Negotiation Case Process</businessProcess>
+    <label>Tax Prep and Negotiation Case</label>
+    <picklistValues>
+        <picklist>Case_Closed_Reason__c</picklist>
+        <values>
+            <fullName>By Client for Bankruptcy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DNC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DNR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Due to Client Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Due to Non Communication</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Due to Non Compliance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Due to Non Payment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Terminated By Client</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>First_Trade_POA_Submitted__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Has_Business__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IRS_Revenue_Officer_on_Case__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Origin</picklist>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>POA_Rejected__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>POA_Submitted_to_CAF__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>POA_hit_CAF__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason</picklist>
+        <values>
+            <fullName>Complex functionality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instructions not clear</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User didn%27t attend training</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sub_status__c</picklist>
+        <values>
+            <fullName>Attempting Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bankruptcy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed%2F Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed%2F Closed- DNR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DNR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Due to Client Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Due to Non Compliance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Due to Non Payment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incorrect Font</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incorrect Info Submitted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intro Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NSF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non Communication</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ready for Yearly Tax Prep</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refuse Financing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TPP Blocked</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tax Prep</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Terminated by Client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Terminated by ITR</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>TI_Completed__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>TI_PIF__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>TI_Type__c</picklist>
+        <values>
+            <fullName>By CAF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manually</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>TPP_Blocked__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Feature Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Question</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

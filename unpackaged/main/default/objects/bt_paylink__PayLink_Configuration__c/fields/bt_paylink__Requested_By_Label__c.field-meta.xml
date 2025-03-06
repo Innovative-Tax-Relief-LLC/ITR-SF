@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_paylink__Requested_By_Label__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Overrides the Requested By label</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Overrides the Requested By label</inlineHelpText>
+    <label>Requested By Label</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

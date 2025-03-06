@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Submit_Discount_for_Manager_Review</name>
+        <label>Submit Discount for Manager Review</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <actionName>submit</actionName>
+        <actionType>submit</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>objectId</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>processDefinitionNameOrId</name>
+            <value>
+                <stringValue>ITR_Approval_Process_Discounts</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>skipEntryCriteria</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>submit</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>62.0</apiVersion>
+    <description>Adds an opportunity to the discount approval process for review.</description>
+    <environments>Default</environments>
+    <interviewLabel>Subflow: Add Opportunity To Approval Process {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Subflow: Add Opportunity To Approval Process</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Submit_Discount_for_Manager_Review</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

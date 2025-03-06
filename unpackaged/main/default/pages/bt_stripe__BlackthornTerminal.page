@@ -1,0 +1,34 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" controller="bt_stripe.VTerminal_Controller" showQuickActionVfHeader="false">
+	<apex:includeLightning />
+
+	<div id="lDiv"/>
+	<script>
+	var nameSpacePrefix = '{!JSENCODE(nameSpacePrefix)}';
+	if (nameSpacePrefix == '') {
+		nameSpacePrefix = 'c';
+	}
+
+	$Lightning.use(nameSpacePrefix + ':BlackthornTerminalLtngOutApp', function() {
+		$Lightning.createComponent(nameSpacePrefix + ':VirtualTerminal',
+		{
+			'recordId' : '{!JSENCODE(recordId)}',
+			'sObjectName' : '{!JSENCODE(sObjectName)}'
+		}, 'lDiv', function(cmp) {
+			$A.eventService.addHandler({ "event": nameSpacePrefix+":BT_ReloadPage", "handler" : reload});
+		});
+	});
+
+	var reload = function(event) {
+		var typeOfEvent = event.getParam('type');
+		//If reload on Lightning
+		if (typeOfEvent === 'reload' && window.location.ancestorOrigins && window.location.ancestorOrigins[0]) {
+			if (window.parent.location.pathname) { // community with path URL #PAY-16
+				window.parent.location.href;
+			} else {
+				window.parent.location = '/' + '{!JSENCODE(recordId)}';
+			}
+			return;
+		}
+	}
+	</script>
+</apex:page>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Agency__c</fullName>
+    <label>Agency</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>State</fullName>
+                <default>false</default>
+                <label>State</label>
+            </value>
+            <value>
+                <fullName>Federal</fullName>
+                <default>false</default>
+                <label>Federal</label>
+            </value>
+            <value>
+                <fullName>State and Federal</fullName>
+                <default>false</default>
+                <label>State and Federal</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

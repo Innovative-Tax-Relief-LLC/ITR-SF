@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__To_Fix_Errors</fullName>
+    <columns>NAME</columns>
+    <columns>bt_stripe__Card_Holder_Name__c</columns>
+    <columns>bt_stripe__Card_Last_4_Digit__c</columns>
+    <columns>bt_stripe__Card_Expiration_Month__c</columns>
+    <columns>bt_stripe__Card_Expiration_Year__c</columns>
+    <columns>bt_stripe__Contact__c</columns>
+    <columns>bt_stripe__Account__c</columns>
+    <columns>bt_stripe__Billing_Email__c</columns>
+    <columns>bt_stripe__Bank_Name__c</columns>
+    <columns>bt_stripe__Error_Message__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>bt_stripe__Error_Message__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>To Fix (Errors)</label>
+</ListView>

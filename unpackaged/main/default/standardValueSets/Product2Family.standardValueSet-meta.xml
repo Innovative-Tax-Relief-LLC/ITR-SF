@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>None</fullName>
+        <default>false</default>
+        <label>None</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Tax Investigation</fullName>
+        <default>false</default>
+        <label>Tax Investigation</label>
+    </standardValue>
+    <standardValue>
+        <fullName>2nd Trade Exploratory Service</fullName>
+        <default>false</default>
+        <label>2nd Trade Exploratory Service</label>
+    </standardValue>
+    <standardValue>
+        <fullName>3rd Trade Services</fullName>
+        <default>false</default>
+        <label>3rd Trade Services</label>
+    </standardValue>
+</StandardValueSet>

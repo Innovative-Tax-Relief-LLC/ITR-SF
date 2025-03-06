@@ -1,0 +1,42 @@
+<apex:page standardController="bt_stripe__Line_Item__c" extensions="bt_stripe.LineItem_NewController" action="{!redirectWithPreData}">
+	<apex:form >
+		<apex:inputHidden value="{!bt_stripe__Line_Item__c.bt_stripe__Sales_Document__c}"/>
+		<apex:inputHidden value="{!bt_stripe__Line_Item__c.RecordTypeId}"/>
+	</apex:form>
+	<apex:pageMessages />
+
+	<apex:outputPanel rendered="{!OR($User.UIThemeDisplayed == 'Theme4d', $User.UIThemeDisplayed == 'Theme4t', $User.UIThemeDisplayed == 'Theme4u') && !error}">
+		<script type="text/javascript">
+		var rtId = '{!JSENCODE(liRecordTypeId)}';
+		var sdId = '{!JSENCODE(salesDocumentId)}';
+		var ns ='{!JSENCODE(ns)}';
+
+		if (ns != null && ns != '') {
+			var params = {};
+			if (sdId) {
+				params= {
+					'bt_stripe__Sales_Document__c' : sdId
+				};
+			}
+			if (rtId) {
+				sforce.one.createRecord('bt_stripe__Line_Item__c', rtId, params);
+			} else {
+				sforce.one.createRecord('bt_stripe__Line_Item__c', null, params);
+			}
+
+		} else {
+			var params = {};
+			if (sdId) {
+				params= {
+					'Sales_Document__c' : sdId
+				};
+			}
+			if (rtId) {
+				sforce.one.createRecord('Line_Item__c', rtId, params);
+			} else {
+				sforce.one.createRecord('Line_Item__c', null, params);
+			}
+		}
+		</script>
+	</apex:outputPanel>
+</apex:page>

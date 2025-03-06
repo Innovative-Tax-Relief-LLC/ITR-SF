@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__MatchRecordsIsRequired</fullName>
+    <active>true</active>
+    <description>Checks that match record cannot be blank on specific criteria.</description>
+    <errorConditionFormula>IF(OR( ISPICKVAL(bt_stripe__Relationship_Rule__c, &#39;Create New Record If No Match&#39;),ISPICKVAL(bt_stripe__Relationship_Rule__c, &#39;Only Relate A Matched Record&#39;)),IF(ISBLANK( bt_stripe__Match_Records__c ) , true,false),false)</errorConditionFormula>
+    <errorDisplayField>bt_stripe__Match_Records__c</errorDisplayField>
+    <errorMessage>The Match Records field is Required</errorMessage>
+</ValidationRule>

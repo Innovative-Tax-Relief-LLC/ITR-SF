@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Current_Period_Start__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Start of the current period that the subscription has been invoiced for.</description>
+    <inlineHelpText>Start of the current period that the subscription has been invoiced for.</inlineHelpText>
+    <label>Current Period Start</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Verification_Code__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Verification Code</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Scan Corrupt</fullName>
+                <default>false</default>
+                <label>Scan Corrupt</label>
+            </value>
+            <value>
+                <fullName>Scan Not Readable</fullName>
+                <default>false</default>
+                <label>Scan Not Readable</label>
+            </value>
+            <value>
+                <fullName>Scan Failed Greyscale</fullName>
+                <default>false</default>
+                <label>Scan Failed Greyscale</label>
+            </value>
+            <value>
+                <fullName>Scan Not Uploaded</fullName>
+                <default>false</default>
+                <label>Scan Not Uploaded</label>
+            </value>
+            <value>
+                <fullName>Scan ID Type Not Supported</fullName>
+                <default>false</default>
+                <label>Scan ID Type Not Supported</label>
+            </value>
+            <value>
+                <fullName>Scan ID Country Not Supported</fullName>
+                <default>false</default>
+                <label>Scan ID Country Not Supported</label>
+            </value>
+            <value>
+                <fullName>Scan Name Mismatch</fullName>
+                <default>false</default>
+                <label>Scan Name Mismatch</label>
+            </value>
+            <value>
+                <fullName>Scan Failed Other</fullName>
+                <default>false</default>
+                <label>Scan Failed Other</label>
+            </value>
+            <value>
+                <fullName>Failed Keyed Identity</fullName>
+                <default>false</default>
+                <label>Failed Keyed Identity</label>
+            </value>
+            <value>
+                <fullName>Failed Other</fullName>
+                <default>false</default>
+                <label>Failed Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

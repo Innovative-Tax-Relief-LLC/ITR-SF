@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Virtual_Terminal</fullName>
+    <description>Field Set for the Virtual Terminal</description>
+    <displayedFields>
+        <field>bt_stripe__Description__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <label>Virtual Terminal</label>
+</FieldSet>

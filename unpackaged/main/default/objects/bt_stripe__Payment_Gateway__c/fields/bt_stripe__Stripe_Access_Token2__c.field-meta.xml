@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Stripe_Access_Token2__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Stripe Access Token</label>
+    <length>175</length>
+    <maskChar>asterisk</maskChar>
+    <maskType>all</maskType>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>EncryptedText</type>
+</CustomField>

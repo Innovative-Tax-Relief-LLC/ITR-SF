@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Hide_Related_To__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Check if you want to hide &quot;Related To&quot; field.</description>
+    <inlineHelpText>Check if you want to hide &quot;Related To&quot; field.</inlineHelpText>
+    <label>Hide Related To</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

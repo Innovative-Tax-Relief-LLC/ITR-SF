@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Livemode__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Indicates if the event is coming from a test environment.</description>
+    <inlineHelpText>Indicates if the event is coming from a test environment.</inlineHelpText>
+    <label>Livemode</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

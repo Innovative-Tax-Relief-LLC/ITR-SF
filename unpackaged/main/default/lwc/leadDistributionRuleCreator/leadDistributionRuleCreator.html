@@ -1,0 +1,166 @@
+<template>
+    <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open slds-modal_large">
+
+        <div class="slds-modal__container">
+            <lightning-button-icon
+                class="slds-button slds-button_icon slds-modal__close"
+                variant="inverse"
+                icon-name="utility:close"
+                alternative-text="Close"
+                title="Close"
+                onclick={handleCloseClick}
+            ></lightning-button-icon>
+
+            <div class="slds-modal__header">
+                <h1 id="modal-heading-02" class="slds-modal__title slds-hyphenate">{ruleName}</h1>
+            </div>
+
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                <!-- Rule Info Section -->
+                <lightning-card title="Rule Info">
+
+                <lightning-button label="Save" onclick={handleSave} slot="actions" variant="brand"></lightning-button>
+
+                <lightning-layout multiple-rows="true" class="slds-grid_vertical-align-center">
+                    <lightning-layout-item padding="around-small" size="6">
+                        <lightning-input label="Rule Name" value={ruleName} onchange={handleRuleNameChange} required></lightning-input>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small" size="6">
+                        <lightning-input label="IsActive?" type="checkbox" checked={isActive} onchange={handleIsActiveChange}> </lightning-input>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small" size="6">
+                        <lightning-input label="Priority" type="number" value={priority} onchange={handlePriorityChange}> </lightning-input>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small" size="6">
+                        <lightning-combobox 
+                            label="Return Object" 
+                            options={returnObjectOptions} 
+                            value={returnObject} 
+                            onchange={handleReturnObjectChange}
+                            required>
+                        </lightning-combobox>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small" size="6">
+                        <lightning-combobox 
+                            label="Sort By" 
+                            options={sortByOptions} 
+                            value={sortBy} 
+                            onchange={handleSortByChange}
+                            required>
+                        </lightning-combobox>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small" size="6">
+                        <lightning-combobox 
+                            label="Sorting Direction" 
+                            options={sortingDirectionOptions} 
+                            value={sortingDirection} 
+                            onchange={handleSortingDirectionChange}
+                            required>
+                        </lightning-combobox>
+                    </lightning-layout-item>
+                </lightning-layout>
+
+                </lightning-card>
+
+                <!-- Rule Criteria Section -->
+                <lightning-card title="Rule Criteria" icon-name="utility:filter">
+                    <lightning-button 
+                        label="Add" 
+                        slot="actions" 
+                        onclick={handleAddRow}
+                        disabled={isAddDisabled}>
+                    </lightning-button>
+                    <div class="slds-m-around_medium">
+                        <table class="slds-table slds-table_bordered">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Field API Name</th>
+                                    <th>Operator</th>
+                                    <th>Value</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <template for:each={criteriaRows} for:item="row">
+                                    <tr key={row.id}>
+                                        <td>
+                                            {row.id}
+                                        </td>
+                                        <td>
+                                            <template if:true={row.fieldApiName}>
+                                                <lightning-button 
+                                                    label={row.fieldApiName} 
+                                                    onclick={handleSelectField} 
+                                                    data-id={row.id}
+                                                    style="margin-bottom: 15px;">
+                                                </lightning-button>
+                                            </template>
+                                            <template if:false={row.fieldApiName}>
+                                                <lightning-button 
+                                                    label="Select Field" 
+                                                    onclick={handleSelectField} 
+                                                    data-id={row.id}
+                                                    style="margin-bottom: 15px;">
+                                                </lightning-button>
+                                            </template>
+                                        </td>
+                                        <td>
+                                            <lightning-combobox 
+                                                options={operatorOptions} 
+                                                value={row.operator} 
+                                                onchange={handleOperatorChange} 
+                                                data-id={row.id}
+                                                style="margin-bottom: 15px;">
+                                            </lightning-combobox>
+                                        </td>
+                                        <td>
+                                            <lightning-input 
+                                                value={row.value} 
+                                                onchange={handleValueChange} 
+                                                data-id={row.id}
+                                                style="margin-bottom: 15px;">
+                                            </lightning-input>
+                                        </td>
+                                        <td>
+                                            <lightning-button-icon
+                                            icon-name="utility:delete"
+                                            variant="bare"
+                                            data-id={row.id}
+                                            alternative-text="Delete Rule Criteria"
+                                            title="Delete Rule Criteria"
+                                            onclick={handleCriteriaDeleteClick}
+                                            style="margin-bottom: 15px;"
+                                            ></lightning-button-icon>
+                                        </td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </div>
+                    <template if:true={showLogic}>
+                        <div class="slds-m-around_medium">
+                            <lightning-textarea 
+                                label="Logic" 
+                                value={logic} 
+                                >
+                            </lightning-textarea>
+                        </div>
+                    </template>
+                </lightning-card>
+            </div>  
+
+            <!-- Field Selector Modal -->
+            <template if:true={isModalOpen}>
+                <c-field-selector-modal
+                    from-object={criteriaObject}
+                    return-object={returnObject}
+                    onfieldselect={handleFieldSelect}
+                    onclose={handleFieldModalClose}>
+                </c-field-selector-modal>
+            </template>
+
+            </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+</template>

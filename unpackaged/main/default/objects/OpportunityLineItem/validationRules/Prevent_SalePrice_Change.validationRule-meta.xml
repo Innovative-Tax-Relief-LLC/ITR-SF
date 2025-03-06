@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_SalePrice_Change</fullName>
+    <active>false</active>
+    <description>Prevents non-Admin users from changing the Sales Price on a product</description>
+    <errorConditionFormula>UnitPrice &lt;&gt; ListPrice</errorConditionFormula>
+    <errorDisplayField>UnitPrice</errorDisplayField>
+    <errorMessage>Users cannot edit the Sales Price.</errorMessage>
+</ValidationRule>

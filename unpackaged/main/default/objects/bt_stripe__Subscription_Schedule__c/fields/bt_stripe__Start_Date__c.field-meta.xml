@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Start_Date__c</fullName>
+    <deprecated>false</deprecated>
+    <description>When the subscription schedule starts. We recommend using now so that it starts the subscription immediately.</description>
+    <inlineHelpText>When the subscription schedule starts. We recommend using now so that it starts the subscription immediately.</inlineHelpText>
+    <label>Start Date</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

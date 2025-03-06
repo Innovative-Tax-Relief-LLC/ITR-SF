@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__TaxDisplaySetting__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Tax Display Setting determines how taxes are displayed and calculated throughout the site. Please note that taxes are always displayed separately on the final payment screen.</description>
+    <inlineHelpText>If Tax-Inclusive Pricing, the advertised price will include tax. If Calculated at Checkout, tax will not be surfaced until the final payment screen.</inlineHelpText>
+    <label>Tax Display Setting</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>bt_stripe__Type__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Calculated_At_Checkout</fullName>
+                <default>false</default>
+                <label>Calculated at Checkout</label>
+            </value>
+            <value>
+                <fullName>Tax_Inclusive_Pricing</fullName>
+                <default>false</default>
+                <label>Tax-Inclusive Pricing</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Tax</controllingFieldValue>
+            <valueName>Calculated_At_Checkout</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tax</controllingFieldValue>
+            <valueName>Tax_Inclusive_Pricing</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

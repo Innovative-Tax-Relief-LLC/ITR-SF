@@ -1,0 +1,10 @@
+<apex:page standardController="bt_stripe__Connected_Account__c" showQuickActionVfHeader="false">
+	<c:BT_CreatePaymentMethod relatedToObjectName="Connected Account" relatedToName="{!bt_stripe__Connected_Account__c.Name}"
+		paymentGatewayId="{!bt_stripe__Connected_Account__c.bt_stripe__Payment_Gateway__c}"
+		connectedAccountId="{!bt_stripe__Connected_Account__c.Id}" relatedTo="{!bt_stripe__Connected_Account__c.bt_stripe__Account__c}"
+		holdersName="{!If(bt_stripe__Connected_Account__c.bt_stripe__Account__c != null, bt_stripe__Connected_Account__c.Account__r.Name, null)}"
+		street="{!If(bt_stripe__Connected_Account__c.bt_stripe__Account__c != null, bt_stripe__Connected_Account__c.Account__r.BillingStreet, null)}"
+		city="{!If(bt_stripe__Connected_Account__c.bt_stripe__Account__c != null, bt_stripe__Connected_Account__c.Account__r.BillingCity, null)}"
+		state="{!If(bt_stripe__Connected_Account__c.bt_stripe__Account__c != null, bt_stripe__Connected_Account__c.Account__r.BillingState, null)}"
+		postalCode="{!If(bt_stripe__Connected_Account__c.bt_stripe__Account__c != null, bt_stripe__Connected_Account__c.Account__r.BillingPostalCode, null)}"/>
+</apex:page>

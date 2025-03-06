@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unqualified_Reason__c</fullName>
+    <label>Unqualified Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Status</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Bad or Wrong Number</fullName>
+                <default>false</default>
+                <label>Bad or Wrong Number</label>
+            </value>
+            <value>
+                <fullName>Bankruptcy</fullName>
+                <default>false</default>
+                <label>Bankruptcy</label>
+            </value>
+            <value>
+                <fullName>Cant Help</fullName>
+                <default>false</default>
+                <label>Cant Help</label>
+            </value>
+            <value>
+                <fullName>Currently in IA or CNC</fullName>
+                <default>false</default>
+                <label>Currently in IA or CNC</label>
+            </value>
+            <value>
+                <fullName>Debt Too Low</fullName>
+                <default>false</default>
+                <label>Debt Too Low</label>
+            </value>
+            <value>
+                <fullName>Do Not Call</fullName>
+                <default>false</default>
+                <label>Do Not Call</label>
+            </value>
+            <value>
+                <fullName>IRS Inquiry</fullName>
+                <default>false</default>
+                <label>IRS Inquiry</label>
+            </value>
+            <value>
+                <fullName>Not Interested</fullName>
+                <default>false</default>
+                <label>Not Interested</label>
+            </value>
+            <value>
+                <fullName>Phone Solicitations</fullName>
+                <default>false</default>
+                <label>Phone Solicitations</label>
+            </value>
+            <value>
+                <fullName>State Debt Only</fullName>
+                <default>false</default>
+                <label>State Debt Only</label>
+            </value>
+            <value>
+                <fullName>Student Loan</fullName>
+                <default>false</default>
+                <label>Student Loan</label>
+            </value>
+            <value>
+                <fullName>Tax Question</fullName>
+                <default>false</default>
+                <label>Tax Question</label>
+            </value>
+            <value>
+                <fullName>Credit Card Debt</fullName>
+                <default>false</default>
+                <label>Credit Card Debt</label>
+            </value>
+            <value>
+                <fullName>Child Support</fullName>
+                <default>false</default>
+                <label>Child Support</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <valueName>Bad or Wrong Number</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <valueName>Bankruptcy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <valueName>Cant Help</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <valueName>Currently in IA or CNC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <valueName>Debt Too Low</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <valueName>Do Not Call</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <valueName>IRS Inquiry</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <valueName>Not Interested</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <valueName>Phone Solicitations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <valueName>State Debt Only</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <valueName>Student Loan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <valueName>Tax Question</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <valueName>Credit Card Debt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <valueName>Child Support</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

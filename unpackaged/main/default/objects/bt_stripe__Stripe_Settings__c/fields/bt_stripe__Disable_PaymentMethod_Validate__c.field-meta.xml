@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Disable_PaymentMethod_Validate__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>If checked, the validation rules for ACH fields, card fields and &quot;Remove from Stripe&quot; button logic will be disabled.</description>
+    <inlineHelpText>If checked, the validation rules for ACH fields, card fields and &quot;Remove from Stripe&quot; button logic will be disabled.</inlineHelpText>
+    <label>Disable PM ACH and Card Validation</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

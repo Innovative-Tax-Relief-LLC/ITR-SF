@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <decisions>
+        <name>Check_If_Are_Pitched_Leads</name>
+        <label>Check If Are Pitched Leads</label>
+        <locationX>176</locationX>
+        <locationY>350</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Are_Available_Pitched</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Check_Pitched_Leads</leftValueReference>
+                <operator>IsEmpty</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Check_Pitched_Leads</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Iterate_all_found_valid_opp</targetReference>
+            </connector>
+            <label>Are Available Pitched</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Has_no_future_events</name>
+        <label>Has no future events?</label>
+        <locationX>332</locationX>
+        <locationY>674</locationY>
+        <defaultConnector>
+            <targetReference>Iterate_all_found_valid_opp</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Outcome_1_of_Decision_2</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Events_from_Opp</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Non future events for opp</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>LastModifiedDateRange</name>
+        <dataType>Date</dataType>
+        <expression>TODAY()-7</expression>
+    </formulas>
+    <interviewLabel>ScreenFlow: Get lead {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>ScreenFlow: Get lead</label>
+    <loops>
+        <name>Iterate_all_found_valid_opp</name>
+        <label>Iterate all found valid opp</label>
+        <locationX>112</locationX>
+        <locationY>458</locationY>
+        <collectionReference>Check_Pitched_Leads</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Get_Events_from_Opp</targetReference>
+        </nextValueConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <description>Check if there are pitched leads that apply for condition</description>
+        <name>Check_Pitched_Leads</name>
+        <label>Check Pitched Leads</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_If_Are_Pitched_Leads</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Pitch</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>LastModifiedDate</field>
+            <operator>LessThanOrEqualTo</operator>
+            <value>
+                <elementReference>LastModifiedDateRange</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>1st Trade</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Events_from_Opp</name>
+        <label>Get Events from Opp</label>
+        <locationX>332</locationX>
+        <locationY>566</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Has_no_future_events</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ActivityDate</field>
+            <operator>GreaterThan</operator>
+            <value>
+                <dateValue>2025-01-03</dateValue>
+            </value>
+        </filters>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Iterate_all_found_valid_opp.Account.Account_Id__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Event</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <screens>
+        <name>Get_lead</name>
+        <label>Get lead</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Check_Pitched_Leads</targetReference>
+        </connector>
+        <fields>
+            <name>LabelName</name>
+            <fieldText>&lt;p&gt;Get Lead&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_lead</targetReference>
+        </connector>
+    </start>
+    <status>Draft</status>
+</Flow>

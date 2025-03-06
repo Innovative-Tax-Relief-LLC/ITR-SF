@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Accepted_Payment_Methods__c</fullName>
+    <deprecated>false</deprecated>
+    <inlineHelpText>Used by the mobile app to determine which kind of Payment Methods are accepted for the Payment Gateway.</inlineHelpText>
+    <label>Accepted Payment Methods</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Card (Reader)</fullName>
+                <default>false</default>
+                <label>Card (Reader)</label>
+            </value>
+            <value>
+                <fullName>Card (Typed)</fullName>
+                <default>false</default>
+                <label>Card (Typed)</label>
+            </value>
+            <value>
+                <fullName>ACH</fullName>
+                <default>false</default>
+                <label>ACH</label>
+            </value>
+            <value>
+                <fullName>Cash</fullName>
+                <default>false</default>
+                <label>Cash</label>
+            </value>
+            <value>
+                <fullName>Check</fullName>
+                <default>false</default>
+                <label>Check</label>
+            </value>
+            <value>
+                <fullName>Money Order</fullName>
+                <default>false</default>
+                <label>Money Order</label>
+            </value>
+            <value>
+                <fullName>Tap to Pay</fullName>
+                <default>false</default>
+                <label>Tap to Pay</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

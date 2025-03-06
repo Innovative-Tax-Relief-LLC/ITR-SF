@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Active_QRR__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Quaterly revenue.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The total amount of Draft or Sent &#39;every 3 month&#39; billing subscription invoices.</inlineHelpText>
+    <label>Upcoming QRR</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

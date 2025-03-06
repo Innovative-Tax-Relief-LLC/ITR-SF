@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CL_Form_Leads_Lead</fullName>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>Velocify_Id__c</columns>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE_CODE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>LEAD.UNREAD</columns>
+    <filterScope>Queue</filterScope>
+    <label>CL Form Leads</label>
+    <queue>CL_Form_Leads</queue>
+    <sharedTo>
+        <allInternalUsers />
+    </sharedTo>
+</ListView>

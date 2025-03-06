@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DuplicateRule xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <actionOnInsert>Allow</actionOnInsert>
+    <actionOnUpdate>Allow</actionOnUpdate>
+    <alertText>Use one of these records?</alertText>
+    <description xsi:nil="true"/>
+    <duplicateRuleFilter xsi:nil="true"/>
+    <duplicateRuleMatchRules>
+        <matchRuleSObjectType>Lead</matchRuleSObjectType>
+        <matchingRule>Duplicated_Mobiles_Lead</matchingRule>
+        <objectMapping xsi:nil="true"/>
+    </duplicateRuleMatchRules>
+    <duplicateRuleMatchRules>
+        <matchRuleSObjectType>Contact</matchRuleSObjectType>
+        <matchingRule>Identify_Contact_Mobile_Phone_Duplicates</matchingRule>
+        <objectMapping>
+            <inputObject>Lead</inputObject>
+            <mappingFields>
+                <inputField>MobilePhone</inputField>
+                <outputField>MobilePhone</outputField>
+            </mappingFields>
+            <outputObject>Contact</outputObject>
+        </objectMapping>
+    </duplicateRuleMatchRules>
+    <isActive>true</isActive>
+    <masterLabel>Duplicate Lead Mobile Phone</masterLabel>
+    <operationsOnInsert>Alert</operationsOnInsert>
+    <operationsOnInsert>Report</operationsOnInsert>
+    <operationsOnUpdate>Alert</operationsOnUpdate>
+    <operationsOnUpdate>Report</operationsOnUpdate>
+    <securityOption>EnforceSharingRules</securityOption>
+    <sortOrder>3</sortOrder>
+</DuplicateRule>

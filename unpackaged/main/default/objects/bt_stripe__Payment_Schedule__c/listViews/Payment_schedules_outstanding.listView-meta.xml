@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payment_schedules_outstanding</fullName>
+    <columns>NAME</columns>
+    <columns>bt_stripe__Status__c</columns>
+    <columns>bt_stripe__Payment_Status__c</columns>
+    <columns>bt_stripe__Total_Amount__c</columns>
+    <columns>bt_stripe__Balance_Due__c</columns>
+    <columns>bt_stripe__Balance_Paid__c</columns>
+    <columns>bt_stripe__Cancel_Payment_Schedule__c</columns>
+    <columns>bt_stripe__Payment_Method__c</columns>
+    <columns>bt_stripe__Payment_Gateway__c</columns>
+    <columns>bt_stripe__Account__c</columns>
+    <columns>Opportunity__c</columns>
+    <columns>Formula_Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>bt_stripe__Payment_Status__c</field>
+        <operation>equals</operation>
+        <value>Overdue,Failed to Collect,Partially Paid</value>
+    </filters>
+    <label>Payment schedules outstanding</label>
+</ListView>

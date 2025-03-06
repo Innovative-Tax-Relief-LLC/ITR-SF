@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Discount_Approval_Email_Alert</fullName>
+        <description>Discount Approval Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>ITR_Emails/Discount_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>Discount_Rejection_Email_Alert</fullName>
+        <description>Discount Rejection Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>ITR_Emails/Discount_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Alert_to_Notify_Manager_of_Approval_Request</fullName>
+        <description>Email Alert to Notify Manager of Approval Request</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>ITR_Manager</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/ContactFollowUpSAMPLE</template>
+    </alerts>
+    <alerts>
+        <fullName>X30_Day_Representation_Reminder_Email_Alert</fullName>
+        <description>30 Day Representation Reminder Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Resolution Coordinator</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>ITRCaseManagementEmails/Representation_Time_email_Template_Opportunity_1728596201049</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Manager_Approval</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Manager Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Manager_Approval_of_1k_Sale</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Manager Approval of 1k Sale</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Manager_Approval_of_Discount</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Manager Approval of Discount</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Manager_Rejection_of_1k_Sale</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Not Approved</literalValue>
+        <name>Manager Rejection of 1k Sale</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Manager_Rejection_of_Discount</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Not Approved</literalValue>
+        <name>Manager Rejection of Discount</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PhoneIQSF__Update_Prior_Rev</fullName>
+        <field>PhoneIQSF__Prior_Rev_Amount__c</field>
+        <formula>PRIORVALUE (Amount)</formula>
+        <name>Update Prior Rev</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Approval_Status_to_Pending</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Pending</literalValue>
+        <name>Set Approval Status to Pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>PhoneIQSF__Updt Previous Amount</fullName>
+        <actions>
+            <name>PhoneIQSF__Update_Prior_Rev</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Updates the previous revenue amount on the opportunity object after each save</description>
+        <formula>NOT ( ISNEW() )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

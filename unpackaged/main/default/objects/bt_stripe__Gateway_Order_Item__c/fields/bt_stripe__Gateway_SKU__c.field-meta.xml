@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Gateway_SKU__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <label>Gateway SKU</label>
+    <referenceTo>bt_stripe__Gateway_SKU__c</referenceTo>
+    <relationshipLabel>Gateway Order Items</relationshipLabel>
+    <relationshipName>Gateway_Order_Items</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

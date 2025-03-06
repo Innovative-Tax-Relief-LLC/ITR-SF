@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <decisions>
+        <description>To Check if Subject is internal on the calendar event object</description>
+        <name>Check_if_Subject_is_internal</name>
+        <label>Check if Subject is internal</label>
+        <locationX>182</locationX>
+        <locationY>384</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Outcome_1_of_Decision_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>GetOpportunityID.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>2nd Trade</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity_ID.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Set Appointment</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opportunity_ID.Sub_Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Contacted</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Calendar_Event_Reminder</targetReference>
+            </connector>
+            <label>Outcome 1 of Decision 1</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>To Check if Subject is internal on the calendar event object</description>
+        <name>Copy_1_of_Check_if_Subject_is_internal</name>
+        <label>Copy 1 of Check if Subject is internal</label>
+        <locationX>710</locationX>
+        <locationY>276</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Copy_1_of_Outcome_1_of_Decision_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <operator>EqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Send_Calendar_Event_Reminder_10_mins_before</targetReference>
+            </connector>
+            <label>Copy 1 of Outcome 1 of Decision 1</label>
+        </rules>
+    </decisions>
+    <description>Send SMS Calendar Events Reminder to clients</description>
+    <environments>Default</environments>
+    <interviewLabel>Send SMS Calendar Events Reminder {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Send SMS Calendar Events Reminder</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <description>Send Calendar Event Reminder Once its created</description>
+        <name>Send_Calendar_Event_Reminder</name>
+        <label>Send Calendar Event Reminder</label>
+        <locationX>50</locationX>
+        <locationY>492</locationY>
+        <inputAssignments>
+            <field>opportunity__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>smagicinteract__Automation_Key_Reference__c</field>
+            <value>
+                <stringValue>PA-000021</stringValue>
+            </value>
+        </inputAssignments>
+        <object>smagicinteract__Converse_App_Task__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <description>Send Calendar Event Reminder 10 mins before</description>
+        <name>Send_Calendar_Event_Reminder_10_mins_before</name>
+        <label>Send Calendar Event Reminder 10 mins before</label>
+        <locationX>578</locationX>
+        <locationY>384</locationY>
+        <inputAssignments>
+            <field>opportunity__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>smagicinteract__Automation_Key_Reference__c</field>
+            <value>
+                <stringValue>PA-000022</stringValue>
+            </value>
+        </inputAssignments>
+        <object>smagicinteract__Converse_App_Task__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <description>Get Opportunity ID</description>
+        <name>Get_Opportunity_ID</name>
+        <label>Get Opportunity ID</label>
+        <locationX>182</locationX>
+        <locationY>276</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_if_Subject_is_internal</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.WhatId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>122</locationX>
+        <locationY>0</locationY>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Subject</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Internal</stringValue>
+            </value>
+        </filters>
+        <object>Event</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <scheduledPaths>
+            <name>Send_SMS_2_min_delay</name>
+            <connector>
+                <targetReference>Get_Opportunity_ID</targetReference>
+            </connector>
+            <label>Send SMS 2 min delay</label>
+            <offsetNumber>2</offsetNumber>
+            <offsetUnit>Minutes</offsetUnit>
+            <timeSource>RecordTriggerEvent</timeSource>
+        </scheduledPaths>
+        <scheduledPaths>
+            <name>Send_SMS_10_mins_before_calendar_event</name>
+            <connector>
+                <targetReference>Copy_1_of_Check_if_Subject_is_internal</targetReference>
+            </connector>
+            <label>Send SMS 10 mins before calendar event</label>
+            <offsetNumber>-10</offsetNumber>
+            <offsetUnit>Minutes</offsetUnit>
+            <recordField>EndDateTime</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>InvalidDraft</status>
+    <variables>
+        <description>For Calendar Event Subject</description>
+        <name>CalendarEventSubject</name>
+        <dataType>Picklist</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>To get Opportunity ID</description>
+        <name>GetOpportunityID</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+</Flow>

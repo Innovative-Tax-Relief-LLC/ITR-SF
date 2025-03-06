@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Days_Until_Due_Set</fullName>
+    <active>false</active>
+    <description>Days Until Due field should be populated when Billing Method is &#39;Send Invoice&#39;.</description>
+    <errorConditionFormula>ISPICKVAL(bt_stripe__Billing_Method__c, &quot;send_invoice&quot;) 
+&amp;&amp; 
+ISBLANK(bt_stripe__Days_Until_Due__c)</errorConditionFormula>
+    <errorDisplayField>bt_stripe__Days_Until_Due__c</errorDisplayField>
+    <errorMessage>Days Until Due field should be populated when Billing Method is &#39;Send Invoice&#39;.</errorMessage>
+</ValidationRule>

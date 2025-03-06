@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <description>This flow has been created as a workaround CL Form country mapped values.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>StateCodeConversion</name>
+        <dataType>String</dataType>
+        <expression>CASE(
+    {!$Record.State_Conversion__c},
+    &quot;Alabama&quot;, &quot;AL&quot;,
+    &quot;Alaska&quot;, &quot;AK&quot;,
+    &quot;Arizona&quot;, &quot;AZ&quot;,
+    &quot;Arkansas&quot;, &quot;AR&quot;,
+    &quot;California&quot;, &quot;CA&quot;,
+    &quot;Colorado&quot;, &quot;CO&quot;,
+    &quot;Connecticut&quot;, &quot;CT&quot;,
+    &quot;Delaware&quot;, &quot;DE&quot;,
+    &quot;Florida&quot;, &quot;FL&quot;,
+    &quot;Georgia&quot;, &quot;GA&quot;,
+    &quot;Hawaii&quot;, &quot;HI&quot;,
+    &quot;Idaho&quot;, &quot;ID&quot;,
+    &quot;Illinois&quot;, &quot;IL&quot;,
+    &quot;Indiana&quot;, &quot;IN&quot;,
+    &quot;Iowa&quot;, &quot;IA&quot;,
+    &quot;Kansas&quot;, &quot;KS&quot;,
+    &quot;Kentucky&quot;, &quot;KY&quot;,
+    &quot;Louisiana&quot;, &quot;LA&quot;,
+    &quot;Maine&quot;, &quot;ME&quot;,
+    &quot;Maryland&quot;, &quot;MD&quot;,
+    &quot;Massachusetts&quot;, &quot;MA&quot;,
+    &quot;Michigan&quot;, &quot;MI&quot;,
+    &quot;Minnesota&quot;, &quot;MN&quot;,
+    &quot;Mississippi&quot;, &quot;MS&quot;,
+    &quot;Missouri&quot;, &quot;MO&quot;,
+    &quot;Montana&quot;, &quot;MT&quot;,
+    &quot;Nebraska&quot;, &quot;NE&quot;,
+    &quot;Nevada&quot;, &quot;NV&quot;,
+    &quot;New Hampshire&quot;, &quot;NH&quot;,
+    &quot;New Jersey&quot;, &quot;NJ&quot;,
+    &quot;New Mexico&quot;, &quot;NM&quot;,
+    &quot;New York&quot;, &quot;NY&quot;,
+    &quot;North Carolina&quot;, &quot;NC&quot;,
+    &quot;North Dakota&quot;, &quot;ND&quot;,
+    &quot;Ohio&quot;, &quot;OH&quot;,
+    &quot;Oklahoma&quot;, &quot;OK&quot;,
+    &quot;Oregon&quot;, &quot;OR&quot;,
+    &quot;Pennsylvania&quot;, &quot;PA&quot;,
+    &quot;Rhode Island&quot;, &quot;RI&quot;,
+    &quot;South Carolina&quot;, &quot;SC&quot;,
+    &quot;South Dakota&quot;, &quot;SD&quot;,
+    &quot;Tennessee&quot;, &quot;TN&quot;,
+    &quot;Texas&quot;, &quot;TX&quot;,
+    &quot;Utah&quot;, &quot;UT&quot;,
+    &quot;Vermont&quot;, &quot;VT&quot;,
+    &quot;Virginia&quot;, &quot;VA&quot;,
+    &quot;Washington&quot;, &quot;WA&quot;,
+    &quot;West Virginia&quot;, &quot;WV&quot;,
+    &quot;Wisconsin&quot;, &quot;WI&quot;,
+    &quot;Wyoming&quot;, &quot;WY&quot;,
+    &quot;District of Columbia&quot;, &quot;DC&quot;,
+    &quot;Unknown&quot;
+)</expression>
+    </formulas>
+    <interviewLabel>[Lead] - State Code Conversion {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>[Lead] - State Code Conversion</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Lead_with_State</name>
+        <label>Update Lead with State</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <inputAssignments>
+            <field>StateCode</field>
+            <value>
+                <elementReference>StateCodeConversion</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Lead_with_State</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>State_Conversion__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Lead</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

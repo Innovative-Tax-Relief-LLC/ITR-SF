@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Paid_By_Days__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>If(ISPICKVAL( bt_stripe__Transaction_Status__c ,&#39;Completed&#39;) &amp;&amp; ISPICKVAL( bt_stripe__Payment_Status__c ,&#39;Captured&#39;), 
+datevalue(bt_stripe__Processed_Date__c) - If(!ISBLANK(bt_stripe__Due_Date__c),bt_stripe__Due_Date__c, datevalue(CreatedDate)) , 
+NULL 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Formula Field, displays the number of days between Processed Date and Due Date (or Created Date when Due Date is empty).  Only populates when Transaction Status equals &#39;Completed&#39; and Payment Status equals &#39;Captured&#39;.</inlineHelpText>
+    <label>Paid By (Days)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Net_Amount__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The quantity multiplied by the unit price.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The quantity multiplied by the unit price.</inlineHelpText>
+    <label>Gross</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

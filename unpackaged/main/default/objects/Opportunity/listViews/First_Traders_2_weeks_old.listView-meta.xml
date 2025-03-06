@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>First_Traders_2_weeks_old</fullName>
+    <columns>Velocify_Id__c</columns>
+    <columns>OPPORTUNITY.LEAD_SOURCE</columns>
+    <columns>OPPORTUNITY.CREATED_DATE</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>Sub_Stage__c</columns>
+    <columns>OPPORTUNITY.LAST_UPDATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>OPPORTUNITY.LAST_STAGE_CHANGE</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.LAST_ACTIVITY</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.LAST_ACTIVITY</field>
+        <operation>lessThan</operation>
+        <value>1/1/2025</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.LAST_UPDATE</field>
+        <operation>lessOrEqual</operation>
+        <value>1/1/2025 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.TYPE</field>
+        <operation>contains</operation>
+        <value>1st Trade</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>notContain</operation>
+        <value>Simmer,Create CPII,Intro Pending,TI PIF Completed,Closed Won,Closed Lost</value>
+    </filters>
+    <label>First Traders - Modified before Jan 1</label>
+</ListView>

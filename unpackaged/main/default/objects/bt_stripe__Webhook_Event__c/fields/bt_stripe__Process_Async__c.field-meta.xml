@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Process_Async__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>When checked, the webhook event will be excluded from webhook processing batches and can instead be processed via the global asynchronous method. (WebhookService.proessEventStripeAsync())</description>
+    <inlineHelpText>When checked, the webhook event will be excluded from webhook processing batches and can instead be processed via the global asynchronous method.</inlineHelpText>
+    <label>Process Async</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

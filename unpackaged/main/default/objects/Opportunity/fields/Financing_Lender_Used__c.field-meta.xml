@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Financing_Lender_Used__c</fullName>
+    <label>Financing Lender Used</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Afterpay</fullName>
+                <default>false</default>
+                <label>Afterpay</label>
+            </value>
+            <value>
+                <fullName>UCFS</fullName>
+                <default>false</default>
+                <label>UCFS</label>
+            </value>
+            <value>
+                <fullName>DecisionFi</fullName>
+                <default>false</default>
+                <label>DecisionFi</label>
+            </value>
+            <value>
+                <fullName>ZipLoan</fullName>
+                <default>false</default>
+                <label>ZipLoan</label>
+            </value>
+            <value>
+                <fullName>ElevateFinance</fullName>
+                <default>false</default>
+                <label>ElevateFinance</label>
+            </value>
+            <value>
+                <fullName>Flexxbuy</fullName>
+                <default>false</default>
+                <label>Flexxbuy</label>
+            </value>
+            <value>
+                <fullName>Monterey</fullName>
+                <default>false</default>
+                <label>Monterey</label>
+            </value>
+            <value>
+                <fullName>Monterrey Possflip</fullName>
+                <default>false</default>
+                <label>Monterrey Possflip</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

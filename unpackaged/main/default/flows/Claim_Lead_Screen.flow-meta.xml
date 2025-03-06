@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <assignments>
+        <name>Assign_Lead</name>
+        <label>Assign Lead</label>
+        <locationX>50</locationX>
+        <locationY>242</locationY>
+        <assignmentItems>
+            <assignToReference>recordId.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Lead</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Lead_is_Owned_by_Queue</name>
+        <label>Lead is Owned by Queue?</label>
+        <locationX>182</locationX>
+        <locationY>134</locationY>
+        <defaultConnector>
+            <targetReference>Claim_Lead</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>recordId.Lead_Owned_by_Queue__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Lead</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>linkrecord</name>
+        <dataType>String</dataType>
+        <expression>HYPERLINK(&quot;/&quot; &amp; {!recordId.Id}, &quot;View Record&quot;)</expression>
+    </formulas>
+    <interviewLabel>Claim Lead Screen {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Claim Lead Screen</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordUpdates>
+        <name>Update_Lead</name>
+        <label>Update Lead</label>
+        <locationX>50</locationX>
+        <locationY>350</locationY>
+        <connector>
+            <targetReference>Copy_1_of_Claim_Lead</targetReference>
+        </connector>
+        <inputReference>recordId</inputReference>
+    </recordUpdates>
+    <screens>
+        <name>Claim_Lead</name>
+        <label>Unsuccessful Claim Lead</label>
+        <locationX>314</locationX>
+        <locationY>242</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>DisplayMessageError</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;This lead has already been claimed. Please try again with another record.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Copy_1_of_Claim_Lead</name>
+        <label>Successful Claim</label>
+        <locationX>50</locationX>
+        <locationY>458</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>DisplayText</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(20, 134, 81);&quot;&gt;Lead Successfully Claimed!&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!linkrecord}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Lead_is_Owned_by_Queue</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>recordId</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Lead</objectType>
+    </variables>
+</Flow>

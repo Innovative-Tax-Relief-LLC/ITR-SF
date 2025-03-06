@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Pay_DP__c</fullName>
+    <description>To calculate total Paid by Client as downpayment</description>
+    <formula>Down_Payment_1__c +  Down_Payment_2__c + Down_Payment_3__c + Down_Payment_4__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>This Generates Automaticly by the sum of all down payments</inlineHelpText>
+    <label>Total Pay</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

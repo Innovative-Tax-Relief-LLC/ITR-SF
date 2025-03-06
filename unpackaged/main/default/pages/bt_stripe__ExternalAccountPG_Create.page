@@ -1,0 +1,8 @@
+<apex:page standardController="bt_stripe__Payment_Gateway__c" showQuickActionVfHeader="false">
+<!--
+deprecated May 2020 - delete this and the button that calls it in the future.
+only worked with stripe and wasn't used - it allowed a customer to create a bank acount for payouts.
+but that's so easy to do directly in Stripe's dashboard and everyone does it there. think it's even a setup step
+-->
+	This is no longer supported. You can create a payout bank account directly in the Stripe Dashboard.
+</apex:page>

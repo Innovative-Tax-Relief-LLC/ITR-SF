@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Display_Language__c</fullName>
+    <deprecated>false</deprecated>
+    <description>List of supported display languages for DocumentLink. Set to English by default.</description>
+    <inlineHelpText>Select language to be displayed to the user when using this DocumentLink Template.</inlineHelpText>
+    <label>Display Language</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>bt_stripe__Languages</valueSetName>
+    </valueSet>
+</CustomField>

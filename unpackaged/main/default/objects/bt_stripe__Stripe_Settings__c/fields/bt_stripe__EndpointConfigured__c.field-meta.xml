@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__EndpointConfigured__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>this check whether the all endpoint are configured for not</description>
+    <label>Endpoint Configured</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

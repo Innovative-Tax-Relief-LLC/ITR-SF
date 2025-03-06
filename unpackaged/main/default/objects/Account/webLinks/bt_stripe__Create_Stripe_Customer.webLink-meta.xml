@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Create_Stripe_Customer</fullName>
+    <availability>online</availability>
+    <description>Create a new Payment Gateway Customer record for this Account.</description>
+    <displayType>button</displayType>
+    <height>600</height>
+    <linkType>page</linkType>
+    <masterLabel>New Customer</masterLabel>
+    <openType>sidebar</openType>
+    <page>bt_stripe__Account_CreateStripeCustomer</page>
+    <protected>false</protected>
+</WebLink>

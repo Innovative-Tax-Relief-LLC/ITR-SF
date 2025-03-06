@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Proration_Behavior__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Determines how to handle prorations when the billing cycle changes (e.g., when switching plans, resetting billing_cycle_anchor=now, or starting a trial), or if an item’s quantity changes.</description>
+    <inlineHelpText>Determines how to handle prorations when the billing cycle changes (e.g., when switching plans, resetting billing_cycle_anchor=now, or starting a trial), or if an item’s quantity changes.</inlineHelpText>
+    <label>Proration Behavior</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Create Prorations</fullName>
+                <default>false</default>
+                <label>Create Prorations</label>
+            </value>
+            <value>
+                <fullName>Send Invoice</fullName>
+                <default>false</default>
+                <label>Send Invoice</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

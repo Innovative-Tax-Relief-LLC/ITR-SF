@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Cancel</fullName>
+    <availability>online</availability>
+    <description>Cancel all the remaining transactions.</description>
+    <displayType>button</displayType>
+    <height>600</height>
+    <linkType>page</linkType>
+    <masterLabel>Cancel</masterLabel>
+    <openType>sidebar</openType>
+    <page>bt_stripe__PaymentSchedule_Cancel</page>
+    <protected>false</protected>
+</WebLink>

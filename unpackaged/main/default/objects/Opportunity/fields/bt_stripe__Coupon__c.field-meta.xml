@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Coupon__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <inlineHelpText>A coupon code that represents a discount to be applied to this order. Must be a one-time duration and in the same currency as the order.</inlineHelpText>
+    <label>Coupon</label>
+    <lookupFilter>
+        <active>false</active>
+        <filterItems>
+            <field>bt_stripe__Coupon2__c.bt_stripe__Deleted_From_Stripe__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </filterItems>
+        <filterItems>
+            <field>bt_stripe__Coupon2__c.bt_stripe__Valid__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>bt_stripe__Coupon2__c</referenceTo>
+    <relationshipLabel>Opportunities</relationshipLabel>
+    <relationshipName>Opportunities</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

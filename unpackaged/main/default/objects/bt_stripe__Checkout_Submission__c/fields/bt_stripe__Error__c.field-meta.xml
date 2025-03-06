@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Error__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Any error encountered while processing the Checkout Submission (Cart) will be saved in this field.</description>
+    <inlineHelpText>Any error encountered while processing the Checkout Submission (Cart) will be saved in this field.</inlineHelpText>
+    <label>Error</label>
+    <length>1000</length>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>4</visibleLines>
+</CustomField>

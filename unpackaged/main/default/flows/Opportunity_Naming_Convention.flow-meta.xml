@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <description>Replaced created date with close date.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>OppNamingConvention</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Account.FirstName}
+&amp; &quot; &quot;
+&amp; {!$Record.Account.LastName}
+&amp; &quot; - &quot;
+&amp; CASE(
+    $Record.RecordType.Name,
+    &quot;First Trade&quot;,  &quot;1T&quot;,
+    &quot;Second Trade&quot;, &quot;2T&quot;,
+    &quot;Third Trade&quot;,  &quot;3T&quot;,
+    /* Default if no match */
+    &quot;&quot;
+)
+&amp; &quot; &quot;
+&amp; CASE(
+    MONTH(
+        
+            IF(
+                ISBLANK($Record.Id),
+                TODAY(),
+                {!$Record.CloseDate}
+            
+        )
+    ),
+    1,  &quot;Jan&quot;,
+    2,  &quot;Feb&quot;,
+    3,  &quot;Mar&quot;,
+    4,  &quot;Apr&quot;,
+    5,  &quot;May&quot;,
+    6,  &quot;Jun&quot;,
+    7,  &quot;Jul&quot;,
+    8,  &quot;Aug&quot;,
+    9,  &quot;Sep&quot;,
+    10, &quot;Oct&quot;,
+    11, &quot;Nov&quot;,
+    12, &quot;Dec&quot;,
+    /* Default if no match */
+    &quot;&quot;
+)
+&amp; &quot; &quot;
+&amp; TEXT(
+    YEAR(
+                 IF(
+                ISBLANK($Record.Id),
+                TODAY(),
+                {!$Record.CloseDate}
+            
+        )
+    )
+)</expression>
+    </formulas>
+    <interviewLabel>Opportunity - Naming Convention {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity - Naming Convention</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Opportunity</name>
+        <label>Update Opportunity</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>OppNamingConvention</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Opportunity</targetReference>
+        </connector>
+        <filterFormula>IF(
+    {!$Record.Name} &lt;&gt; 
+    (
+{!$Record.Account.FirstName}
+&amp; &quot; &quot;
+&amp; {!$Record.Account.LastName}
+&amp; &quot; - &quot;
+&amp; CASE(
+    {!$Record.RecordType.Name},
+    &quot;First Trade&quot;,  &quot;1T&quot;,
+    &quot;Second Trade&quot;, &quot;2T&quot;,
+    &quot;Third Trade&quot;,  &quot;3T&quot;,
+    /* Default if no match */
+    &quot;&quot;
+)
+&amp; &quot; &quot;
+&amp; CASE(
+    MONTH(
+        
+            IF(
+                ISBLANK({!$Record.Id}),
+                TODAY(),
+                {!$Record.CloseDate}
+            
+        )
+    ),
+    1,  &quot;Jan&quot;,
+    2,  &quot;Feb&quot;,
+    3,  &quot;Mar&quot;,
+    4,  &quot;Apr&quot;,
+    5,  &quot;May&quot;,
+    6,  &quot;Jun&quot;,
+    7,  &quot;Jul&quot;,
+    8,  &quot;Aug&quot;,
+    9,  &quot;Sep&quot;,
+    10, &quot;Oct&quot;,
+    11, &quot;Nov&quot;,
+    12, &quot;Dec&quot;,
+    /* Default if no match */
+    &quot;&quot;
+)
+&amp; &quot; &quot;
+&amp; TEXT(
+    YEAR(
+                 IF(
+                ISBLANK({!$Record.Id}),
+                TODAY(),
+                {!$Record.CloseDate}
+            
+        )
+    )
+)),TRUE,FALSE)</filterFormula>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

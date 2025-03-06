@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Resolution Coordinator</fullName>
+        <default>false</default>
+        <label>Resolution Coordinator</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Billing Team Member</fullName>
+        <default>false</default>
+        <label>Billing Team Member</label>
+    </standardValue>
+</StandardValueSet>

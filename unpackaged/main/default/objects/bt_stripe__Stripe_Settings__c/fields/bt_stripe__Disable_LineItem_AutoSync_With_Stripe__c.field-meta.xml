@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Disable_LineItem_AutoSync_With_Stripe__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>If checked, line items will not be automatically pushed to stripe invoice. You will need to push it manually using Push To Stripe.</description>
+    <inlineHelpText>If checked, line items will not be automatically pushed to stripe invoice. You will need to push it manually using Push To Stripe.</inlineHelpText>
+    <label>Disable Line Item Auto Sync With Stripe</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

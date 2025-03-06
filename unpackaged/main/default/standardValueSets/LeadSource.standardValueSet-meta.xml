@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>LM Call</fullName>
+        <default>false</default>
+        <label>LM Call</label>
+    </standardValue>
+    <standardValue>
+        <fullName>1.Bing PPC</fullName>
+        <default>false</default>
+        <label>1.Bing PPC</label>
+    </standardValue>
+    <standardValue>
+        <fullName>1.Facebook</fullName>
+        <default>false</default>
+        <label>1.Facebook</label>
+    </standardValue>
+    <standardValue>
+        <fullName>1.Facebook Lead Ads</fullName>
+        <default>false</default>
+        <label>1.Facebook Lead Ads</label>
+    </standardValue>
+    <standardValue>
+        <fullName>1.Hulu</fullName>
+        <default>false</default>
+        <label>1.Hulu</label>
+    </standardValue>
+    <standardValue>
+        <fullName>1.Innovative.tax form</fullName>
+        <default>false</default>
+        <label>1.Innovative.tax form</label>
+    </standardValue>
+    <standardValue>
+        <fullName>1. Instagram</fullName>
+        <default>false</default>
+        <label>1. Instagram</label>
+    </standardValue>
+    <standardValue>
+        <fullName>1.Linkedin</fullName>
+        <default>false</default>
+        <label>1.Linkedin</label>
+    </standardValue>
+    <standardValue>
+        <fullName>1.Local Directories</fullName>
+        <default>false</default>
+        <label>1.Local Directories</label>
+    </standardValue>
+    <standardValue>
+        <fullName>1.Pandora</fullName>
+        <default>false</default>
+        <label>1.Pandora</label>
+    </standardValue>
+    <standardValue>
+        <fullName>1.Press</fullName>
+        <default>false</default>
+        <label>1.Press</label>
+    </standardValue>
+    <standardValue>
+        <fullName>1.Twitter</fullName>
+        <default>false</default>
+        <label>1.Twitter</label>
+    </standardValue>
+    <standardValue>
+        <fullName>1. Website Chat</fullName>
+        <default>false</default>
+        <label>1. Website Chat</label>
+    </standardValue>
+    <standardValue>
+        <fullName>1. Website Form</fullName>
+        <default>false</default>
+        <label>1. Website Form</label>
+    </standardValue>
+    <standardValue>
+        <fullName>AApend</fullName>
+        <default>false</default>
+        <label>AApend</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ACN Call</fullName>
+        <default>false</default>
+        <label>ACN Call</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ACN Form Fill</fullName>
+        <default>false</default>
+        <label>ACN Form Fill</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ACTP Sem</fullName>
+        <default>false</default>
+        <label>ACTP Sem</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ACTP Spanish</fullName>
+        <default>false</default>
+        <label>ACTP Spanish</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ACTP Transfer</fullName>
+        <default>false</default>
+        <label>ACTP Transfer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Aged 365 Legacy</fullName>
+        <default>false</default>
+        <label>Aged 365 Legacy</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Aged AS U10</fullName>
+        <default>false</default>
+        <label>Aged AS U10</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Aged CL Form</fullName>
+        <default>false</default>
+        <label>Aged CL Form</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Aged CS U30</fullName>
+        <default>false</default>
+        <label>Aged CS U30</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Aged-Digital</fullName>
+        <default>false</default>
+        <label>Aged-Digital</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Aged DT Transfers</fullName>
+        <default>false</default>
+        <label>Aged DT Transfers</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Aged DT U30</fullName>
+        <default>false</default>
+        <label>Aged DT U30</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Aged-FL 60</fullName>
+        <default>false</default>
+        <label>Aged-FL 60</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Aged-Forward60 U10</fullName>
+        <default>false</default>
+        <label>Aged-Forward60 U10</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Aged GTI U30</fullName>
+        <default>false</default>
+        <label>Aged GTI U30</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Aged JL O90</fullName>
+        <default>false</default>
+        <label>Aged JL O90</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Aged JL U90</fullName>
+        <default>false</default>
+        <label>Aged JL U90</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Aged KD U30</fullName>
+        <default>false</default>
+        <label>Aged KD U30</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Aged LB</fullName>
+        <default>false</default>
+        <label>Aged LB</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Aged OnCore</fullName>
+        <default>false</default>
+        <label>Aged OnCore</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Aged-OnCore TVR</fullName>
+        <default>false</default>
+        <label>Aged-OnCore TVR</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Aged-PI</fullName>
+        <default>false</default>
+        <label>Aged-PI</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Aged-PI 365</fullName>
+        <default>false</default>
+        <label>Aged-PI 365</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Aged PI CR U30</fullName>
+        <default>false</default>
+        <label>Aged PI CR U30</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Aged PI Free</fullName>
+        <default>false</default>
+        <label>Aged PI Free</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Aged PI RS</fullName>
+        <default>false</default>
+        <label>Aged PI RS</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Aged PI Select</fullName>
+        <default>false</default>
+        <label>Aged PI Select</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Aged PI Transfer</fullName>
+        <default>false</default>
+        <label>Aged PI Transfer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Aged PI Transfer Spanish</fullName>
+        <default>false</default>
+        <label>Aged PI Transfer Spanish</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Aged Powers</fullName>
+        <default>false</default>
+        <label>Aged Powers</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Aged Testing</fullName>
+        <default>false</default>
+        <label>Aged Testing</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Aged-TL</fullName>
+        <default>false</default>
+        <label>Aged-TL</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Aged TLW</fullName>
+        <default>false</default>
+        <label>Aged TLW</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Applicants-ITR</fullName>
+        <default>false</default>
+        <label>Applicants-ITR</label>
+    </standardValue>
+    <standardValue>
+        <fullName>BBB</fullName>
+        <default>false</default>
+        <label>BBB</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Best Co. Call</fullName>
+        <default>false</default>
+        <label>Best Co. Call</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Best Co. Form Fill</fullName>
+        <default>false</default>
+        <label>Best Co. Form Fill</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Best Company Referral</fullName>
+        <default>false</default>
+        <label>Best Company Referral</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Blazeo</fullName>
+        <default>false</default>
+        <label>Blazeo</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ChatBot Lead</fullName>
+        <default>false</default>
+        <label>ChatBot Lead</label>
+    </standardValue>
+    <standardValue>
+        <fullName>CL Form</fullName>
+        <default>false</default>
+        <label>CL Form</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Data Score</fullName>
+        <default>false</default>
+        <label>Data Score</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Digital transfer</fullName>
+        <default>false</default>
+        <label>Digital transfer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>DT Form</fullName>
+        <default>false</default>
+        <label>DT Form</label>
+    </standardValue>
+    <standardValue>
+        <fullName>DT Form DS</fullName>
+        <default>false</default>
+        <label>DT Form DS</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email-Digital 1</fullName>
+        <default>false</default>
+        <label>Email-Digital 1</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email-Digital 2</fullName>
+        <default>false</default>
+        <label>Email-Digital 2</label>
+    </standardValue>
+    <standardValue>
+        <fullName>FL Call</fullName>
+        <default>false</default>
+        <label>FL Call</label>
+    </standardValue>
+    <standardValue>
+        <fullName>FL Call 1</fullName>
+        <default>false</default>
+        <label>FL Call 1</label>
+    </standardValue>
+    <standardValue>
+        <fullName>FL Form</fullName>
+        <default>false</default>
+        <label>FL Form</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Forward Call-No Charge</fullName>
+        <default>false</default>
+        <label>Forward Call-No Charge</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ForwardLeap710</fullName>
+        <default>false</default>
+        <label>ForwardLeap710</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Forward Leap-Overnight</fullName>
+        <default>false</default>
+        <label>Forward Leap-Overnight</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Forward Leap-Semi</fullName>
+        <default>false</default>
+        <label>Forward Leap-Semi</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ForwardLeap u10</fullName>
+        <default>false</default>
+        <label>ForwardLeap u10</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Google LSA Web Calls</fullName>
+        <default>false</default>
+        <label>Google LSA Web Calls</label>
+    </standardValue>
+    <standardValue>
+        <fullName>GOOGLE PPC</fullName>
+        <default>false</default>
+        <label>GOOGLE PPC</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Help</fullName>
+        <default>false</default>
+        <label>Help</label>
+    </standardValue>
+    <standardValue>
+        <fullName>HELP Comio</fullName>
+        <default>false</default>
+        <label>HELP Comio</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ITR_Mailer</fullName>
+        <default>false</default>
+        <label>ITR_Mailer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ITR_Mailer_3</fullName>
+        <default>false</default>
+        <label>ITR_Mailer_3</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ITR Birthday Campaigns</fullName>
+        <default>false</default>
+        <label>ITR Birthday Campaigns</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ITR Deleted lead sources</fullName>
+        <default>false</default>
+        <label>ITR Deleted lead sources</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ITR Email Camp 1 Calls</fullName>
+        <default>false</default>
+        <label>ITR Email Camp 1 Calls</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ITR Email Camp 1 Forms</fullName>
+        <default>false</default>
+        <label>ITR Email Camp 1 Forms</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ITR-Facebook</fullName>
+        <default>false</default>
+        <label>ITR-Facebook</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ITR Landing</fullName>
+        <default>false</default>
+        <label>ITR Landing</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ITR Landing App</fullName>
+        <default>false</default>
+        <label>ITR Landing App</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ITR Landing Call</fullName>
+        <default>false</default>
+        <label>ITR Landing Call</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ITR-Linkedin</fullName>
+        <default>false</default>
+        <label>ITR-Linkedin</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ITR SMS Campaign</fullName>
+        <default>false</default>
+        <label>ITR SMS Campaign</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ITR Testing</fullName>
+        <default>false</default>
+        <label>ITR Testing</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ITR-Twitter</fullName>
+        <default>false</default>
+        <label>ITR-Twitter</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Local Caller ID Callbacks</fullName>
+        <default>false</default>
+        <label>Local Caller ID Callbacks</label>
+    </standardValue>
+    <standardValue>
+        <fullName>LTS Transfer</fullName>
+        <default>false</default>
+        <label>LTS Transfer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Myirsfreshstart</fullName>
+        <default>false</default>
+        <label>Myirsfreshstart</label>
+    </standardValue>
+    <standardValue>
+        <fullName>PI Call</fullName>
+        <default>false</default>
+        <label>PI Call</label>
+    </standardValue>
+    <standardValue>
+        <fullName>PI Form</fullName>
+        <default>false</default>
+        <label>PI Form</label>
+    </standardValue>
+    <standardValue>
+        <fullName>PI Transfer</fullName>
+        <default>false</default>
+        <label>PI Transfer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>PM Calls</fullName>
+        <default>false</default>
+        <label>PM Calls</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Podium</fullName>
+        <default>false</default>
+        <label>Podium</label>
+    </standardValue>
+    <standardValue>
+        <fullName>PPC Call</fullName>
+        <default>false</default>
+        <label>PPC Call</label>
+    </standardValue>
+    <standardValue>
+        <fullName>PPC Call (B)</fullName>
+        <default>false</default>
+        <label>PPC Call (B)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>PPC Call (E)</fullName>
+        <default>false</default>
+        <label>PPC Call (E)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>PPC Call 3</fullName>
+        <default>false</default>
+        <label>PPC Call 3</label>
+    </standardValue>
+    <standardValue>
+        <fullName>PPC Call 4</fullName>
+        <default>false</default>
+        <label>PPC Call 4</label>
+    </standardValue>
+    <standardValue>
+        <fullName>PPC Call-Missed</fullName>
+        <default>false</default>
+        <label>PPC Call-Missed</label>
+    </standardValue>
+    <standardValue>
+        <fullName>PPC Form Fill</fullName>
+        <default>false</default>
+        <label>PPC Form Fill</label>
+    </standardValue>
+    <standardValue>
+        <fullName>PPC Form Fill (B)</fullName>
+        <default>false</default>
+        <label>PPC Form Fill (B)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>PPC Form Fill (E)</fullName>
+        <default>false</default>
+        <label>PPC Form Fill (E)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Website</fullName>
+        <default>false</default>
+        <label>Website</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Website Call</fullName>
+        <default>false</default>
+        <label>Website Call</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Website Form</fullName>
+        <default>false</default>
+        <label>Website Form</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Referral External</fullName>
+        <default>false</default>
+        <label>Referral External</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Referral Internal</fullName>
+        <default>false</default>
+        <label>Referral Internal</label>
+    </standardValue>
+</StandardValueSet>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Disable_Balance_Validation__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <inlineHelpText>If checked,Before a transfer or payout is processed the balances will not be checked against the stripe/salesforce data</inlineHelpText>
+    <label>Disable Transaction Balance Validation</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

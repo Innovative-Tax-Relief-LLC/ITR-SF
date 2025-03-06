@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Recalculate_Parent_Rollup__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>number fields are: Amount__c, Net_Amount__c, Application_Fee__c, Stripe_Fee__c, Partial_Amount__c, Retained_Net_Amount__c</description>
+    <inlineHelpText>If A Parent field is set on the Transaction, this field is checked by packaged code any time:
+A Number field on the Transaction ISCHANGED
+Transaction Status ISCHANGED
+Payment Status ISCHANGED</inlineHelpText>
+    <label>Recalculate Parent Rollup</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

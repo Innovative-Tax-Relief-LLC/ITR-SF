@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CaseCloseValidation</fullName>
+    <active>false</active>
+    <errorConditionFormula>RecordType.Name != &quot;TI Follow Up Case&quot; &amp;&amp;  IsClosed = TRUE &amp;&amp;  (Opportunity__r.Count_of_Services__c&gt; Opportunity__r.Services_Completed__c)</errorConditionFormula>
+    <errorMessage>There are services in the related opportunity that are not yet completed.</errorMessage>
+</ValidationRule>

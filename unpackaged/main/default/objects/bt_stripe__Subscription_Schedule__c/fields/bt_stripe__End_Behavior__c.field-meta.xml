@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__End_Behavior__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The behavior of the subscription schedule and underlying subscription when it ends.</description>
+    <inlineHelpText>The behavior of the subscription schedule and underlying subscription when it ends. Possible values are release and cancel.</inlineHelpText>
+    <label>End Behavior</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Cancel</fullName>
+                <default>false</default>
+                <label>Cancel</label>
+            </value>
+            <value>
+                <fullName>Release</fullName>
+                <default>false</default>
+                <label>Release</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

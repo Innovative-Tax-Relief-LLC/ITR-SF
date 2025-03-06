@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Distribution_Rule__c</fullName>
+    <label>Lead Distribution Rule</label>
+    <referenceTo>LeadDistributionRule__c</referenceTo>
+    <relationshipLabel>Lead Distribution Rule Criterias</relationshipLabel>
+    <relationshipName>Lead_Distribution_Rule_Criterias</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

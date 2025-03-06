@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Source_Group__c</fullName>
+    <label>Lead Source Group</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Real Time</fullName>
+                <default>false</default>
+                <label>Real Time</label>
+            </value>
+            <value>
+                <fullName>Calls</fullName>
+                <default>false</default>
+                <label>Calls</label>
+            </value>
+            <value>
+                <fullName>Aged</fullName>
+                <default>false</default>
+                <label>Aged</label>
+            </value>
+            <value>
+                <fullName>Age-SMS-Email</fullName>
+                <default>false</default>
+                <label>Age-SMS-Email</label>
+            </value>
+            <value>
+                <fullName>Employment</fullName>
+                <default>false</default>
+                <label>Employment</label>
+            </value>
+            <value>
+                <fullName>Referral/Self Gen</fullName>
+                <default>false</default>
+                <label>Referral/Self Gen</label>
+            </value>
+            <value>
+                <fullName>Email Campaigns</fullName>
+                <default>false</default>
+                <label>Email Campaigns</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

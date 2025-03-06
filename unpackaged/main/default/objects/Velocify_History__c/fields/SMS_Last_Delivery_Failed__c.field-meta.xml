@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SMS_Last_Delivery_Failed__c</fullName>
+    <defaultValue>false</defaultValue>
+    <label>SMS Last Delivery Failed</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

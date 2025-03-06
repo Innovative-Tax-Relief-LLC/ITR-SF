@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Show_Address__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <inlineHelpText>When enabled, additional address fields (Street, City, State, and Country/Region) will be visible on the Payment Method creation page in the Virtual Terminal. These fields are required for certain Spreedly gateways.</inlineHelpText>
+    <label>Show Address</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

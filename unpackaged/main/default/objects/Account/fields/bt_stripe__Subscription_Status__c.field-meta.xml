@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Subscription_Status__c</fullName>
+    <deprecated>false</deprecated>
+    <description>See documentation for details.</description>
+    <inlineHelpText>See documentation for details.</inlineHelpText>
+    <label>Subscription Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Trialing</fullName>
+                <default>false</default>
+                <label>Trialing</label>
+            </value>
+            <value>
+                <fullName>Active</fullName>
+                <default>false</default>
+                <label>Active</label>
+            </value>
+            <value>
+                <fullName>past_due</fullName>
+                <default>false</default>
+                <label>Past Due</label>
+            </value>
+            <value>
+                <fullName>Canceled</fullName>
+                <default>false</default>
+                <label>Canceled</label>
+            </value>
+            <value>
+                <fullName>Unpaid</fullName>
+                <default>false</default>
+                <label>Unpaid</label>
+            </value>
+            <value>
+                <fullName>See Subscriptions</fullName>
+                <default>false</default>
+                <label>See Subscriptions</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

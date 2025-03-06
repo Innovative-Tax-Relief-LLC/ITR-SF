@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Stripe_URL__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF(TEXT(bt_stripe__Payment_Gateway__r.bt_stripe__Provider__c)==&#39;Stripe&#39;,IF(bt_stripe__Payment_Gateway__r.bt_stripe__Test_Mode__c ,HYPERLINK(&#39;https://dashboard.stripe.com/test/customers/&#39;+bt_stripe__Customer_Id__c,&#39;View&#39;),HYPERLINK(&#39;https://dashboard.stripe.com/customers/&#39;+bt_stripe__Customer_Id__c,&#39;View&#39;)),&#39;&#39;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>The URL for the record in Stripe.</inlineHelpText>
+    <label>Stripe URL</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

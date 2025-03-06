@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Allocation_Rollup__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Sum of all Allocations for this Invoice.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Sum of all Allocations for this Invoice.</inlineHelpText>
+    <label>Allocation Rollup</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

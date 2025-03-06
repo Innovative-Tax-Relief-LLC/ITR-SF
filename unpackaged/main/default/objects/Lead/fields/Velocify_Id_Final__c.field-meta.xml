@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Velocify_Id_Final__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <externalId>false</externalId>
+    <inlineHelpText>Velocify ID after Data Migration Jan 2025</inlineHelpText>
+    <label>Velocify Id Final</label>
+    <length>20</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Male</fullName>
+        <default>false</default>
+        <label>Male</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Female</fullName>
+        <default>false</default>
+        <label>Female</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Nonbinary</fullName>
+        <default>false</default>
+        <label>Nonbinary</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Not Listed</fullName>
+        <default>false</default>
+        <label>Not Listed</label>
+    </standardValue>
+</StandardValueSet>

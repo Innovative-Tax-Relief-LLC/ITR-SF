@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Completed_transactions_payroll</fullName>
+    <columns>NAME</columns>
+    <columns>bt_stripe__Related_Account__c</columns>
+    <columns>bt_stripe__Processed_Date__c</columns>
+    <columns>bt_stripe__Transaction_Type__c</columns>
+    <columns>bt_stripe__Transaction_Sub_Type__c</columns>
+    <columns>bt_stripe__Amount__c</columns>
+    <columns>bt_stripe__Due_Date__c</columns>
+    <columns>bt_stripe__Opportunity2__c</columns>
+    <columns>bt_stripe__Outcome_Type__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>bt_stripe__Payment_Method__c</columns>
+    <columns>bt_stripe__Payment_Method_Brand__c</columns>
+    <columns>bt_stripe__Payment_Status__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>bt_stripe__Description__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>bt_stripe__Transaction_Status__c</field>
+        <operation>equals</operation>
+        <value>Completed</value>
+    </filters>
+    <filters>
+        <field>bt_stripe__Processed_Date__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>12/23/2024 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>bt_stripe__Processed_Date__c</field>
+        <operation>lessOrEqual</operation>
+        <value>12/25/2024 12:00 AM</value>
+    </filters>
+    <label>Completed transactions -payroll</label>
+</ListView>

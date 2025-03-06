@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Status__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The status of this Invoice.</description>
+    <inlineHelpText>The status of this Invoice.</inlineHelpText>
+    <label>Status</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Draft</fullName>
+                <default>true</default>
+                <label>Draft</label>
+            </value>
+            <value>
+                <fullName>Sent</fullName>
+                <default>false</default>
+                <label>Sent</label>
+            </value>
+            <value>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+                <label>Accepted</label>
+            </value>
+            <value>
+                <fullName>Completed</fullName>
+                <default>false</default>
+                <label>Completed</label>
+            </value>
+            <value>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+                <label>Rejected</label>
+            </value>
+            <value>
+                <fullName>Voided</fullName>
+                <default>false</default>
+                <label>Voided</label>
+            </value>
+            <value>
+                <fullName>Ready To Bill</fullName>
+                <default>false</default>
+                <label>Ready To Bill</label>
+            </value>
+            <value>
+                <fullName>Uncollectible</fullName>
+                <default>false</default>
+                <label>Uncollectible</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Virtual_Terminal</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Virtual Terminal</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>window.open(&#39;/apex/bt_stripe__BlackthornTerminal?id={!Contact.Id}&#39;,&#39;Blackthorn Terminal&#39;,&#39;toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=450,height=690&#39;);</url>
+</WebLink>

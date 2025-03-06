@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Transaction_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Defines the Type of Allocation. Normal, Refund or Write Off. The default value is Normal.</description>
+    <inlineHelpText>Displays the Transaction Type. Normal transactions are regular charges with a positive amount.</inlineHelpText>
+    <label>Transaction Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Normal</fullName>
+                <default>true</default>
+                <label>Normal</label>
+            </value>
+            <value>
+                <fullName>Refund</fullName>
+                <default>false</default>
+                <label>Refund</label>
+            </value>
+            <value>
+                <fullName>Reversal</fullName>
+                <default>false</default>
+                <label>Reversal</label>
+            </value>
+            <value>
+                <fullName>Write Off</fullName>
+                <default>false</default>
+                <label>Write Off</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

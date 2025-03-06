@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Disable_Send_Invoice_Immediately__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>If checked, invoice is not sent immediately. Instead use Send Invoice button or schedule an invoice for auto send.</description>
+    <inlineHelpText>If checked, invoice is not sent immediately. Instead use Send Invoice button or schedule an invoice for auto send.</inlineHelpText>
+    <label>Disable Send Invoice Immediately</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

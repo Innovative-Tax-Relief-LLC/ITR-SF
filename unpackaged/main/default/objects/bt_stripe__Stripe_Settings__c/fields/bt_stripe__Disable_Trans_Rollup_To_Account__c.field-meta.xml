@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Disable_Trans_Rollup_To_Account__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>When setting is enabled, transactions will not roll up to related Account&#39;s &quot;Historical Account Value&quot; field.</description>
+    <inlineHelpText>When setting is enabled, transactions will not roll up to related Account&#39;s &quot;Historical Account Value&quot; field.</inlineHelpText>
+    <label>Disable Trans Rollup To Account</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

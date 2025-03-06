@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Disable_PaymentMethod_RUPContactToCust__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>If checked, the Account and Contact on Payment Method will not roll-up to the Stripe Customer record.</description>
+    <inlineHelpText>If checked, the Account and Contact on Payment Method will not roll-up to the Stripe Customer record.</inlineHelpText>
+    <label>Disable PM Roll-up To Stripe Customer</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

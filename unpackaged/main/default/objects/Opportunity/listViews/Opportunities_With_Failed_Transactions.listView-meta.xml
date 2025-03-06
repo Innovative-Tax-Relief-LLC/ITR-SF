@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunities_With_Failed_Transactions</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.TYPE</columns>
+    <columns>Failed_Transaction__c</columns>
+    <columns>Failed_Transaction_Indicator__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Failed_Transaction__c</field>
+        <operation>equals</operation>
+        <value>Yes</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Opportunity.First_Trade</value>
+    </filters>
+    <label>1T Opportunities W/Failed Transactions</label>
+    <sharedTo>
+        <group>ITR_Billing_Team</group>
+    </sharedTo>
+</ListView>

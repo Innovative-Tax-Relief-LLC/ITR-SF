@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Source__c</fullName>
+    <deprecated>false</deprecated>
+    <inlineHelpText>Tracks the source of transaction.</inlineHelpText>
+    <label>Source</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Salesforce UI</fullName>
+                <default>false</default>
+                <label>Salesforce UI</label>
+            </value>
+            <value>
+                <fullName>Virtual Terminal</fullName>
+                <default>false</default>
+                <label>Virtual Terminal</label>
+            </value>
+            <value>
+                <fullName>REST API</fullName>
+                <default>false</default>
+                <label>REST API</label>
+            </value>
+            <value>
+                <fullName>Apex API</fullName>
+                <default>false</default>
+                <label>Apex API</label>
+            </value>
+            <value>
+                <fullName>PayLink</fullName>
+                <default>false</default>
+                <label>PayLink</label>
+            </value>
+            <value>
+                <fullName>DocumentLink</fullName>
+                <default>false</default>
+                <label>DocumentLink</label>
+            </value>
+            <value>
+                <fullName>Mobile</fullName>
+                <default>false</default>
+                <label>Mobile</label>
+            </value>
+            <value>
+                <fullName>Donations</fullName>
+                <default>false</default>
+                <label>Donations</label>
+            </value>
+            <value>
+                <fullName>Event</fullName>
+                <default>false</default>
+                <label>Event</label>
+            </value>
+            <value>
+                <fullName>Flow</fullName>
+                <default>false</default>
+                <label>Flow</label>
+            </value>
+            <value>
+                <fullName>Webhook</fullName>
+                <default>false</default>
+                <label>Webhook</label>
+            </value>
+            <value>
+                <fullName>Sync</fullName>
+                <default>false</default>
+                <label>Sync</label>
+            </value>
+            <value>
+                <fullName>Storefront</fullName>
+                <default>false</default>
+                <label>Storefront</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

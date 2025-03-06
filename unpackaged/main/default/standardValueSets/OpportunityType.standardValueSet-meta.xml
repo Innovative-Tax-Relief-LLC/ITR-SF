@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>1st Trade</fullName>
+        <default>false</default>
+        <label>1st Trade</label>
+    </standardValue>
+    <standardValue>
+        <fullName>2nd Trade</fullName>
+        <default>false</default>
+        <label>2nd Trade</label>
+    </standardValue>
+    <standardValue>
+        <fullName>3rd Trade</fullName>
+        <default>false</default>
+        <label>3rd Trade</label>
+    </standardValue>
+</StandardValueSet>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllAccounts</fullName>
+    <booleanFilter>1 OR 2</booleanFilter>
+    <columns>Velocify_Id__pc</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Litigator__c</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>PC_PHONE3</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>PC_BIRTHDATE</columns>
+    <columns>Date_of_Birth__pc</columns>
+    <columns>ACCOUNT.CREATED_DATE</columns>
+    <columns>CREATEDBY_USER.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Velocify_Id__pc</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Velocify_Id__pc</field>
+        <operation>greaterOrEqual</operation>
+        <value>6661437</value>
+    </filters>
+    <label>All Accounts</label>
+</ListView>

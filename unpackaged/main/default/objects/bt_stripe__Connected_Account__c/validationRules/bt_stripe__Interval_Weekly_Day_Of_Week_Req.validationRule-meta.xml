@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Interval_Weekly_Day_Of_Week_Req</fullName>
+    <active>true</active>
+    <description>if interval = weekly , Day of the Week field is required.</description>
+    <errorConditionFormula>AND (TEXT( bt_stripe__Automatic_Payout_Schedule_Interval__c ) ==&#39;Weekly&#39;,ISBLANK( TEXT(bt_stripe__Day_of_the_Week__c) ))</errorConditionFormula>
+    <errorDisplayField>bt_stripe__Day_of_the_Week__c</errorDisplayField>
+    <errorMessage>With weekly intervals, Day of the Week is required.</errorMessage>
+</ValidationRule>

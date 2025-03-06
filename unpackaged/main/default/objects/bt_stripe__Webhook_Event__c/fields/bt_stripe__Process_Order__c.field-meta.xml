@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Process_Order__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This formula is included in the Process Order formula and determines the order the Stripe webhooks should be processed.</description>
+    <externalId>false</externalId>
+    <formula>CASE(bt_stripe__Type__c,
+&quot;customer.created&quot;, &quot;100&quot;,
+&quot;customer.updated&quot;, &quot;110&quot;,
+&quot;customer.deleted&quot;, &quot;120&quot;,
+
+&quot;customer.source.created&quot;, &quot;130&quot;,
+&quot;customer.source.updated&quot;, &quot;140&quot;,
+&quot;customer.source.expiring&quot;, &quot;150&quot;,
+&quot;customer.source.deleted&quot;, &quot;160&quot;,
+
+&quot;person.created&quot;, &quot;200&quot;,
+&quot;person.updated&quot;, &quot;210&quot;,
+&quot;person.deleted&quot;, &quot;220&quot;,
+
+&quot;account.updated&quot;, &quot;230&quot;,
+&quot;account.external_account.created&quot;, &quot;240&quot;,
+&quot;account.external_account.deleted&quot;, &quot;250&quot;,
+&quot;account.external_account.updated&quot;, &quot;260&quot;,
+
+&quot;transfer.created&quot;, &quot;300&quot;,
+&quot;transfer.updated&quot;, &quot;310&quot;,
+&quot;transfer.paid&quot;, &quot;320&quot;,
+&quot;transfer.failed&quot;, &quot;330&quot;,
+&quot;transfer.reversed&quot;, &quot;340&quot;,
+
+&quot;payout.created&quot;, &quot;350&quot;,
+&quot;payout.updated&quot;, &quot;360&quot;,
+&quot;payout.paid&quot;, &quot;370&quot;,
+&quot;payout.failed&quot;, &quot;380&quot;,
+&quot;payout.canceled&quot;, &quot;390&quot;,
+
+&quot;payment_method.attached&quot;, &quot;400&quot;,
+&quot;payment_method.updated&quot;, &quot;410&quot;,
+&quot;payment_method.card_automatically_updated&quot;, &quot;420&quot;,
+&quot;payment_method.detached&quot;, &quot;430&quot;,
+
+&quot;charge.pending&quot;, &quot;500&quot;,
+&quot;charge.updated&quot;, &quot;510&quot;,
+&quot;charge.succeeded&quot;, &quot;520&quot;,
+&quot;charge.failed&quot;, &quot;530&quot;,
+&quot;charge.captured&quot;, &quot;540&quot;,
+&quot;charge.expired&quot;, &quot;550&quot;,
+&quot;charge.refunded&quot;, &quot;560&quot;,
+&quot;charge.refund.updated&quot;, &quot;570&quot;,
+
+&quot;charge.dispute.created&quot;, &quot;580&quot;,
+&quot;charge.dispute.updated&quot;, &quot;581&quot;,
+&quot;charge.dispute.funds_withdrawn&quot;, &quot;582&quot;,
+&quot;charge.dispute.funds_reinstated&quot;, &quot;583&quot;,
+&quot;charge.dispute.closed&quot;, &quot;584&quot;,
+
+&quot;payment_intent.created&quot;, &quot;600&quot;,
+&quot;payment_intent.amount_capturable_updated&quot;, &quot;610&quot;,
+&quot;payment_intent.succeeded&quot;, &quot;620&quot;,
+&quot;payment_intent.payment_failed&quot;, &quot;630&quot;,
+&quot;payment_intent.canceled&quot;, &quot;640&quot;,
+&quot;&quot;)</formula>
+    <label>Process Order</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

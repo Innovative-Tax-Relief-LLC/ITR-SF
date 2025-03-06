@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Type__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Discount: Decreases the financial amount
+Access-Promo: Access to proceed/purchase an item or a promotional code for an item benefit
+Source: A tracking code to follow a user through a flow, such as in an embedded URL</description>
+    <inlineHelpText>Discount: Decreases the financial amount
+Access-Promo: Access to proceed/purchase an item or a promotional code for an item benefit
+Source: A tracking code to follow a user through a flow, such as in an embedded URL</inlineHelpText>
+    <label>Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Discount</fullName>
+                <default>true</default>
+                <label>Discount</label>
+            </value>
+            <value>
+                <fullName>Access-Promo</fullName>
+                <default>false</default>
+                <label>Access-Promo</label>
+            </value>
+            <value>
+                <fullName>Source</fullName>
+                <default>false</default>
+                <label>Source</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

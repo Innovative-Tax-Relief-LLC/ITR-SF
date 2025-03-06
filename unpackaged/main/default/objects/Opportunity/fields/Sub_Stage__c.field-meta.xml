@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Stage__c</fullName>
+    <label>Sub-Stage</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>StageName</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>In progress</fullName>
+                <default>false</default>
+                <label>In progress</label>
+            </value>
+            <value>
+                <fullName>Send Agreements</fullName>
+                <default>false</default>
+                <label>Send Agreements</label>
+            </value>
+            <value>
+                <fullName>Sent Agreements</fullName>
+                <default>false</default>
+                <label>Sent Agreements</label>
+            </value>
+            <value>
+                <fullName>New Client Email Submitted</fullName>
+                <default>false</default>
+                <label>New Client Email Submitted</label>
+            </value>
+            <value>
+                <fullName>Incorrect Submitted</fullName>
+                <default>false</default>
+                <label>Incorrect Submitted</label>
+            </value>
+            <value>
+                <fullName>Info Corrected</fullName>
+                <default>false</default>
+                <label>Info Corrected</label>
+            </value>
+            <value>
+                <fullName>TI Resubmitted</fullName>
+                <default>false</default>
+                <label>TI Resubmitted</label>
+            </value>
+            <value>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+                <label>Not Started</label>
+            </value>
+            <value>
+                <fullName>Completed</fullName>
+                <default>false</default>
+                <label>Completed</label>
+            </value>
+            <value>
+                <fullName>TI PIF</fullName>
+                <default>false</default>
+                <label>TI PIF</label>
+            </value>
+            <value>
+                <fullName>Send POAs</fullName>
+                <default>false</default>
+                <label>Send POAs</label>
+            </value>
+            <value>
+                <fullName>Sent POAs</fullName>
+                <default>false</default>
+                <label>Sent POAs</label>
+            </value>
+            <value>
+                <fullName>Received POAs</fullName>
+                <default>false</default>
+                <label>Received POAs</label>
+            </value>
+            <value>
+                <fullName>Process Payment</fullName>
+                <default>false</default>
+                <label>Process Payment</label>
+            </value>
+            <value>
+                <fullName>Pitched-Nurture</fullName>
+                <default>false</default>
+                <label>Pitched-Nurture</label>
+            </value>
+            <value>
+                <fullName>Pitched-Nurture 1T</fullName>
+                <default>false</default>
+                <label>Pitched-Nurture 1T</label>
+            </value>
+            <value>
+                <fullName>Pitched Simmer</fullName>
+                <default>false</default>
+                <label>Pitched Simmer</label>
+            </value>
+            <value>
+                <fullName>NSF</fullName>
+                <default>false</default>
+                <label>NSF</label>
+            </value>
+            <value>
+                <fullName>2nd Trade CPII</fullName>
+                <default>false</default>
+                <label>2nd Trade CPII</label>
+            </value>
+            <value>
+                <fullName>Pitched</fullName>
+                <default>false</default>
+                <label>Pitched</label>
+            </value>
+            <value>
+                <fullName>Send Agreement</fullName>
+                <default>false</default>
+                <label>Send Agreement</label>
+            </value>
+            <value>
+                <fullName>Sent Agreement</fullName>
+                <default>false</default>
+                <label>Sent Agreement</label>
+            </value>
+            <value>
+                <fullName>Received Agreement</fullName>
+                <default>false</default>
+                <label>Received Agreement</label>
+            </value>
+            <value>
+                <fullName>Incorrect Info Submitted</fullName>
+                <default>false</default>
+                <label>Incorrect Info Submitted</label>
+            </value>
+            <value>
+                <fullName>Missing POAs</fullName>
+                <default>false</default>
+                <label>Missing POAs</label>
+            </value>
+            <value>
+                <fullName>Sent to Pitbull</fullName>
+                <default>false</default>
+                <label>Sent to Pitbull</label>
+            </value>
+            <value>
+                <fullName>Transcript Investigation</fullName>
+                <default>false</default>
+                <label>Transcript Investigation</label>
+            </value>
+            <value>
+                <fullName>TI Completed</fullName>
+                <default>false</default>
+                <label>TI Completed</label>
+            </value>
+            <value>
+                <fullName>Recurring Tax Prep</fullName>
+                <default>false</default>
+                <label>Recurring Tax Prep</label>
+            </value>
+            <value>
+                <fullName>Attempting Contact</fullName>
+                <default>false</default>
+                <label>Attempting Contact</label>
+            </value>
+            <value>
+                <fullName>Contacted</fullName>
+                <default>false</default>
+                <label>Contacted</label>
+            </value>
+            <value>
+                <fullName>Send Echosign</fullName>
+                <default>false</default>
+                <label>Send Echosign</label>
+            </value>
+            <value>
+                <fullName>Sent Echosign</fullName>
+                <default>false</default>
+                <label>Sent Echosign</label>
+            </value>
+            <value>
+                <fullName>Send Agreement Recurring Tax Prep</fullName>
+                <default>false</default>
+                <label>Send Agreement Recurring Tax Prep</label>
+            </value>
+            <value>
+                <fullName>Sent Agreement Recurring Tax Prep</fullName>
+                <default>false</default>
+                <label>Sent Agreement Recurring Tax Prep</label>
+            </value>
+            <value>
+                <fullName>Received Agreement Recurring Tax Prep</fullName>
+                <default>false</default>
+                <label>Received Agreement Recurring Tax Prep</label>
+            </value>
+            <value>
+                <fullName>Quoted</fullName>
+                <default>false</default>
+                <label>Quoted</label>
+            </value>
+            <value>
+                <fullName>Priority</fullName>
+                <default>false</default>
+                <label>Priority</label>
+            </value>
+            <value>
+                <fullName>Down Payment</fullName>
+                <default>false</default>
+                <label>Down Payment</label>
+            </value>
+            <value>
+                <fullName>Enrolled</fullName>
+                <default>false</default>
+                <label>Enrolled</label>
+            </value>
+            <value>
+                <fullName>Enrolled - New POAs Required</fullName>
+                <default>false</default>
+                <label>Enrolled - New POAs Required</label>
+            </value>
+            <value>
+                <fullName>NSF 1st Payment</fullName>
+                <default>false</default>
+                <label>NSF 1st Payment</label>
+            </value>
+            <value>
+                <fullName>New</fullName>
+                <default>false</default>
+                <label>New</label>
+            </value>
+            <value>
+                <fullName>Partial Payment</fullName>
+                <default>false</default>
+                <label>Partial Payment</label>
+            </value>
+            <value>
+                <fullName>Nurture</fullName>
+                <default>false</default>
+                <label>Nurture</label>
+            </value>
+            <value>
+                <fullName>Lost: DNR</fullName>
+                <default>false</default>
+                <label>Lost: DNR</label>
+            </value>
+            <value>
+                <fullName>Lost: Bad or Wrong Number</fullName>
+                <default>false</default>
+                <label>Lost: Bad or Wrong Number</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Create CPII</controllingFieldValue>
+            <controllingFieldValue>Agreements</controllingFieldValue>
+            <controllingFieldValue>Investigation</controllingFieldValue>
+            <valueName>NSF</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Create CPII</controllingFieldValue>
+            <valueName>Down Payment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Create CPII</controllingFieldValue>
+            <valueName>Enrolled</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Create CPII</controllingFieldValue>
+            <valueName>Enrolled - New POAs Required</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Create CPII</controllingFieldValue>
+            <valueName>NSF 1st Payment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Create CPII</controllingFieldValue>
+            <controllingFieldValue>Preliminary Review</controllingFieldValue>
+            <valueName>New</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Preliminary Review</controllingFieldValue>
+            <controllingFieldValue>Quoting</controllingFieldValue>
+            <valueName>Recurring Tax Prep</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Set Appointment</controllingFieldValue>
+            <valueName>Attempting Contact</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Set Appointment</controllingFieldValue>
+            <valueName>Contacted</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pitch</controllingFieldValue>
+            <valueName>Pitched Simmer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pitch</controllingFieldValue>
+            <valueName>Pitched</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quoting</controllingFieldValue>
+            <valueName>Quoted</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Quoting</controllingFieldValue>
+            <valueName>Priority</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agreements</controllingFieldValue>
+            <valueName>Send POAs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agreements</controllingFieldValue>
+            <valueName>Sent POAs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agreements</controllingFieldValue>
+            <valueName>Received POAs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agreements</controllingFieldValue>
+            <valueName>Send Agreement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agreements</controllingFieldValue>
+            <valueName>Sent Agreement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agreements</controllingFieldValue>
+            <valueName>Received Agreement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agreements</controllingFieldValue>
+            <valueName>Incorrect Info Submitted</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agreements</controllingFieldValue>
+            <valueName>Missing POAs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agreements</controllingFieldValue>
+            <valueName>Sent to Pitbull</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agreements</controllingFieldValue>
+            <valueName>Send Echosign</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agreements</controllingFieldValue>
+            <valueName>Sent Echosign</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agreements</controllingFieldValue>
+            <valueName>Send Agreement Recurring Tax Prep</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agreements</controllingFieldValue>
+            <valueName>Sent Agreement Recurring Tax Prep</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agreements</controllingFieldValue>
+            <valueName>Received Agreement Recurring Tax Prep</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agreements</controllingFieldValue>
+            <valueName>Partial Payment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Investigation</controllingFieldValue>
+            <valueName>New Client Email Submitted</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Investigation</controllingFieldValue>
+            <valueName>Incorrect Submitted</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Investigation</controllingFieldValue>
+            <valueName>Info Corrected</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Investigation</controllingFieldValue>
+            <valueName>TI Resubmitted</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Investigation</controllingFieldValue>
+            <valueName>TI PIF</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Investigation</controllingFieldValue>
+            <valueName>Transcript Investigation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Investigation</controllingFieldValue>
+            <valueName>TI Completed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Pitched-Nurture</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Lost: DNR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Lost: Bad or Wrong Number</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

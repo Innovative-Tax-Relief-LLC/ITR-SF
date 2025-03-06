@@ -1,0 +1,4 @@
+<apex:page showHeader="true" sidebar="true" standardController="bt_stripe__Payment_Schedule__c" >
+	<!-- TODO: delete in the future -->
+	Deprecated
+</apex:page>

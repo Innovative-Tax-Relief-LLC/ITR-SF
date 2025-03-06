@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Source_Charge__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>If a source Charge is related, this Transfer can process from a pending Charge (before the balance is available). In Stripe&#39;s API, this is referred to as source_transaction.</description>
+    <inlineHelpText>If a source Charge is related, this Transfer can process from a pending Charge (before the balance is available). In Stripe&#39;s API, this is referred to as source_transaction.</inlineHelpText>
+    <label>Source Charge</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>Please select the correct charge</errorMessage>
+        <filterItems>
+            <field>bt_stripe__Transaction__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Charge</value>
+        </filterItems>
+        <filterItems>
+            <field>bt_stripe__Transaction__c.bt_stripe__Transaction_Id__c</field>
+            <operation>notEqual</operation>
+            <value />
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>bt_stripe__Transaction__c</referenceTo>
+    <relationshipLabel>Transactions (Source Charge)</relationshipLabel>
+    <relationshipName>TransferSrcTransaction</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

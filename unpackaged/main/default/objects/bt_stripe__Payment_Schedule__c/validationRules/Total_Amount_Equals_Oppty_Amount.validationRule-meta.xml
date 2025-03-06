@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Amount_Equals_Oppty_Amount</fullName>
+    <active>false</active>
+    <description>This confirms if the payment schedule total amount equals the opportunity amount when created.</description>
+    <errorConditionFormula>bt_stripe__Total_Amount__c &lt;&gt;  Opportunity_Amount__c</errorConditionFormula>
+    <errorMessage>The total amount of the payment schedule must match the amount of its related opportunity.</errorMessage>
+</ValidationRule>

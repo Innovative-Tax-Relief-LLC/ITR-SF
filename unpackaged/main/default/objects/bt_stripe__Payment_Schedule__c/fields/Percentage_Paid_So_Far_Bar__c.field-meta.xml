@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Percentage_Paid_So_Far_Bar__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Percentage_Paid_So_Far__c&lt;0.3, IMAGE(&#39;/resource/Red&#39;, &#39;&#39;, 20, 100* Percentage_Paid_So_Far__c),
+IF(Percentage_Paid_So_Far__c&lt;0.8, IMAGE(&#39;/resource/Orange&#39;, &#39;&#39;, 20, 100* Percentage_Paid_So_Far__c),
+
+IMAGE(&#39;/resource/Green&#39;, &#39;&#39;, 20, 100* Percentage_Paid_So_Far__c)))
+
+&amp; IMAGE(&#39;/resource/Gray&#39;, &#39;&#39;, 20, 100* (1-Percentage_Paid_So_Far__c))
+&amp; &#39; &#39;&amp; TEXT(ROUND(100*Percentage_Paid_So_Far__c, 0))&amp;&#39;%&#39;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Percentage Paid So Far Bar</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

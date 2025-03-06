@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Code__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <inlineHelpText>The Code that is Eligible</inlineHelpText>
+    <label>Code</label>
+    <referenceTo>bt_stripe__Code__c</referenceTo>
+    <relationshipLabel>Code Eligibilities</relationshipLabel>
+    <relationshipName>Code_Eligibilities</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

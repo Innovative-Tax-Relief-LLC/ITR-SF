@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Verification_Details__c</fullName>
+    <deprecated>false</deprecated>
+    <description>A user-displayable string describing the verification state for this Company Info. For example, if a document is uploaded and the picture is too fuzzy, this may say “Identity document is too unclear to read”.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>A user-displayable string describing the verification state for this Company Info. For example, if a document is uploaded and the picture is too fuzzy, this may say “Identity document is too unclear to read”.</inlineHelpText>
+    <label>Verification Details</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X2nd_Trade_1st_Payment_Declined_Task</fullName>
+    <filterScope>Queue</filterScope>
+    <label>2nd Trade – 1st Payment Declined</label>
+    <queue>X2nd_Trade_1st_Payment_Declined</queue>
+    <sharedTo>
+        <allInternalUsers />
+    </sharedTo>
+</ListView>

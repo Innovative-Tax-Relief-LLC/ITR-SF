@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_Payment_Schedules</fullName>
+    <columns>NAME</columns>
+    <columns>Formula_Name__c</columns>
+    <filterScope>Mine</filterScope>
+    <label>Billing Payment Schedules</label>
+</ListView>

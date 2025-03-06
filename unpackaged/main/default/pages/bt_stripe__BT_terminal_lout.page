@@ -1,0 +1,16 @@
+<apex:page showHeader="true" sidebar="true">
+	<apex:includeLightning />
+	<div id="lDiv"/>
+
+	<script>
+	$Lightning.use('c:BlackthornTerminalLtngOutApp', function() {
+		$Lightning.createComponent('c:VirtualTerminal',
+			{
+			},
+			'lDiv',
+			function(cmp) {
+			}
+		);
+	});
+	</script>
+</apex:page>

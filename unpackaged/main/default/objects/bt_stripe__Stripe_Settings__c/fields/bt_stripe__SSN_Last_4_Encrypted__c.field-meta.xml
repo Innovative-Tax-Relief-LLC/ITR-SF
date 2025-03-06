@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__SSN_Last_4_Encrypted__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>When checked, the encrypted value in SSN Last 4 will not be removed when a Connected Account is verified.</description>
+    <inlineHelpText>When checked, the encrypted value in SSN Last 4 will not be removed when a Connected Account is verified..</inlineHelpText>
+    <label>SSN Last 4 Encrypted</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

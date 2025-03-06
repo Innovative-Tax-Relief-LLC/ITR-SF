@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Primary_Contact_Error</fullName>
+    <active>true</active>
+    <description>This button should only be used for additional owners. For the primary (first) owner, use the Submit to Stripe button on the related Connected Account</description>
+    <errorConditionFormula>AND( bt_stripe__Primary__c , bt_stripe__Submit_to_Stripe__c )</errorConditionFormula>
+    <errorMessage>This button should only be used for additional owners. For the primary (first) owner, use the Submit to Stripe button on the related Connected Account</errorMessage>
+</ValidationRule>

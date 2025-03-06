@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Enable_ACH__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>This enables ACH Record Type and Page Layout on the Payment Method object. Configured in Setup Wizard. Do Not Update Here, use the Setup Wizard instead for changes.</inlineHelpText>
+    <label>Enable ACH</label>
+    <length>4</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

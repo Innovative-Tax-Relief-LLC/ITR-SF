@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Payment_Method__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <label>Payment Method</label>
+    <lookupFilter>
+        <active>false</active>
+        <filterItems>
+            <field>bt_stripe__Payment_Method__c.bt_stripe__Stripe_Customer__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.bt_stripe__Customer__c</valueField>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>bt_stripe__Payment_Method__c</referenceTo>
+    <relationshipLabel>Opportunities</relationshipLabel>
+    <relationshipName>Opportunities</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

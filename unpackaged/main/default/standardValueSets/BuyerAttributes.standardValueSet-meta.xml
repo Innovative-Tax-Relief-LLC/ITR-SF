@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Detractor</fullName>
+        <default>false</default>
+        <label>Detractor</label>
+    </standardValue>
+    <standardValue>
+        <fullName>DecisionMaker</fullName>
+        <default>false</default>
+        <label>Decision Maker</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Buyer</fullName>
+        <default>false</default>
+        <label>Buyer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ExecutiveSponsor</fullName>
+        <default>false</default>
+        <label>Executive Sponsor</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Champion</fullName>
+        <default>false</default>
+        <label>Champion</label>
+    </standardValue>
+    <standardValue>
+        <fullName>BusinessUser</fullName>
+        <default>false</default>
+        <label>Business User</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Evaluator</fullName>
+        <default>false</default>
+        <label>Evaluator</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TechnicalExpert</fullName>
+        <default>false</default>
+        <label>Technical Expert</label>
+    </standardValue>
+</StandardValueSet>

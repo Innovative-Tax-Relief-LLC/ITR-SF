@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Spouse_Full_Name__c</fullName>
+    <description>This field is the combination of the spouse&#39;s first name and last name.</description>
+    <externalId>false</externalId>
+    <formula>Spouse_First_Name__pc &amp; &quot; &quot; &amp; Spouse_Middle_Initial__c &amp; &quot; &quot; &amp; Spouse_Last_Name__pc</formula>
+    <label>Spouse Full Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

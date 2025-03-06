@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hot_Button__c</fullName>
+    <label>Hot Button</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>2nd Opinion</fullName>
+                <default>false</default>
+                <label>2nd Opinion</label>
+            </value>
+            <value>
+                <fullName>Buy Property</fullName>
+                <default>false</default>
+                <label>Buy Property</label>
+            </value>
+            <value>
+                <fullName>Clear record and move on</fullName>
+                <default>false</default>
+                <label>Clear record and move on</label>
+            </value>
+            <value>
+                <fullName>Fear of IRS</fullName>
+                <default>false</default>
+                <label>Fear of IRS</label>
+            </value>
+            <value>
+                <fullName>Garnishment/Levy</fullName>
+                <default>false</default>
+                <label>Garnishment/Levy</label>
+            </value>
+            <value>
+                <fullName>Immigration Status</fullName>
+                <default>false</default>
+                <label>Immigration Status</label>
+            </value>
+            <value>
+                <fullName>Marriage/Divorce</fullName>
+                <default>false</default>
+                <label>Marriage/Divorce</label>
+            </value>
+            <value>
+                <fullName>No Real Ether - Asked All Questions</fullName>
+                <default>false</default>
+                <label>No Real Ether - Asked All Questions</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Passport Restriction</fullName>
+                <default>false</default>
+                <label>Passport Restriction</label>
+            </value>
+            <value>
+                <fullName>Retirement</fullName>
+                <default>false</default>
+                <label>Retirement</label>
+            </value>
+            <value>
+                <fullName>IRS Letter Within 30 Days</fullName>
+                <default>false</default>
+                <label>IRS Letter Within 30 Days</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

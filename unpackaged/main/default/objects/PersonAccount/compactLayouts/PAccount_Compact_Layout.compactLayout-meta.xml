@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PAccount_Compact_Layout</fullName>
+    <fields>Name</fields>
+    <fields>PersonMobilePhone</fields>
+    <fields>Phone</fields>
+    <fields>PersonEmail</fields>
+    <fields>OwnerId</fields>
+    <fields>ITR_Id_formula__c</fields>
+    <fields>Litigator__c</fields>
+    <label>PAccount Compact Layout</label>
+</CompactLayout>

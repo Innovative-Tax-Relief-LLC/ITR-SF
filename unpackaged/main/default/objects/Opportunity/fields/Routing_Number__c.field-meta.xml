@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Routing_Number__c</fullName>
+    <label>Routing Number</label>
+    <length>25</length>
+    <maskChar>X</maskChar>
+    <maskType>creditCard</maskType>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>EncryptedText</type>
+</CustomField>

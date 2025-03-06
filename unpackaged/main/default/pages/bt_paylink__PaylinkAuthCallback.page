@@ -1,0 +1,3 @@
+<apex:page controller="bt_paylink.SetupWizardController" action="{!processCallback}">
+	<apex:pageMessages />
+</apex:page>

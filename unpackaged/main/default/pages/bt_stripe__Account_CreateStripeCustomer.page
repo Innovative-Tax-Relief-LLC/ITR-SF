@@ -1,0 +1,43 @@
+<apex:page standardController="Account" extensions="bt_stripe.AccountCreateStripeCustomerCtrl">
+	<apex:includeLightning />
+
+	<div id="lDiv"/>
+	<script>
+	var nameSpacePrefix = '{!JSENCODE(nameSpacePrefix)}';
+	var recordId = '{!JSENCODE(recordId)}';
+
+	var params = {};
+	if (recordId) {
+		params['recordId'] = recordId;
+	}
+
+	if (nameSpacePrefix == '') {
+		nameSpacePrefix = 'c';
+	}
+	$Lightning.use(nameSpacePrefix + ':AccountStripeCustomerCreateLtngApp', function() {
+		$Lightning.createComponent(nameSpacePrefix + ':AccountStripeCustomerCreate', params, 'lDiv',
+		function(cmp) {
+			$A.eventService.addHandler({
+				event: 'force:navigateToSObject',
+				handler: function(event) {
+					navigateTo(event.getParam('recordId'));
+				}
+			});
+		});
+	});
+
+
+	// this works awesome! let's use it everywhere
+	function navigateTo(sObjectId) {
+		if ((typeof sforce != 'undefined') && sforce && (!!sforce.one)) {
+			// Salesforce1 navigation
+			sforce.one.navigateToSObject(sObjectId, 'detail');
+		} else {
+			// Set the window's URL using a Visualforce expression
+			window.location.href = '/' + sObjectId;
+			// TODO: may want to use this instead - suppose to help with navigation in community
+			// window.location.href = '{!$site.Prefix}' + '/' + sObjectId;
+		}
+	}
+	</script>
+</apex:page>

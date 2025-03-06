@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Plan_Product_Match</fullName>
+    <active>true</active>
+    <description>Price should be related to the Product.</description>
+    <errorConditionFormula>bt_stripe__Plan__c != null &amp;&amp; bt_stripe__Product__c!=null &amp;&amp; bt_stripe__Plan__r.bt_stripe__Product__c != bt_stripe__Product__c</errorConditionFormula>
+    <errorDisplayField>bt_stripe__Plan__c</errorDisplayField>
+    <errorMessage>Price should be related to the Product.</errorMessage>
+</ValidationRule>

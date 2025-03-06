@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Non_Negative_Integer_Required</fullName>
+    <active>true</active>
+    <description>The Site ID must be a non-negative integer.</description>
+    <errorConditionFormula>IF(NOT(ISBLANK(bt_stripe__TouchNet_uPay_Site_ID__c)), NOT(ISNUMBER(bt_stripe__TouchNet_uPay_Site_ID__c )) ||
+            FLOOR(VALUE(bt_stripe__TouchNet_uPay_Site_ID__c)) &lt;&gt; VALUE(bt_stripe__TouchNet_uPay_Site_ID__c) ||
+            VALUE(bt_stripe__TouchNet_uPay_Site_ID__c) &lt; 0, false)</errorConditionFormula>
+    <errorDisplayField>bt_stripe__TouchNet_uPay_Site_ID__c</errorDisplayField>
+    <errorMessage>The Site ID must be a non-negative integer.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X3T_Opportunity__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>3T Opportunity</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Opportunity.RecordType.DeveloperName</field>
+            <operation>equals</operation>
+            <value>Third_Trade</value>
+        </filterItems>
+        <filterItems>
+            <field>Opportunity.AccountId</field>
+            <operation>equals</operation>
+            <valueField>$Source.AccountId</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Opportunity</referenceTo>
+    <relationshipLabel>Third Trade Opportunities</relationshipLabel>
+    <relationshipName>ThirdTradeOpportunities</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

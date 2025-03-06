@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Disable_StripeCustomer_Upsert__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <inlineHelpText>If checked, the Stripe Customer will not get created as a record in Stripe.</inlineHelpText>
+    <label>Disable Creating a Stripe Customer</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

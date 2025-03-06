@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Spreedly_Transaction_Token__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>true</externalId>
+    <inlineHelpText>Unique Gateway-generated value. This is the unique ID related to this transaction.</inlineHelpText>
+    <label>Spreedly Transaction Token</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

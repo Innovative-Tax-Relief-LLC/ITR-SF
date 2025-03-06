@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Disable_Transaction_CleanOnClone__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <inlineHelpText>If checked, Stripe and status fields on the cloned Transaction will not be removed. Caution! If the cloned Transaction status is anything but “Open”, you will not be able to capture payment.</inlineHelpText>
+    <label>Disable Transaction &quot;Clone&quot; Process</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

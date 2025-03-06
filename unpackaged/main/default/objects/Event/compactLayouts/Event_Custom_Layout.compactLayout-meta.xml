@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Event_Custom_Layout</fullName>
+    <fields>Subject</fields>
+    <fields>Location</fields>
+    <fields>StartDateTime</fields>
+    <fields>EndDateTime</fields>
+    <fields>IsReminderSet</fields>
+    <label>Event_Custom Layout</label>
+</CompactLayout>

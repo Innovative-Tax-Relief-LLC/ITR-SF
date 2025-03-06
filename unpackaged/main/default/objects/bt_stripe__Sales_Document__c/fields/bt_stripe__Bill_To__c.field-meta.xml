@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Bill_To__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The account to bill the related line items to. Used to calculate tax if the Ship To fields are blank.</description>
+    <inlineHelpText>The account to bill the related line items to. Used to calculate tax if the Ship To fields are blank.</inlineHelpText>
+    <label>Account (Bill To)</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Invoices</relationshipLabel>
+    <relationshipName>Sales_Documents2</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

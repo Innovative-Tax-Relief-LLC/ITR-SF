@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Duplicate_window__c</fullName>
+    <defaultValue>&quot;120&quot;</defaultValue>
+    <deprecated>false</deprecated>
+    <description>How long, in seconds, that the Auth.net gateway should check for duplicates after a transaction is submitted.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>How long, in seconds, that the Auth.net gateway should check for duplicates after a transaction is submitted. If the value is set to 0 or to a negative number, no duplicate transaction window will be enforced. The maximum value is 28800, which equals eight hours. If a value greater than 28800 sent, the payment gateway will default to 28800.</inlineHelpText>
+    <label>Duplicate window</label>
+    <length>5</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

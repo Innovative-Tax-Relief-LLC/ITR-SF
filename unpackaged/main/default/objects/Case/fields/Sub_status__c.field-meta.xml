@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_status__c</fullName>
+    <label>Sub-status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Status</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Incorrect Info Submitted</fullName>
+                <default>false</default>
+                <label>Incorrect Info Submitted</label>
+            </value>
+            <value>
+                <fullName>TPP Blocked</fullName>
+                <default>false</default>
+                <label>TPP Blocked</label>
+            </value>
+            <value>
+                <fullName>Incorrect Font</fullName>
+                <default>false</default>
+                <label>Incorrect Font</label>
+            </value>
+            <value>
+                <fullName>Intro Pending</fullName>
+                <default>false</default>
+                <label>Intro Pending</label>
+            </value>
+            <value>
+                <fullName>NSF</fullName>
+                <default>false</default>
+                <label>NSF</label>
+            </value>
+            <value>
+                <fullName>Ready for Yearly Tax Prep</fullName>
+                <default>false</default>
+                <label>Ready for Yearly Tax Prep</label>
+            </value>
+            <value>
+                <fullName>Bankruptcy</fullName>
+                <default>false</default>
+                <label>Bankruptcy</label>
+            </value>
+            <value>
+                <fullName>Non Communication</fullName>
+                <default>false</default>
+                <label>Non-Communication</label>
+            </value>
+            <value>
+                <fullName>Refuse Financing</fullName>
+                <default>false</default>
+                <label>Refuse Financing</label>
+            </value>
+            <value>
+                <fullName>Terminated by Client</fullName>
+                <default>false</default>
+                <label>Terminated by Client</label>
+            </value>
+            <value>
+                <fullName>Terminated by ITR</fullName>
+                <default>false</default>
+                <label>Terminated by ITR</label>
+            </value>
+            <value>
+                <fullName>DNR</fullName>
+                <default>false</default>
+                <label>DNR</label>
+            </value>
+            <value>
+                <fullName>Tax Prep</fullName>
+                <default>false</default>
+                <label>Tax Prep</label>
+            </value>
+            <value>
+                <fullName>Due to Client Request</fullName>
+                <default>false</default>
+                <label>Due to Client Request</label>
+            </value>
+            <value>
+                <fullName>Due to Non Payment</fullName>
+                <default>false</default>
+                <label>Due to Non Payment</label>
+            </value>
+            <value>
+                <fullName>Due to Non Compliance</fullName>
+                <default>false</default>
+                <label>Due to Non-Compliance</label>
+            </value>
+            <value>
+                <fullName>Completed/ Closed</fullName>
+                <default>false</default>
+                <label>Completed/ Closed</label>
+            </value>
+            <value>
+                <fullName>Completed/ Closed- DNR</fullName>
+                <default>false</default>
+                <label>Completed/ Closed- DNR</label>
+            </value>
+            <value>
+                <fullName>Attempting Contact</fullName>
+                <default>false</default>
+                <label>Attempting Contact</label>
+            </value>
+            <value>
+                <fullName>Pitched Simmer</fullName>
+                <default>false</default>
+                <label>Pitched Simmer</label>
+            </value>
+            <value>
+                <fullName>Services Completed / Client DNS (Did Not Sign)</fullName>
+                <default>false</default>
+                <label>Services Completed / Client DNS (Did Not Sign)</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Resolution Docs Requested</controllingFieldValue>
+            <controllingFieldValue>Resolution Docs Collected</controllingFieldValue>
+            <controllingFieldValue>Resolution Docs Submitted</controllingFieldValue>
+            <controllingFieldValue>Resolution Docs Accepted</controllingFieldValue>
+            <controllingFieldValue>Intro</controllingFieldValue>
+            <controllingFieldValue>Tax Prep Docs Requested</controllingFieldValue>
+            <controllingFieldValue>Tax Prep Docs Collected</controllingFieldValue>
+            <controllingFieldValue>Tax Prep Docs Submitted</controllingFieldValue>
+            <controllingFieldValue>Tax Prep Docs Accepted</controllingFieldValue>
+            <valueName>Attempting Contact</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Blocked</controllingFieldValue>
+            <valueName>Incorrect Info Submitted</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Blocked</controllingFieldValue>
+            <valueName>TPP Blocked</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Case Completed Failed</controllingFieldValue>
+            <controllingFieldValue>Case Closed</controllingFieldValue>
+            <valueName>Ready for Yearly Tax Prep</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Case Completed Failed</controllingFieldValue>
+            <controllingFieldValue>Case Closed</controllingFieldValue>
+            <valueName>Bankruptcy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Case Completed Failed</controllingFieldValue>
+            <controllingFieldValue>Case Closed</controllingFieldValue>
+            <valueName>Non Communication</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Case Completed Failed</controllingFieldValue>
+            <controllingFieldValue>Case Closed</controllingFieldValue>
+            <valueName>Refuse Financing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Case Completed Failed</controllingFieldValue>
+            <controllingFieldValue>Case Closed</controllingFieldValue>
+            <valueName>Terminated by Client</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Case Completed Failed</controllingFieldValue>
+            <controllingFieldValue>Case Closed</controllingFieldValue>
+            <valueName>Terminated by ITR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Case Completed Failed</controllingFieldValue>
+            <controllingFieldValue>Case Closed</controllingFieldValue>
+            <valueName>DNR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Case Completed Failed</controllingFieldValue>
+            <controllingFieldValue>Case Closed</controllingFieldValue>
+            <valueName>Due to Client Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Case Completed Failed</controllingFieldValue>
+            <controllingFieldValue>Case Closed</controllingFieldValue>
+            <valueName>Due to Non Payment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Case Completed Failed</controllingFieldValue>
+            <controllingFieldValue>Case Closed</controllingFieldValue>
+            <valueName>Due to Non Compliance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Intro</controllingFieldValue>
+            <valueName>Intro Pending</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Intro</controllingFieldValue>
+            <valueName>NSF</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Intro</controllingFieldValue>
+            <valueName>Tax Prep</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

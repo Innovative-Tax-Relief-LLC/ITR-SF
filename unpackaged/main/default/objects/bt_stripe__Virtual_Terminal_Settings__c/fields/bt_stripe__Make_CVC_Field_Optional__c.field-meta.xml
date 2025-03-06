@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Make_CVC_Field_Optional__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>If enabled, the CVC field will be optional when adding a payment method via the Virtual Terminal.</description>
+    <inlineHelpText>If enabled, the CVC field will be optional when adding a payment method via the Virtual Terminal.</inlineHelpText>
+    <label>Make CVC Field Optional</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

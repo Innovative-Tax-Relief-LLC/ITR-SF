@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payment_Treshold__c</fullName>
+    <label>Payment Threshold (% of Invoice))</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Down Payment</fullName>
+                <default>false</default>
+                <label>Down Payment</label>
+            </value>
+            <value>
+                <fullName>30%</fullName>
+                <default>false</default>
+                <label>30%</label>
+            </value>
+            <value>
+                <fullName>75%</fullName>
+                <default>false</default>
+                <label>75%</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

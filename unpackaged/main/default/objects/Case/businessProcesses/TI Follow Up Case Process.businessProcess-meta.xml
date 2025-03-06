@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BusinessProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TI Follow Up Case Process</fullName>
+    <isActive>true</isActive>
+    <values>
+        <fullName>Blocked</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Case Closed</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Case Completed Failed</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Case Completed Successful</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>In Progress</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Transcript Investigation</fullName>
+        <default>true</default>
+    </values>
+</BusinessProcess>

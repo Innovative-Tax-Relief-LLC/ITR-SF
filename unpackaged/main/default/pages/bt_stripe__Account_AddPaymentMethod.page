@@ -1,0 +1,6 @@
+<apex:page standardController="Account" showQuickActionVfHeader="false">
+	<c:BT_CreatePaymentMethod relatedTo="{!Account.Id}" relatedToObjectName="Account" relatedToName="{!Account.Name}"
+		holdersName="{!Account.Name}" street="{!Account.BillingStreet}" city="{!Account.BillingCity}"
+		state="{!Account.BillingState}" postalCode="{!Account.BillingPostalCode}"
+		country="{!Account.BillingCountry}"/>
+</apex:page>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Enable_Auth_Trans_Rollup_on_WorkOrder__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>When enabled, Authorized transactions are included with Captured transactions in Balance Paid rollup field on the Work Order.</description>
+    <label>Enable Auth Trans Rollup on WorkOrder</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>
