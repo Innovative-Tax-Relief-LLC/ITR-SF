@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Payment_Method__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The Payment Method to use to Capture the related Transactions. When updated, any Open Transactions will be updated to have this Payment Method.</description>
+    <inlineHelpText>The Payment Method to use to Capture the related Transactions. When updated, any Open Transactions will be updated to have this Payment Method.</inlineHelpText>
+    <label>Payment Method</label>
+    <referenceTo>bt_stripe__Payment_Method__c</referenceTo>
+    <relationshipLabel>Payment Schedules</relationshipLabel>
+    <relationshipName>Payment_Schedules</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

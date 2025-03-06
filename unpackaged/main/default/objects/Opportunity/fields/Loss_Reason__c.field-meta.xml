@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Loss_Reason__c</fullName>
+    <label>Loss Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>StageName</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Cannot Assist</fullName>
+                <default>false</default>
+                <label>Cannot Assist</label>
+            </value>
+            <value>
+                <fullName>Debt Too Small</fullName>
+                <default>false</default>
+                <label>Debt Too Small</label>
+            </value>
+            <value>
+                <fullName>Cant Help Eligible for Yearly Tax Prep</fullName>
+                <default>false</default>
+                <label>Cant Help Eligible for Yearly Tax Prep</label>
+            </value>
+            <value>
+                <fullName>DNR</fullName>
+                <default>false</default>
+                <label>DNR</label>
+            </value>
+            <value>
+                <fullName>Bad or Wrong Number</fullName>
+                <default>false</default>
+                <label>Bad or Wrong Number</label>
+            </value>
+            <value>
+                <fullName>Refunded</fullName>
+                <default>false</default>
+                <label>Refunded</label>
+            </value>
+            <value>
+                <fullName>Cant Help</fullName>
+                <default>false</default>
+                <label>Cant Help</label>
+            </value>
+            <value>
+                <fullName>Not Interested</fullName>
+                <default>false</default>
+                <label>Not Interested</label>
+            </value>
+            <value>
+                <fullName>Cant Help Eligible for Bookeeping and Tax Prep</fullName>
+                <default>false</default>
+                <label>Cant Help Eligible for Bookeeping and Tax Prep</label>
+            </value>
+            <value>
+                <fullName>Cant Help Eligible for Tax Prep</fullName>
+                <default>false</default>
+                <label>Cant Help Eligible for Tax Prep</label>
+            </value>
+            <value>
+                <fullName>Cant Help Currently in IA or CNC</fullName>
+                <default>false</default>
+                <label>Cant Help Currently in IA or CNC</label>
+            </value>
+            <value>
+                <fullName>IN LEVY</fullName>
+                <default>false</default>
+                <label>IN LEVY</label>
+            </value>
+            <value>
+                <fullName>2nd Trade Nurture Priority</fullName>
+                <default>false</default>
+                <label>2nd Trade Nurture Priority</label>
+            </value>
+            <value>
+                <fullName>2nd Trade Nurture</fullName>
+                <default>false</default>
+                <label>2nd Trade Nurture</label>
+            </value>
+            <value>
+                <fullName>Bankruptcy</fullName>
+                <default>false</default>
+                <label>Bankruptcy</label>
+            </value>
+            <value>
+                <fullName>Currently in IA or CNC</fullName>
+                <default>false</default>
+                <label>Currently in IA or CNC</label>
+            </value>
+            <value>
+                <fullName>Debt Too Low</fullName>
+                <default>false</default>
+                <label>Debt Too Low</label>
+            </value>
+            <value>
+                <fullName>Do Not Call</fullName>
+                <default>false</default>
+                <label>Do Not Call</label>
+            </value>
+            <value>
+                <fullName>IRS Inquiry</fullName>
+                <default>false</default>
+                <label>IRS Inquiry</label>
+            </value>
+            <value>
+                <fullName>Phone Solicitations</fullName>
+                <default>false</default>
+                <label>Phone Solicitations</label>
+            </value>
+            <value>
+                <fullName>State Debt Only</fullName>
+                <default>false</default>
+                <label>State Debt Only</label>
+            </value>
+            <value>
+                <fullName>Student Loan</fullName>
+                <default>false</default>
+                <label>Student Loan</label>
+            </value>
+            <value>
+                <fullName>Tax Question</fullName>
+                <default>false</default>
+                <label>Tax Question</label>
+            </value>
+            <value>
+                <fullName>Credit Card Debt</fullName>
+                <default>false</default>
+                <label>Credit Card Debt</label>
+            </value>
+            <value>
+                <fullName>Child Support</fullName>
+                <default>false</default>
+                <label>Child Support</label>
+            </value>
+            <value>
+                <fullName>Pitched Nurture</fullName>
+                <default>false</default>
+                <label>Pitched Nurture</label>
+            </value>
+            <value>
+                <fullName>Client Request</fullName>
+                <default>false</default>
+                <label>Client Request</label>
+            </value>
+            <value>
+                <fullName>Non Payment</fullName>
+                <default>false</default>
+                <label>Non Payment</label>
+            </value>
+            <value>
+                <fullName>Disputed Payments</fullName>
+                <default>false</default>
+                <label>Disputed Payments</label>
+            </value>
+            <value>
+                <fullName>Nurture</fullName>
+                <default>false</default>
+                <label>Nurture</label>
+            </value>
+            <value>
+                <fullName>Lost: DNR</fullName>
+                <default>false</default>
+                <label>Lost: DNR</label>
+            </value>
+            <value>
+                <fullName>Cancelled within 3 days of signing TSA</fullName>
+                <default>false</default>
+                <label>Cancelled within 3 days of signing TSA</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Cannot Assist</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Debt Too Small</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Cant Help Eligible for Yearly Tax Prep</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>DNR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Bad or Wrong Number</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Refunded</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Cant Help</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Not Interested</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Cant Help Eligible for Bookeeping and Tax Prep</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Cant Help Eligible for Tax Prep</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Cant Help Currently in IA or CNC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>IN LEVY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Bankruptcy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Currently in IA or CNC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Debt Too Low</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Do Not Call</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>IRS Inquiry</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Phone Solicitations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>State Debt Only</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Student Loan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Tax Question</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Credit Card Debt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Child Support</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Pitched Nurture</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Client Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Non Payment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Disputed Payments</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Nurture</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Lost: DNR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Cancelled within 3 days of signing TSA</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

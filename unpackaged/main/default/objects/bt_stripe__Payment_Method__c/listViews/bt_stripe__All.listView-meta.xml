@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__All</fullName>
+    <columns>NAME</columns>
+    <columns>bt_stripe__Card_Holder_Name__c</columns>
+    <columns>Formula_Name__c</columns>
+    <columns>bt_stripe__Account__c</columns>
+    <columns>bt_stripe__Stripe_Customer__c</columns>
+    <columns>bt_stripe__Payment_Method_Status__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>bt_stripe__Payment_Gateway__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>bt_stripe__Card_Last_4_Digit__c</field>
+        <operation>equals</operation>
+        <value>4242</value>
+    </filters>
+    <label>All</label>
+</ListView>

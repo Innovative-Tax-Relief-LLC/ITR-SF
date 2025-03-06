@@ -1,0 +1,3 @@
+<apex:page showHeader="false" sidebar="false">
+<!-- DEPRECATED! but we stopped deleting VF pages because they can cause package upgrade issues -->
+</apex:page>

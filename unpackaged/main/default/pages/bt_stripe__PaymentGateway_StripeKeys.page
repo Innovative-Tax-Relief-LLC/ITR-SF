@@ -1,0 +1,94 @@
+<apex:page standardController="bt_stripe__Payment_Gateway__c" extensions="bt_stripe.PaymentGateway_StripeKeyCtrl">
+
+	<apex:pageMessages />
+
+	<apex:form rendered="{!NOT(hasFatalError)}">
+		<apex:outputPanel rendered="{!OR($User.UIThemeDisplayed == 'Theme4d', $User.UIThemeDisplayed == 'Theme4t')}">
+			<apex:slds />
+			<div class="slds-scope">
+				<div class="slds-form slds-form_stacked">
+					<div class="slds-grid slds-wrap slds-align_absolute-center" style="width:50%">
+						<div class="slds-size_1-of-2 slds-m-around_x-small">
+							<div class="slds-form-element">
+								<label class="slds-form-element__label" for="input-id-01">Publishable Key</label>
+								<div class="slds-form-element__control">
+									<apex:inputText value="{!keySet.bt_stripe__Publishable_API_Key__c}" id="number" title="cardnumber" styleClass="slds-input"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="slds-size_1-of-2 slds-m-around_x-small">
+							<div class="slds-form-element">
+								<label class="slds-form-element__label" for="input-id-01">Secret Key</label>
+								<div class="slds-form-element__control">
+									<apex:inputText value="{!keySet.bt_stripe__Secret_API_Key__c}" styleClass="slds-input" id="email" title="email"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="slds-size_1-of-2 slds-m-around_x-small">
+							<div class="slds-form-element">
+								<label class="slds-form-element__label" for="input-id-01">Test Publishable Keys</label>
+								<div class="slds-form-element__control">
+									<apex:inputText value="{!keySet.bt_stripe__Test_Publishable_API_Key__c}" styleClass="slds-input" id="currency" title="name"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="slds-size_1-of-2 slds-m-around_x-small">
+							<div class="slds-form-element">
+								<label class="slds-form-element__label" for="input-id-01">Test Secret Key</label>
+								<div class="slds-form-element__control">
+									<apex:inputText value="{!keySet.bt_stripe__Test_Secret_API_Key__c}" styleClass="slds-input" id="name" title="name"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="slds-size_1-of-2 slds-m-around_x-small slds-text-align_right">
+							<button style="slds-button slds-button_brand slds-p-right_small" onclick="upsertKeys()">Save</button>
+							<button style="slds-button slds-button_brand slds-p-right_small" onclick="back();">Cancel</button>
+						</div>
+					</div><!-- end grid -->
+				</div><!-- end form-stacked -->
+			</div>
+			<Apex:actionfunction name="upsertKeys" action="{!upsertKeys}" oncomplete="navigate()"/>
+		</apex:outputPanel>
+
+		<apex:outputPanel rendered="{!$User.UIThemeDisplayed == 'Theme3'}">
+			<!-- UI for classic -->
+			<apex:sectionHeader title="Payment Gateway" subtitle="Manage Stripe Keys"/>
+			<apex:pageBlock >
+				<apex:pageBlockButtons >
+					<apex:commandButton action="{!upsertKeys}" value="Save"/>
+					<apex:commandButton action="{!back}" value="Cancel"/>
+				</apex:pageBlockButtons>
+
+				<apex:pageBlockSection id="s2" collapsible="false">
+					<apex:pageBlockSectionItem >
+						<apex:outputLabel >Publishable Key</apex:outputLabel>
+						<apex:inputText value="{!keySet.bt_stripe__Publishable_API_Key__c}" id="pkProd" title="name"/>
+					</apex:pageBlockSectionItem>
+					<apex:pageBlockSectionItem >
+						<apex:outputLabel >Test Publishable Key</apex:outputLabel>
+						<apex:inputText value="{!keySet.bt_stripe__Test_Publishable_API_Key__c}" id="pkTest" title="name"/>
+					</apex:pageBlockSectionItem>
+					<apex:pageBlockSectionItem >
+						<apex:outputLabel >Secret Key</apex:outputLabel>
+						<apex:inputText value="{!keySet.bt_stripe__Secret_API_Key__c}" id="apiProd" title="name"/>
+					</apex:pageBlockSectionItem>
+					<apex:pageBlockSectionItem >
+						<apex:outputLabel >Test Secret Key</apex:outputLabel>
+						<apex:inputText value="{!keySet.bt_stripe__Test_Secret_API_Key__c}" id="apiTest" title="name"/>
+					</apex:pageBlockSectionItem>
+				</apex:pageBlockSection>
+			</apex:pageBlock>
+		</apex:outputPanel>
+	</apex:form>
+
+	<script type="text/javascript">
+	function back() {
+		// this only works in lightning - it goes back to the last page and refreshes the record
+		sforce.one.back(true);
+	}
+	</script>
+</apex:page>

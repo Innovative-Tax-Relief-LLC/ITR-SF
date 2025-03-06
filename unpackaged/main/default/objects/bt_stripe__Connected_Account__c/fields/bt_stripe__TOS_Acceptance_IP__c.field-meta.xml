@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__TOS_Acceptance_IP__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The IP address from which the account owner accepted Stripe&#39;s terms.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The IP address from which the account owner accepted Stripe&#39;s terms.</inlineHelpText>
+    <label>TOS Acceptance IP</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

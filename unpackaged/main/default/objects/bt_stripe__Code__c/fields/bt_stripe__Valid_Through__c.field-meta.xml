@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Valid_Through__c</fullName>
+    <deprecated>false</deprecated>
+    <inlineHelpText>If set, the Code can only be used before or on the Date.</inlineHelpText>
+    <label>Valid Through</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

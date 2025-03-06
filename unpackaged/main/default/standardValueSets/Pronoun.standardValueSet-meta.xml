@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>He/Him</fullName>
+        <default>false</default>
+        <label>He/Him</label>
+    </standardValue>
+    <standardValue>
+        <fullName>She/Her</fullName>
+        <default>false</default>
+        <label>She/Her</label>
+    </standardValue>
+    <standardValue>
+        <fullName>They/Them</fullName>
+        <default>false</default>
+        <label>They/Them</label>
+    </standardValue>
+    <standardValue>
+        <fullName>He/They</fullName>
+        <default>false</default>
+        <label>He/They</label>
+    </standardValue>
+    <standardValue>
+        <fullName>She/They</fullName>
+        <default>false</default>
+        <label>She/They</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Not Listed</fullName>
+        <default>false</default>
+        <label>Not Listed</label>
+    </standardValue>
+</StandardValueSet>

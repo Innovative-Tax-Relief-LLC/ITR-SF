@@ -1,0 +1,41 @@
+<apex:page standardController="bt_stripe__Transaction__c" showHeader="true" sidebar="true" extensions="bt_stripe.Transaction_ChargeListController" recordSetVar="tra">
+	<apex:sectionHeader title="Mass Capture" subtitle="Confirmation" />
+	<apex:form >
+		<apex:pageBlock >
+			<apex:pageBlockButtons >
+				<apex:commandButton value="Capture" action="{!charge}" reRender="alertBlock"/>
+				<apex:commandButton value="Cancel" action="{!cancel}" />
+			</apex:pageBlockButtons>
+
+			<apex:pageBlock >
+				<div style="color: #E5882B;">
+					<apex:outputPanel id="theInfo">
+						<b> Note: </b>
+						Only Transactions with a Payment Method on them can be mass captured. Transactions without a Payment Method are not displayed on this list. After clicking the Capture button, you will be taken back to the Transaction List View.
+					</apex:outputPanel>
+				</div>
+			</apex:pageBlock>
+
+			<apex:pageBlockTable value="{!traList}" var="i">
+				<apex:repeat value="{!$ObjectType.bt_stripe__Transaction__c.FieldSets.bt_stripe__Mass_Capture_VF}" var="f">
+					<apex:column >
+						<apex:outputField value="{!i[f.fieldPath]}" />
+						<apex:facet name="header">
+							{!f.Label}
+						</apex:facet>
+					</apex:column>
+				</apex:repeat>
+			</apex:pageBlockTable>
+		</apex:pageBlock>
+		<apex:actionFunction name="redirect" action="{!redirectToListview}"/>
+	</apex:form>
+
+	<apex:outputPanel id="alertBlock">
+		<script>
+			if('{!message}') {
+				alert('{!message}');
+				redirect(); // redirect back on the list view
+			}
+		</script>
+	</apex:outputPanel>
+</apex:page>

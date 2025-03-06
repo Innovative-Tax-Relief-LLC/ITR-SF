@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Transaction_Sub_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <inlineHelpText>Displays the payment method type used to process transactions Only applies to Non-Stripe transactions.</inlineHelpText>
+    <label>Transaction Sub-Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>bt_stripe__Transaction_Type__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Charge Card</fullName>
+                <default>false</default>
+                <label>Charge Card</label>
+            </value>
+            <value>
+                <fullName>ACH</fullName>
+                <default>false</default>
+                <label>ACH</label>
+            </value>
+            <value>
+                <fullName>Check</fullName>
+                <default>false</default>
+                <label>Check</label>
+            </value>
+            <value>
+                <fullName>Cash</fullName>
+                <default>false</default>
+                <label>Cash</label>
+            </value>
+            <value>
+                <fullName>Wire Transfer</fullName>
+                <default>false</default>
+                <label>Wire Transfer</label>
+            </value>
+            <value>
+                <fullName>Money Order</fullName>
+                <default>false</default>
+                <label>Money Order</label>
+            </value>
+            <value>
+                <fullName>Late Fee</fullName>
+                <default>false</default>
+                <label>Late Fee</label>
+            </value>
+            <value>
+                <fullName>Fee Waiver</fullName>
+                <default>false</default>
+                <label>Fee Waiver</label>
+            </value>
+            <value>
+                <fullName>Dispute</fullName>
+                <default>false</default>
+                <label>Dispute</label>
+            </value>
+            <value>
+                <fullName>Zelle</fullName>
+                <default>false</default>
+                <label>Zelle</label>
+            </value>
+            <value>
+                <fullName>CashApp</fullName>
+                <default>false</default>
+                <label>CashApp</label>
+            </value>
+            <value>
+                <fullName>Afterpay</fullName>
+                <default>false</default>
+                <label>Afterpay</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Normal</controllingFieldValue>
+            <controllingFieldValue>Refund</controllingFieldValue>
+            <valueName>Charge Card</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Normal</controllingFieldValue>
+            <controllingFieldValue>Refund</controllingFieldValue>
+            <valueName>ACH</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Normal</controllingFieldValue>
+            <controllingFieldValue>Refund</controllingFieldValue>
+            <valueName>Check</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Normal</controllingFieldValue>
+            <controllingFieldValue>Refund</controllingFieldValue>
+            <valueName>Cash</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Normal</controllingFieldValue>
+            <controllingFieldValue>Refund</controllingFieldValue>
+            <valueName>Wire Transfer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Normal</controllingFieldValue>
+            <controllingFieldValue>Refund</controllingFieldValue>
+            <valueName>Money Order</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Normal</controllingFieldValue>
+            <controllingFieldValue>Refund</controllingFieldValue>
+            <valueName>Late Fee</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Normal</controllingFieldValue>
+            <controllingFieldValue>Refund</controllingFieldValue>
+            <valueName>Fee Waiver</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Normal</controllingFieldValue>
+            <controllingFieldValue>Refund</controllingFieldValue>
+            <valueName>Dispute</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Normal</controllingFieldValue>
+            <controllingFieldValue>Refund</controllingFieldValue>
+            <valueName>Zelle</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Normal</controllingFieldValue>
+            <controllingFieldValue>Refund</controllingFieldValue>
+            <valueName>CashApp</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Normal</controllingFieldValue>
+            <controllingFieldValue>Refund</controllingFieldValue>
+            <valueName>Afterpay</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

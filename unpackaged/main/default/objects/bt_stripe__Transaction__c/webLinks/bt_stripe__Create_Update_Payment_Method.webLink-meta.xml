@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Create_Update_Payment_Method</fullName>
+    <availability>online</availability>
+    <description>launch blackthorn terminal to update the payment method</description>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Create/Update Payment Method</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>window.open(&#39;/apex/bt_stripe__BlackthornTerminal?id={!bt_stripe__Transaction__c.Id}&amp;action=create_update_pm&#39;,&#39;Blackthorn Terminal&#39;,&#39;toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=450,height=690&#39;);</url>
+</WebLink>

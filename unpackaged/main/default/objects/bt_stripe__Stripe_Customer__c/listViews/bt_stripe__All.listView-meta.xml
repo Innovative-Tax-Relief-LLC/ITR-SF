@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__All</fullName>
+    <columns>NAME</columns>
+    <columns>bt_stripe__Contact__c</columns>
+    <columns>bt_stripe__Account__c</columns>
+    <columns>bt_stripe__Email__c</columns>
+    <columns>bt_stripe__Payment_Gateway__c</columns>
+    <columns>bt_stripe__Created_Date__c</columns>
+    <columns>bt_stripe__Customer_Id__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

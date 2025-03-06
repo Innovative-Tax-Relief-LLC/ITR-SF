@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Remove_From_Stripe</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <height>600</height>
+    <linkType>page</linkType>
+    <masterLabel>Remove From Gateway</masterLabel>
+    <openType>sidebar</openType>
+    <page>bt_stripe__PaymentMethod_RemoveFromStripe</page>
+    <protected>false</protected>
+</WebLink>

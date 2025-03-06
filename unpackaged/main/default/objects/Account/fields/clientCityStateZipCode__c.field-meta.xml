@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>clientCityStateZipCode__c</fullName>
+    <description>This field contains the client&#39;s city, the state they are located in, and the zip code of the area they are in; this field combines the three fields.</description>
+    <externalId>false</externalId>
+    <formula>BillingCity &amp; &quot;, &quot; &amp; BillingState &amp; &quot;, &quot; &amp;  BillingPostalCode</formula>
+    <label>clientCityStateZipCode</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

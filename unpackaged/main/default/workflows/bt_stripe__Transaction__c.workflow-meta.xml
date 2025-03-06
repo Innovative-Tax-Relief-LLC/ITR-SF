@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Failed_Transaction_Email_Alert</fullName>
+        <description>Failed Transaction Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>bt_stripe__Related_Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderAddress>payments@innovativetaxreliefllc.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>ITRPaymentEmails/Payment_did_not_process_email_1734918373896</template>
+    </alerts>
+    <alerts>
+        <fullName>Refund_Approved</fullName>
+        <description>Refund Approved</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Approval_Submitter__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>ITR_Emails/Fee_Waiver_Request_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>Refund_Request_Rejected</fullName>
+        <description>Refund Rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Approval_Submitter__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>ITR_Emails/Fee_Waiver_Request_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>X1k_First_Trade_Txn_Approved</fullName>
+        <description>1k First Trade Txn Approved</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>ITR_Emails/X1k_First_Trade_Txn_Approval_Request</template>
+    </alerts>
+    <alerts>
+        <fullName>X1k_First_Trade_Txn_Rejected</fullName>
+        <description>1k First Trade Txn Rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>ITR_Emails/X1k_First_Trade_Txn_Approval_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>bt_stripe__Send_payment360_Receipt_HTML</fullName>
+        <description>Send payment360 Receipt (HTML)</description>
+        <protected>false</protected>
+        <recipients>
+            <field>bt_stripe__Payment_Method_Billing_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>bt_stripe__payment360/bt_stripe__Receipt_HTML</template>
+    </alerts>
+    <alerts>
+        <fullName>bt_stripe__Send_payment360_Receipt_Text</fullName>
+        <description>Send payment360 Receipt (Text)</description>
+        <protected>false</protected>
+        <recipients>
+            <field>bt_stripe__Payment_Method_Billing_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>bt_stripe__payment360/bt_stripe__Receipt_Text</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Due_Date</fullName>
+        <field>bt_stripe__Due_Date__c</field>
+        <formula>Today()</formula>
+        <name>Due Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Process_Transaction</fullName>
+        <field>bt_stripe__Auto_Capture__c</field>
+        <literalValue>1</literalValue>
+        <name>Process Transaction</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Pay_Status</fullName>
+        <field>bt_stripe__Payment_Status__c</field>
+        <literalValue>Captured</literalValue>
+        <name>Set Pay Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Status_to_Approved</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Set Status to Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Status_to_Not_Approved</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Not Approved</literalValue>
+        <name>Set Status to Not Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Status_to_Pending</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Pending</literalValue>
+        <name>Set Status to Pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>bt_stripe__Transaction_Amount_to_Retained_Revenue</fullName>
+        <description>Deprecated but can&#39;t delete</description>
+        <field>bt_stripe__Retained_Revenue__c</field>
+        <name>Transaction: Amount to Retained Revenue</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>bt_stripe__Send Blackthorn %7C Payments Receipt %28HTML%29</fullName>
+        <actions>
+            <name>bt_stripe__Send_payment360_Receipt_HTML</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>bt_stripe__Transaction__c.bt_stripe__Transaction_Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>bt_stripe__Transaction__c.bt_stripe__Payment_Status__c</field>
+            <operation>equals</operation>
+            <value>Captured,Partially Captured</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>bt_stripe__Transaction__c.bt_stripe__Payment_Method_Billing_Email__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>bt_stripe__Send Blackthorn %7C Payments Receipt %28Text%29</fullName>
+        <actions>
+            <name>bt_stripe__Send_payment360_Receipt_Text</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>bt_stripe__Transaction__c.bt_stripe__Transaction_Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>bt_stripe__Transaction__c.bt_stripe__Payment_Status__c</field>
+            <operation>equals</operation>
+            <value>Captured,Partially Captured</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>bt_stripe__Transaction__c.bt_stripe__Payment_Method_Billing_Email__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>bt_stripe__Send payment360 Receipt %28HTML%29</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>bt_stripe__Transaction__c.bt_stripe__Transaction_Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>bt_stripe__Transaction__c.bt_stripe__Payment_Status__c</field>
+            <operation>equals</operation>
+            <value>Captured,Partially Captured</value>
+        </criteriaItems>
+        <description>@deprecated</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>bt_stripe__Send payment360 Receipt %28Text%29</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>bt_stripe__Transaction__c.bt_stripe__Transaction_Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>bt_stripe__Transaction__c.bt_stripe__Payment_Status__c</field>
+            <operation>equals</operation>
+            <value>Captured,Partially Captured</value>
+        </criteriaItems>
+        <description>@deprecated</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>bt_stripe__Transaction%3A Copy non-stripe tra amount to retained revenue</fullName>
+        <active>false</active>
+        <description>Deprecated but can&#39;t delete</description>
+        <formula>false</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

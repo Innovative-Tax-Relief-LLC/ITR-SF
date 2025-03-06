@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Personal_ID_Number_Encrypted__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>When checked, the encrypted value in Personal ID Number will not be removed when a Connected Account is verified.</description>
+    <inlineHelpText>When checked, the encrypted value in Personal ID Number will not be removed when a Connected Account is verified.</inlineHelpText>
+    <label>Personal ID Number Encrypted</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

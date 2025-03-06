@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Subscription__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>If this Line Item is related to a Subscription.</description>
+    <inlineHelpText>If this Line Item is related to a Subscription.</inlineHelpText>
+    <label>Subscription</label>
+    <referenceTo>bt_stripe__Subscription2__c</referenceTo>
+    <relationshipLabel>Line Items</relationshipLabel>
+    <relationshipName>Line_Items</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

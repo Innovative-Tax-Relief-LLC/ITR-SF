@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Default_New_Payment_Method__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <inlineHelpText>Shows the “New Payment Method” screen when loading the Virtual Terminal. Can’t be enabled with “Disable New Payment Method”</inlineHelpText>
+    <label>Default New Payment Method</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

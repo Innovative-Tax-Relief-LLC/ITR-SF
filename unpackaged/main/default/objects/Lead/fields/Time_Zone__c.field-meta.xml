@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Time_Zone__c</fullName>
+    <label>Time Zone</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Mountain Time (US &amp; Canada)</fullName>
+                <default>false</default>
+                <label>Mountain Time (US &amp; Canada)</label>
+            </value>
+            <value>
+                <fullName>Eastern Time (US &amp; Canada)</fullName>
+                <default>false</default>
+                <label>Eastern Time (US &amp; Canada)</label>
+            </value>
+            <value>
+                <fullName>Atlantic Time (Canada)</fullName>
+                <default>false</default>
+                <label>Atlantic Time (Canada)</label>
+            </value>
+            <value>
+                <fullName>Georgetown, La Paz, San Juan</fullName>
+                <default>false</default>
+                <label>Georgetown, La Paz, San Juan</label>
+            </value>
+            <value>
+                <fullName>Central Time (US &amp; Canada)</fullName>
+                <default>false</default>
+                <label>Central Time (US &amp; Canada)</label>
+            </value>
+            <value>
+                <fullName>Pacific Time (US &amp; Canada)</fullName>
+                <default>false</default>
+                <label>Pacific Time (US &amp; Canada)</label>
+            </value>
+            <value>
+                <fullName>Alaska</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Alaska</label>
+            </value>
+            <value>
+                <fullName>Arizona</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Arizona</label>
+            </value>
+            <value>
+                <fullName>Central</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Central</label>
+            </value>
+            <value>
+                <fullName>Eastern</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Eastern</label>
+            </value>
+            <value>
+                <fullName>Guam, Port Moresby</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Guam, Port Moresby</label>
+            </value>
+            <value>
+                <fullName>Hawaii</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Hawaii</label>
+            </value>
+            <value>
+                <fullName>Mountain</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Mountain</label>
+            </value>
+            <value>
+                <fullName>Pacific</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Pacific</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

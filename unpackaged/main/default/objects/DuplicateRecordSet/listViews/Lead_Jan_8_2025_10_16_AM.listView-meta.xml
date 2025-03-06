@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Jan_8_2025_10_16_AM</fullName>
+    <columns>Name</columns>
+    <columns>RecordCount</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Parent</field>
+        <operation>equals</operation>
+        <value>&quot;Lead Jan 8, 2025 10:16 AM&quot;</value>
+    </filters>
+    <label>Lead Jan 8, 2025 10:16 AM</label>
+</ListView>

@@ -1,0 +1,9 @@
+public enum TriggerOperationType {
+    AFTER_DELETE,
+    AFTER_INSERT,
+    AFTER_UNDELETE,
+    AFTER_UPDATE,
+    BEFORE_DELETE,
+    BEFORE_INSERT,
+    BEFORE_UPDATE
+}

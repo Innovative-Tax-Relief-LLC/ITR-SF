@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Process_Order_Stripe_Billing__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This formula is included in the Process Order formula and determines the order the Stripe Billing webhooks should be processed.</description>
+    <externalId>false</externalId>
+    <formula>CASE(bt_stripe__Type__c,
+&quot;product.created&quot;, &quot;700&quot;,
+&quot;product.updated&quot;, &quot;705&quot;,
+&quot;product.deleted&quot;, &quot;710&quot;,
+
+&quot;sku.created&quot;, &quot;715&quot;,
+&quot;sku.updated&quot;, &quot;720&quot;,
+&quot;sku.deleted&quot;, &quot;725&quot;,
+
+&quot;plan.created&quot;, &quot;727&quot;,
+
+&quot;price.created&quot;, &quot;730&quot;,
+&quot;price.updated&quot;, &quot;735&quot;,
+&quot;price.deleted&quot;, &quot;740&quot;,
+
+&quot;coupon.created&quot;, &quot;745&quot;,
+&quot;coupon.updated&quot;, &quot;750&quot;,
+&quot;coupon.deleted&quot;, &quot;755&quot;,
+
+&quot;customer.discount.created&quot;, &quot;760&quot;,
+&quot;customer.discount.updated&quot;, &quot;765&quot;,
+&quot;customer.discount.deleted&quot;, &quot;770&quot;,
+
+&quot;order.created&quot;, &quot;775&quot;,
+&quot;order.payment_failed&quot;, &quot;780&quot;,
+&quot;order.payment_succeeded&quot;, &quot;785&quot;,
+&quot;order.updated&quot;, &quot;790&quot;,
+
+&quot;subscription_schedule.created&quot;, &quot;792&quot;,
+&quot;subscription_schedule.updated&quot;, &quot;795&quot;,
+&quot;customer.subscription.created&quot;, &quot;800&quot;,
+&quot;customer.subscription.updated&quot;, &quot;810&quot;,
+&quot;customer.subscription.pending_update_applied&quot;, &quot;820&quot;,
+&quot;customer.subscription.pending_update_expired&quot;, &quot;830&quot;,
+&quot;customer.subscription.trial_will_end&quot;, &quot;840&quot;,
+&quot;customer.subscription.deleted&quot;, &quot;850&quot;,
+
+&quot;invoice.created&quot;, &quot;900&quot;,
+&quot;invoice.updated&quot;, &quot;980&quot;,
+&quot;invoice.sent&quot;, &quot;910&quot;,
+&quot;invoice.finalized&quot;, &quot;920&quot;,
+&quot;invoice.marked_uncollectible&quot;, &quot;930&quot;,
+&quot;invoice.voided&quot;, &quot;940&quot;,
+&quot;invoice.payment_succeeded&quot;, &quot;950&quot;,
+&quot;invoice.payment_action_required&quot;, &quot;960&quot;,
+&quot;invoice.payment_failed&quot;, &quot;970&quot;,
+&quot;invoice.deleted&quot;, &quot;990&quot;,
+
+&quot;invoiceitem.created&quot;, &quot;991&quot;,
+&quot;invoiceitem.updated&quot;, &quot;992&quot;,
+&quot;invoiceitem.deleted&quot;, &quot;993&quot;,
+&quot;&quot;)</formula>
+    <label>Process Order Stripe Billing</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

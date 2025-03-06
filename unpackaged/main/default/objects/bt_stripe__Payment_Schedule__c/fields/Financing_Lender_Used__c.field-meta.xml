@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Financing_Lender_Used__c</fullName>
+    <externalId>false</externalId>
+    <formula>TEXT(Opportunity__r.Financing_Lender_Used__c)</formula>
+    <label>Financing Lender Used</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

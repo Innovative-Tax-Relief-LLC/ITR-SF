@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>Related_Client__c</columns>
+    <columns>Related_Lead__c</columns>
+    <columns>NAME</columns>
+    <columns>Business_Type__c</columns>
+    <columns>Business_Street__c</columns>
+    <columns>Business_City__c</columns>
+    <columns>Business_State__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Related_Client__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>All</label>
+</ListView>

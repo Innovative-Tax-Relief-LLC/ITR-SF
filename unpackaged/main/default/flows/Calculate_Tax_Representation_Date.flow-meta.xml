@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <environments>Default</environments>
+    <formulas>
+        <name>EndDate</name>
+        <dataType>Date</dataType>
+        <expression>ADDMONTHS({!$Record.Representation_Start_Date__c},VALUE({!$Record.Service_Resolution_Type_1_1__c}))</expression>
+    </formulas>
+    <interviewLabel>Calculate Tax Representation Date {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Calculate Tax Representation Date</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Representation_End_Date</name>
+        <label>Update Representation End Date</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <inputAssignments>
+            <field>Representation_End_Date__c</field>
+            <value>
+                <elementReference>EndDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Representation_End_Date</targetReference>
+        </connector>
+        <filterFormula>ISNULL({!$Record.Representation_Start_Date__c}) = FALSE &amp;&amp; ISNULL({!$Record.Service_Resolution_Type_1_1__c})=FALSE 
+&amp;&amp; 
+OR(ISCHANGED({!$Record.Representation_Start_Date__c})=TRUE,ISCHANGED({!$Record.Service_Resolution_Type_1_1__c})=TRUE, ISNULL({!$Record__Prior.Id})=FALSE)</filterFormula>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

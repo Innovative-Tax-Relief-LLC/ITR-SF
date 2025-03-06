@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Enable_Payment_Method__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The list of payment method types (e.g. card) to provide to the invoice’s PaymentIntent.</description>
+    <inlineHelpText>The list of payment method types (e.g. card) to provide to the invoice’s PaymentIntent.</inlineHelpText>
+    <label>Enable Payment Methods</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ACH bank transfer</fullName>
+                <default>false</default>
+                <label>ACH Credit (pushed by them)</label>
+            </value>
+            <value>
+                <fullName>ACH</fullName>
+                <default>false</default>
+                <label>ACH Debit (pulled by you)</label>
+            </value>
+            <value>
+                <fullName>Canadian pre-authorized debit</fullName>
+                <default>false</default>
+                <label>Canadian pre-authorized debit</label>
+            </value>
+            <value>
+                <fullName>BECS Direct Debit</fullName>
+                <default>false</default>
+                <label>BECS Direct Debit</label>
+            </value>
+            <value>
+                <fullName>Bacs Direct Debit</fullName>
+                <default>false</default>
+                <label>Bacs Direct Debit</label>
+            </value>
+            <value>
+                <fullName>Bancontact</fullName>
+                <default>false</default>
+                <label>Bancontact</label>
+            </value>
+            <value>
+                <fullName>Boleto</fullName>
+                <default>false</default>
+                <label>Boleto</label>
+            </value>
+            <value>
+                <fullName>Card</fullName>
+                <default>false</default>
+                <label>Card</label>
+            </value>
+            <value>
+                <fullName>EPS</fullName>
+                <default>false</default>
+                <label>EPS</label>
+            </value>
+            <value>
+                <fullName>fpx</fullName>
+                <default>false</default>
+                <label>FPX</label>
+            </value>
+            <value>
+                <fullName>giropay</fullName>
+                <default>false</default>
+                <label>giropay</label>
+            </value>
+            <value>
+                <fullName>iDEAL</fullName>
+                <default>false</default>
+                <label>iDEAL</label>
+            </value>
+            <value>
+                <fullName>Przelewy24</fullName>
+                <default>false</default>
+                <label>Przelewy24</label>
+            </value>
+            <value>
+                <fullName>SEPA Direct Debit</fullName>
+                <default>false</default>
+                <label>SEPA Direct Debit</label>
+            </value>
+            <value>
+                <fullName>SOFORT</fullName>
+                <default>false</default>
+                <label>SOFORT</label>
+            </value>
+            <value>
+                <fullName>Wechat Pay</fullName>
+                <default>false</default>
+                <label>Wechat Pay</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

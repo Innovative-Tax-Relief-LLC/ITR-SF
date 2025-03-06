@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Non_processed</fullName>
+    <columns>NAME</columns>
+    <columns>bt_stripe__Created__c</columns>
+    <columns>bt_stripe__Request__c</columns>
+    <columns>bt_stripe__Type__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>bt_stripe__Processed__c</field>
+        <operation>notEqual</operation>
+        <value>1</value>
+    </filters>
+    <label>Non-processed</label>
+</ListView>

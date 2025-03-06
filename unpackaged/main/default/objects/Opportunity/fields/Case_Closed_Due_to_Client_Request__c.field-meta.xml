@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_Closed_Due_to_Client_Request__c</fullName>
+    <label>Case Closed Due to Client Request</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Went to Competitor</fullName>
+                <default>false</default>
+                <label>Went to Competitor</label>
+            </value>
+            <value>
+                <fullName>Financial Constraints</fullName>
+                <default>false</default>
+                <label>Financial Constraints</label>
+            </value>
+            <value>
+                <fullName>Dissatisfaction</fullName>
+                <default>false</default>
+                <label>Dissatisfaction</label>
+            </value>
+            <value>
+                <fullName>Disputing Payments</fullName>
+                <default>false</default>
+                <label>Disputing Payments</label>
+            </value>
+            <value>
+                <fullName>Went directly through IRS</fullName>
+                <default>false</default>
+                <label>Went directly through IRS</label>
+            </value>
+            <value>
+                <fullName>Paid off the debt themselves</fullName>
+                <default>false</default>
+                <label>Paid off the debt themselves</label>
+            </value>
+            <value>
+                <fullName>Cancelled within 3 days of signing</fullName>
+                <default>false</default>
+                <label>Cancelled within 3 days of signing</label>
+            </value>
+            <value>
+                <fullName>TSA</fullName>
+                <default>false</default>
+                <label>TSA</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

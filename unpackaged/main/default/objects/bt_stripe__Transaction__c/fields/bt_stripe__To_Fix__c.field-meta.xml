@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__To_Fix__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This field displays a message about the Transaction if it will not capture correctly.</description>
+    <externalId>false</externalId>
+    <formula>If( 
+bt_stripe__Auto_Capture__c = TRUE &amp;&amp; ( ISBLANK(bt_stripe__Due_Date__c) &amp;&amp; ISBLANK(bt_stripe__Date_To_Process__c)), 
+&quot;If Auto-Process is checked, a Due Date or Date to Process is needed to automatically capture this transaction.&quot;,
+If( bt_stripe__Invalid_Payment_Method__c = TRUE,
+&quot;The related Payment Method is not valid to capture this transaction.&quot;,
+If(bt_stripe__Auto_Capture__c = TRUE &amp;&amp; ISBLANK( bt_stripe__Payment_Method__c ) &amp;&amp; RecordType.Name = &#39;Charge&#39;,
+&quot;If Auto-Process is checked, a Payment Method is needed to automatically capture this transaction.&quot;,
+If(bt_stripe__Auto_Capture__c = TRUE &amp;&amp; ISBLANK( bt_stripe__Connected_Account__c ) &amp;&amp; RecordType.Name = &#39;Transfer&#39; ,
+&quot;If Auto-Process is checked, a Connected Account is needed to automatically process this transaction.&quot;,
+If(bt_stripe__Auto_Capture__c = TRUE &amp;&amp; ISBLANK( bt_stripe__Connected_Account__c ) &amp;&amp; ISBLANK( bt_stripe__Payment_Method__c ) &amp;&amp; RecordType.Name = &#39;Payout&#39; ,
+&quot;If Auto-Process is checked, a Connected Account/Payment Method is needed to automatically process this transaction.&quot;,
+null
+)
+)
+)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>This field displays a message about the Transaction if it will not capture correctly.</inlineHelpText>
+    <label>To Fix</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

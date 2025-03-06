@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SecondTradeValidation</fullName>
+    <active>false</active>
+    <errorConditionFormula>RecordType.Name = &quot;Second Trade&quot;&amp;&amp; HasOpportunityLineItem =FALSE&amp;&amp; ISPICKVAL(StageName, &quot;Intro Pending&quot;)</errorConditionFormula>
+    <errorMessage>You must add services in order to close a second trade opportunity.</errorMessage>
+</ValidationRule>

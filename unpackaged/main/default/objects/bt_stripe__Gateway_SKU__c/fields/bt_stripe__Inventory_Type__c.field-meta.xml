@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Inventory_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Inventory type. Possible values are finite, bucket (not quantified), and infinite</description>
+    <inlineHelpText>Inventory type. Possible values are finite, bucket (not quantified), and infinite</inlineHelpText>
+    <label>Inventory Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>infinite</fullName>
+                <default>false</default>
+                <label>Infinite</label>
+            </value>
+            <value>
+                <fullName>bucket</fullName>
+                <default>false</default>
+                <label>Bucket</label>
+            </value>
+            <value>
+                <fullName>finite</fullName>
+                <default>false</default>
+                <label>Finite</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

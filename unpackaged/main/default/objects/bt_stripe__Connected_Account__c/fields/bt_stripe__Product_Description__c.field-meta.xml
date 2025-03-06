@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Product_Description__c</fullName>
+    <deprecated>false</deprecated>
+    <description>An internal-only description of the product or service provided. This is used by Stripe in the event the account gets flagged for potential fraud.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>An internal-only description of the product or service provided. This is used by Stripe in the event the account gets flagged for potential fraud.</inlineHelpText>
+    <label>Product Description</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

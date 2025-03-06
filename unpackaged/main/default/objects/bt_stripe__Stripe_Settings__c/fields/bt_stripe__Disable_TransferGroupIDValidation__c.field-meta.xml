@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Disable_TransferGroupIDValidation__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>When disabled, Transaction: Process with Transfer Group can be TRUE without a value in Transfer Group ID.</description>
+    <inlineHelpText>When disabled, Transaction: Process with Transfer Group can be TRUE without a value in Transfer Group ID.</inlineHelpText>
+    <label>Disable Transfer Group ID Validation</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

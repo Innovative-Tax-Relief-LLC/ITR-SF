@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Must_Select_SubStage_Values_at_Agreement</fullName>
+    <active>false</active>
+    <description>Users cannot set the sub-stage to &#39;Sent POAs&#39; without selecting one of the Agreement sub-stage values.</description>
+    <errorConditionFormula>AND(
+    ISPICKVAL(StageName, &#39;Agreements&#39;),
+    ISPICKVAL(Sub_Stage__c, &#39;Send POAs&#39;),
+				ISPICKVAL(Type,&#39;1st Trade&#39;),
+   AND(NOT(
+        OR(
+            ISPICKVAL(PRIORVALUE(Sub_Stage__c), &#39;Sent Agreement&#39;),
+            ISPICKVAL(PRIORVALUE(Sub_Stage__c), &#39;Send Agreement&#39;),
+            ISPICKVAL(PRIORVALUE(Sub_Stage__c), &#39;Received Agreement&#39;)
+        )
+    )
+)
+)</errorConditionFormula>
+    <errorMessage>You cannot set the sub-stage to &#39;Sent POAs&#39; without selecting one of the Agreement sub-stage values.</errorMessage>
+</ValidationRule>

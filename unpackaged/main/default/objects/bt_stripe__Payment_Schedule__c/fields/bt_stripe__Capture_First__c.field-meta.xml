@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Capture_First__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>When checked, the first Transaction created in the Schedule will process automatically. A Payment Method must be related to the Schedule prior to generating Transactions.</description>
+    <inlineHelpText>When checked, the first Transaction created in the Schedule will process automatically. A Payment Method must be related to the Schedule prior to generating Transactions.</inlineHelpText>
+    <label>Capture First Transaction Now</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

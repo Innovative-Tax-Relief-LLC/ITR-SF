@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Paused_Invoice_Behavior__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The payment collection behavior for this subscription while paused.</description>
+    <inlineHelpText>The payment collection behavior for this subscription while paused.</inlineHelpText>
+    <label>Paused Invoice Behavior</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>keep_as_draft</fullName>
+                <default>false</default>
+                <label>Keep As Draft</label>
+            </value>
+            <value>
+                <fullName>mark_uncollectible</fullName>
+                <default>false</default>
+                <label>Mark Uncollectible</label>
+            </value>
+            <value>
+                <fullName>void</fullName>
+                <default>false</default>
+                <label>Void</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

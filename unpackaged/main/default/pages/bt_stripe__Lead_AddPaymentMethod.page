@@ -1,0 +1,5 @@
+<apex:page standardController="Lead" showQuickActionVfHeader="false">
+	<c:BT_CreatePaymentMethod relatedTo="{!Lead.Id}" relatedToObjectName="Lead" relatedToName="{!Lead.Name}"
+		holdersName="{!Lead.Name}" email="{!Lead.Email}"
+		street="{!Lead.Street}" city="{!Lead.City}" state="{!Lead.State}" postalCode="{!Lead.PostalCode}"/>
+</apex:page>

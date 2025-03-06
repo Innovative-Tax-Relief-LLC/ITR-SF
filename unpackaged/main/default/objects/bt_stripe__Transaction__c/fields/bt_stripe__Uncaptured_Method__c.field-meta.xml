@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Uncaptured_Method__c</fullName>
+    <deprecated>false</deprecated>
+    <inlineHelpText>This field&#39;s value is set automatically. Manual: If your transaction was authorized and you refunded the charge before it was automatically released. Automatic: The authorization expired and Gateway released the funds back to the card automatically.</inlineHelpText>
+    <label>Uncaptured Method</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Manual</fullName>
+                <default>false</default>
+                <label>Manual</label>
+            </value>
+            <value>
+                <fullName>Automatic</fullName>
+                <default>false</default>
+                <label>Automatic</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

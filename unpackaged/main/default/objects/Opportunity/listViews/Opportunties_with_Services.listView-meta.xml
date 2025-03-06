@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunties_with_Services</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>Has_Services__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.TYPE</columns>
+    <columns>OPPORTUNITY.LEAD_SOURCE</columns>
+    <columns>OPPORTUNITY.RECORDTYPE</columns>
+    <columns>OPPORTUNITY.CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Has_Services__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Opportunties with Services</label>
+    <sharedTo>
+        <group>ITR_Billing_Team</group>
+    </sharedTo>
+</ListView>

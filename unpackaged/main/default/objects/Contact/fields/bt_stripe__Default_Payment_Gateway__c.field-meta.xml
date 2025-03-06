@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Default_Payment_Gateway__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>This field is automatically set from the related Default Payment Method&#39;s Payment Gateway.</description>
+    <inlineHelpText>This field is automatically set from the related Default Payment Method&#39;s Payment Gateway.</inlineHelpText>
+    <label>Default Payment Gateway</label>
+    <referenceTo>bt_stripe__Payment_Gateway__c</referenceTo>
+    <relationshipLabel>Contacts</relationshipLabel>
+    <relationshipName>Contacts</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_Payment_Method</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Create Payment Method</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>/flow/Create_Payment_Method?defaultFieldValues=CreditCardNumber={!Opportunity.Credit_Card_Number__c},CVV={!Opportunity.CVV__c},AccountNumber={!Opportunity.Account_Number__c},RoutingNumber={!Opportunity.Routing_Number__c},recordId={!Opportunity.Id}&amp;retURL=/{!Opportunity.Id}</url>
+</WebLink>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Failed_Transactions</fullName>
+    <booleanFilter>(1 OR 2) AND 3 and 4</booleanFilter>
+    <columns>NAME</columns>
+    <columns>bt_stripe__Related_Account__c</columns>
+    <columns>bt_stripe__Amount__c</columns>
+    <columns>bt_stripe__Balance_Status__c</columns>
+    <columns>bt_stripe__Payment_Status__c</columns>
+    <columns>bt_stripe__Transaction_Status__c</columns>
+    <columns>bt_stripe__Opportunity2__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>bt_stripe__Opportunity2__c</field>
+        <operation>contains</operation>
+        <value>1st Trade</value>
+    </filters>
+    <filters>
+        <field>bt_stripe__Opportunity2__c</field>
+        <operation>contains</operation>
+        <value>First Trade</value>
+    </filters>
+    <filters>
+        <field>bt_stripe__Transaction_Status__c</field>
+        <operation>equals</operation>
+        <value>Needs Review,Failed</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>bt_stripe__Transaction__c.bt_stripe__Charge</value>
+    </filters>
+    <label>Failed Transactions- 1st Trade</label>
+</ListView>

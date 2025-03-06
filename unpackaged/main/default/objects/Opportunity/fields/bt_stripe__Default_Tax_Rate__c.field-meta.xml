@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Default_Tax_Rate__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The tax rate that will apply to any subscription item if tax_rates is not set. Invoices created will have their default_tax_rates populated from the subscription.</description>
+    <inlineHelpText>The tax rate that will apply to any subscription item if tax_rates is not set. Invoices created will have their default_tax_rates populated from the subscription.</inlineHelpText>
+    <label>Default Tax</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>3</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Percent</type>
+</CustomField>

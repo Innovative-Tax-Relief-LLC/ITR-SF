@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Refund_Policy_Disclosure__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Documentation demonstrating that the customer was shown your refund policy prior to purchase.</description>
+    <inlineHelpText>Documentation demonstrating that the customer was shown your refund policy prior to purchase.</inlineHelpText>
+    <label>Refund Policy Disclosure</label>
+    <length>32768</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>6</visibleLines>
+</CustomField>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BusinessProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tax Prep and Negotiation Case Process</fullName>
+    <isActive>true</isActive>
+    <values>
+        <fullName>Case Completed Failed</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Case Completed Successful</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Intro</fullName>
+        <default>true</default>
+    </values>
+    <values>
+        <fullName>Resolution Docs Accepted</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Resolution Docs Collected</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Resolution Docs Requested</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Resolution Docs Submitted</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Tax Prep Docs Accepted</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Tax Prep Docs Collected</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Tax Prep Docs Requested</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Tax Prep Docs Submitted</fullName>
+        <default>false</default>
+    </values>
+</BusinessProcess>

@@ -1,0 +1,8 @@
+<apex:page standardController="Contact" showQuickActionVfHeader="false">
+	<c:BT_CreatePaymentMethod relatedTo="{!Contact.Id}" relatedToObjectName="Contact" relatedToName="{!Contact.Name}"
+		paymentGatewayId="{!Contact.bt_stripe__Default_Payment_Gateway__c}"
+		holdersName="{!Contact.Name}" email="{!Contact.Email}"
+		street="{!Contact.MailingStreet}" city="{!Contact.MailingCity}"
+		state="{!Contact.MailingState}" postalCode="{!Contact.MailingPostalCode}"
+		country="{!Contact.MailingCountry}" />
+</apex:page>

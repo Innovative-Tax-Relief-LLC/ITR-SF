@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Disable_Stripe_Support_Currency__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>If checked, the Apex validation rules will be disabled. Caution! If this custom setting is disabled, your Payment Method may fail due to not being supported by Stripe.</description>
+    <inlineHelpText>If checked, the Apex validation rules will be disabled. Caution! If this custom setting is disabled, your Payment Method may fail due to not being supported by Stripe.</inlineHelpText>
+    <label>Disable Stripe Support Currency</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

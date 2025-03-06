@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Update_Balance</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <height>600</height>
+    <linkType>page</linkType>
+    <masterLabel>Update Balance</masterLabel>
+    <openType>sidebar</openType>
+    <page>bt_stripe__ConnectedAccount_UpdateBalance</page>
+    <protected>false</protected>
+</WebLink>

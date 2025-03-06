@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__LineItem</fullName>
+    <active>true</active>
+    <description>use this for all non stripe line items for Invoice</description>
+    <label>Line Item</label>
+</RecordType>

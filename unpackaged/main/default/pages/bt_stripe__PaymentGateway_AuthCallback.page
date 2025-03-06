@@ -1,0 +1,7 @@
+<apex:page showHeader="true" sidebar="true" controller="bt_stripe.PaymentGateway_AuthController" action="{!processCallbackFactory}">
+	<!--
+	this page is called from Stripe once a customer creates/links a Stripe Account to our Payments app. the processCallback
+	action creates/updates a Payment Gateway record - then this page redirects to the Payment Gateway record
+	-->
+	<apex:pageMessages />
+</apex:page>

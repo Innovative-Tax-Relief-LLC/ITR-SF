@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Disable_Transaction_TriggerDeclarative__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <inlineHelpText>If checked, the Transaction Trigger will be disabled and the three checkboxes on Transaction (authorize, capture, refund) will not work.</inlineHelpText>
+    <label>Disable Authorize, Capture, Refund Logic</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

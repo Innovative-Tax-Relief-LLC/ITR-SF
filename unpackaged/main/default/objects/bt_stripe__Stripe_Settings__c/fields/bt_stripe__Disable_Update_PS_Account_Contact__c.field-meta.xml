@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Disable_Update_PS_Account_Contact__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>By default the account &amp; contact on payment schedule if null are populated with Payment method account &amp; contact. Check this to disable this</description>
+    <inlineHelpText>By default the account &amp; contact on payment schedule if null are populated with Payment method account &amp; contact. Check this to disable this</inlineHelpText>
+    <label>Disable Update PS Account/Contact</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

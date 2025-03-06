@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Must_Set_Values_at_Investigation</fullName>
+    <active>false</active>
+    <description>Users must confirm that customers have returned their agreements, POAs, and paid their payments before proceeding to the next step.</description>
+    <errorConditionFormula>AND(ISPICKVAL(StageName, &#39;Investigation&#39;),
+    
+				ISPICKVAL(Type,&#39;1st Trade&#39;),
+			AND(OR(	
+    Received_Agreements__c = FALSE,
+				Received_POAs__c = FALSE,
+			 Processed_Payment__c= FALSE
+   )				
+)
+				)</errorConditionFormula>
+    <errorMessage>You must confirm the customer has returned his/her agreements, POAs, and paid his/her payments before proceeding to the next step.</errorMessage>
+</ValidationRule>

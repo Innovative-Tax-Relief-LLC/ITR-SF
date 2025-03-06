@@ -1,0 +1,153 @@
+<apex:page controller="bt_stripe.ConnectedAccountSendToStripeCtrl" action="{!initDocumentUpload}" showQuickActionVfHeader="false">
+
+	<c:BT_Common /> <!-- includes common html and javascript we use in all our VF Pages & Components -->
+
+	<!-- setting max-width here to it doesn't stretch across the entire screen on desktops - this also keeps it looking good for mobile -->
+	<apex:outputpanel layout="block" style="max-width:420px;margin:auto;padding:10px;">
+
+		<!-- put in an outer container so we can easily hide everything -->
+		<div id="outerContainer" style="padding:0px;">
+			<article class="slds-card">
+				<div class="slds-card__header slds-grid">
+					<header class="slds-media slds-media_center slds-has-flexi-truncate">
+						<div class="slds-media__figure">
+							<span class="slds-icon_container slds-icon-standard-file" title="file">
+								<svg class="slds-icon slds-icon_small" aria-hidden="true">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/standard-sprite/svg/symbols.svg#file')}"></use>
+								</svg>
+								<span class="slds-assistive-text">file upload</span>
+							</span>
+						</div>
+						<div class="slds-media__body">
+							<h2 class="slds-card__header-title">
+								<span>Upload Verification Documents</span>
+							</h2>
+						</div>
+					</header>
+				</div>
+				<div class="slds-card__body slds-card__body_inner">
+
+					<apex:form id="myForm" >
+						<apex:inputHidden value="{!doc.bt_stripe__File_Id__c}" id="frontFileInputId"/>
+						<apex:inputHidden value="{!doc2.bt_stripe__File_Id__c}" id="backFileInputId"/>
+						<apex:actionFunction name="uploadToSF" action="{!uploadVerificationDoc}">
+							<apex:param name="frontFileId" assignTo="{!frontFileId}" value=""/>
+							<apex:param name="backFileId" assignTo="{!backFileId}" value=""/>
+						</apex:actionFunction>
+
+						<apex:outputPanel rendered="{!error == false}">
+							<br/>
+							Stripe accepts png and jpeg image documents.
+							<br/><br/>
+							<div id="actionForm">
+								<div class="slds-form-element">
+									<span class="slds-form-element__label" id="file-selector-primary-label">Verification Document (Front-Side)</span>
+									<div class="slds-form-element__control">
+										<apex:inputFile filename="{!doc.Title}" styleClass="upload_file" fileSize="{!doc.ContentSize}" value="{!doc.VersionData}" id="file-box"/>
+									</div>
+								</div>
+								<div class="slds-form-element slds-p-top_medium">
+									<span class="slds-form-element__label" id="file-selector-primary-label">Verification Document (Back-Side)</span>
+									<div class="slds-form-element__control">
+										<apex:inputFile filename="{!doc2.Title}" styleClass="upload_file" fileSize="{!doc2.ContentSize}" value="{!doc2.VersionData}" id="file-box2"/>
+									</div>
+								</div>
+							</div>
+							<br/>
+						</apex:outputPanel>
+					</apex:form>
+				</div>
+				<footer class="slds-card__footer">
+					<apex:outputPanel rendered="{!error == false}">
+						<button id="actionButton" class="slds-button slds-button--brand slds-not-selected" aria-live="assertive" onclick="uploadFile()">
+							<span class="slds-text-not-selected">Upload Files</span>
+						</button>
+					</apex:outputPanel>
+
+					<button id="back" class="slds-button slds-button_neutral slds-not-selected " aria-live="assertive" onclick="navigateTo('{!JSENCODE(recordId)}')">
+						<span class="slds-text-not-selected">Return To Record</span>
+					</button>
+				</footer>
+			</article>
+		</div>
+	</apex:outputpanel>
+
+	<script type="text/javascript">
+	window.onload = function() {
+		if ({!error}) { // this attribute is Boolean - false positive on Reflected/Stored XSS
+			showErrorToast("{!JSENCODE(errorMessage)}");
+		}
+	};
+	var fileId1;
+	var fileId2;
+
+	function uploadFile() {
+		toggleSpinner(); // show spinner
+		let className = '.' + 'upload-file';
+		let file1 = document.getElementsByClassName("upload_file")[0].files[0];
+		var data = new FormData();
+		data.append('purpose', 'identity_document');
+		data.append('file', file1);
+		var xhr = new XMLHttpRequest(); // https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+		xhr.open('POST', 'https://uploads.stripe.com/v1/files');
+		xhr.setRequestHeader('Authorization', 'Bearer ' + '{!pubKey}');
+		xhr.onload = function() {
+			if (xhr.status === 200) {
+				var response = JSON.parse(xhr.responseText);
+				if (response.id) { // see if success
+					fileId1 = response.id;
+					//even though we pass the param to action function - it is of no use as the parameter goes null to apex server if we do not
+					//use rerender attribute. Issue we cannot use rerender attribute with input file.
+					//so two avoid 2 server callouts we are updatingthe doc file input hidden field with respective file ID so that we have no issues & we can
+					//by pass 2 server callouts
+					document.getElementById('{!$Component.myForm.frontFileInputId}').value=fileId1;
+					uploadfile2();
+				} else {
+					showErrorToast("Unable to upload front side: " + JSON.stringify(response));
+					toggleSpinner(); // hide spinner
+				}
+			}
+		};
+		xhr.send(data);
+	}
+
+
+	function uploadfile2() {
+		let file2 = document.getElementsByClassName("upload_file")[1].files[0];
+		var data = new FormData();
+		data.append('purpose', 'identity_document');
+		data.append('file', file2);
+		var xhr = new XMLHttpRequest(); // https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+		xhr.open('POST', 'https://uploads.stripe.com/v1/files');
+		xhr.setRequestHeader('Authorization', 'Bearer ' + '{!pubKey}');
+		xhr.onload = function() {
+			if (xhr.status === 200) {
+				var response = JSON.parse(xhr.responseText);
+				if (response.id) { // see if success
+
+					fileId2 = response.id;
+
+					//even though we pass the param to action function - it is of no use as the parameter goes null to apex server if we do not
+					//use rerender attribute. Issue we cannot use rerender attribute with input file.
+					//so two avoid 2 server callouts we are updatingthe doc file input hidden field with respective file ID so that we have no issues & we can
+					//by pass 2 server callouts
+					document.getElementById('{!$Component.myForm.backFileInputId}').value=fileId2;
+					uploadToSF(fileId1, fileId2);
+
+					document.getElementById('actionForm').style.display = 'none'; // hide input
+					document.getElementById('actionButton').style.display = 'none'; // hide button
+
+					// this is a little funky. we show this message even though the files haven't been uploaded to SF yet
+					// the problem is that we can't call a  oncomplete="allDone()" from the actionFunction because file
+					// uploads don't support it - we have to let the controller do the redirect once it's done uploading
+					showSuccessToast('Verification Document upload in progress...','');
+				} else {
+					showErrorToast("Unable to upload back side: " + JSON.stringify(response));
+					toggleSpinner(); // hide spinner
+				}
+			}
+		};
+		xhr.send(data);
+	}
+	</script>
+</apex:page>

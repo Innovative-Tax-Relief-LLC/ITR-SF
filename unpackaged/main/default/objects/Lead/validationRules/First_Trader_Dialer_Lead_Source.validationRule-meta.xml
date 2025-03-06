@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>First_Trader_Dialer_Lead_Source</fullName>
+    <active>true</active>
+    <description>This rule prevents Dialers and First Traders to change the lead source value field after is created.</description>
+    <errorConditionFormula>ISCHANGED(LeadSource)&amp;&amp; OR($Profile.Name =&quot;ITR First Trader&quot;,
+$Profile.Name =&quot;ITR Dialer&quot;,$Profile.Name =&quot;ITR Processing Agent&quot;	)</errorConditionFormula>
+    <errorDisplayField>LeadSource</errorDisplayField>
+    <errorMessage>You are not able to change the lead source, please contact the system administrator</errorMessage>
+</ValidationRule>

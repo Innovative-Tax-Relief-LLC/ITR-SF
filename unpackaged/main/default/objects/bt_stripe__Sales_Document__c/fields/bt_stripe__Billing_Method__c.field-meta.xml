@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Billing_Method__c</fullName>
+    <deprecated>false</deprecated>
+    <description>When charging automatically, Stripe will attempt to pay this invoice  using the default source attached to the customer. When sending an invoice, Stripe will email your customer an invoice with payment instructions.</description>
+    <inlineHelpText>When charging automatically, Stripe will attempt to pay this invoice  using the default source attached to the customer. When sending an invoice, Stripe will email your customer an invoice with payment instructions.</inlineHelpText>
+    <label>Billing Method</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>charge_automatically</fullName>
+                <default>false</default>
+                <label>Charge Automatically</label>
+            </value>
+            <value>
+                <fullName>send_invoice</fullName>
+                <default>true</default>
+                <label>Send Invoice</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

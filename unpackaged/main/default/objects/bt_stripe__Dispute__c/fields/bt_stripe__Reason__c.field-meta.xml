@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Reason__c</fullName>
+    <deprecated>false</deprecated>
+    <label>Reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+                <label>Duplicate</label>
+            </value>
+            <value>
+                <fullName>Fraudulent</fullName>
+                <default>false</default>
+                <label>Fraudulent</label>
+            </value>
+            <value>
+                <fullName>Subscription Canceled</fullName>
+                <default>false</default>
+                <label>Subscription Canceled</label>
+            </value>
+            <value>
+                <fullName>Product Unacceptable</fullName>
+                <default>false</default>
+                <label>Product Unacceptable</label>
+            </value>
+            <value>
+                <fullName>Product Not Received</fullName>
+                <default>false</default>
+                <label>Product Not Received</label>
+            </value>
+            <value>
+                <fullName>Unrecognized</fullName>
+                <default>false</default>
+                <label>Unrecognized</label>
+            </value>
+            <value>
+                <fullName>Credit Not Processed</fullName>
+                <default>false</default>
+                <label>Credit Not Processed</label>
+            </value>
+            <value>
+                <fullName>General</fullName>
+                <default>false</default>
+                <label>General</label>
+            </value>
+            <value>
+                <fullName>Incorrect Account Details</fullName>
+                <default>false</default>
+                <label>Incorrect Account Details</label>
+            </value>
+            <value>
+                <fullName>Insufficient Funds</fullName>
+                <default>false</default>
+                <label>Insufficient Funds</label>
+            </value>
+            <value>
+                <fullName>Bank Cannot Process</fullName>
+                <default>false</default>
+                <label>Bank Cannot Process</label>
+            </value>
+            <value>
+                <fullName>Debit Not Authorized</fullName>
+                <default>false</default>
+                <label>Debit Not Authorized</label>
+            </value>
+            <value>
+                <fullName>Customer Initiated</fullName>
+                <default>false</default>
+                <label>Customer Initiated</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

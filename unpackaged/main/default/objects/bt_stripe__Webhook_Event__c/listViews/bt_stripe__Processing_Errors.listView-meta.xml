@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Processing_Errors</fullName>
+    <columns>NAME</columns>
+    <columns>bt_stripe__Type__c</columns>
+    <columns>bt_stripe__Payment_Gateway__c</columns>
+    <columns>bt_stripe__Created__c</columns>
+    <columns>bt_stripe__Processing_Error__c</columns>
+    <columns>bt_stripe__Processed__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>bt_stripe__Processing_Error__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>Processing Errors</label>
+</ListView>

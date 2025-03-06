@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Webhook_Label_Validation</fullName>
+    <active>true</active>
+    <description>Validation for special characters in Webhook Label</description>
+    <errorConditionFormula>NOT(REGEX(  bt_stripe__Webhook_Label__c ,&quot;^[a-zA-Z0-9_-]*$&quot;))</errorConditionFormula>
+    <errorDisplayField>bt_stripe__Webhook_Label__c</errorDisplayField>
+    <errorMessage>Webhook Label can not have a space or any special characters in the name, except an underscore (ex. _).</errorMessage>
+</ValidationRule>

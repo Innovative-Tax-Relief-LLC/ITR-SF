@@ -1,0 +1,5 @@
+.slds-m-around_medium {
+    display: flex;
+    justify-content: left;
+    gap: 0.5rem;
+}

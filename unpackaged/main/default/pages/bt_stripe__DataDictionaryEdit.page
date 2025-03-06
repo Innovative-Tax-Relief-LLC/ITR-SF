@@ -1,0 +1,36 @@
+<apex:page standardController="bt_stripe__Data_Dictionary_Entry__c" extensions="bt_stripe.DataDictionaryEntryController" showHeader="true" sidebar="true">
+	
+	<Apex:form >
+		<apex:inputHidden value="{!bt_stripe__Data_Dictionary_Entry__c.bt_stripe__Data_Dictionary_Group__c}" />
+		<apex:inputHidden value="{!bt_stripe__Data_Dictionary_Entry__c.Id}" />
+	</Apex:form>
+
+	<apex:includeLightning />
+	<div id="lDiv"/>
+	<script>
+	var nameSpacePrefix = '{!JSENCODE(nameSpacePrefix)}';
+	var groupId = '{!groupId}';
+	var recordId = '{!recordId}';
+
+	var params = {};
+	params['groupId'] = groupId;
+	if (recordId) {
+		params['recordId'] = recordId;
+	}
+
+	if (nameSpacePrefix == '') {
+		nameSpacePrefix = 'c';
+	}
+	$Lightning.use(nameSpacePrefix + ':DataDictionaryEntryLtngApp', function() {
+		$Lightning.createComponent(nameSpacePrefix + ':dataDictionaryEdit', params, 'lDiv',
+		function(cmp) { 
+			$A.eventService.addHandler({
+				event: 'force:navigateToSObject',
+				handler: function(event) {
+					window.location = '/' + event.getParams().recordId;
+				}
+			});
+		});
+	});
+	</script>
+</apex:page>

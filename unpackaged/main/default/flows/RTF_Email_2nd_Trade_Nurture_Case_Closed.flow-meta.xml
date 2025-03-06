@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Email_Ext_2nd_Trade_Nurture_Case_Closed</name>
+        <label>[Email] [Ext] 2nd Trade Nurture | Case Closed</label>
+        <locationX>50</locationX>
+        <locationY>600</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recipientId</name>
+            <value>
+                <elementReference>Get_Person_Email_Address_2T.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>logEmailOnSend</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailTemplateId</name>
+            <value>
+                <elementReference>$Label.Email_Template_2nd_Trade_Nurture_Case_Closed</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Pitched_Nurture_1T</name>
+        <label>Pitched-Nurture 1T</label>
+        <locationX>1106</locationX>
+        <locationY>600</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recipientId</name>
+            <value>
+                <elementReference>Get_Person_Email_Address_1T.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>logEmailOnSend</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailTemplateId</name>
+            <value>
+                <elementReference>$Label.Pitched_Nurture_1T</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>62.0</apiVersion>
+    <customErrors>
+        <name>No_Email_Exists_for_First_Trade_Customer</name>
+        <label>No Email Exists for First Trade Customer.</label>
+        <locationX>1634</locationX>
+        <locationY>600</locationY>
+        <customErrorMessages>
+            <errorMessage>This customer does not have an email address. As a result, he or she will not receive a pitch-nurture email.</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>No_Email_Exists_for_this_Second_Trade_Customer</name>
+        <label>No Email Exists for this Second Trade Customer</label>
+        <locationX>578</locationX>
+        <locationY>600</locationY>
+        <customErrorMessages>
+            <errorMessage>This customer does not have an email address. As a result, he or she will not receive a pitch-nurture email.</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <name>Does_First_Trade_Customer_have_an_email_address</name>
+        <label>Does First Trade Customer have an email address?</label>
+        <locationX>1370</locationX>
+        <locationY>492</locationY>
+        <defaultConnector>
+            <targetReference>No_Email_Exists_for_First_Trade_Customer</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No - Email Address Exists</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Email_address_exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Person_Email_Address_1T.Email</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Pitched_Nurture_1T</targetReference>
+            </connector>
+            <label>Yes - Email address exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Does_Second_Trade_customer_have_an_emaill_address</name>
+        <label>Does Second Trade customer have an emaill address?</label>
+        <locationX>314</locationX>
+        <locationY>492</locationY>
+        <defaultConnector>
+            <targetReference>No_Email_Exists_for_this_Second_Trade_Customer</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Email_address</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Person_Email_Address_2T.Email</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Email_Ext_2nd_Trade_Nurture_Case_Closed</targetReference>
+            </connector>
+            <label>Yes - Email address</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>X1st_Trade_opportunity</name>
+        <label>1st Trade opportunity</label>
+        <locationX>1634</locationX>
+        <locationY>276</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>X1st_Trade</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordTypeId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Label.First_Trade_Opportunity_record_type</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Person_Email_Address_1T</targetReference>
+            </connector>
+            <label>1st Trade</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>X2nd_Trade_Opportunity</name>
+        <label>2nd Trade Opportunity</label>
+        <locationX>578</locationX>
+        <locationY>276</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>X2nd_Trade</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordTypeId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Label.Second_Trade_Opportunity_record_Type</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Person_Email_Address_2T</targetReference>
+            </connector>
+            <label>2nd Trade?</label>
+        </rules>
+    </decisions>
+    <description>[Email] [Ext] 2nd Trade Nurture | Case Closed - 3 - 60 days</description>
+    <environments>Default</environments>
+    <interviewLabel>RTF: [Email] 2nd Trade Nurture | Case Closed {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RTF: [Email] 1st or 2nd Trade Nurture | Case Closed</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Person_Email_Address_1T</name>
+        <label>Get Person Email Address - 1T</label>
+        <locationX>1370</locationX>
+        <locationY>384</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Does_First_Trade_Customer_have_an_email_address</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Person_Email_Address_2T</name>
+        <label>Get Person Email Address - 2T</label>
+        <locationX>314</locationX>
+        <locationY>384</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Does_Second_Trade_customer_have_an_emaill_address</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>584</locationX>
+        <locationY>0</locationY>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Closed Lost</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Pitch</stringValue>
+            </value>
+        </filters>
+        <object>Opportunity</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <scheduledPaths>
+            <name>X2nd_Trade_Nurture</name>
+            <connector>
+                <targetReference>X2nd_Trade_Opportunity</targetReference>
+            </connector>
+            <label>2nd Trade Nurture</label>
+            <offsetNumber>60</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
+            <timeSource>RecordTriggerEvent</timeSource>
+        </scheduledPaths>
+        <scheduledPaths>
+            <name>X1st_Trade_Pitch_stage_of_the_opportunity</name>
+            <connector>
+                <targetReference>X1st_Trade_opportunity</targetReference>
+            </connector>
+            <label>1st Trade Pitch stage of the opportunity</label>
+            <offsetNumber>7</offsetNumber>
+            <offsetUnit>Days</offsetUnit>
+            <timeSource>RecordTriggerEvent</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__End_Date__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The end date from which the logic is calculated. Can be the last Transaction date or the final date to calculate the series of Transactions with. Do not define if Recurrence Method is defined.</description>
+    <inlineHelpText>The end date from which the logic is calculated. Can be the last Transaction date or the final date to calculate the series of Transactions with. Do not define if Recurrence Method is defined.</inlineHelpText>
+    <label>End Date</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Live</fullName>
+    <columns>NAME</columns>
+    <columns>bt_stripe__Default__c</columns>
+    <columns>bt_stripe__Test_Mode__c</columns>
+    <columns>bt_stripe__Webhook_Label__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>bt_stripe__Test_Mode__c</field>
+        <operation>notEqual</operation>
+        <value>1</value>
+    </filters>
+    <label>Live</label>
+</ListView>

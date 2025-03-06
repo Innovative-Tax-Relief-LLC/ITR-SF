@@ -1,0 +1,92 @@
+<apex:page standardController="bt_stripe__Payment_Schedule__c" extensions="bt_stripe.PaymentScheduleController" action="{!init}" showQuickActionVfHeader="false">
+
+	<c:BT_Common /> <!-- includes common html and javascript we use in all our VF Pages & Components -->
+
+	<!-- setting max-width here to it doesn't stretch across the entire screen on desktops - this also keeps it looking good for mobile -->
+	<apex:outputpanel layout="block" style="max-width:420px;margin:auto;padding:10px;">
+
+		<!-- put in an outer container so we can easily hide everything -->
+		<div id="outerContainer" style="padding:0px;">
+			<article class="slds-card">
+				<div class="slds-card__header slds-grid">
+					<header class="slds-media slds-media_center slds-has-flexi-truncate">
+						<div class="slds-media__figure">
+							<span class="slds-icon_container slds-icon-custom-custom41" title="transaction">
+								<svg class="slds-icon slds-icon_small" aria-hidden="true">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/custom-sprite/svg/symbols.svg#custom41')}"></use>
+								</svg>
+								<span class="slds-assistive-text">transaction</span>
+							</span>
+						</div>
+						<div class="slds-media__body">
+							<h2 class="slds-card__header-title">
+								<span>Generate Transactions for {!bt_stripe__Payment_Schedule__c.Name}</span>
+							</h2>
+						</div>
+					</header>
+				</div>
+				<div class="slds-card__body slds-card__body_inner">
+
+					<apex:form id="main">
+						<apex:actionFunction name="generateTra" action="{!generate}" oncomplete="allDone()" rerender="errorMessage">
+						</apex:actionFunction>
+
+						<apex:inputHidden value="{!errorMessage}" id="errorMessage" />
+
+						<apex:inputHidden value="{!bt_stripe__Payment_Schedule__c.bt_stripe__Payment_Method__c}" />
+						
+						<apex:inputHidden value="{!bt_stripe__Payment_Schedule__c.bt_stripe__Initial_Amount__c}" />
+						<apex:inputHidden value="{!bt_stripe__Payment_Schedule__c.bt_stripe__Each_Amount__c}" />
+						<apex:inputHidden value="{!bt_stripe__Payment_Schedule__c.bt_stripe__Total_Amount__c}" />
+						<apex:inputHidden value="{!bt_stripe__Payment_Schedule__c.bt_stripe__Capture_First__c}" />
+						<div style="display:none"><apex:inputField value="{!bt_stripe__Payment_Schedule__c.bt_stripe__End_Date__c}" /></div>
+						<apex:inputHidden value="{!bt_stripe__Payment_Schedule__c.bt_stripe__Count__c}" />
+						<apex:inputHidden value="{!bt_stripe__Payment_Schedule__c.bt_stripe__Status__c}" />
+					</apex:form>
+
+					<apex:outputPanel rendered="{!error == false}">
+						<br/>
+						You are about to generate {!bt_stripe__Payment_Schedule__c.bt_stripe__Count__c} Transactions
+					</apex:outputPanel>
+				</div>
+				<footer class="slds-card__footer">
+					<apex:outputPanel rendered="{!error == false}">
+						<button id="actionButton" class="slds-button slds-button--brand slds-not-selected" aria-live="assertive" onclick="generateTraJS()">
+							<span class="slds-text-not-selected">Generate</span>
+						</button>
+					</apex:outputPanel>
+
+					<button id="back" class="slds-button slds-button_neutral slds-not-selected " aria-live="assertive" onclick="navigateTo('{!Payment_Schedule__c.Id}')">
+						<span class="slds-text-not-selected">Return To Schedule</span>
+					</button>
+				</footer>
+			</article>
+		</div>
+	</apex:outputpanel>
+
+	<script>
+	window.onload = function() {
+		if ({!error}) { // this attribute is Boolean - false positive on Reflected/Stored XSS
+			showErrorToast("{!JSENCODE(errorMessage)}");
+		}
+	};
+
+	function generateTraJS() {
+		toggleSpinner(); // show spinner
+		// this next method is a apex:actionFunction
+		generateTra(); // this method calls allDone() when it's complete
+		return true;
+	}
+
+	function allDone() {
+		toggleSpinner(); // hide spinner
+		document.getElementById('actionButton').style.display = 'none'; // hide button
+		var error = document.getElementById('{!$Component.main.errorMessage}').value;
+		if (error) {
+			showErrorToast(error);
+		}else { // success!
+			showSuccessToast('Transactions were successfully created for the Payment Schedule.', '{!Payment_Schedule__c.Id}');
+		}
+	}
+	</script>
+</apex:page>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X2T_Opportunities_W_Failed_Transactions</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.TYPE</columns>
+    <columns>Failed_Transaction__c</columns>
+    <columns>Failed_Transaction_Indicator__c</columns>
+    <columns>Collection_Specialist__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Failed_Transaction__c</field>
+        <operation>equals</operation>
+        <value>Yes</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Opportunity.Second_Trade</value>
+    </filters>
+    <label>2T Opportunities W/Failed Transactions</label>
+    <sharedTo>
+        <group>ITR_Billing_Team</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__New_Discount_Code</fullName>
+    <availability>online</availability>
+    <description>This can be added to the Code Eligibility related lists to make it easier for users to create a Discount Code record before they create a Code Eligibility record</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New Code</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>{!URLFOR($Action.bt_stripe__Code__c.New)}</url>
+</WebLink>

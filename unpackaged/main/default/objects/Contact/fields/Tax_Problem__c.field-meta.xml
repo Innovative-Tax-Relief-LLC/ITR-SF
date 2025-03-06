@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tax_Problem__c</fullName>
+    <label>Tax Problem</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Assets Seized</fullName>
+                <default>false</default>
+                <label>Assets Seized</label>
+            </value>
+            <value>
+                <fullName>Bank Account Levy</fullName>
+                <default>false</default>
+                <label>Bank Account Levy</label>
+            </value>
+            <value>
+                <fullName>Can&#39;t Pay Unpaid Taxes</fullName>
+                <default>false</default>
+                <label>Can&#39;t Pay Unpaid Taxes</label>
+            </value>
+            <value>
+                <fullName>Innocent Spouse</fullName>
+                <default>false</default>
+                <label>Innocent Spouse</label>
+            </value>
+            <value>
+                <fullName>Lien Filed</fullName>
+                <default>false</default>
+                <label>Lien Filed</label>
+            </value>
+            <value>
+                <fullName>Received Audit Notice</fullName>
+                <default>false</default>
+                <label>Received Audit Notice</label>
+            </value>
+            <value>
+                <fullName>Unfiled Tax Returns</fullName>
+                <default>false</default>
+                <label>Unfiled Tax Returns</label>
+            </value>
+            <value>
+                <fullName>Unpaid Penalties and Interest</fullName>
+                <default>false</default>
+                <label>Unpaid Penalties and Interest</label>
+            </value>
+            <value>
+                <fullName>Wage Garnishment</fullName>
+                <default>false</default>
+                <label>Wage Garnishment</label>
+            </value>
+            <value>
+                <fullName>Wanting to start a business</fullName>
+                <default>false</default>
+                <label>Wanting to start a business</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>N/A</fullName>
+                <default>false</default>
+                <label>N/A</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

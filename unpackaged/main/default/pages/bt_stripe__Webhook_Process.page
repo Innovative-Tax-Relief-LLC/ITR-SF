@@ -1,0 +1,7 @@
+<apex:page showHeader="true" standardController="bt_stripe__Webhook_Event__c" extensions="bt_stripe.Webhook_ProcessController" action="{!process}">
+	<apex:pagemessages />
+
+	<apex:form >
+		<apex:inputHidden value="{!bt_stripe__Webhook_Event__c.Name}" />
+	</apex:form>
+</apex:page>

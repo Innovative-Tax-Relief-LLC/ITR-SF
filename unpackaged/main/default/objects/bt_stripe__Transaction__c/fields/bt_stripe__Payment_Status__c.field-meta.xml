@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Payment_Status__c</fullName>
+    <deprecated>false</deprecated>
+    <inlineHelpText>Displays the state of the funds. Payment Status is only applicable when Transaction Status is &#39;Completed&#39;. Authorized funds will be &#39;Uncaptured&#39; after 7 days if not captured.</inlineHelpText>
+    <label>Payment Status</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Authorized</fullName>
+                <default>false</default>
+                <label>Authorized</label>
+            </value>
+            <value>
+                <fullName>Captured</fullName>
+                <default>false</default>
+                <label>Captured</label>
+            </value>
+            <value>
+                <fullName>Partially Captured</fullName>
+                <default>false</default>
+                <label>Partially Captured</label>
+            </value>
+            <value>
+                <fullName>Refunded</fullName>
+                <default>false</default>
+                <label>Refunded</label>
+            </value>
+            <value>
+                <fullName>Partially Refunded</fullName>
+                <default>false</default>
+                <label>Partially Refunded</label>
+            </value>
+            <value>
+                <fullName>Uncaptured</fullName>
+                <default>false</default>
+                <label>Uncaptured</label>
+            </value>
+            <value>
+                <fullName>Disputed</fullName>
+                <default>false</default>
+                <label>Disputed</label>
+            </value>
+            <value>
+                <fullName>Dispute Warning</fullName>
+                <default>false</default>
+                <label>Dispute Warning</label>
+            </value>
+            <value>
+                <fullName>In Transit</fullName>
+                <default>false</default>
+                <label>In Transit</label>
+            </value>
+            <value>
+                <fullName>Paid</fullName>
+                <default>false</default>
+                <label>Paid</label>
+            </value>
+            <value>
+                <fullName>Transferred</fullName>
+                <default>false</default>
+                <label>Transferred</label>
+            </value>
+            <value>
+                <fullName>Partially Reversed</fullName>
+                <default>false</default>
+                <label>Partially Reversed</label>
+            </value>
+            <value>
+                <fullName>Reversed</fullName>
+                <default>false</default>
+                <label>Reversed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

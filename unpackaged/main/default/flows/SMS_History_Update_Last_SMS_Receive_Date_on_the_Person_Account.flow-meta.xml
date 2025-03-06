@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <description>This flow updates the last SMS received date on the person account object when an incoming SMS is received.</description>
+    <environments>Default</environments>
+    <interviewLabel>SMS History - Update Last SMS Receive Date on the Person Account {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>SMS History - Update Last SMS Receive Date on the Person Account</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Last_SMS_Received_Date_Field</name>
+        <label>Update Last SMS Received Date Field</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <inputAssignments>
+            <field>Last_SMS_Received_Date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Last_SMS_Text__c</field>
+            <value>
+                <elementReference>$Record.smagicinteract__SMSText__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.smagicinteract__Account__r</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Last_SMS_Received_Date_Field</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>smagicinteract__Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Incoming</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>smagicinteract__ObjectType__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Account</stringValue>
+            </value>
+        </filters>
+        <object>smagicinteract__smsMagic__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

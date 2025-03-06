@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prospect__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Prospect</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Velocify History Records</relationshipLabel>
+    <relationshipName>Velocify_History_Records</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Day_of_Week__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Set Transactions to be due on specific days of the week, on all weekdays, or all weekends.</description>
+    <inlineHelpText>Set Transactions to be due on specific days of the week, on all weekdays, or all weekends.</inlineHelpText>
+    <label>Day of Week</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Sunday</fullName>
+                <default>false</default>
+                <label>Sunday</label>
+            </value>
+            <value>
+                <fullName>Monday</fullName>
+                <default>false</default>
+                <label>Monday</label>
+            </value>
+            <value>
+                <fullName>Tuesday</fullName>
+                <default>false</default>
+                <label>Tuesday</label>
+            </value>
+            <value>
+                <fullName>Wednesday</fullName>
+                <default>false</default>
+                <label>Wednesday</label>
+            </value>
+            <value>
+                <fullName>Thursday</fullName>
+                <default>false</default>
+                <label>Thursday</label>
+            </value>
+            <value>
+                <fullName>Friday</fullName>
+                <default>false</default>
+                <label>Friday</label>
+            </value>
+            <value>
+                <fullName>Saturday</fullName>
+                <default>false</default>
+                <label>Saturday</label>
+            </value>
+            <value>
+                <fullName>Weekday</fullName>
+                <default>false</default>
+                <label>Weekday</label>
+            </value>
+            <value>
+                <fullName>Weekend Day</fullName>
+                <default>false</default>
+                <label>Weekend Day</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>7</visibleLines>
+</CustomField>

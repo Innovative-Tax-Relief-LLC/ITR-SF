@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Payment_Gateway__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The Payment Gateway to process this Invoice through, such as an Invoice payment.</description>
+    <inlineHelpText>The Payment Gateway to process this Invoice through, such as an Invoice payment.</inlineHelpText>
+    <label>Payment Gateway</label>
+    <referenceTo>bt_stripe__Payment_Gateway__c</referenceTo>
+    <relationshipLabel>Document Link</relationshipLabel>
+    <relationshipName>Document_Links</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

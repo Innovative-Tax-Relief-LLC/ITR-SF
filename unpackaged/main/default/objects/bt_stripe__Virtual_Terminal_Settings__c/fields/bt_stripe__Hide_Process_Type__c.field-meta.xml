@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Hide_Process_Type__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Check if you wanted to set &quot;Capture Now&quot; as a default process type and hide other options.</description>
+    <inlineHelpText>Check if you wanted to set &quot;Capture Now&quot; as a default process type and hide other options.</inlineHelpText>
+    <label>Hide Process Type</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

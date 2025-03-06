@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Use_Default_Transfer_Group_Id__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>When checked, this transaction parent&#39;s Salesforce record ID will be used to populate the Transfer Group ID on creation of the record.</description>
+    <inlineHelpText>When checked, this transaction parent&#39;s Salesforce record ID will be used to populate the Transfer Group ID on creation of the record.</inlineHelpText>
+    <label>Use Default Transfer Group ID</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

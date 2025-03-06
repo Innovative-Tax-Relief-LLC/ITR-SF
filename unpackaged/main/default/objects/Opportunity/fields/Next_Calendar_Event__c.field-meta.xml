@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Next_Calendar_Event__c</fullName>
+    <description>Only displays information if the last calendar event is in the future</description>
+    <formula>IF(
+    Last_Calendar_Event__c &lt; NOW(),
+    NULL,
+    Last_Calendar_Event__c
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Displays a date if the latest event is in the future. Otherwise displays a blank value.</inlineHelpText>
+    <label>Next Calendar Event</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>DateTime</type>
+</CustomField>

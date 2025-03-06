@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Must_Be_Valid_Email_Format</fullName>
+    <active>true</active>
+    <description>Ensures the value entered is in email address format.</description>
+    <errorConditionFormula>AND(
+                NOT($Setup.bt_stripe__Stripe_Settings__c.bt_stripe__Disable_Customer_Email_Validation__c),
+                NOT(ISBLANK(bt_stripe__Email__c)),
+                NOT(REGEX(bt_stripe__Email__c, &quot;^[A-Za-z0-9._%+-/!#$%&amp;&#39;*=?^_`{|}~]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$&quot;))
+            )</errorConditionFormula>
+    <errorMessage>Email entered must be valid email address format.</errorMessage>
+</ValidationRule>

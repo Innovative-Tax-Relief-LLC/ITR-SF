@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Percent_Ownership__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The percent owned by the person of the account&#39;s Company Info.</description>
+    <inlineHelpText>The percent owned by the person of the account&#39;s Company Info.</inlineHelpText>
+    <label>Percent Ownership</label>
+    <precision>8</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

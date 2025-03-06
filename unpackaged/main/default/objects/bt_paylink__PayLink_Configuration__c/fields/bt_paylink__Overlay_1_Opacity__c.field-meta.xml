@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_paylink__Overlay_1_Opacity__c</fullName>
+    <deprecated>false</deprecated>
+    <description>You can set an opacity for the Color 1 Overlay by entering a percentage (0-99%). 99% means it&#39;s almost fully transparent.</description>
+    <inlineHelpText>You can set an opacity for the Color 1 Overlay by entering a percentage (0-99%). 99% means it&#39;s almost fully transparent.</inlineHelpText>
+    <label>Overlay 1 Opacity (%)</label>
+    <precision>2</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

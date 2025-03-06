@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Reattempted</fullName>
+    <columns>NAME</columns>
+    <columns>bt_stripe__Reattempted_Transaction__c</columns>
+    <columns>bt_stripe__Amount__c</columns>
+    <columns>bt_stripe__Processed_Date__c</columns>
+    <columns>bt_stripe__Payment_Method__c</columns>
+    <columns>bt_stripe__Due_Date__c</columns>
+    <columns>bt_stripe__Description__c</columns>
+    <columns>bt_stripe__Error_Message__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>bt_stripe__Reattempted_Transaction__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>Reattempted</label>
+</ListView>

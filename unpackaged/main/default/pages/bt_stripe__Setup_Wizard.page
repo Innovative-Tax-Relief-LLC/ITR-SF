@@ -1,0 +1,64 @@
+<apex:page showHeader="true" sidebar="false" controller="bt_stripe.SetupWizardLightningCmpController" standardStylesheets="false" docType="html-5.0"
+ applyHtmlTag="true">
+	<apex:includeLightning />
+	<c:BT_Common />
+	<style type="text/css">
+		body {
+			margin: 0px;
+		}
+
+		html body.sfdcBody,
+		.noSidebarCell {
+			margin: 0px;
+			padding: 0px;
+		}
+
+		.float {
+			position: fixed;
+			bottom: 20px;
+			right: 95px;
+		}
+
+		.intercom-borderless-frame {
+			margin-bottom: 40px !important;
+		}
+	</style>
+
+	<div id="lDiv" />
+	<script>
+		var nameSpacePrefix = '{!JSENCODE(nameSpacePrefix)}';
+		if (nameSpacePrefix == '') {
+			nameSpacePrefix = 'c';
+		}
+
+		$Lightning.use(nameSpacePrefix + ':SetupWizardLtngApp', function () {
+			$Lightning.createComponent(nameSpacePrefix + ':SetupWizard', {},
+				'lDiv',
+				function (cmp) {
+					$A.eventService.addHandler({
+						event: 'force:navigateToURL',
+						handler: function (event) {
+							if ((typeof sforce != 'undefined') && sforce && (!!sforce.one)) {
+								// VF page in S1 or Lightning Exp
+								sforce.one.navigateToURL(event.getParam('url'));
+							} else {
+								// VF page in Classic
+								window.location = event.getParam('url');
+							}
+						}
+					});
+				}
+			);
+		});
+
+		document.addEventListener("BTReferEmailSuccess", function (event) {
+			showSuccessToast('The message has been sent successfully.','');
+		});
+
+		document.addEventListener("BTReferEmailError", function (event) {
+			var errorMessage = event.detail.error;
+			showErrorToast(errorMessage);
+		});
+	</script>
+
+</apex:page>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cases_Untouched_Last_15_days</fullName>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>NAME</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>CASES.LAST_UPDATE_DATE_ONLY</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>CASES.LAST_UPDATE_DATE_ONLY</field>
+        <operation>lessThan</operation>
+        <value>N_DAYS_AGO:15</value>
+    </filters>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>notEqual</operation>
+        <value>New,Case Completed,Case Closed,Transcript Investigation,In Progress,TI PIF,TI Completed,IRS Issue,TI PIF / TI Completed,Closed</value>
+    </filters>
+    <label>Cases Untouched Last 15 days</label>
+    <sharedTo>
+        <group>Case_Managers</group>
+    </sharedTo>
+</ListView>

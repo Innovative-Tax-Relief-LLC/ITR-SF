@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Type__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Type is used to distinguish between tax fees and payment processing fees. Each type has a corresponding lookup field on the event object, and have differing functionality.</description>
+    <inlineHelpText>Tax is applied to the total after discounts are calculated. Payment processing fees are applied after tax.</inlineHelpText>
+    <label>Type</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Payment Processing</fullName>
+                <default>false</default>
+                <label>Payment Processing</label>
+            </value>
+            <value>
+                <fullName>Tax</fullName>
+                <default>false</default>
+                <label>Tax</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TI_Case_Created__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This checkbox was created to prevent dupe TI cases being created.</description>
+    <label>TI Case Created</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

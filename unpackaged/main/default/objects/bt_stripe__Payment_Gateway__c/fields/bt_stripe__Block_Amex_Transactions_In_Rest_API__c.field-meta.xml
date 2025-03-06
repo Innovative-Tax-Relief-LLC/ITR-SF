@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Block_Amex_Transactions_In_Rest_API__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>If checked, all charges with an American Express card will be blocked from any application that uses our Payments Rest API.</description>
+    <inlineHelpText>If checked, all charges with an American Express card will be blocked from any application that uses our Payments Rest API.</inlineHelpText>
+    <label>Block Amex Transactions In Rest API</label>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

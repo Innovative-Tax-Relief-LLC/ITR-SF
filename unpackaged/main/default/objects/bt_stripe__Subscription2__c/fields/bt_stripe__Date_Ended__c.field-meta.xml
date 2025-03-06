@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Date_Ended__c</fullName>
+    <deprecated>false</deprecated>
+    <description>If the Subscription ended, the date the Subscription ended.</description>
+    <inlineHelpText>If the Subscription ended, the date the Subscription ended.</inlineHelpText>
+    <label>Date Ended</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

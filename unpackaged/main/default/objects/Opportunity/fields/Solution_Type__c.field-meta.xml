@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Solution_Type__c</fullName>
+    <label>Solution Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Tax Prep Only</fullName>
+                <default>false</default>
+                <label>Tax Prep Only</label>
+            </value>
+            <value>
+                <fullName>Tax Negotiation Only</fullName>
+                <default>false</default>
+                <label>Tax Negotiation Only</label>
+            </value>
+            <value>
+                <fullName>Tax Prep and Negotiation</fullName>
+                <default>false</default>
+                <label>Tax Prep and Negotiation</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

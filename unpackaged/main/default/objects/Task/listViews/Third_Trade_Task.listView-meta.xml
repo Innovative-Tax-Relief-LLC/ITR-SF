@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Third_Trade_Task</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Third Trade Requests</label>
+    <queue>Third_Trade</queue>
+    <sharedTo>
+        <allInternalUsers />
+    </sharedTo>
+</ListView>

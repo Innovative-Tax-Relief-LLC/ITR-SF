@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Payout_Schedule_Delay_Days__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The number of days charges for the account will be held before being paid out.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The number of days charges for the account will be held before being paid out.</inlineHelpText>
+    <label>Payout Schedule Delay Days</label>
+    <precision>3</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

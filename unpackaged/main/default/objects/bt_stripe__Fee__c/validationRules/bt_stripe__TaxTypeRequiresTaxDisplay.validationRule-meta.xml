@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__TaxTypeRequiresTaxDisplay</fullName>
+    <active>true</active>
+    <description>When the fee type is Tax, a tax display setting must be selected.</description>
+    <errorConditionFormula>IF( AND( ISPICKVAL(bt_stripe__Type__c, &quot;Tax&quot;), ISPICKVAL(bt_stripe__TaxDisplaySetting__c,&quot;&quot;) ), true, false)</errorConditionFormula>
+    <errorDisplayField>bt_stripe__TaxDisplaySetting__c</errorDisplayField>
+    <errorMessage>You must select a tax display method for tax records.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Accounting</fullName>
+        <default>false</default>
+        <label>Accounting</label>
+    </customValue>
+    <customValue>
+        <fullName>Construction and Maintenance</fullName>
+        <default>false</default>
+        <label>Construction and Maintenance</label>
+    </customValue>
+    <customValue>
+        <fullName>Driving and Transportation</fullName>
+        <default>false</default>
+        <label>Driving and Transportation</label>
+    </customValue>
+    <customValue>
+        <fullName>Education</fullName>
+        <default>false</default>
+        <label>Education</label>
+    </customValue>
+    <customValue>
+        <fullName>Government and Security</fullName>
+        <default>false</default>
+        <label>Government and Security</label>
+    </customValue>
+    <customValue>
+        <fullName>Healthcare and Nursing</fullName>
+        <default>false</default>
+        <label>Healthcare and Nursing</label>
+    </customValue>
+    <customValue>
+        <fullName>Management and Business</fullName>
+        <default>false</default>
+        <label>Management and Business</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <customValue>
+        <fullName>Retail and Customer Service</fullName>
+        <default>false</default>
+        <label>Retail and Customer Service</label>
+    </customValue>
+    <customValue>
+        <fullName>Self Employed</fullName>
+        <default>false</default>
+        <label>Self Employed</label>
+    </customValue>
+    <customValue>
+        <fullName>Service and Hospitality</fullName>
+        <default>false</default>
+        <label>Service and Hospitality</label>
+    </customValue>
+    <customValue>
+        <fullName>Technology and IT</fullName>
+        <default>false</default>
+        <label>Technology and IT</label>
+    </customValue>
+    <customValue>
+        <fullName>Under Social Security or Retired</fullName>
+        <default>false</default>
+        <label>Under Social Security or Retired</label>
+    </customValue>
+    <customValue>
+        <fullName>Lawyer Or Paralegal</fullName>
+        <default>false</default>
+        <label>Lawyer Or Paralegal</label>
+    </customValue>
+    <customValue>
+        <fullName>Sales</fullName>
+        <default>false</default>
+        <label>Sales</label>
+    </customValue>
+    <masterLabel>Occupation Category</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

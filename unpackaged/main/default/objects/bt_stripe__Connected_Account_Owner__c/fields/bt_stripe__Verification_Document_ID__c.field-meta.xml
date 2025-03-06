@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Verification_Document_ID__c</fullName>
+    <deprecated>false</deprecated>
+    <description>(ID of a file upload) A photo (jpg or png) of the front side of an identifying document, either a passport or local ID card.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>(ID of a file upload) A photo (jpg or png) of the front side of an identifying document, either a passport or local ID card.</inlineHelpText>
+    <label>Verification Document ID (Front-side)</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

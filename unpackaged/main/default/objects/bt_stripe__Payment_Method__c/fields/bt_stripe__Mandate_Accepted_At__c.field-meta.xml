@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Mandate_Accepted_At__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The date/time that customer accepted mandate for ACH payment methods.</description>
+    <inlineHelpText>The date/time that customer accepted mandate for ACH payment methods.</inlineHelpText>
+    <label>Mandate Accepted At</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

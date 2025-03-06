@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Type__c</fullName>
+    <deprecated>false</deprecated>
+    <description>For all non card or ACH payment method types to capture the source type, such as Alipay, Apple Pay, etc. Set automatically.</description>
+    <inlineHelpText>For all non card or ACH payment method types to capture the source type, such as Alipay, Apple Pay, etc. Set automatically.</inlineHelpText>
+    <label>Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>alipay</fullName>
+                <default>false</default>
+                <label>Ali Pay</label>
+            </value>
+            <value>
+                <fullName>bacs_debit</fullName>
+                <default>false</default>
+                <label>Bacs Debit</label>
+            </value>
+            <value>
+                <fullName>bancontact</fullName>
+                <default>false</default>
+                <label>Bancontact</label>
+            </value>
+            <value>
+                <fullName>au_becs_debit</fullName>
+                <default>false</default>
+                <label>BECS Direct Debit</label>
+            </value>
+            <value>
+                <fullName>card</fullName>
+                <default>false</default>
+                <label>Card</label>
+            </value>
+            <value>
+                <fullName>card_present</fullName>
+                <default>false</default>
+                <label>Card Present</label>
+            </value>
+            <value>
+                <fullName>eps</fullName>
+                <default>false</default>
+                <label>EPS</label>
+            </value>
+            <value>
+                <fullName>fpx</fullName>
+                <default>false</default>
+                <label>FPX</label>
+            </value>
+            <value>
+                <fullName>giropay</fullName>
+                <default>false</default>
+                <label>Giro Pay</label>
+            </value>
+            <value>
+                <fullName>grabpay</fullName>
+                <default>false</default>
+                <label>Grab Pay</label>
+            </value>
+            <value>
+                <fullName>ideal</fullName>
+                <default>false</default>
+                <label>Ideal</label>
+            </value>
+            <value>
+                <fullName>interac_present</fullName>
+                <default>false</default>
+                <label>Interac Present</label>
+            </value>
+            <value>
+                <fullName>oxxo</fullName>
+                <default>false</default>
+                <label>OXXO</label>
+            </value>
+            <value>
+                <fullName>p24</fullName>
+                <default>false</default>
+                <label>p24</label>
+            </value>
+            <value>
+                <fullName>sepa_debit</fullName>
+                <default>false</default>
+                <label>Sepa Debit</label>
+            </value>
+            <value>
+                <fullName>sofort</fullName>
+                <default>false</default>
+                <label>Sofort</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

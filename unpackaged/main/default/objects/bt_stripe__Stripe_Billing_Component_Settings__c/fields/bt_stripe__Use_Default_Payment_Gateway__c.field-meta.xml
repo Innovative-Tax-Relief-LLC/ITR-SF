@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Use_Default_Payment_Gateway__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <inlineHelpText>Automatically uses the default Payment Gateway while creating subscription.</inlineHelpText>
+    <label>Use Default Payment Gateway</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

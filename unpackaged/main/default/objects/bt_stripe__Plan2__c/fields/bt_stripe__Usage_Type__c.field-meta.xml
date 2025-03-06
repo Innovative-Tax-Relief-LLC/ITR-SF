@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Usage_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <inlineHelpText>Licensed will automatically bill the quantity set for a price when adding it to a subscription, Metered will aggregate the total usage based on usage records. Defaults to licensed.</inlineHelpText>
+    <label>Usage Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Licensed</fullName>
+                <default>true</default>
+                <label>Licensed</label>
+            </value>
+            <value>
+                <fullName>Metered</fullName>
+                <default>false</default>
+                <label>Metered</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

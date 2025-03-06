@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__New_Payment_Method</fullName>
+    <availability>online</availability>
+    <description>Create a new Payment Method for the Contact.</description>
+    <displayType>button</displayType>
+    <height>600</height>
+    <linkType>page</linkType>
+    <masterLabel>New Payment Method</masterLabel>
+    <openType>sidebar</openType>
+    <page>bt_stripe__Contact_AddPaymentMethod</page>
+    <protected>false</protected>
+</WebLink>

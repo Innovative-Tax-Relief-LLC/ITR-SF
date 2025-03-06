@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__On_The__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Specify if the Transaction falls on the first, second, etc., week of each month.</description>
+    <inlineHelpText>Specify if the Transaction falls on the first, second, etc., week of each month.</inlineHelpText>
+    <label>On The</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>First</fullName>
+                <default>false</default>
+                <label>First</label>
+            </value>
+            <value>
+                <fullName>Second</fullName>
+                <default>false</default>
+                <label>Second</label>
+            </value>
+            <value>
+                <fullName>Third</fullName>
+                <default>false</default>
+                <label>Third</label>
+            </value>
+            <value>
+                <fullName>Fourth</fullName>
+                <default>false</default>
+                <label>Fourth</label>
+            </value>
+            <value>
+                <fullName>Last</fullName>
+                <default>false</default>
+                <label>Last</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Validate_PG_is_Stripe</fullName>
+    <active>true</active>
+    <description>this rules validates that the selected payment gateway  provider is stripe</description>
+    <errorConditionFormula>if(bt_stripe__Payment_Gateway__c==null,false,NOT(ISPICKVAL(bt_stripe__Payment_Gateway__r.bt_stripe__Provider__c, &#39;Stripe&#39;)==true) )</errorConditionFormula>
+    <errorDisplayField>bt_stripe__Payment_Gateway__c</errorDisplayField>
+    <errorMessage>Please select  Stripe Payment Gateway</errorMessage>
+</ValidationRule>

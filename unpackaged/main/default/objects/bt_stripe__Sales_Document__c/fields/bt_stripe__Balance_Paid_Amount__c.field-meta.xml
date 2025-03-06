@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Balance_Paid_Amount__c</fullName>
+    <deprecated>false</deprecated>
+    <description>If payment360 Transactions are related (with Transaction Status = Completed), this field is automatically populated. If no completed payment360 Transactions are present, this field will be blank, or may be manually updated.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If payment360 Transactions are related (with Transaction Status = Completed), this field is automatically populated. If no completed payment360 Transactions are present, this field will be blank, or may be manually updated.</inlineHelpText>
+    <label>Balance Paid</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

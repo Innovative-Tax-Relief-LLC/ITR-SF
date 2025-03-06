@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Insignificant</fullName>
+        <default>false</default>
+        <label>Insignificant</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Minor</fullName>
+        <default>false</default>
+        <label>Minor</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Moderate</fullName>
+        <default>false</default>
+        <label>Moderate</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Major</fullName>
+        <default>false</default>
+        <label>Major</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Critical</fullName>
+        <default>false</default>
+        <label>Critical</label>
+    </standardValue>
+</StandardValueSet>

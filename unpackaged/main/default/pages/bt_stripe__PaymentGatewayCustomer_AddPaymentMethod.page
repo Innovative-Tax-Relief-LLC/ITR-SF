@@ -1,0 +1,12 @@
+<apex:page standardController="bt_stripe__Stripe_Customer__c" showQuickActionVfHeader="false">
+	<c:BT_CreatePaymentMethod paymentGatewayCustomerId="{!bt_stripe__Stripe_Customer__c.Id}"
+		relatedTo="{!If(bt_stripe__Stripe_Customer__c.bt_stripe__Contact__c != null, bt_stripe__Stripe_Customer__c.bt_stripe__Contact__c, If(bt_stripe__Stripe_Customer__c.bt_stripe__Account__c != null, bt_stripe__Stripe_Customer__c.bt_stripe__Account__c, bt_stripe__Stripe_Customer__c.bt_stripe__Lead__c))}"
+		paymentGatewayId="{!bt_stripe__Stripe_Customer__c.bt_stripe__Payment_Gateway__c}"
+		relatedToObjectName="Payment Gateway Customer"
+		relatedToName="{!bt_stripe__Stripe_Customer__c.Name}"
+		holdersName="{!bt_stripe__Stripe_Customer__c.Name}"
+		email="{!bt_stripe__Stripe_Customer__c.bt_stripe__Email__c}"
+		street="{!bt_stripe__Stripe_Customer__c.bt_stripe__Billing_Street1__c}" city="{!bt_stripe__Stripe_Customer__c.bt_stripe__Billing_City__c}"
+		state="{!bt_stripe__Stripe_Customer__c.bt_stripe__Billing_State__c}" postalCode="{!bt_stripe__Stripe_Customer__c.bt_stripe__Billing_Postal_Code__c}"
+		country="{!bt_stripe__Stripe_Customer__c.bt_stripe__Billing_Country__c}"/>
+</apex:page>

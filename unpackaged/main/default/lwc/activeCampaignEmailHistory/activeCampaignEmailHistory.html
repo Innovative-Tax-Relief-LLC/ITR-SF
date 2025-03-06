@@ -1,0 +1,32 @@
+<template>
+
+    <div class="slds-box">
+        <lightning-card title="Email History" variant="Narrow" icon-name="standard:list_email" class="slds-theme_shade">
+            <lightning-button label="Refresh" slot="actions" onclick={searchEmail}></lightning-button>
+
+            <template if:true={records}>
+                <lightning-datatable data={recordsToDisplay}
+                                    columns={columns}
+                                    key-field="Id"
+                                    hide-checkbox-column="true"
+                                    resize-column-disabled></lightning-datatable>
+            </template>
+
+            <div class="slds-grid slds-grid_vertical-align-center slds-grid_align-spread" style="padding-top: 0.5em;">
+                <div class="slds-align_absolute-center" style="height: 3rem">
+                    <lightning-button disabled={bDisableFirst} icon-name="utility:jump_to_left" class="slds-p-horizontal_x-small" onclick={firstPage}></lightning-button>
+                    <lightning-button disabled={bDisableFirst} icon-name="utility:chevronleft" onclick={previousPage}></lightning-button>
+                    &nbsp;
+                    <span class="slds-badge">Showing {pageNumber} &nbsp;of&nbsp; {totalPages}</span>
+                    &nbsp;
+                    <lightning-button disabled={bDisableLast} icon-name="utility:chevronright" onclick={nextPage} class="slds-p-horizontal_x-small" icon-position="right"></lightning-button>
+                    <lightning-button disabled={bDisableLast} icon-name="utility:jump_to_right" onclick={lastPage} icon-position="right"></lightning-button>
+                </div>
+            </div>
+            
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading" size="medium" variant="brand"></lightning-spinner>
+            </template>
+        </lightning-card>
+    </div> 
+</template>

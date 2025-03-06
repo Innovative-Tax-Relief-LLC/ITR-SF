@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Key__c</fullName>
+    <deprecated>false</deprecated>
+    <description>A unique random key generated for the record in a before insert trigger. Now we have an identifier we can use in before insert triggers. We can also use this key if we ever need to expose an id to the public - we shouldn&#39;t use the SF Id since it&#39;s sequential and can be easily guessed. Not adding this to the page layout.</description>
+    <externalId>true</externalId>
+    <label>Key</label>
+    <length>40</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

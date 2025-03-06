@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Status_Unqualified_Reason</fullName>
+    <active>false</active>
+    <description>Unqualified Reason Validation</description>
+    <errorConditionFormula>ISPICKVAL(Status, &quot;Unqualified&quot;) &amp;&amp; ISPICKVAL(Unqualified_Reason__c, &quot;&quot;)</errorConditionFormula>
+    <errorMessage>Missing the Unqualified Reason. Please add.</errorMessage>
+</ValidationRule>

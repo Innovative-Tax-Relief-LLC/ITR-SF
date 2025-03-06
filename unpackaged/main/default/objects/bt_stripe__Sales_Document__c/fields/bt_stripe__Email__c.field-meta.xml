@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Email__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The email address of the related Contact. Set automatically if the Contact is set and the record is saved.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The email address of the related Contact. Set automatically if the Contact is set and the record is saved.</inlineHelpText>
+    <label>Email</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Email</type>
+    <unique>false</unique>
+</CustomField>

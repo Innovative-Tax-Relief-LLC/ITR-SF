@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Redeem_By__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Date after which the coupon can no longer be redeemed.</description>
+    <inlineHelpText>Date after which the coupon can no longer be redeemed.</inlineHelpText>
+    <label>Redeem By</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

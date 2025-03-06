@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Transactions_NEEDS_REVIEW</fullName>
+    <booleanFilter>2 AND 3 AND (1 OR 4)</booleanFilter>
+    <columns>NAME</columns>
+    <columns>bt_stripe__Transaction_Type__c</columns>
+    <columns>bt_stripe__Transaction_Status__c</columns>
+    <columns>bt_stripe__Related_Account__c</columns>
+    <columns>bt_stripe__Amount__c</columns>
+    <columns>bt_stripe__Due_Date__c</columns>
+    <columns>bt_stripe__Payment_Gateway__c</columns>
+    <columns>bt_stripe__Opportunity2__c</columns>
+    <columns>bt_stripe__Payment_Method__c</columns>
+    <columns>bt_stripe__Payment_Method_Brand__c</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>bt_stripe__Transaction_Status__c</field>
+        <operation>equals</operation>
+        <value>Needs Review</value>
+    </filters>
+    <filters>
+        <field>bt_stripe__Due_Date__c</field>
+        <operation>equals</operation>
+        <value>TODAY</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>bt_stripe__Transaction__c.bt_stripe__Charge</value>
+    </filters>
+    <filters>
+        <field>bt_stripe__Transaction_Status__c</field>
+        <operation>equals</operation>
+        <value>Open</value>
+    </filters>
+    <label>Transactions NEEDS REVIEW</label>
+    <sharedTo>
+        <group>ITR_Billing_Team</group>
+    </sharedTo>
+</ListView>

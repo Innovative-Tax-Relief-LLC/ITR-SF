@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Create_Invoice</fullName>
+    <availability>online</availability>
+    <description>Creates an Invoice-type Invoice from the standard Opportunity fields.</description>
+    <displayType>button</displayType>
+    <height>600</height>
+    <linkType>page</linkType>
+    <masterLabel>Create Invoice</masterLabel>
+    <openType>sidebar</openType>
+    <page>bt_stripe__Opportunity_CreateInvoice</page>
+    <protected>false</protected>
+</WebLink>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Holder_Type__c</fullName>
+    <label>Account Holder Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Company</fullName>
+                <default>false</default>
+                <label>Company</label>
+            </value>
+            <value>
+                <fullName>Individual</fullName>
+                <default>false</default>
+                <label>Individual</label>
+            </value>
+            <value>
+                <fullName>Personal Checking</fullName>
+                <default>false</default>
+                <label>Personal Checking</label>
+            </value>
+            <value>
+                <fullName>Business Checking</fullName>
+                <default>false</default>
+                <label>Business Checking</label>
+            </value>
+            <value>
+                <fullName>Savings Account</fullName>
+                <default>false</default>
+                <label>Savings Account</label>
+            </value>
+            <value>
+                <fullName>Business Savings</fullName>
+                <default>false</default>
+                <label>Business Savings</label>
+            </value>
+            <value>
+                <fullName>Personal Savings</fullName>
+                <default>false</default>
+                <label>Personal Savings</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

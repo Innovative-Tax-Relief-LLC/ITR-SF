@@ -1,0 +1,31 @@
+<apex:page showHeader="true" standardController="bt_stripe__Payment_Gateway__c" extensions="bt_stripe.Stripe_SF_BalanceUpdateContoller" action="{!updatePaymentGatewayBalance}">
+	<apex:form >
+		<apex:inputHidden value="{!bt_stripe__Payment_Gateway__c.Id}"/>
+		<apex:inputHidden value="{!bt_stripe__Payment_Gateway__c.bt_stripe__Update_Balance__c}"/>
+
+		<apex:pageMessages />
+		<br/><br/>
+
+		<apex:outputPanel style="margin-left:20px;margin-top:15px;">
+			<apex:outputPanel rendered="{!$User.UIThemeDisplayed == 'Theme3'}">
+				<apex:commandButton action="{!back}" value="Back To Record"/>
+			</apex:outputPanel>
+
+			<apex:outputPanel rendered="{!OR($User.UIThemeDisplayed == 'Theme4d', $User.UIThemeDisplayed == 'Theme4t')}">
+				<button onclick="back();">Back To Record</button>
+			</apex:outputPanel>
+		</apex:outputPanel>
+	</apex:form>
+
+	<script type="text/javascript">
+	function back() {
+		// this only works in lightning - it goes back to the last page and refreshes the record
+		sforce.one.back(true);
+	}
+
+	// lightning & no error - return to record - doing it here so the record is refreshed
+	if ({!AND(ISNULL(Messages), OR($User.UIThemeDisplayed == 'Theme4d', $User.UIThemeDisplayed == 'Theme4t'))}) {
+		back();
+	}
+	</script>
+</apex:page>

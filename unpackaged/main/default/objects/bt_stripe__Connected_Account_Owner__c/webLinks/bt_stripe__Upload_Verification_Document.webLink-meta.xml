@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Upload_Verification_Document</fullName>
+    <availability>online</availability>
+    <description>The page name is bt_stripe__ConnectedAccount_UploadVerificationDoc - be sure to include the namespace</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Upload Verification Document</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>/apex/bt_stripe__ConnectedAccount_UploadVerificationDoc?id={!bt_stripe__Connected_Account_Owner__c.Id}</url>
+</WebLink>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pitched_Nurture_1T_Leads</fullName>
+    <columns>Velocify_Id__c</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>Sub_Stage__c</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Sub_Stage__c</field>
+        <operation>equals</operation>
+        <value>Pitched-Nurture 1T</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.TYPE</field>
+        <operation>equals</operation>
+        <value>1st Trade</value>
+    </filters>
+    <label>Pitched-Nurture 1T Leads</label>
+    <sharedTo>
+        <group>ITR_First_Trader</group>
+    </sharedTo>
+</ListView>

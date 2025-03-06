@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Lead Distribution Rules" >
+        <lightning-button slot="actions" label="New" variant="brand" onclick={handleNewClick}></lightning-button>
+
+        <template if:true={rules}>
+            <lightning-datatable
+                key-field="Id"
+                data={rules}
+                columns={columns}
+                onrowaction={handleRowAction}
+                hide-checkbox-column
+            ></lightning-datatable>
+        </template>
+
+        <template if:false={rules}>
+            <div class="slds-p-around_medium">
+                <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+            </div>
+        </template>
+
+        <!-- Modal for LeadDistributionRuleCreator -->
+        <template if:true={isModalOpen}>
+            <c-lead-distribution-rule-creator
+                record-id={selectedRuleId}
+                is-edit-mode={isEditMode}
+                onclose={handleModalClose}
+            ></c-lead-distribution-rule-creator>
+        </template>
+    </lightning-card>
+</template>

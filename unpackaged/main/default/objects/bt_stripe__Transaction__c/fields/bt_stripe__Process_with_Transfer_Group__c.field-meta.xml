@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Process_with_Transfer_Group__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>When checked, sends the Transfer Group ID with the Stripe callout, adding this Transaction to the related Transfer Group. Charges and Transfers comprise a Transfer Group.</description>
+    <inlineHelpText>When checked, sends the Transfer Group ID with the Stripe callout, adding this Transaction to the related Transfer Group. Charges and Transfers comprise a Transfer Group.</inlineHelpText>
+    <label>Process with Transfer Group</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

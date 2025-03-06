@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bt_stripe__Connected_Account__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <inlineHelpText>If this error results from a Connected Account record, this lookup will be set to the source record.</inlineHelpText>
+    <label>Connected Account</label>
+    <referenceTo>bt_stripe__Connected_Account__c</referenceTo>
+    <relationshipLabel>Blackthorn Logs</relationshipLabel>
+    <relationshipName>Blackthorn_Logs</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>
