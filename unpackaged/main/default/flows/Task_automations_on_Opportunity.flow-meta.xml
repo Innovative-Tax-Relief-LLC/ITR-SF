@@ -3,10 +3,13 @@
     <actionCalls>
         <name>Notify_the_case_manager_queue_team</name>
         <label>Notify the case manager queue team</label>
-        <locationX>1436</locationX>
-        <locationY>1247</locationY>
+        <locationX>1700</locationX>
+        <locationY>1655</locationY>
         <actionName>Case.Case_Manager_Notification</actionName>
         <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Pre_Activation_Flow</targetReference>
+        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>SObjectRowId</name>
@@ -18,6 +21,52 @@
         <offset>0</offset>
     </actionCalls>
     <apiVersion>62.0</apiVersion>
+    <assignments>
+        <name>Assign_Activation_Call</name>
+        <label>Assign Activation Fields</label>
+        <locationX>886</locationX>
+        <locationY>755</locationY>
+        <assignmentItems>
+            <assignToReference>varR_CaseRecord.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Activation Call</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varR_CaseRecord.Activation_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varR_CaseRecord.Pre_Activation_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Tax_Prep_Case_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Case_Account</name>
+        <label>Assign Case Account</label>
+        <locationX>1700</locationX>
+        <locationY>1331</locationY>
+        <assignmentItems>
+            <assignToReference>varR_CaseRecord.AccountId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Account.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Case_Creation</targetReference>
+        </connector>
+    </assignments>
     <assignments>
         <name>Assign_IT_Follow_Up_Case_Values</name>
         <label>Assign IT Follow Up Case Values</label>
@@ -86,8 +135,8 @@
     <assignments>
         <name>Assign_Negotiation_Case_Values</name>
         <label>Assign Negotiation Case Values</label>
-        <locationX>1238</locationX>
-        <locationY>647</locationY>
+        <locationX>1502</locationX>
+        <locationY>947</locationY>
         <assignmentItems>
             <assignToReference>varR_CaseRecord.AccountId</assignToReference>
             <operator>Assign</operator>
@@ -121,13 +170,6 @@
             <operator>Assign</operator>
             <value>
                 <elementReference>$Label.Tax_Negotiation_Only_Record_Id</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varR_CaseRecord.Status</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>Intro</stringValue>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -168,14 +210,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Case_Creation</targetReference>
+            <targetReference>Assign_Case_Account</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Assign_Tax_and_Negotiation_Case_Values</name>
         <label>Assign Tax and Negotiation Case Values</label>
-        <locationX>1766</locationX>
-        <locationY>647</locationY>
+        <locationX>2206</locationX>
+        <locationY>947</locationY>
         <assignmentItems>
             <assignToReference>varR_CaseRecord.AccountId</assignToReference>
             <operator>Assign</operator>
@@ -212,13 +254,6 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varR_CaseRecord.Status</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>Intro</stringValue>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
             <assignToReference>varR_CaseRecord.Description</assignToReference>
             <operator>Assign</operator>
             <value>
@@ -246,8 +281,8 @@
     <assignments>
         <name>Assign_Tax_Prep_Case_Values</name>
         <label>Assign Tax Prep Case Values</label>
-        <locationX>710</locationX>
-        <locationY>647</locationY>
+        <locationX>798</locationX>
+        <locationY>947</locationY>
         <assignmentItems>
             <assignToReference>varR_CaseRecord.AccountId</assignToReference>
             <operator>Assign</operator>
@@ -284,13 +319,6 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varR_CaseRecord.Status</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>Intro</stringValue>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
             <assignToReference>varR_CaseRecord.Description</assignToReference>
             <operator>Assign</operator>
             <value>
@@ -316,10 +344,40 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Copy_1_of_Assign_Activation_Call</name>
+        <label>Assign Activation Fields</label>
+        <locationX>1590</locationX>
+        <locationY>755</locationY>
+        <assignmentItems>
+            <assignToReference>varR_CaseRecord.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Activation Call</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varR_CaseRecord.Activation_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varR_CaseRecord.Pre_Activation_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Negotiation_Case_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Copy_1_of_Assign_Opportunity_Checkbox</name>
         <label>Assign Opportunity Checkbox</label>
-        <locationX>710</locationX>
-        <locationY>755</locationY>
+        <locationX>798</locationX>
+        <locationY>1055</locationY>
         <assignmentItems>
             <assignToReference>$Record.Tax_Prep_Case_Created__c</assignToReference>
             <operator>Assign</operator>
@@ -328,14 +386,44 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Case_Creation</targetReference>
+            <targetReference>Assign_Case_Account</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_2_of_Assign_Activation_Call</name>
+        <label>Assign Activation Call</label>
+        <locationX>2294</locationX>
+        <locationY>755</locationY>
+        <assignmentItems>
+            <assignToReference>varR_CaseRecord.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Activation Call</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varR_CaseRecord.Activation_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varR_CaseRecord.Pre_Activation_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Tax_and_Negotiation_Case_Values</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Copy_2_of_Assign_Opportunity_Checkbox</name>
         <label>Assign Opportunity Checkbox</label>
-        <locationX>1238</locationX>
-        <locationY>755</locationY>
+        <locationX>1502</locationX>
+        <locationY>1055</locationY>
         <assignmentItems>
             <assignToReference>$Record.Negotiations_Case_Created__c</assignToReference>
             <operator>Assign</operator>
@@ -344,14 +432,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Case_Creation</targetReference>
+            <targetReference>Assign_Case_Account</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Copy_4_of_Assign_Opportunity_Checkbox</name>
         <label>Assign Opportunity Checkbox</label>
-        <locationX>1766</locationX>
-        <locationY>755</locationY>
+        <locationX>2206</locationX>
+        <locationY>1055</locationY>
         <assignmentItems>
             <assignToReference>$Record.Tax_Negotiation_Created__c</assignToReference>
             <operator>Assign</operator>
@@ -360,7 +448,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Case_Creation</targetReference>
+            <targetReference>Assign_Case_Account</targetReference>
         </connector>
     </assignments>
     <constants>
@@ -373,8 +461,8 @@
     <customErrors>
         <name>Could_Not_Create_Case</name>
         <label>Could Not Create Case</label>
-        <locationX>3086</locationX>
-        <locationY>1139</locationY>
+        <locationX>3614</locationX>
+        <locationY>1547</locationY>
         <customErrorMessages>
             <errorMessage>Something happened! Please give provide your admin the message below.
 {!$Flow.FaultMessage}</errorMessage>
@@ -382,9 +470,105 @@
         </customErrorMessages>
     </customErrors>
     <decisions>
+        <name>Copy_1_of_Financing_Lender_Used_Monterrey_Possflip</name>
+        <label>Monterrey Possflip or In House?</label>
+        <locationX>1502</locationX>
+        <locationY>647</locationY>
+        <defaultConnector>
+            <targetReference>Copy_1_of_Assign_Activation_Call</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Copy_4_of_Yes</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Financing_Lender_Used__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Monterey Poss-Flip</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Financing_Lender_Used__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Negotiation_Case_Values</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Copy_2_of_Financing_Lender_Used_Monterrey_Possflip</name>
+        <label>Monterrey Possflip or In House?</label>
+        <locationX>2206</locationX>
+        <locationY>647</locationY>
+        <defaultConnector>
+            <targetReference>Copy_2_of_Assign_Activation_Call</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Copy_5_of_Yes</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Financing_Lender_Used__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Monterey Poss-Flip</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Financing_Lender_Used__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Tax_and_Negotiation_Case_Values</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Financing_Lender_Used_Monterrey_Possflip</name>
+        <label>Monterrey Possflip or In House?</label>
+        <locationX>798</locationX>
+        <locationY>647</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Activation_Call</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Monterey</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Financing_Lender_Used__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Monterey Poss-Flip</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Financing_Lender_Used__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Tax_Prep_Case_Values</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Is_New_Opportunity</name>
         <label>Is New Opportunity?</label>
-        <locationX>545</locationX>
+        <locationX>677</locationX>
         <locationY>323</locationY>
         <defaultConnector>
             <targetReference>What_Action_Should_Occur</targetReference>
@@ -406,10 +590,10 @@
     <decisions>
         <name>Negotiations_Only_Case_Created</name>
         <label>Negotiations Only Case Created?</label>
-        <locationX>1106</locationX>
+        <locationX>1326</locationX>
         <locationY>539</locationY>
         <defaultConnector>
-            <targetReference>Assign_Negotiation_Case_Values</targetReference>
+            <targetReference>Copy_1_of_Financing_Lender_Used_Monterrey_Possflip</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
@@ -428,10 +612,10 @@
     <decisions>
         <name>Tax_Prep_Case_Created</name>
         <label>Tax Prep Case Created?</label>
-        <locationX>578</locationX>
+        <locationX>622</locationX>
         <locationY>539</locationY>
         <defaultConnector>
-            <targetReference>Assign_Tax_Prep_Case_Values</targetReference>
+            <targetReference>Financing_Lender_Used_Monterrey_Possflip</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
@@ -450,10 +634,10 @@
     <decisions>
         <name>Tax_Prep_Negotiations_Created</name>
         <label>Tax Prep &amp; Negotiations Created?</label>
-        <locationX>1634</locationX>
+        <locationX>2030</locationX>
         <locationY>539</locationY>
         <defaultConnector>
-            <targetReference>Assign_Tax_and_Negotiation_Case_Values</targetReference>
+            <targetReference>Copy_2_of_Financing_Lender_Used_Monterrey_Possflip</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
@@ -491,7 +675,7 @@
     <decisions>
         <name>What_Action_Should_Occur</name>
         <label>What Action Should Occur?</label>
-        <locationX>1436</locationX>
+        <locationX>1700</locationX>
         <locationY>431</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -662,8 +846,8 @@
     <recordCreates>
         <name>Case_Creation</name>
         <label>Case Creation</label>
-        <locationX>1436</locationX>
-        <locationY>1031</locationY>
+        <locationX>1700</locationX>
+        <locationY>1439</locationY>
         <connector>
             <targetReference>Update_Opportunity</targetReference>
         </connector>
@@ -675,15 +859,15 @@
     <recordUpdates>
         <name>Update_Opportunity</name>
         <label>Update Opportunity</label>
-        <locationX>1436</locationX>
-        <locationY>1139</locationY>
+        <locationX>1700</locationX>
+        <locationY>1547</locationY>
         <connector>
             <targetReference>Notify_the_case_manager_queue_team</targetReference>
         </connector>
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>419</locationX>
+        <locationX>551</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Is_New_Opportunity</targetReference>
@@ -696,7 +880,7 @@
     <subflows>
         <name>Create_CPII_for_Billing_Team</name>
         <label>Create CPII for Billing Team</label>
-        <locationX>2294</locationX>
+        <locationX>2822</locationX>
         <locationY>539</locationY>
         <flowName>Subflow_Create_CPII_Task_Assign_to_CPII_Queue</flowName>
         <inputAssignments>
@@ -707,9 +891,22 @@
         </inputAssignments>
     </subflows>
     <subflows>
+        <name>Pre_Activation_Flow</name>
+        <label>Pre-Activation Flow</label>
+        <locationX>1700</locationX>
+        <locationY>1763</locationY>
+        <flowName>Subflow_Pre_Activation</flowName>
+        <inputAssignments>
+            <name>OpportunityRecord</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <subflows>
         <name>Submit_Discounted_Opportunity_for_Manager_Review</name>
         <label>Submit Discounted Opportunity for Manager Review</label>
-        <locationX>2558</locationX>
+        <locationX>3086</locationX>
         <locationY>539</locationY>
         <flowName>Subflow_Add_Opportunity_To_Approval_Process</flowName>
         <inputAssignments>

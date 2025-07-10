@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Chris_ro_cases</fullName>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>NAME</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>Sub_status__c</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>CASES.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Enrolled_Agent__c</field>
+        <operation>contains</operation>
+        <value>Chris</value>
+    </filters>
+    <filters>
+        <field>IRS_Revenue_Officer_on_Case__c</field>
+        <operation>equals</operation>
+        <value>Yes</value>
+    </filters>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Case Completed Successful,Case Completed Failed,Case Closed</value>
+    </filters>
+    <label>Chris&#39; RO Cases</label>
+    <sharedTo>
+        <group>Case_Managers</group>
+    </sharedTo>
+</ListView>

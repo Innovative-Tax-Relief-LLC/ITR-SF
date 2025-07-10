@@ -9,28 +9,6 @@ private class OpportunityTriggerHandlerTest {
         );
         insert acc;
     }
-
-    @IsTest
-    static void shouldHandleFieldChangesOpportunities() {
-
-        Account acc = [SELECT Id FROM Account];
-
-        Opportunity opp = new Opportunity(
-            AccountId = acc.Id,
-            RecordTypeId = Schema.SObjectType.Opportunity.getRecordTypeInfosByName().get('First Trade').getRecordTypeId(),
-            Name = 'Teste Opportunity Trade',
-            StageName = 'Qualification',
-            CloseDate = Date.today().addDays(2)
-        );
-
-        Test.startTest();
-			Test.setMock(HttpCalloutMock.class, new OpportunitiesWebhookCalloutMock());
-			insert opp;
-
-			opp.CloseDate = Date.today();
-			update opp;
-		Test.stopTest();
-    }
     
     @IsTest
     static void testGoogleDriveFolderService() {

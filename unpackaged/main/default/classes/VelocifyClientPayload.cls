@@ -5,6 +5,7 @@ global with sharing class VelocifyClientPayload {
     public ClientData client_data;
 
     global class ClientData {
+        public String flipped_client;
         public Integer is_business;
         public Integer has_income_tax;
         public Integer has_employment_taxes;
@@ -22,10 +23,10 @@ global with sharing class VelocifyClientPayload {
         public String cell_phone;
         public String email;
         public String spouse_first_name;
-        public String spouse_middle_name;
+        public String spouse_middle_initial;
         public String spouse_last_name;
         public String spouse_date_of_birth;
-        public String spouse_cell_phone;
+        public String spouse_mobile_phone;
         public String spouse_email;
         public String notes;
         public Integer priority;
@@ -46,9 +47,19 @@ global with sharing class VelocifyClientPayload {
         public String solution_type;
         public String first_trader;
         public String second_trader;
-
         public LenderInfo lender_info;
         public ThirdPartyInfor third_party_info;
+        public String marital_status;
+        public String social_security_number;
+        public String gender;
+        public String date_of_marriage_to_current_spouse;
+        public String spanish_speaking;
+        public String agency;
+        public String time_zone;
+        public String spouse_gender;
+        public String spouse_social_security;
+        public String spouse_occupation;
+        public String spouse_occupation_category;
     }
 
     global class Services {

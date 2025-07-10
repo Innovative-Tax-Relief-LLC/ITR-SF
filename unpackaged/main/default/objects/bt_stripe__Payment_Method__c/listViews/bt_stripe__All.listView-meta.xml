@@ -11,10 +11,5 @@
     <columns>bt_stripe__Payment_Gateway__c</columns>
     <columns>CREATED_DATE</columns>
     <filterScope>Everything</filterScope>
-    <filters>
-        <field>bt_stripe__Card_Last_4_Digit__c</field>
-        <operation>equals</operation>
-        <value>4242</value>
-    </filters>
     <label>All</label>
 </ListView>

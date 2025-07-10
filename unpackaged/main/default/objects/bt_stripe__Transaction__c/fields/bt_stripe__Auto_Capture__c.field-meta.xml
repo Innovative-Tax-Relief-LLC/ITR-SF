@@ -5,7 +5,7 @@
     <deprecated>false</deprecated>
     <inlineHelpText>If checked, the transaction will be captured automatically on the Due Date. Requires a Payment Method, Amount over the currency minimum, and Due Date to be automatically captured.</inlineHelpText>
     <label>Auto-Process</label>
-    <trackHistory>false</trackHistory>
+    <trackHistory>true</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>
 </CustomField>

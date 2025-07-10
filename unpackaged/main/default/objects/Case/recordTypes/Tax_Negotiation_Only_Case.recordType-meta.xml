@@ -39,6 +39,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Financing Recourse</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Terminated By Client</fullName>
             <default>false</default>
         </values>
@@ -173,19 +177,19 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Completed%2F Closed</fullName>
+            <fullName>Cancelled within 3 days of signing TSA</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Completed%2F Closed- DNR</fullName>
+            <fullName>Disputing Payments</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>DNR</fullName>
+            <fullName>Dissatisfaction</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Due to Client Request</fullName>
+            <fullName>Do Not Resucitate %28DNR%29</fullName>
             <default>false</default>
         </values>
         <values>
@@ -193,7 +197,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Due to Non Payment</fullName>
+            <fullName>Financial Constraints</fullName>
             <default>false</default>
         </values>
         <values>
@@ -205,23 +209,27 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Intro Pending</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>NSF</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Non Communication</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Ready for Yearly Tax Prep</fullName>
+            <fullName>Non-Payment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Sufficient Funds %28NSF%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paid off the debt themselves</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>Refuse Financing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services Completed %2F Client DNS %28Did Not Sign%29</fullName>
             <default>false</default>
         </values>
         <values>
@@ -234,6 +242,14 @@
         </values>
         <values>
             <fullName>Terminated by ITR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Went directly through IRS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Went to Competitor</fullName>
             <default>false</default>
         </values>
     </picklistValues>

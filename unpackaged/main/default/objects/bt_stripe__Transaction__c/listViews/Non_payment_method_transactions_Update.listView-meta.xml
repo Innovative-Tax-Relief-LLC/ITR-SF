@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Non_payment_method_transactions_Update</fullName>
+    <booleanFilter>1 AND 2 AND 3</booleanFilter>
+    <columns>NAME</columns>
+    <columns>bt_stripe__Opportunity2__c</columns>
+    <columns>bt_stripe__Transaction_Status__c</columns>
+    <columns>bt_stripe__Payment_Status__c</columns>
+    <columns>Payment_Method_Record_Type__c</columns>
+    <columns>bt_stripe__Non_Stripe__c</columns>
+    <columns>bt_stripe__Auto_Capture__c</columns>
+    <columns>bt_stripe__Payment_Schedule__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>bt_stripe__Transaction__c.bt_stripe__Charge</value>
+    </filters>
+    <filters>
+        <field>Payment_Method_Record_Type__c</field>
+        <operation>notEqual</operation>
+        <value>ACH</value>
+    </filters>
+    <filters>
+        <field>Payment_Method_Record_Type__c</field>
+        <operation>notEqual</operation>
+        <value>Card</value>
+    </filters>
+    <label>Non payment method transactions Update</label>
+</ListView>

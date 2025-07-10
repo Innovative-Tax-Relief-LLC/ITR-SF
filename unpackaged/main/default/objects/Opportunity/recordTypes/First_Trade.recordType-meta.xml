@@ -3,7 +3,7 @@
     <fullName>First_Trade</fullName>
     <active>true</active>
     <businessProcess>First Trader Sales Process</businessProcess>
-    <compactLayoutAssignment>New_Awesome_Companct_Layout</compactLayoutAssignment>
+    <compactLayoutAssignment>New_Compact_Layout</compactLayoutAssignment>
     <label>First Trade</label>
     <picklistValues>
         <picklist>Access_to_discuss_resolution__c</picklist>
@@ -40,10 +40,6 @@
         </values>
         <values>
             <fullName>Personal Savings</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Savings Account</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -275,6 +271,26 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Elevate Finance - Tier 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Elevate Finance - Tier 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Elevate Finance - Tier 3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Elevate Finance - Tier 4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Elevate Finance - Tier 5</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>ElevateFinance</fullName>
             <default>false</default>
         </values>
@@ -284,6 +300,26 @@
         </values>
         <values>
             <fullName>Monterey</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monterey Poss-Flip</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monterey Tier A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monterey Tier B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monterey Tier B%2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monterey-Tier C</fullName>
             <default>false</default>
         </values>
         <values>

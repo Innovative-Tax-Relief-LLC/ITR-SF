@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_CPII_without_Solution_Type</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Solution_Type__c</columns>
+    <columns>Payment_Treshold__c</columns>
+    <columns>Financing_Lender_Used__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>equals</operation>
+        <value>Create CPII</value>
+    </filters>
+    <filters>
+        <field>Solution_Type__c</field>
+        <operation>notEqual</operation>
+        <value>Tax Prep Only,Tax Negotiation Only,Tax Prep and Negotiation</value>
+    </filters>
+    <label>Create CPII without Solution Type</label>
+</ListView>

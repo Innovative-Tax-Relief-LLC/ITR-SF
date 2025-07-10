@@ -8,5 +8,6 @@
     <fields>OwnerId</fields>
     <fields>ITR_Id_formula__c</fields>
     <fields>Litigator__c</fields>
+    <fields>Time_Zone__pc</fields>
     <label>PAccount Compact Layout</label>
 </CompactLayout>

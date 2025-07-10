@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Solution_Type_Required</fullName>
-    <active>false</active>
-    <errorConditionFormula>ISPICKVAL( StageName , &quot;Intro Pending&quot;)
-&amp;&amp;
-ISBLANK(Text( Solution_Type__c ))</errorConditionFormula>
-    <errorMessage>Please Enter the solution Type to save the record</errorMessage>
+    <active>true</active>
+    <errorConditionFormula>RecordType.Name=&#39;Second Trade&#39;&amp;&amp; 
+ISPICKVAL(StageName, &quot;Intro Pending&quot;) &amp;&amp;
+NOT(ISPICKVAL(PRIORVALUE(StageName), &quot;Intro Pending&quot;))&amp;&amp;
+
+
+(
+    ISBLANK(TEXT(Solution_Type__c)) ||
+    ISBLANK(TEXT(Payment_Treshold__c))
+)
+
+||
+RecordType.Name=&#39;Third Trade&#39;&amp;&amp; 
+ISPICKVAL(StageName, &quot;Intro Pending&quot;) &amp;&amp;
+NOT(ISPICKVAL(PRIORVALUE(StageName), &quot;Intro Pending&quot;))&amp;&amp;
+
+ISBLANK(TEXT(Solution_Type__c))</errorConditionFormula>
+    <errorMessage>Please Enter the Solution Type and/or Payment Threshold to save the record</errorMessage>
 </ValidationRule>

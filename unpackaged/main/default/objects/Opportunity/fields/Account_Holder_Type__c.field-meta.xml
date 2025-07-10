@@ -7,6 +7,7 @@
     <trackHistory>false</trackHistory>
     <type>Picklist</type>
     <valueSet>
+        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
@@ -25,14 +26,14 @@
                 <label>Personal Checking</label>
             </value>
             <value>
+                <fullName>Personal Savings</fullName>
+                <default>false</default>
+                <label>Personal Savings</label>
+            </value>
+            <value>
                 <fullName>Business Checking</fullName>
                 <default>false</default>
                 <label>Business Checking</label>
-            </value>
-            <value>
-                <fullName>Savings Account</fullName>
-                <default>false</default>
-                <label>Savings Account</label>
             </value>
             <value>
                 <fullName>Business Savings</fullName>
@@ -40,9 +41,10 @@
                 <label>Business Savings</label>
             </value>
             <value>
-                <fullName>Personal Savings</fullName>
+                <fullName>Savings Account</fullName>
                 <default>false</default>
-                <label>Personal Savings</label>
+                <isActive>false</isActive>
+                <label>Savings Account</label>
             </value>
         </valueSetDefinition>
     </valueSet>

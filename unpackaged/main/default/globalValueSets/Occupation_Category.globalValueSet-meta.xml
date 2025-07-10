@@ -75,6 +75,31 @@
         <default>false</default>
         <label>Sales</label>
     </customValue>
+    <customValue>
+        <fullName>Real Estate Professional</fullName>
+        <default>false</default>
+        <label>Real Estate Professional</label>
+    </customValue>
+    <customValue>
+        <fullName>Manufacturing</fullName>
+        <default>false</default>
+        <label>Manufacturing</label>
+    </customValue>
+    <customValue>
+        <fullName>Clergy</fullName>
+        <default>false</default>
+        <label>Clergy</label>
+    </customValue>
+    <customValue>
+        <fullName>Oil and Gas</fullName>
+        <default>false</default>
+        <label>Oil and Gas</label>
+    </customValue>
+    <customValue>
+        <fullName>Automotive/ Automobile Industry</fullName>
+        <default>false</default>
+        <label>Automotive/ Automobile Industry</label>
+    </customValue>
     <masterLabel>Occupation Category</masterLabel>
     <sorted>false</sorted>
 </GlobalValueSet>

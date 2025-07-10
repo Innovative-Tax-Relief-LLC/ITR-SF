@@ -578,6 +578,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>IRS Letter Within 30 Days</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Immigration Status</fullName>
             <default>false</default>
         </values>
@@ -599,6 +603,10 @@
         </values>
         <values>
             <fullName>Retirement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wants to Apply for SSI</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -1009,6 +1017,14 @@
     <picklistValues>
         <picklist>Time_Zone__pc</picklist>
         <values>
+            <fullName>Alaska</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arizona</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Central Time %28US %26 Canada%29</fullName>
             <default>false</default>
         </values>
@@ -1018,6 +1034,10 @@
         </values>
         <values>
             <fullName>Georgetown%2C La Paz%2C San Juan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hawaii</fullName>
             <default>false</default>
         </values>
         <values>

@@ -173,7 +173,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>DNR</fullName>
+            <fullName>Do Not Resucitate %28DNR%29</fullName>
             <default>false</default>
         </values>
         <values>
@@ -185,19 +185,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Intro Pending</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>NSF</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Non Communication</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Ready for Yearly Tax Prep</fullName>
+            <fullName>Not Sufficient Funds %28NSF%29</fullName>
             <default>false</default>
         </values>
         <values>

@@ -7,11 +7,11 @@
     <columns>OPPORTUNITY.STAGE_NAME</columns>
     <columns>Sub_Stage__c</columns>
     <columns>CORE.USERS.ALIAS</columns>
-    <filterScope>Mine</filterScope>
+    <filterScope>Everything</filterScope>
     <filters>
-        <field>OPPORTUNITY.STAGE_NAME</field>
-        <operation>notEqual</operation>
-        <value>Closed Won,Closed Lost</value>
+        <field>Collection_Specialist__c</field>
+        <operation>equals</operation>
+        <value>Lesley Sosa</value>
     </filters>
     <label>My Open Opportunities</label>
 </ListView>

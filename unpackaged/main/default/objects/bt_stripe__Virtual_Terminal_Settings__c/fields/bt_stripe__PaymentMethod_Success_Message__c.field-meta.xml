@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>bt_stripe__PaymentMethod_Success_Message__c</fullName>
     <deprecated>false</deprecated>
+    <description>The message is displayed when a new payment method is successfully created.</description>
     <externalId>false</externalId>
     <label>Payment Method Success Message</label>
     <length>255</length>

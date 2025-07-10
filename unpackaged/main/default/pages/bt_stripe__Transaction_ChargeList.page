@@ -32,8 +32,8 @@
 
 	<apex:outputPanel id="alertBlock">
 		<script>
-			if('{!message}') {
-				alert('{!message}');
+			if('{!JSENCODE(message)}') {
+				alert('{!JSENCODE(message)}');
 				redirect(); // redirect back on the list view
 			}
 		</script>

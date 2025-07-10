@@ -433,7 +433,7 @@
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
-                    <scale>0</scale>
+                    <scale>2</scale>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -453,7 +453,7 @@
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
-                    <scale>0</scale>
+                    <scale>2</scale>
                 </fields>
                 <fields>
                     <name>Each_Amount</name>
@@ -462,7 +462,7 @@
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
-                    <scale>0</scale>
+                    <scale>2</scale>
                 </fields>
                 <fields>
                     <name>Total_Amount</name>
@@ -471,7 +471,7 @@
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
-                    <scale>0</scale>
+                    <scale>2</scale>
                 </fields>
                 <fields>
                     <name>Currency</name>
@@ -739,7 +739,7 @@
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
-                    <scale>0</scale>
+                    <scale>2</scale>
                 </fields>
                 <fields>
                     <name>Balance_Due</name>
@@ -748,7 +748,7 @@
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
-                    <scale>0</scale>
+                    <scale>2</scale>
                 </fields>
                 <fields>
                     <name>Next_Payment_Date</name>

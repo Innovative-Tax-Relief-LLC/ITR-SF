@@ -27,7 +27,7 @@ public with sharing class PaymentScheduleGenQueuable_Test {
         params.endDate = Date.today().addMonths(12);
         params.count = 12;
         params.opportunityId = testOpportunity.Id;
-        params.initialAmount = 1000;
+        params.initialAmount = 1000.1;
         params.eachAmount = 100;
         params.totalAmount = 2200;
         params.currencyITR = 'USD';

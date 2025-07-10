@@ -184,7 +184,7 @@
         <searchFilterFields>bt_stripe__Stripe_Customer__c</searchFilterFields>
         <searchResultsAdditionalFields>Formula_Name__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>bt_stripe__Card_Holder_Name__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>bt_stripe__Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Payment_Method_Type__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>

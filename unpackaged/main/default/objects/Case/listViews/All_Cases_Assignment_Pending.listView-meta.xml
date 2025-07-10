@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Cases_Assignment_Pending</fullName>
+    <booleanFilter>(1 OR 2 OR 3) AND 4 AND 5 AND 6 AND 7 AND 8</booleanFilter>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>Opportunity__c</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>OWNER_NAME</columns>
+    <columns>Enrolled_Agent__c</columns>
+    <columns>LastOutreachDate__c</columns>
+    <columns>CASES.CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OWNER_NAME</field>
+        <operation>contains</operation>
+        <value>Tax Prep</value>
+    </filters>
+    <filters>
+        <field>OWNER_NAME</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Enrolled_Agent__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Case Completed Successful,Case Completed Failed</value>
+    </filters>
+    <filters>
+        <field>CASES.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Case.Tax_Negotiation_Only_Case,Case.Tax_Prep_Only_Case,Case.Tax_Prep_and_Negotiation_Case</value>
+    </filters>
+    <filters>
+        <field>OWNER_NAME</field>
+        <operation>notEqual</operation>
+        <value>Gabriela Fernandez</value>
+    </filters>
+    <filters>
+        <field>OWNER_NAME</field>
+        <operation>notEqual</operation>
+        <value>Firian Martinez</value>
+    </filters>
+    <filters>
+        <field>OWNER_NAME</field>
+        <operation>notEqual</operation>
+        <value>Eriksson Morales</value>
+    </filters>
+    <label>All Cases: Assignment Pending</label>
+</ListView>

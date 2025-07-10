@@ -5,6 +5,7 @@
     <label>Collection Specialist</label>
     <lookupFilter>
         <active>true</active>
+        <booleanFilter>1 AND (2 OR 3)</booleanFilter>
         <filterItems>
             <field>User.IsActive</field>
             <operation>equals</operation>
@@ -15,12 +16,17 @@
             <operation>contains</operation>
             <value>Billing</value>
         </filterItems>
-        <isOptional>false</isOptional>
+        <filterItems>
+            <field>User.Username</field>
+            <operation>equals</operation>
+            <value>jsanchez@innovativetaxreliefllc.com</value>
+        </filterItems>
+        <isOptional>true</isOptional>
     </lookupFilter>
     <referenceTo>User</referenceTo>
     <relationshipName>Opportunities</relationshipName>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
-    <trackHistory>false</trackHistory>
+    <trackHistory>true</trackHistory>
     <type>Lookup</type>
 </CustomField>

@@ -2,9 +2,21 @@
 <StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <sorted>false</sorted>
     <standardValue>
-        <fullName>Intro</fullName>
+        <fullName>Intro Call</fullName>
         <default>true</default>
-        <label>Intro</label>
+        <label>Intro Call</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Pre-Activation</fullName>
+        <default>false</default>
+        <label>Pre-Activation</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Activation Call</fullName>
+        <default>false</default>
+        <label>Activation Call</label>
         <closed>false</closed>
     </standardValue>
     <standardValue>
@@ -80,15 +92,15 @@
         <closed>true</closed>
     </standardValue>
     <standardValue>
-        <fullName>Case Closed</fullName>
-        <default>false</default>
-        <label>Case Closed</label>
-        <closed>true</closed>
-    </standardValue>
-    <standardValue>
         <fullName>Case Completed Failed</fullName>
         <default>false</default>
         <label>Case Completed Failed</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Case Closed</fullName>
+        <default>false</default>
+        <label>Case Closed</label>
         <closed>true</closed>
     </standardValue>
 </StandardValueSet>

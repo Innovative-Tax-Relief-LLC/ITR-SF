@@ -3,6 +3,10 @@
     <fullName>Tax Prep Only Case Process</fullName>
     <isActive>true</isActive>
     <values>
+        <fullName>Activation Call</fullName>
+        <default>false</default>
+    </values>
+    <values>
         <fullName>Case Completed Failed</fullName>
         <default>false</default>
     </values>
@@ -11,8 +15,12 @@
         <default>false</default>
     </values>
     <values>
-        <fullName>Intro</fullName>
+        <fullName>Intro Call</fullName>
         <default>true</default>
+    </values>
+    <values>
+        <fullName>Pre-Activation</fullName>
+        <default>false</default>
     </values>
     <values>
         <fullName>Tax Prep Docs Accepted</fullName>

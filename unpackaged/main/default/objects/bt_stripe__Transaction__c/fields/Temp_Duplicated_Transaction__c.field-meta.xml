@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Temp_Duplicated_Transaction__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Temporary checkbox to track duplicated transactions generated during Biling Data Migration.</description>
+    <inlineHelpText>Temporary checkbox to track duplicated transactions generated during Biling Data Migration.</inlineHelpText>
+    <label>Temp Dup Transaction</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

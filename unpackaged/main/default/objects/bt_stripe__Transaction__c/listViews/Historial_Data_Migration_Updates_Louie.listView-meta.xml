@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Historial_Data_Migration_Updates_Louie</fullName>
+    <columns>NAME</columns>
+    <columns>bt_stripe__Opportunity2__c</columns>
+    <columns>bt_stripe__Transaction_Status__c</columns>
+    <columns>bt_stripe__Payment_Status__c</columns>
+    <columns>bt_stripe__Non_Stripe__c</columns>
+    <columns>bt_stripe__Auto_Capture__c</columns>
+    <columns>bt_stripe__Payment_Schedule__c</columns>
+    <columns>bt_stripe__Related_Account__c</columns>
+    <columns>bt_stripe__Due_Date__c</columns>
+    <columns>bt_stripe__Amount__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>bt_stripe__Transaction__c.bt_stripe__Charge</value>
+    </filters>
+    <filters>
+        <field>bt_stripe__Transaction_Status__c</field>
+        <operation>contains</operation>
+        <value>Open,Completed</value>
+    </filters>
+    <filters>
+        <field>bt_stripe__Opportunity2__c</field>
+        <operation>contains</operation>
+        <value>Nancy Gachowski</value>
+    </filters>
+    <label>Historial Data Migration Updates - Louie</label>
+</ListView>

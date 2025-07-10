@@ -9,8 +9,8 @@
 	<div id="lDiv"/>
 	<script>
 	var nameSpacePrefix = '{!JSENCODE(nameSpacePrefix)}';
-	var groupId = '{!groupId}';
-	var recordId = '{!recordId}';
+	var groupId = '{!JSENCODE(groupId)}';
+	var recordId = '{!JSENCODE(recordId)}';
 
 	var params = {};
 	params['groupId'] = groupId;

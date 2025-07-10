@@ -50,4 +50,26 @@ public class TestUtility {
         return returnList;
     }
 
+    public static EmailTemplate createEmailTemplate(String name, String developerName) {
+        return new EmailTemplate(
+            DeveloperName = developerName,
+            Name = name,
+            IsActive = true,
+            FolderId = UserInfo.getUserId(),
+            TemplateType = 'text',
+            Subject = 'Test Subject',
+            Body = 'Test Body'
+        );
+    }
+
+    public static Case createCase(Id accountId, Id contactId, Id ownerId) {
+        return new Case(
+            Subject = 'Test Case',
+            Status = 'New',
+            ContactId = contactId,
+            AccountId = accountId,
+            OwnerId = ownerId
+        );
+    }
+
 }

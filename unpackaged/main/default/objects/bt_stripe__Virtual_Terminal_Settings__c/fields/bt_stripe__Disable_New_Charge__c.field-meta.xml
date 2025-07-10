@@ -3,6 +3,7 @@
     <fullName>bt_stripe__Disable_New_Charge__c</fullName>
     <defaultValue>false</defaultValue>
     <deprecated>false</deprecated>
+    <description>Disables the ability to complete a charge transaction.</description>
     <label>Disable New Charge</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

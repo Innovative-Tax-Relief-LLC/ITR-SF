@@ -38,7 +38,15 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>30%25 Advance payment</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>File closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paid in Full</fullName>
             <default>false</default>
         </values>
         <values>
@@ -47,6 +55,10 @@
         </values>
         <values>
             <fullName>Recaptured same day</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reinstatement fee</fullName>
             <default>false</default>
         </values>
         <values>

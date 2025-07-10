@@ -8,13 +8,14 @@
     <columns>bt_stripe__Balance_Due__c</columns>
     <columns>bt_stripe__Balance_Paid__c</columns>
     <columns>Percentage_Paid_So_Far__c</columns>
+    <columns>CREATED_DATE</columns>
     <columns>bt_stripe__Cancel_Payment_Schedule__c</columns>
     <columns>bt_stripe__Payment_Method__c</columns>
     <columns>bt_stripe__Payment_Gateway__c</columns>
     <columns>bt_stripe__Account__c</columns>
     <columns>Formula_Name__c</columns>
     <columns>Opportunity__c</columns>
-    <columns>CREATED_DATE</columns>
+    <columns>Last_Payment_Date__c</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>

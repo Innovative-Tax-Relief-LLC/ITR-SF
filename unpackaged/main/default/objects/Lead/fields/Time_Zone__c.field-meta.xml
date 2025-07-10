@@ -41,52 +41,45 @@
                 <label>Pacific Time (US &amp; Canada)</label>
             </value>
             <value>
+                <fullName>Eastern</fullName>
+                <default>false</default>
+                <label>Eastern</label>
+            </value>
+            <value>
+                <fullName>Central</fullName>
+                <default>false</default>
+                <label>Central</label>
+            </value>
+            <value>
+                <fullName>Mountain</fullName>
+                <default>false</default>
+                <label>Mountain</label>
+            </value>
+            <value>
+                <fullName>Pacific</fullName>
+                <default>false</default>
+                <label>Pacific</label>
+            </value>
+            <value>
+                <fullName>Hawaii</fullName>
+                <default>false</default>
+                <label>Hawaii</label>
+            </value>
+            <value>
                 <fullName>Alaska</fullName>
                 <default>false</default>
-                <isActive>false</isActive>
                 <label>Alaska</label>
             </value>
             <value>
                 <fullName>Arizona</fullName>
                 <default>false</default>
-                <isActive>false</isActive>
                 <label>Arizona</label>
-            </value>
-            <value>
-                <fullName>Central</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>Central</label>
-            </value>
-            <value>
-                <fullName>Eastern</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>Eastern</label>
             </value>
             <value>
                 <fullName>Guam, Port Moresby</fullName>
                 <default>false</default>
                 <isActive>false</isActive>
                 <label>Guam, Port Moresby</label>
-            </value>
-            <value>
-                <fullName>Hawaii</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>Hawaii</label>
-            </value>
-            <value>
-                <fullName>Mountain</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>Mountain</label>
-            </value>
-            <value>
-                <fullName>Pacific</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>Pacific</label>
             </value>
         </valueSetDefinition>
     </valueSet>

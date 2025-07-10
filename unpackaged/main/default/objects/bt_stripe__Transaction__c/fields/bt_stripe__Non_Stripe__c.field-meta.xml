@@ -5,7 +5,7 @@
     <deprecated>false</deprecated>
     <inlineHelpText>Transactions will process through Stripe unless this box is checked. An example is if you receive a check or want to record a wire transfer, you&#39;d check this box and have the Transaction Record Type of &quot;Charge&quot;.</inlineHelpText>
     <label>Non-Gateway</label>
-    <trackHistory>false</trackHistory>
+    <trackHistory>true</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>
 </CustomField>

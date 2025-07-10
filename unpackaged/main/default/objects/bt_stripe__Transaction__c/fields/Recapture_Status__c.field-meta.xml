@@ -55,6 +55,21 @@
                 <default>false</default>
                 <label>1st trade payment decline</label>
             </value>
+            <value>
+                <fullName>Paid in Full</fullName>
+                <default>false</default>
+                <label>Paid in Full</label>
+            </value>
+            <value>
+                <fullName>30% Advance payment</fullName>
+                <default>false</default>
+                <label>30% Advance payment</label>
+            </value>
+            <value>
+                <fullName>Reinstatement fee</fullName>
+                <default>false</default>
+                <label>Reinstatement fee</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

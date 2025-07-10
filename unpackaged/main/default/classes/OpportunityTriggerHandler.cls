@@ -36,47 +36,6 @@ public class OpportunityTriggerHandler {
             processOpportunities(oppsToProcess);
         }
     }
-    
-    // Start of El Funileiro Code
-    public static void handleFieldChangesOpportunities(Map<Id, Opportunity> oldMap, Map<Id, Opportunity> newMap, Boolean isInsert, Boolean isUpdate) {
-        List<Opportunity> opportunitiesData = new List<Opportunity>();
-
-        // List of fields to check
-        Set<String> monitoredFields = new Set<String>{
-            'Name', 'Type', 'StageName', 'Sub_Stage__c', 'CloseDate', 'Tax_Type__c'
-        };
-
-        for (Opportunity opp : newMap.values()) {            
-            Boolean hasChanges = false;
-            
-                if (isInsert) {
-                    // Checks whether any monitored field has a value filled in upon insertion
-                    for (String field : monitoredFields) {
-                        if (opp.get(field) != null) {
-                            hasChanges = true;
-                            break;
-                        }
-                    }
-                } else if (isUpdate) {
-                    // Checks if any monitored field was changed in the update
-                    Opportunity oldOpp = oldMap.get(opp.Id);
-                    for (String field : monitoredFields) {
-                        if (oldOpp.get(field) != opp.get(field)) {
-                            hasChanges = true;
-                            break;
-                        }
-                    }
-                }
-
-            if (hasChanges) {
-                opportunitiesData.add(opp);
-            }
-        }
-        if(!opportunitiesData.isEmpty()){
-            Database.executeBatch(new OpportunitiesWebhookCallout(JSON.serialize(opportunitiesData), opportunitiesData), 200);
-        }
-    }
-    // End of El Funileiro Code
 
     private static void processOpportunities(List<Opportunity> oppsToProcess) {
         List<Account> accountsToUpdate = new List<Account>();

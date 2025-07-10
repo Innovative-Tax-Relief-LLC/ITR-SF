@@ -1,11 +1,173 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>62.0</apiVersion>
+    <assignments>
+        <name>Assign_12</name>
+        <label>Assign 12</label>
+        <locationX>578</locationX>
+        <locationY>431</locationY>
+        <assignmentItems>
+            <assignToReference>NumberofMonthstoAdd</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <numberValue>12.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Representation_End_Date</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_18</name>
+        <label>Assign 18</label>
+        <locationX>842</locationX>
+        <locationY>431</locationY>
+        <assignmentItems>
+            <assignToReference>NumberofMonthstoAdd</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <numberValue>18.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Representation_End_Date</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_24</name>
+        <label>Assign 24</label>
+        <locationX>1106</locationX>
+        <locationY>431</locationY>
+        <assignmentItems>
+            <assignToReference>NumberofMonthstoAdd</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <numberValue>24.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Representation_End_Date</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_3</name>
+        <label>Assign 3</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <assignmentItems>
+            <assignToReference>NumberofMonthstoAdd</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <numberValue>3.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Representation_End_Date</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_6</name>
+        <label>Assign 6</label>
+        <locationX>314</locationX>
+        <locationY>431</locationY>
+        <assignmentItems>
+            <assignToReference>NumberofMonthstoAdd</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <numberValue>6.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Representation_End_Date</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Months_In_Field</name>
+        <label>Months In Field?</label>
+        <locationX>710</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>X3_months</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Service_Resolution_Type_1_1__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>3 Months</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_3</targetReference>
+            </connector>
+            <label>3 months</label>
+        </rules>
+        <rules>
+            <name>X6_Months</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Service_Resolution_Type_1_1__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>6 Months</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_6</targetReference>
+            </connector>
+            <label>6 Months</label>
+        </rules>
+        <rules>
+            <name>X12</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Service_Resolution_Type_1_1__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>12 Months</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_12</targetReference>
+            </connector>
+            <label>12 Months</label>
+        </rules>
+        <rules>
+            <name>X18_Months</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Service_Resolution_Type_1_1__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>18 Months</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_18</targetReference>
+            </connector>
+            <label>18 Months</label>
+        </rules>
+        <rules>
+            <name>X24_Months</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Service_Resolution_Type_1_1__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>24 Months</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_24</targetReference>
+            </connector>
+            <label>24 Months</label>
+        </rules>
+    </decisions>
     <environments>Default</environments>
     <formulas>
         <name>EndDate</name>
         <dataType>Date</dataType>
-        <expression>ADDMONTHS({!$Record.Representation_Start_Date__c},VALUE({!$Record.Service_Resolution_Type_1_1__c}))</expression>
+        <expression>ADDMONTHS({!$Record.Representation_Start_Date__c},{!NumberofMonthstoAdd})</expression>
     </formulas>
     <interviewLabel>Calculate Tax Representation Date {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Calculate Tax Representation Date</label>
@@ -31,8 +193,8 @@
     <recordUpdates>
         <name>Update_Representation_End_Date</name>
         <label>Update Representation End Date</label>
-        <locationX>176</locationX>
-        <locationY>323</locationY>
+        <locationX>710</locationX>
+        <locationY>623</locationY>
         <inputAssignments>
             <field>Representation_End_Date__c</field>
             <value>
@@ -42,10 +204,10 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>50</locationX>
+        <locationX>584</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Update_Representation_End_Date</targetReference>
+            <targetReference>Months_In_Field</targetReference>
         </connector>
         <filterFormula>ISNULL({!$Record.Representation_Start_Date__c}) = FALSE &amp;&amp; ISNULL({!$Record.Service_Resolution_Type_1_1__c})=FALSE 
 &amp;&amp; 
@@ -54,5 +216,16 @@ OR(ISCHANGED({!$Record.Representation_Start_Date__c})=TRUE,ISCHANGED({!$Record.S
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
+    <variables>
+        <name>NumberofMonthstoAdd</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+        <value>
+            <numberValue>1.0</numberValue>
+        </value>
+    </variables>
 </Flow>

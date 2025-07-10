@@ -1,10 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
+        <name>Send_Email_to_Collection_Specialist</name>
+        <label>Send Email to Collection Specialist</label>
+        <locationX>50</locationX>
+        <locationY>647</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Update_Transaction_so_Process_Runs_Once</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>Get_Collection_Specialist_User_Record.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>$User.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>taskSubject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>emailBody</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
         <name>Send_Email_to_Opp_Team_Members</name>
         <label>Send Email to Opp Team Members</label>
-        <locationX>50</locationX>
-        <locationY>1163</locationY>
+        <locationX>402</locationX>
+        <locationY>1271</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <connector>
@@ -42,8 +80,8 @@
     <assignments>
         <name>Set_User_Emails</name>
         <label>Set User Emails</label>
-        <locationX>138</locationX>
-        <locationY>971</locationY>
+        <locationX>490</locationX>
+        <locationY>1079</locationY>
         <assignmentItems>
             <assignToReference>teamMemberEmails</assignToReference>
             <operator>Add</operator>
@@ -58,8 +96,8 @@
     <decisions>
         <name>Found_Queue</name>
         <label>Found Queue?</label>
-        <locationX>182</locationX>
-        <locationY>647</locationY>
+        <locationX>534</locationX>
+        <locationY>755</locationY>
         <defaultConnector>
             <targetReference>Update_Transaction_so_Process_Runs_Once</targetReference>
         </defaultConnector>
@@ -80,6 +118,38 @@
             <label>Queue Found</label>
         </rules>
     </decisions>
+    <decisions>
+        <name>Is_Collection_Specialist_blank</name>
+        <label>Is Collection Specialist blank?</label>
+        <locationX>292</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Get_Queue_Id</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Yes</defaultConnectorLabel>
+        <rules>
+            <name>No</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Collection_Specialist__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.bt_stripe__Opportunity2__r.CreatedDate</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <dateTimeValue>2025-02-01T08:00:00.000Z</dateTimeValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Collection_Specialist_User_Record</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
     <environments>Default</environments>
     <formulas>
         <name>opportunityLink</name>
@@ -96,8 +166,8 @@
     <loops>
         <name>For_Each_Queue_Member</name>
         <label>For Each Queue Member</label>
-        <locationX>50</locationX>
-        <locationY>755</locationY>
+        <locationX>402</locationX>
+        <locationY>863</locationY>
         <collectionReference>Get_Queue_Members</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -129,8 +199,8 @@
     <recordCreates>
         <name>Create_Task</name>
         <label>Create Task</label>
-        <locationX>182</locationX>
-        <locationY>431</locationY>
+        <locationX>534</locationX>
+        <locationY>539</locationY>
         <connector>
             <targetReference>Get_Queue_Members</targetReference>
         </connector>
@@ -167,11 +237,73 @@
         <object>Task</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
+    <recordCreates>
+        <name>Create_Task_for_Collection_Specialist</name>
+        <label>Create Task for Collection Specialist</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+        <connector>
+            <targetReference>Send_Email_to_Collection_Specialist</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>ActivityDate</field>
+            <value>
+                <elementReference>$Record.LastModifiedDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>Get_Collection_Specialist_User_Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Priority</field>
+            <value>
+                <stringValue>Urgent</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <elementReference>taskSubject</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhatId</field>
+            <value>
+                <elementReference>$Record.bt_stripe__Payment_Schedule__r.Opportunity__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Collection_Specialist_User_Record</name>
+        <label>Get Collection Specialist User Record</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Create_Task_for_Collection_Specialist</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.bt_stripe__Opportunity2__r.Collection_Specialist__r.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordLookups>
         <name>Get_Queue_Id</name>
         <label>Get Queue Id</label>
-        <locationX>182</locationX>
-        <locationY>323</locationY>
+        <locationX>534</locationX>
+        <locationY>431</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Create_Task</targetReference>
@@ -191,8 +323,8 @@
     <recordLookups>
         <name>Get_Queue_Members</name>
         <label>Get Queue Members</label>
-        <locationX>182</locationX>
-        <locationY>539</locationY>
+        <locationX>534</locationX>
+        <locationY>647</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Found_Queue</targetReference>
@@ -212,8 +344,8 @@
     <recordLookups>
         <name>Get_User_Emails</name>
         <label>Get User Emails</label>
-        <locationX>138</locationX>
-        <locationY>863</locationY>
+        <locationX>490</locationX>
+        <locationY>971</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Set_User_Emails</targetReference>
@@ -233,8 +365,8 @@
     <recordUpdates>
         <name>Update_Transaction_so_Process_Runs_Once</name>
         <label>Update Transaction so Process Runs Once</label>
-        <locationX>182</locationX>
-        <locationY>1355</locationY>
+        <locationX>292</locationX>
+        <locationY>1547</locationY>
         <inputAssignments>
             <field>First_Declined_Process_Completed__c</field>
             <value>
@@ -244,10 +376,10 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>56</locationX>
+        <locationX>166</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Get_Queue_Id</targetReference>
+            <targetReference>Is_Collection_Specialist_blank</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -275,7 +407,7 @@
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Obsolete</status>
+    <status>Active</status>
     <textTemplates>
         <name>emailBody</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
@@ -287,6 +419,13 @@ Please find related task and follow up with your opportunity team.
 
 Regards</text>
     </textTemplates>
+    <variables>
+        <name>collectionSpecialistEmail</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
     <variables>
         <name>teamMemberEmails</name>
         <dataType>String</dataType>

@@ -3,5 +3,5 @@
 		<apex:inputHidden value="{!bt_stripe__Payment_Gateway__c.bt_stripe__Test_Mode__c}"/>
 		<apex:inputHidden value="{!bt_stripe__Payment_Gateway__c.bt_stripe__Provider__c}"/>
 	</apex:form>
-	<a href="{!redirectUrl}">Connect!</a>
+	<apex:outputLink value="{!redirectUrl}">Connect!</apex:outputLink>
 </apex:page>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Intro_Call_Cases</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4 AND (5 AND 6)</booleanFilter>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>Opportunity__c</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>CASES.CREATED_DATE</columns>
+    <columns>LastOutreachDate__c</columns>
+    <columns>OWNER_NAME</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>equals</operation>
+        <value>Intro Call</value>
+    </filters>
+    <filters>
+        <field>OWNER_NAME</field>
+        <operation>notEqual</operation>
+        <value>Gabriela Fernandez</value>
+    </filters>
+    <filters>
+        <field>OWNER_NAME</field>
+        <operation>notEqual</operation>
+        <value>Firian Martinez</value>
+    </filters>
+    <filters>
+        <field>OWNER_NAME</field>
+        <operation>notEqual</operation>
+        <value>Eriksson Morales</value>
+    </filters>
+    <filters>
+        <field>OWNER_NAME</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Enrolled_Agent__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>My Intro Call Cases</label>
+    <sharedTo>
+        <group>Case_Managers</group>
+        <group>ITR_Admin</group>
+    </sharedTo>
+</ListView>

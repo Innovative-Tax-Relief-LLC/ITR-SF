@@ -1,5 +1,5 @@
-<apex:page showHeader="true" sidebar="true" controller="bt_stripe.OrderService" action="{!validate}">
-
+<apex:page showHeader="true" sidebar="true" controller="bt_stripe.OrderService">
+	<apex:pageMessages />
 	<c:BT_Common /> <!-- includes common html and javascript we use in all our VF Pages & Components -->
 
 	<!-- setting max-width here to it doesn't stretch across the entire screen on desktops - this also keeps it looking good for mobile -->
@@ -28,6 +28,7 @@
 				<div class="slds-card__body slds-card__body_inner">
 					<apex:form id="main">
 						<apex:actionFunction name="doAction" action="{!createInvoice}" oncomplete="allDone()" rerender="errorMessage"></apex:actionFunction>
+						<apex:actionFunction name="validateAction" action="{!validate}" oncomplete="allDone()" rerender="errorMessage"></apex:actionFunction>
 						<apex:inputHidden value="{!errorMessage}" id="errorMessage" />
 					</apex:form>
 
@@ -43,7 +44,7 @@
 						</button>
 					</apex:outputPanel>
 
-					<button id="back" class="slds-button slds-button_neutral slds-not-selected " aria-live="assertive" onclick="navigateTo('{!sObjId}')">
+					<button id="back" class="slds-button slds-button_neutral slds-not-selected " aria-live="assertive" onclick="navigateTo('{!JSENCODE(sObjId)}')">
 						<span class="slds-text-not-selected">Return To Record</span>
 					</button>
 				</footer>
@@ -53,9 +54,11 @@
 
 	<script>
 	window.onload = function() {
-		if ({!error}) { // this attribute is Boolean - false positive on Reflected/Stored XSS
-			showErrorToast("{!JSENCODE(errorMessage)}");
-		}
+    	if ({!error}) { // this attribute is Boolean - false positive on Reflected/Stored XSS
+   			showErrorToast("{!JSENCODE(errorMessage)}");
+  		} else {
+   			validateAction();
+  		}
 	};
 
 	function doActionJS() {
@@ -72,7 +75,7 @@
 			showErrorToast(error);
 		} else { // success!
 			
-			showSuccessToast('The Invoice has been created.', '{!sObjId}');
+			showSuccessToast('The Invoice has been created.', '{!JSENCODE(sObjId)}');
 		}
 	}
 	</script>

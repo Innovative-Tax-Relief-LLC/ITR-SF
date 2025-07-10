@@ -3,18 +3,23 @@
     <fullName>Support_View_Marianny</fullName>
     <columns>OPPORTUNITY.NAME</columns>
     <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.RECORDTYPE</columns>
     <columns>OPPORTUNITY.STAGE_NAME</columns>
     <columns>Sub_Stage__c</columns>
     <columns>OPPORTUNITY.LAST_STAGE_CHANGE</columns>
-    <columns>Payment_Details__c</columns>
     <columns>OPPORTUNITY.CLOSE_DATE</columns>
-    <columns>OPPORTUNITY.AMOUNT</columns>
-    <columns>CORE.USERS.ALIAS</columns>
+    <columns>X2T_Received_Agreement_Timestamp__c</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>Negotiations_Case_Created__c</columns>
+    <columns>Solution_Type__c</columns>
+    <columns>Tax_Negotiation_Created__c</columns>
+    <columns>Tax_Prep_Case_Created__c</columns>
+    <columns>TI_PIF__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>OPPORTUNITY.NAME</field>
-        <operation>contains</operation>
-        <value>Eriksson Testing</value>
+        <field>Financing_Lender_Used__c</field>
+        <operation>equals</operation>
+        <value>Monterey-Tier C</value>
     </filters>
     <label>Support View_Marianny</label>
 </ListView>

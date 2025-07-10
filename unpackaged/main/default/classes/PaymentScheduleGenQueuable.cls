@@ -82,13 +82,13 @@ public with sharing class PaymentScheduleGenQueuable implements Queueable, Datab
         public Id opportunityId;
 
         @InvocableVariable(label='Initial Amount')
-        public Integer initialAmount;
+        public Decimal initialAmount;
 
         @InvocableVariable(label='Each Amount')
-        public Integer eachAmount;
+        public Decimal eachAmount;
 
         @InvocableVariable(label='Total Amount')
-        public Integer totalAmount;
+        public Decimal totalAmount;
 
         @InvocableVariable(label='Currency')
         public String currencyITR;
@@ -115,10 +115,10 @@ public with sharing class PaymentScheduleGenQueuable implements Queueable, Datab
         public String scheduleStatus;
 
         @InvocableVariable(label='Balance Paid')
-        public Integer balancePaid;
+        public Decimal balancePaid;
 
         @InvocableVariable(label='Balance Due')
-        public Integer balanceDue;
+        public Decimal balanceDue;
 
         @InvocableVariable(label='Next Payment Date')
         public Date nextPaymentDate;

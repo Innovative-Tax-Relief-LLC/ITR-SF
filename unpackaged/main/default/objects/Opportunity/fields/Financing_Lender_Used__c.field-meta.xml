@@ -4,36 +4,66 @@
     <label>Financing Lender Used</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
-    <trackHistory>false</trackHistory>
+    <trackHistory>true</trackHistory>
     <type>Picklist</type>
     <valueSet>
         <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Afterpay</fullName>
-                <default>false</default>
-                <label>Afterpay</label>
-            </value>
-            <value>
-                <fullName>UCFS</fullName>
-                <default>false</default>
-                <label>UCFS</label>
-            </value>
-            <value>
                 <fullName>DecisionFi</fullName>
                 <default>false</default>
                 <label>DecisionFi</label>
             </value>
             <value>
-                <fullName>ZipLoan</fullName>
+                <fullName>Monterey Tier A</fullName>
                 <default>false</default>
-                <label>ZipLoan</label>
+                <label>Monterey Tier A</label>
             </value>
             <value>
-                <fullName>ElevateFinance</fullName>
+                <fullName>Monterey Tier B</fullName>
                 <default>false</default>
-                <label>ElevateFinance</label>
+                <label>Monterey Tier B</label>
+            </value>
+            <value>
+                <fullName>Monterey Tier B+</fullName>
+                <default>false</default>
+                <label>Monterey Tier B+</label>
+            </value>
+            <value>
+                <fullName>Monterey-Tier C</fullName>
+                <default>false</default>
+                <label>Monterey-Tier C</label>
+            </value>
+            <value>
+                <fullName>Monterey Poss-Flip</fullName>
+                <default>false</default>
+                <label>Monterey Poss-Flip</label>
+            </value>
+            <value>
+                <fullName>Elevate Finance - Tier 1</fullName>
+                <default>false</default>
+                <label>Elevate Finance - Tier 1</label>
+            </value>
+            <value>
+                <fullName>Elevate Finance - Tier 2</fullName>
+                <default>false</default>
+                <label>Elevate Finance - Tier 2</label>
+            </value>
+            <value>
+                <fullName>Elevate Finance - Tier 3</fullName>
+                <default>false</default>
+                <label>Elevate Finance - Tier 3</label>
+            </value>
+            <value>
+                <fullName>Elevate Finance - Tier 4</fullName>
+                <default>false</default>
+                <label>Elevate Finance - Tier 4</label>
+            </value>
+            <value>
+                <fullName>Elevate Finance - Tier 5</fullName>
+                <default>false</default>
+                <label>Elevate Finance - Tier 5</label>
             </value>
             <value>
                 <fullName>Flexxbuy</fullName>
@@ -41,14 +71,29 @@
                 <label>Flexxbuy</label>
             </value>
             <value>
+                <fullName>UCFS</fullName>
+                <default>false</default>
+                <label>UCFS</label>
+            </value>
+            <value>
+                <fullName>ZipLoan</fullName>
+                <default>false</default>
+                <label>ZipLoan</label>
+            </value>
+            <value>
+                <fullName>Afterpay</fullName>
+                <default>false</default>
+                <label>Afterpay</label>
+            </value>
+            <value>
+                <fullName>ElevateFinance</fullName>
+                <default>false</default>
+                <label>ElevateFinance</label>
+            </value>
+            <value>
                 <fullName>Monterey</fullName>
                 <default>false</default>
                 <label>Monterey</label>
-            </value>
-            <value>
-                <fullName>Monterrey Possflip</fullName>
-                <default>false</default>
-                <label>Monterrey Possflip</label>
             </value>
         </valueSetDefinition>
     </valueSet>

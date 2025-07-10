@@ -46,4 +46,14 @@
         <default>false</default>
         <label>Order To Billing Schedule</label>
     </standardValue>
+    <standardValue>
+        <fullName>Catalog Syndication</fullName>
+        <default>false</default>
+        <label>Catalog Syndication</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Subscription Payment</fullName>
+        <default>false</default>
+        <label>Subscription Payment</label>
+    </standardValue>
 </StandardValueSet>

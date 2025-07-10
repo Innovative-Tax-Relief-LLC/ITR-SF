@@ -1,30 +1,25 @@
-@RestResource(urlMapping='/VelocifyCreateOpportunity')
+@RestResource(UrlMapping='/VelocifyCreateOpportunity')
 global with sharing class VelocifyOpportunityRestService {
-	private static Id achRecordTypeId = Schema.SObjectType.bt_stripe__Payment_Method__c.getRecordTypeInfosByDeveloperName().get('ACH').getRecordTypeId();
-    private static Id creditCardRecordTypeId = Schema.SObjectType.bt_stripe__Payment_Method__c.getRecordTypeInfosByDeveloperName().get('Charge_Card').getRecordTypeId();
-    private static Id secondTradersOppRecordTypeId = Schema.SObjectType.Opportunity.getRecordTypeInfosByDeveloperName().get('Second_Trade').getRecordTypeId();
-    private static Id thirdTradersOppRecordTypeId = Schema.SObjectType.Opportunity.getRecordTypeInfosByDeveloperName().get('Third_Trade').getRecordTypeId();
+	private static final Id achRecordTypeId = Schema.SObjectType.bt_stripe__Payment_Method__c.getRecordTypeInfosByDeveloperName().get('ACH').getRecordTypeId();
+    private static final Id creditCardRecordTypeId = Schema.SObjectType.bt_stripe__Payment_Method__c.getRecordTypeInfosByDeveloperName().get('Charge_Card').getRecordTypeId();
+    private static final Id secondTradersOppRecordTypeId = Schema.SObjectType.Opportunity.getRecordTypeInfosByDeveloperName().get('Second_Trade').getRecordTypeId();
+    private static final Id thirdTradersOppRecordTypeId = Schema.SObjectType.Opportunity.getRecordTypeInfosByDeveloperName().get('Third_Trade').getRecordTypeId();
 
-    @TestVisible
-    private static Account findAccountByExternalId(String externalId) {
-        if (!Schema.sObjectType.Account.isAccessible()) {
+    private static Account findAccountByCellphoneAndEmail(String cellphone, String email) {
+        if (!Schema.SObjectType.Account.isAccessible()) {
             throw new SecurityException('Insufficient permissions to access Account');
         }
-        
-        Decimal externalIdNumber;
-        try {
-            externalIdNumber = Decimal.valueOf(externalId);
-        } catch (Exception e) {
+        if(String.isBlank(cellphone) && String.isBlank(email)) {
             return null;
         }
-        
         List<Account> accounts = [
-        SELECT Id, FirstName, LastName
-        FROM Account
-        WHERE ITR_Id__c = :externalIdNumber
-        LIMIT 1
+            SELECT Id, FirstName, LastName, PersonEmail, PersonHomePhone, Work_Phone__pc, PersonMobilePhone 
+            FROM Account 
+            WHERE PersonMobilePhone = :cellphone
+            OR PersonEmail = :email
+            LIMIT 1
         ];
-
+        
         return accounts.isEmpty() ? null : accounts[0];
     }
 
@@ -38,14 +33,15 @@ global with sharing class VelocifyOpportunityRestService {
                 return new VelocifyResponseWrapper(400, false, 'Invalid payload', null);
             }
 
-            Account account = findAccountByExternalId(payload.client_data.profile_id); 
+            Account account = findAccountByCellphoneAndEmail(payload.client_data.cell_phone, payload.client_data.email);
             if(account == null) {
-                return new VelocifyResponseWrapper(400, false, 'We could not find an account associated with the provided ID.', null);
-            }
+                return new VelocifyResponseWrapper(400, false, 'We could not find an account associated with the provided cell phone and email.', null);
+            } 
 
             Opportunity existingOpportunity = findExistingOpportunity(account.Id);
-            if(existingOpportunity != null && existingOpportunity.CreatedDate > Date.today().addDays(-90) 
-            && (existingOpportunity.RecordTypeId == secondTradersOppRecordTypeId || existingOpportunity.RecordTypeId == thirdTradersOppRecordTypeId)) {
+            if(existingOpportunity != null && existingOpportunity.CreatedDate > Date.today().addDays(-90)
+            && (existingOpportunity.RecordTypeId == secondTradersOppRecordTypeId || existingOpportunity.RecordTypeId == thirdTradersOppRecordTypeId)) 
+            {
                 return new VelocifyResponseWrapper(400, false, 'An Opportunity has been created in the last 3 months for this record type; cannot create a new one.', null);
             }
             
@@ -55,25 +51,12 @@ global with sharing class VelocifyOpportunityRestService {
             newOpportunity.CloseDate = Date.today().addMonths(3);
             newOpportunity.StageName = 'Create CPII';
             setOpportunityRecordType(newOpportunity, payload.client_data.opportunity_type);
-            if(findOwnerId(payload) != null) {
-                newOpportunity.OwnerId = findOwnerId(payload);
-            }
+            newOpportunity.OwnerId = findOwnerId(payload);
 
             newOpportunity = mapOpportunityFields(newOpportunity, payload);
             if (newOpportunity.RecordTypeId == null) {
                 return new VelocifyResponseWrapper(400, false, 'Invalid Opportunity Type', null);
             }
-
-            if (!Schema.sObjectType.Opportunity.isCreateable() || !Schema.sObjectType.Opportunity.isUpdateable()) {
-                throw new SecurityException('Insufficient permissions to create/update Opportunity');
-            }
-
-            
-            // if(paymentMethod != null) {
-            //     newOpportunity.bt_stripe__Payment_Method__c = paymentMethod.Id;
-            // } else {
-            //     return new VelocifyResponseWrapper(400, false, 'Invalid Payment Method', null);
-            // }
 
             insert newOpportunity;
             Map<String, String> dataMap = new Map<String, String>();
@@ -88,11 +71,6 @@ global with sharing class VelocifyOpportunityRestService {
 
     private static void createPaymentMethod(Id accountId, VelocifyClientPayload payload) {
         try {
-            // bt_stripe__Payment_Method__c existingPaymentMethod = findExistingPaymentMethod(accountId, payload);
-            // if (existingPaymentMethod != null) {
-            //     return existingPaymentMethod;
-            // }
-            
             bt_stripe__Payment_Method__c newPaymentMethod = new bt_stripe__Payment_Method__c();
             List<ITR_Payment_Method_Field_Mapping__mdt> paymentMethodFieldMappings = ITR_Payment_Method_Field_Mapping__mdt.getAll().values();
             Map<String, Object> billingInfoDataMap = (Map<String, Object>)JSON.deserializeUntyped(JSON.serialize(payload.client_data.billing_info[0]));
@@ -110,45 +88,17 @@ global with sharing class VelocifyOpportunityRestService {
                 newPaymentMethod.RecordTypeId = creditCardRecordTypeId;
                 newPaymentMethod.bt_stripe__Send_to_Gateway__c = !Test.isRunningTest();
             } 
-            
-            // else {
-            //     // return null;
-            // }
 
-            if (!Schema.sObjectType.bt_stripe__Payment_Method__c.isCreateable()) {
+            if (!Schema.SObjectType.bt_stripe__Payment_Method__c.isCreateable()) {
                 throw new SecurityException('Insufficient permissions to create Payment Method');
             }
             
             insert newPaymentMethod;
             
-            // return newPaymentMethod;             
         } catch (Exception e) {
             System.debug('Error creating payment method: ' + e.getMessage());
-            // return null;
         }
     }
-
-    // private static bt_stripe__Payment_Method__c findExistingPaymentMethod(Id accountId, VelocifyClientPayload payload) {
-    //     String routingNumber = payload.client_data.billing_info[0].routing_number; 
-    //     String creditCardNumber = payload.client_data.billing_info[0].card_number;
-
-    //     List<bt_stripe__Payment_Method__c> existingPaymentMethodList = [
-    //         SELECT Id, CreatedDate, bt_stripe__Routing_Number__c, bt_stripe__Card_Number__c
-    //         FROM bt_stripe__Payment_Method__c
-    //         WHERE bt_stripe__Account__c = :accountId 
-    //         AND bt_stripe__Payment_Method_Status__c = 'Valid'
-    //         ORDER BY CreatedDate DESC   
-    //         LIMIT 100
-    //     ];
-
-    //     for (bt_stripe__Payment_Method__c paymentMethod : existingPaymentMethodList) {
-    //         if ((String.isNotBlank(routingNumber) && paymentMethod.bt_stripe__Routing_Number__c == routingNumber) || 
-    //             (String.isNotBlank(creditCardNumber) && paymentMethod.bt_stripe__Card_Number__c == creditCardNumber)) {
-    //             return paymentMethod;
-    //         }
-    //     }
-    //     return null;
-    // }
 
     private static Boolean validatePayload(VelocifyClientPayload payload) {
         if (payload == null || payload.client_data == null || payload.client_data.profile_id == null) {
@@ -204,13 +154,12 @@ global with sharing class VelocifyOpportunityRestService {
         return newOpportunity;
     }
 
-    @TestVisible
     private static Opportunity findExistingOpportunity(Id accountId) {
         List<Opportunity> existingOpportunityList = [
             SELECT Id, CreatedDate, RecordTypeId
             FROM Opportunity
             WHERE AccountId = :accountId
-            AND isClosed = false
+            AND IsClosed = FALSE
             ORDER BY CreatedDate DESC   
             LIMIT 1
         ];
@@ -233,7 +182,16 @@ global with sharing class VelocifyOpportunityRestService {
         if(String.isBlank(secondTraderName)) {
             return null;
         }
-        List<User> users = [SELECT Id FROM User WHERE Name = :secondTraderName LIMIT 1];
+        List<User> users = [SELECT Id, IsActive 
+                            FROM User 
+                            WHERE Name = :secondTraderName AND IsActive = TRUE
+                            LIMIT 1];
+        if(users.isEmpty()) {
+        users = [SELECT Id, IsActive, Name
+                FROM User
+                WHERE Profile.Name = 'ITR Second Trader' AND IsActive = TRUE
+                LIMIT 1];
+        }
         return users.isEmpty() ? null : users[0].Id;
     }
 }
