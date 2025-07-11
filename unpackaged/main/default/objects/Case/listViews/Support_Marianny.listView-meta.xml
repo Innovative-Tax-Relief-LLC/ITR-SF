@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Support_Marianny</fullName>
+    <columns>ITR_Id_formula__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Opportunity__c</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>Sub_status__c</columns>
+    <columns>CASES.CREATED_DATE</columns>
+    <columns>Case_Owner_First_Name__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Has_Business__c</columns>
+    <columns>Representation_Start_Date__c</columns>
+    <columns>Representation_Time__c</columns>
+    <columns>Representation_End_Date__c</columns>
+    <columns>Representation_Re_Closure_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CASES.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Case.Tax_Negotiation_Only_Case,Case.Tax_Prep_Only_Case,Case.Tax_Prep_and_Negotiation_Case</value>
+    </filters>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>equals</operation>
+        <value>Intro Call,Pre-Activation,Activation Call</value>
+    </filters>
+    <filters>
+        <field>Activation_Amount__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Support_Marianny</label>
+</ListView>
