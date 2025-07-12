@@ -48,9 +48,16 @@
         <connector>
             <targetReference>Update</targetReference>
         </connector>
-        <filterFormula>OR(ISCHANGED({!$Record.Owner:User.Id}), ISNEW() )</filterFormula>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OwnerId</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
         <object>Case</object>
-        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>

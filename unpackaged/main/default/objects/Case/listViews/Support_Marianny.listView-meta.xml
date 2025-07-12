@@ -3,18 +3,13 @@
     <fullName>Support_Marianny</fullName>
     <columns>ITR_Id_formula__c</columns>
     <columns>ACCOUNT.NAME</columns>
-    <columns>Opportunity__c</columns>
     <columns>CASES.SUBJECT</columns>
     <columns>CASES.STATUS</columns>
     <columns>Sub_status__c</columns>
     <columns>CASES.CREATED_DATE</columns>
     <columns>Case_Owner_First_Name__c</columns>
     <columns>CORE.USERS.ALIAS</columns>
-    <columns>Has_Business__c</columns>
-    <columns>Representation_Start_Date__c</columns>
-    <columns>Representation_Time__c</columns>
-    <columns>Representation_End_Date__c</columns>
-    <columns>Representation_Re_Closure_Date__c</columns>
+    <columns>Activation_Amount__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>CASES.RECORDTYPE</field>

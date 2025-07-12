@@ -1,6 +1,211 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Copy_1_of_Notify_Ready_for_Activation</name>
+        <label>Notify Ready for Activation</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Update_Case</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <stringValue>jornan@innovativetaxreliefllc.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>casemanagement@innovativetaxreliefllc.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>composeEmailContent</name>
+            <value>
+                <stringValue>True</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>EmailSubject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <stringValue>&lt;p&gt;Case {!Get_2T_Case.SuppliedName}, {!Get_2T_Case.Subject} is ready for activation but the owner is a queue.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please assign a user as the owner and the case will be moved automatically to activation call.&lt;/p&gt;</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Copy_2_of_Notify_Ready_for_Activation</name>
+        <label>Notify Ready for Activation</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Update_Case</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <stringValue>jornan@innovativetaxreliefllc.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>casemanagement@innovativetaxreliefllc.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>composeEmailContent</name>
+            <value>
+                <stringValue>True</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>EmailSubject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <stringValue>&lt;p&gt;Case {!Get_2T_Case.SuppliedName}, {!Get_2T_Case.Subject} is ready for activation but the owner is a queue.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please assign a user as the owner and the case will be moved automatically to activation call.&lt;/p&gt;</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Notify_Ready_for_Activation</name>
+        <label>Notify Ready for Activation</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Update_Case</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <stringValue>jornan@innovativetaxreliefllc.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>casemanagement@innovativetaxreliefllc.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>composeEmailContent</name>
+            <value>
+                <stringValue>True</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>EmailSubject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <stringValue>&lt;p&gt;Case {!Get_2T_Case.SuppliedName}, {!Get_2T_Case.Subject} is ready for activation but the owner is a queue.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please assign a user as the owner and the case will be moved automatically to activation call.&lt;/p&gt;</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
     <apiVersion>64.0</apiVersion>
+    <assignments>
+        <name>Assign_Case_Values</name>
+        <label>Assign Case Values</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>Get_2T_Case.Activation_Amount__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>FinalPaymentThreshold</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_2T_Case.Balance_Paid__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>BalancePaid</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_2T_Case.Case_Activation__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CaseAct100</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_2T_Case.Total_Amount__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>OpportunityRecord.Amount</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>X2T_Case_Found</targetReference>
+        </connector>
+    </assignments>
     <assignments>
         <name>Assign_PT_Final_Calculated</name>
         <label>Assign PT Final Calculated</label>
@@ -14,7 +219,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>X2T_Case_in_Pre_Activation</targetReference>
+            <targetReference>Get_2T_Case</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -30,7 +235,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>X2T_Case_in_Pre_Activation</targetReference>
+            <targetReference>Get_2T_Case</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -46,7 +251,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>X2T_Case_in_Pre_Activation</targetReference>
+            <targetReference>Get_2T_Case</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -82,6 +287,29 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Case_Activation_Assignment</name>
+        <label>Case Activation</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>Get_2T_Case.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Activation Call</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_2T_Case.Activation_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Case</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Copy_1_of_Assign_PT_Value</name>
         <label>Assign PT Value</label>
         <locationX>0</locationX>
@@ -97,11 +325,60 @@
             <targetReference>Assign_PT_Final_Calculated</targetReference>
         </connector>
     </assignments>
+    <assignments>
+        <name>Copy_1_of_Case_Activation</name>
+        <label>Case Activation</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>Get_2T_Case.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Activation Call</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_2T_Case.Activation_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Case</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Copy_2_of_Case_Activation</name>
+        <label>Case Activation</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>Get_2T_Case.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Activation Call</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_2T_Case.Activation_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Case</targetReference>
+        </connector>
+    </assignments>
     <decisions>
         <name>Balance_Paid_Threshold</name>
         <label>Balance Paid&gt;=Threshold</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Update_Case</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes_bigger</name>
@@ -120,10 +397,88 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Copy_1_of_Is_Case_Owned_by_User</name>
+        <label>Is Case Owned by User?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Copy_1_of_Notify_Ready_for_Activation</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Copy_1_of_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_2T_Case.OwnerId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>005</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_2_of_Case_Activation</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Copy_2_of_Is_Case_Owned_by_User</name>
+        <label>Is Case Owned by User?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Copy_2_of_Notify_Ready_for_Activation</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Copy_2_of_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_2T_Case.OwnerId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>005</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Case_Activation</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Case_Owned_by_User</name>
+        <label>Is Case Owned by User?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Notify_Ready_for_Activation</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_user</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_2T_Case.OwnerId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>005</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Case_Activation_Assignment</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Is_Loan_Purchased</name>
         <label>Is Loan Purchased?</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Update_Case</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>Yes_purchased</name>
@@ -136,16 +491,19 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Case_Activationx2</targetReference>
+                <targetReference>Copy_1_of_Is_Case_Owned_by_User</targetReference>
             </connector>
             <label>Yes</label>
         </rules>
     </decisions>
     <decisions>
         <name>Is_Possflip_or_in_House</name>
-        <label>Is Possflip or in House?</label>
+        <label>Is Possflip, in House or Lender?</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Update_Case</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Possflip</name>
@@ -173,9 +531,31 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Case_Activation</targetReference>
+                <targetReference>Is_Case_Owned_by_User</targetReference>
             </connector>
             <label>In House</label>
+        </rules>
+        <rules>
+            <name>Lender</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>OpportunityRecord.Financing_Lender_Used__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Monterey Poss-Flip</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>OpportunityRecord.Financing_Lender_Used__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_2_of_Is_Case_Owned_by_User</targetReference>
+            </connector>
+            <label>Lender</label>
         </rules>
     </decisions>
     <decisions>
@@ -205,6 +585,9 @@
         <label>Threshold Compare</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Get_2T_Case</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Down_Payment</name>
@@ -269,28 +652,35 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Threshold_Compare</targetReference>
+                <targetReference>X2T_Case_in_Pre_Activation</targetReference>
             </connector>
             <label>Yes</label>
         </rules>
     </decisions>
     <decisions>
         <name>X2T_Case_in_Pre_Activation</name>
-        <label>2T Case in Pre-Activation?</label>
+        <label>2T Case in Pre-Activation or Intro?</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <defaultConnector>
-            <targetReference>Update_Case_Balance</targetReference>
+            <targetReference>Update_Case</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>Yes_pre</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>or</conditionLogic>
             <conditions>
                 <leftValueReference>Get_2T_Case.Status</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Pre-Activation</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_2T_Case.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Intro Call</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -325,7 +715,7 @@
             <targetReference>Calculate_Balance_Paid</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>Get_2T_Case</targetReference>
+            <targetReference>Threshold_Compare</targetReference>
         </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
@@ -354,7 +744,7 @@
         <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>X2T_Case_Found</targetReference>
+            <targetReference>Assign_Case_Values</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -404,139 +794,11 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
-        <name>Case_Activation</name>
-        <label>Case Activation</label>
+        <name>Update_Case</name>
+        <label>Update Case</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>Get_2T_Case.Id</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>Activation_Amount__c</field>
-            <value>
-                <elementReference>FinalPaymentThreshold</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Activation_Date__c</field>
-            <value>
-                <elementReference>$Flow.CurrentDate</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Balance_Paid__c</field>
-            <value>
-                <elementReference>BalancePaid</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Case_Activation__c</field>
-            <value>
-                <elementReference>CaseAct100</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Status</field>
-            <value>
-                <stringValue>Activation Call</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Total_Amount__c</field>
-            <value>
-                <elementReference>OpportunityRecord.Amount</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Case</object>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Case_Activationx2</name>
-        <label>Case Activation</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>Get_2T_Case.Id</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>Activation_Amount__c</field>
-            <value>
-                <elementReference>FinalPaymentThreshold</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Activation_Date__c</field>
-            <value>
-                <elementReference>$Flow.CurrentDate</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Balance_Paid__c</field>
-            <value>
-                <elementReference>BalancePaid</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Case_Activation__c</field>
-            <value>
-                <elementReference>CaseAct100</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Status</field>
-            <value>
-                <stringValue>Activation Call</stringValue>
-            </value>
-        </inputAssignments>
-        <object>Case</object>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Update_Case_Balance</name>
-        <label>Update Case Balance</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>Get_2T_Case.Id</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>Activation_Amount__c</field>
-            <value>
-                <elementReference>FinalPaymentThreshold</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Balance_Paid__c</field>
-            <value>
-                <elementReference>BalancePaid</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Case_Activation__c</field>
-            <value>
-                <elementReference>CaseAct100</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Total_Amount__c</field>
-            <value>
-                <elementReference>OpportunityRecord.Amount</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Case</object>
+        <inputReference>Get_2T_Case</inputReference>
     </recordUpdates>
     <start>
         <locationX>0</locationX>
@@ -565,6 +827,16 @@
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>EmailSubject</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Case {!Get_2T_Case.SuppliedName}, {!Get_2T_Case.Subject} is ready for activation </stringValue>
+        </value>
     </variables>
     <variables>
         <name>FinalPaymentThreshold</name>
