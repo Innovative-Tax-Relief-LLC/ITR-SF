@@ -175,7 +175,7 @@
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <subflows>
         <name>Pre_Activation</name>
         <label>Pre-Activation</label>

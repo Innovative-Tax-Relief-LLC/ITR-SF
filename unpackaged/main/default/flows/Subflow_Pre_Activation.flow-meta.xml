@@ -203,7 +203,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>X2T_Case_Found</targetReference>
+            <targetReference>X2T_Case_in_Pre_Activation</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -652,7 +652,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>X2T_Case_in_Pre_Activation</targetReference>
+                <targetReference>Assign_Case_Values</targetReference>
             </connector>
             <label>Yes</label>
         </rules>
@@ -744,7 +744,7 @@
         <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Assign_Case_Values</targetReference>
+            <targetReference>X2T_Case_Found</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
