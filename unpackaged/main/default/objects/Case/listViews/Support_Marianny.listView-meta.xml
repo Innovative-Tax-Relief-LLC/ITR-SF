@@ -10,6 +10,7 @@
     <columns>Case_Owner_First_Name__c</columns>
     <columns>CORE.USERS.ALIAS</columns>
     <columns>Activation_Amount__c</columns>
+    <columns>Activation_Date__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>CASES.RECORDTYPE</field>
@@ -17,14 +18,9 @@
         <value>Case.Tax_Negotiation_Only_Case,Case.Tax_Prep_Only_Case,Case.Tax_Prep_and_Negotiation_Case</value>
     </filters>
     <filters>
-        <field>CASES.STATUS</field>
-        <operation>equals</operation>
-        <value>Intro Call,Pre-Activation,Activation Call</value>
-    </filters>
-    <filters>
-        <field>Activation_Amount__c</field>
-        <operation>equals</operation>
-        <value>0</value>
+        <field>OWNER_NAME</field>
+        <operation>contains</operation>
+        <value>Tax</value>
     </filters>
     <label>Support_Marianny</label>
 </ListView>
