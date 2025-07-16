@@ -21,12 +21,12 @@
     <filters>
         <field>bt_stripe__Transaction_Status__c</field>
         <operation>contains</operation>
-        <value>Completed</value>
+        <value>Completed,Open</value>
     </filters>
     <filters>
         <field>bt_stripe__Opportunity2__c</field>
         <operation>equals</operation>
-        <value>Brenda Salley - 2T Sep 2024</value>
+        <value>TAMMY PETERSON - 2T May 2023</value>
     </filters>
     <label>Historial Data Migration Updates- MG</label>
 </ListView>
