@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rating_Spouse__c</fullName>
+    <label>Rating Spouse</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Hot</fullName>
+                <default>false</default>
+                <label>Hot</label>
+            </value>
+            <value>
+                <fullName>Warm</fullName>
+                <default>false</default>
+                <label>Warm</label>
+            </value>
+            <value>
+                <fullName>Cold</fullName>
+                <default>false</default>
+                <label>Cold</label>
+            </value>
+            <value>
+                <fullName>Tier 1</fullName>
+                <default>false</default>
+                <label>Tier 1</label>
+            </value>
+            <value>
+                <fullName>Tier 2</fullName>
+                <default>false</default>
+                <label>Tier 2</label>
+            </value>
+            <value>
+                <fullName>Tier 3</fullName>
+                <default>false</default>
+                <label>Tier 3</label>
+            </value>
+            <value>
+                <fullName>Tier 4</fullName>
+                <default>false</default>
+                <label>Tier 4</label>
+            </value>
+            <value>
+                <fullName>Tier 5</fullName>
+                <default>false</default>
+                <label>Tier 5</label>
+            </value>
+            <value>
+                <fullName>NotScr</fullName>
+                <default>false</default>
+                <label>NotScr</label>
+            </value>
+            <value>
+                <fullName>Frozn</fullName>
+                <default>false</default>
+                <label>Frozn</label>
+            </value>
+            <value>
+                <fullName>Good</fullName>
+                <default>false</default>
+                <label>Good</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

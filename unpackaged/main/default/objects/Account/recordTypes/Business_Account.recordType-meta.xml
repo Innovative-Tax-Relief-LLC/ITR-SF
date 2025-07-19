@@ -237,6 +237,13 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Rating_Spouse__c</picklist>
+        <values>
+            <fullName>Hot</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Spanish_Speaking__c</picklist>
         <values>
             <fullName>No</fullName>

@@ -16,4 +16,44 @@
         <default>false</default>
         <label>Cold</label>
     </standardValue>
+    <standardValue>
+        <fullName>Tier 1</fullName>
+        <default>false</default>
+        <label>Tier 1</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Tier 2</fullName>
+        <default>false</default>
+        <label>Tier 2</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Tier 3</fullName>
+        <default>false</default>
+        <label>Tier 3</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Tier 4</fullName>
+        <default>false</default>
+        <label>Tier 4</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Tier 5</fullName>
+        <default>false</default>
+        <label>Tier 5</label>
+    </standardValue>
+    <standardValue>
+        <fullName>NotScr</fullName>
+        <default>false</default>
+        <label>NotScr</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Frozn</fullName>
+        <default>false</default>
+        <label>Frozn</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Good</fullName>
+        <default>false</default>
+        <label>Good</label>
+    </standardValue>
 </StandardValueSet>

@@ -204,4 +204,19 @@ public class TestDataFactory {
     existingSession.DT_Form_DS_campaing_Id__c = '32142';
     insert existingSession;
   }
+
+    public static Task createTask(String subject) {
+        Task testTask = new Task(Subject = subject);
+        insert testTask;
+        return testTask;
+    }
+
+    public static ContentVersion createContentVersion(String title, String pathOnClient, Blob versionData) {
+        ContentVersion cv = new ContentVersion();
+        cv.Title = title;
+        cv.PathOnClient = pathOnClient;
+        cv.VersionData = versionData;
+        insert cv;
+        return cv;
+    }
 }
