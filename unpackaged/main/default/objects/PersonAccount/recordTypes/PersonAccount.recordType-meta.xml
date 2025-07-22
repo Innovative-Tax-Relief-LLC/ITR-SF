@@ -796,19 +796,11 @@
     <picklistValues>
         <picklist>Rating</picklist>
         <values>
-            <fullName>Cold</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Frozn</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>Good</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Hot</fullName>
             <default>false</default>
         </values>
         <values>

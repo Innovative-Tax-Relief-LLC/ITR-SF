@@ -16,16 +16,6 @@
                 <label>Hot</label>
             </value>
             <value>
-                <fullName>Warm</fullName>
-                <default>false</default>
-                <label>Warm</label>
-            </value>
-            <value>
-                <fullName>Cold</fullName>
-                <default>false</default>
-                <label>Cold</label>
-            </value>
-            <value>
                 <fullName>Tier 1</fullName>
                 <default>false</default>
                 <label>Tier 1</label>
@@ -64,6 +54,18 @@
                 <fullName>Good</fullName>
                 <default>false</default>
                 <label>Good</label>
+            </value>
+            <value>
+                <fullName>Cold</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Cold</label>
+            </value>
+            <value>
+                <fullName>Warm</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Warm</label>
             </value>
         </valueSetDefinition>
     </valueSet>

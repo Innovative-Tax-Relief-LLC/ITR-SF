@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tax_Prep_Negotiation_Cases_Task</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Tax Prep - Negotiation Cases</label>
+    <queue>Tax_Prep_Negotiation_Cases</queue>
+    <sharedTo>
+        <allInternalUsers />
+    </sharedTo>
+</ListView>
