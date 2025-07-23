@@ -12,6 +12,7 @@
     <columns>bt_stripe__Related_Account__c</columns>
     <columns>bt_stripe__Payment_Method__c</columns>
     <columns>bt_stripe__Due_Date__c</columns>
+    <columns>bt_stripe__Amount__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>RECORDTYPE</field>
@@ -21,12 +22,12 @@
     <filters>
         <field>bt_stripe__Transaction_Status__c</field>
         <operation>contains</operation>
-        <value>Open</value>
+        <value>Open,Completed</value>
     </filters>
     <filters>
         <field>bt_stripe__Payment_Schedule__c</field>
         <operation>contains</operation>
-        <value>PS-002090</value>
+        <value>PS-002713</value>
     </filters>
     <label>Non-Gateway / Auto-Process Check Update</label>
 </ListView>
