@@ -800,10 +800,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Good</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>NotScr</fullName>
             <default>false</default>
         </values>
@@ -825,10 +821,6 @@
         </values>
         <values>
             <fullName>Tier 5</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Warm</fullName>
             <default>false</default>
         </values>
     </picklistValues>

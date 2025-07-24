@@ -11,11 +11,6 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Hot</fullName>
-                <default>false</default>
-                <label>Hot</label>
-            </value>
-            <value>
                 <fullName>Tier 1</fullName>
                 <default>false</default>
                 <label>Tier 1</label>
@@ -51,15 +46,22 @@
                 <label>Frozn</label>
             </value>
             <value>
-                <fullName>Good</fullName>
-                <default>false</default>
-                <label>Good</label>
-            </value>
-            <value>
                 <fullName>Cold</fullName>
                 <default>false</default>
                 <isActive>false</isActive>
                 <label>Cold</label>
+            </value>
+            <value>
+                <fullName>Good</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Good</label>
+            </value>
+            <value>
+                <fullName>Tier 52</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Tier 52</label>
             </value>
             <value>
                 <fullName>Warm</fullName>

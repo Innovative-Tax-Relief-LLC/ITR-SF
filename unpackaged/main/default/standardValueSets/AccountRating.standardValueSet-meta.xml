@@ -2,11 +2,6 @@
 <StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <sorted>false</sorted>
     <standardValue>
-        <fullName>Warm</fullName>
-        <default>false</default>
-        <label>Warm</label>
-    </standardValue>
-    <standardValue>
         <fullName>Tier 1</fullName>
         <default>false</default>
         <label>Tier 1</label>
@@ -40,10 +35,5 @@
         <fullName>Frozn</fullName>
         <default>false</default>
         <label>Frozn</label>
-    </standardValue>
-    <standardValue>
-        <fullName>Good</fullName>
-        <default>false</default>
-        <label>Good</label>
     </standardValue>
 </StandardValueSet>

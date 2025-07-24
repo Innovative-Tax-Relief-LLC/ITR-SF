@@ -224,14 +224,22 @@
     <picklistValues>
         <picklist>Rating</picklist>
         <values>
-            <fullName>Warm</fullName>
+            <fullName>Frozn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NotScr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tier 1</fullName>
             <default>false</default>
         </values>
     </picklistValues>
     <picklistValues>
         <picklist>Rating_Spouse__c</picklist>
         <values>
-            <fullName>Hot</fullName>
+            <fullName>Tier 1</fullName>
             <default>false</default>
         </values>
     </picklistValues>
