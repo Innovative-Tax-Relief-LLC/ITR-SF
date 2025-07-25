@@ -23,6 +23,11 @@
                 <default>false</default>
                 <label>Married Filing Separately</label>
             </value>
+            <value>
+                <fullName>Married Filing Deceased</fullName>
+                <default>false</default>
+                <label>Married Filing Deceased</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

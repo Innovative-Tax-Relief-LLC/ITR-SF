@@ -762,6 +762,10 @@
     <picklistValues>
         <picklist>Marital_Status__pc</picklist>
         <values>
+            <fullName>Married Filing Deceased</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Married Filing Jointly</fullName>
             <default>false</default>
         </values>
