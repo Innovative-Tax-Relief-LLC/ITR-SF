@@ -48,6 +48,12 @@
         </action>
     </finalRejectionActions>
     <finalRejectionRecordLock>true</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>ApprovalStatusToPending</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
     <label>ITR Approval - Refund</label>
     <nextAutomatedApprover>
         <useApproverFieldOfRecordOwner>false</useApproverFieldOfRecordOwner>

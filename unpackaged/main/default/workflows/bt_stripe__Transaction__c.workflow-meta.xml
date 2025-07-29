@@ -77,6 +77,16 @@
         <template>bt_stripe__payment360/bt_stripe__Receipt_Text</template>
     </alerts>
     <fieldUpdates>
+        <fullName>ApprovalStatusToPending</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Pending</literalValue>
+        <name>ApprovalStatusToPending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>Due_Date</fullName>
         <field>bt_stripe__Due_Date__c</field>
         <formula>Today()</formula>

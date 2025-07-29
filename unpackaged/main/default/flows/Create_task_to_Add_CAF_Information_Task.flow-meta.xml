@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>64.0</apiVersion>
+    <constants>
+        <name>TaskOwner</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Joel Espinal</stringValue>
+        </value>
+    </constants>
     <decisions>
         <name>Case_Owner_has_the_required_information</name>
         <label>Case Owner has the required information</label>
@@ -19,6 +26,13 @@
             </conditions>
             <conditions>
                 <leftValueReference>$Record.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Find_Task_Owner_Id</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
@@ -60,7 +74,7 @@
         <inputAssignments>
             <field>OwnerId</field>
             <value>
-                <elementReference>$Record.OwnerId</elementReference>
+                <elementReference>Find_Task_Owner_Id.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -96,11 +110,32 @@
         <object>Task</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
+    <recordLookups>
+        <name>Find_Task_Owner_Id</name>
+        <label>Find Task Owner Id</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Case_Owner_has_the_required_information</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>TaskOwner</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <start>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Case_Owner_has_the_required_information</targetReference>
+            <targetReference>Find_Task_Owner_Id</targetReference>
         </connector>
         <object>Case</object>
         <recordTriggerType>Create</recordTriggerType>
