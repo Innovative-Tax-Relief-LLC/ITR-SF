@@ -7,6 +7,7 @@
     <columns>STATUS</columns>
     <columns>DUE_DATE</columns>
     <columns>LAST_UPDATE</columns>
+    <columns>WHO_NAME</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>SUBJECT</field>

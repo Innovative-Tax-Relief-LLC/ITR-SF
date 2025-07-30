@@ -4,20 +4,6 @@
     <deleteConstraint>SetNull</deleteConstraint>
     <inlineHelpText>Internal Point of Contact to manage this financing client.</inlineHelpText>
     <label>Financing Point of Contact</label>
-    <lookupFilter>
-        <active>true</active>
-        <filterItems>
-            <field>User.Profile.Name</field>
-            <operation>contains</operation>
-            <value>ITR Billing Agent</value>
-        </filterItems>
-        <filterItems>
-            <field>$User.IsActive</field>
-            <operation>equals</operation>
-            <value>True</value>
-        </filterItems>
-        <isOptional>false</isOptional>
-    </lookupFilter>
     <referenceTo>User</referenceTo>
     <relationshipName>Opportunities_Users</relationshipName>
     <required>false</required>
