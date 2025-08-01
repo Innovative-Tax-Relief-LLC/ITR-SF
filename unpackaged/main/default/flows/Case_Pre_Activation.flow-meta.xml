@@ -711,7 +711,7 @@
             <targetReference>Pre_Activation_or_Activation</targetReference>
         </connector>
         <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
-        <filterLogic>(1 AND 2) OR (3 AND 4)</filterLogic>
+        <filterLogic>or</filterLogic>
         <filters>
             <field>Status</field>
             <operator>EqualTo</operator>
@@ -720,24 +720,10 @@
             </value>
         </filters>
         <filters>
-            <field>Pre_Activation_Date__c</field>
-            <operator>IsNull</operator>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </filters>
-        <filters>
             <field>Status</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Activation Call</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Activation_Date__c</field>
-            <operator>IsNull</operator>
-            <value>
-                <booleanValue>true</booleanValue>
             </value>
         </filters>
         <object>Case</object>
