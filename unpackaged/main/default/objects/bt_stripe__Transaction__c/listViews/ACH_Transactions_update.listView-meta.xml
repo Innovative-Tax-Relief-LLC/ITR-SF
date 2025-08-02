@@ -18,6 +18,7 @@
     <filters>
         <field>RECORDTYPE</field>
         <operation>equals</operation>
+        <value>bt_stripe__Transaction__c.bt_stripe__Charge</value>
     </filters>
     <filters>
         <field>bt_stripe__Transaction_Status__c</field>
@@ -27,7 +28,7 @@
     <filters>
         <field>bt_stripe__Payment_Schedule__c</field>
         <operation>contains</operation>
-        <value>PS-003217</value>
+        <value>PS-000116</value>
     </filters>
     <label>Non-Gateway / Auto-Process Check Update</label>
 </ListView>
