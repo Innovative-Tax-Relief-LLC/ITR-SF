@@ -28,7 +28,7 @@
     <filters>
         <field>bt_stripe__Payment_Schedule__c</field>
         <operation>contains</operation>
-        <value>PS-003060</value>
+        <value>PS-001617</value>
     </filters>
     <label>Non-Gateway / Auto-Process Check Update</label>
 </ListView>
