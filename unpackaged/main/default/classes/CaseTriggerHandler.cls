@@ -10,13 +10,16 @@ public class CaseTriggerHandler extends TriggerHandler {
     }
     
     public override void beforeInsert() {
-        if (newCases != null && !newCases.isEmpty()) {
+         if (newCases != null && !newCases.isEmpty()) {
             CaseAssignmentService.assignOwnersBeforeInsert(newCases);
+            CaseNotesHandler.handleCaseNotesInsert(newCases);
         }
     }
     
     public override void beforeUpdate() {
-        // Add before update logic here
+        if (oldCasesMap != null && newCasesMap != null) {
+            CaseNotesHandler.handleCaseNotesChange(newCases, oldCasesMap);
+        }
     }
     
     public override void afterInsert() {
@@ -28,9 +31,11 @@ public class CaseTriggerHandler extends TriggerHandler {
     public override void afterUpdate() {
         if (oldCasesMap != null && newCasesMap != null) {
             List<Case> closedCases = new List<Case>();
+            
             for (Id caseId : newCasesMap.keySet()) {
                 Case oldCase = oldCasesMap.get(caseId);
                 Case newCase = newCasesMap.get(caseId);
+                
                 if (!oldCase.IsClosed && newCase.IsClosed) {
                     closedCases.add(oldCase);
                 }
