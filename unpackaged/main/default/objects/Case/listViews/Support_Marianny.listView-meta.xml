@@ -18,9 +18,9 @@
         <value>Case.Tax_Negotiation_Only_Case,Case.Tax_Prep_Only_Case,Case.Tax_Prep_and_Negotiation_Case</value>
     </filters>
     <filters>
-        <field>Case_Owner_First_Name__c</field>
-        <operation>equals</operation>
-        <value>Nicole</value>
+        <field>CASES.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Case Completed Successful,Case Completed Failed,Case Closed,In Progress,Transcript Investigation,Blocked</value>
     </filters>
     <label>Support_Marianny</label>
 </ListView>
