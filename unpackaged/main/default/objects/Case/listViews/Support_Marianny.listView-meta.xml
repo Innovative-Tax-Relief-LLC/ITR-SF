@@ -22,5 +22,10 @@
         <operation>notEqual</operation>
         <value>Case Completed Successful,Case Completed Failed,Case Closed,In Progress,Transcript Investigation,Blocked</value>
     </filters>
+    <filters>
+        <field>Case_Owner_First_Name__c</field>
+        <operation>equals</operation>
+        <value>Lisa</value>
+    </filters>
     <label>Support_Marianny</label>
 </ListView>
