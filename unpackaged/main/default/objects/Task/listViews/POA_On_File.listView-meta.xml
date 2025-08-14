@@ -6,6 +6,7 @@
     <columns>Case_Subject__c</columns>
     <columns>Account__c</columns>
     <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>POA_needs_resubmission__c</columns>
     <columns>STATUS</columns>
     <columns>CREATED_DATE</columns>
     <columns>LAST_UPDATE</columns>
