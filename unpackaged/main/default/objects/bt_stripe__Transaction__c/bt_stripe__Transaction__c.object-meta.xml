@@ -166,6 +166,17 @@
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Transactions</pluralLabel>
+    <profileSearchLayouts>
+        <fields>NAME</fields>
+        <fields>bt_stripe__Amount__c</fields>
+        <fields>bt_stripe__Payment_Status__c</fields>
+        <fields>bt_stripe__Processed_Date__c</fields>
+        <fields>bt_stripe__Payment_Method__c</fields>
+        <fields>bt_stripe__Due_Date__c</fields>
+        <fields>bt_stripe__Error_Message__c</fields>
+        <fields>First_Completed_Captured_Transaction__c</fields>
+        <profileName>ITR Billing Agent</profileName>
+    </profileSearchLayouts>
     <recordTypeTrackHistory>true</recordTypeTrackHistory>
     <searchLayouts>
         <customTabListAdditionalFields>bt_stripe__Amount__c</customTabListAdditionalFields>
