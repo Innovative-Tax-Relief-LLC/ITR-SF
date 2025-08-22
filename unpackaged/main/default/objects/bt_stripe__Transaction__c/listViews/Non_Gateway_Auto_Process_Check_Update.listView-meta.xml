@@ -13,14 +13,19 @@
     <columns>bt_stripe__Amount__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>bt_stripe__Transaction_Status__c</field>
+        <field>RECORDTYPE</field>
         <operation>equals</operation>
-        <value>Completed</value>
+        <value>bt_stripe__Transaction__c.bt_stripe__Charge</value>
     </filters>
     <filters>
         <field>bt_stripe__Payment_Schedule__c</field>
         <operation>equals</operation>
-        <value>PS-000003</value>
+        <value>PS-002766</value>
+    </filters>
+    <filters>
+        <field>Payment_Method_Record_Type__c</field>
+        <operation>equals</operation>
+        <value>ACH</value>
     </filters>
     <label>Non-Gateway / Auto-Process Check Update</label>
 </ListView>
