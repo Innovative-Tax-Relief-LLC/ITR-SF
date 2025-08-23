@@ -20,12 +20,7 @@
     <filters>
         <field>bt_stripe__Payment_Schedule__c</field>
         <operation>equals</operation>
-        <value>PS-002766</value>
-    </filters>
-    <filters>
-        <field>Payment_Method_Record_Type__c</field>
-        <operation>equals</operation>
-        <value>ACH</value>
+        <value>PS-003350</value>
     </filters>
     <label>Non-Gateway / Auto-Process Check Update</label>
 </ListView>

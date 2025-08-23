@@ -195,6 +195,17 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Client_Owns_more_than_1_Real_Estate_Prop__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Country_ISO__c</picklist>
         <values>
             <fullName>US</fullName>
