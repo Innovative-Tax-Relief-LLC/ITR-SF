@@ -20,7 +20,12 @@
     <filters>
         <field>bt_stripe__Payment_Schedule__c</field>
         <operation>equals</operation>
-        <value>PS-003482</value>
+        <value>PS-003125</value>
+    </filters>
+    <filters>
+        <field>bt_stripe__Transaction_Status__c</field>
+        <operation>equals</operation>
+        <value>Canceled</value>
     </filters>
     <label>Non-Gateway / Auto-Process Check Update</label>
 </ListView>
