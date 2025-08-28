@@ -41,11 +41,11 @@ private class velocifyAccountRestServiceTest {
                 '"date_of_marriage_to_current_spouse": "11/20/2021",' +
                 '"spanish_speaking": "Yes",' +
                 '"agency": "State",' +
-                '"time_zone": "Alaska",' +
                 '"spouse_gender": "Female",' +
                 '"spouse_social_security": "987654321",' +
                 '"spouse_occupation": "Nurse",' +
                 '"spouse_occupation_category": "Accounting",' +
+                '"first_trader": "James, Coy",' +
                 '"billing_info": [' +
                     '{' +
                         '"holder_name": "Carlos Rodriguez",' +
@@ -76,14 +76,14 @@ private class velocifyAccountRestServiceTest {
         Assert.isTrue(response.success, 'It should be a success');
         Assert.isNotNull(response.data, 'Data should not be null');
 
-        List<Account> createdAccs = [SELECT Id, FirstName, LastName, PersonEmail, PersonContactId, Occupation__pc, Marital_Status__pc, Spanish_Speaking__c, Date_of_Marriage_to_Current_Spouse__pc, SSN__pc, Spouse_Social__pc, Spouse_Mobile__pc, Spouse_Middle_Initial__c
-                                    FROM Account 
+        List<Account> createdAccs = [SELECT Id, FirstName, Velocify_First_Trader__c, LastName, PersonEmail, PersonContactId, Occupation__pc, Marital_Status__pc, Spanish_Speaking__c, Date_of_Marriage_to_Current_Spouse__pc, SSN__pc, Spouse_Social__pc, Spouse_Mobile__pc, Spouse_Middle_Initial__c
+                                    FROM Account
                                     WHERE Id = :response.data.values() LIMIT 1];
-        List<bt_stripe__Payment_Method__c> paymentMethod = [SELECT Id, bt_stripe__Account__c, bt_stripe__Contact__c 
-                                                            FROM bt_stripe__Payment_Method__c 
+        List<bt_stripe__Payment_Method__c> paymentMethod = [SELECT Id, bt_stripe__Account__c, bt_stripe__Contact__c
+                                                            FROM bt_stripe__Payment_Method__c
                                                             WHERE bt_stripe__Account__c = :createdAccs[0].Id LIMIT 1];
-        
-        
+
+
         Assert.areNotEqual(paymentMethod[0], null, 'It should return a Payment Method.');
         Assert.areEqual('Carlos', createdAccs[0].FirstName, 'Firstname should match');
         Assert.areEqual('Rodriguez', createdAccs[0].LastName, 'Lastname should match');
@@ -91,6 +91,7 @@ private class velocifyAccountRestServiceTest {
         Assert.areEqual('Software Engineer', createdAccs[0].Occupation__pc, 'Occupation should match');
         Assert.areEqual('Married', createdAccs[0].Marital_Status__pc, 'Marital Status should match');
         Assert.areEqual('123456789', createdAccs[0].SSN__pc, 'SSN should match');
+        Assert.areEqual('James, Coy', createdAccs[0].Velocify_First_Trader__c, 'First Trader should match');
     }
 
     @IsTest
@@ -321,7 +322,7 @@ private class velocifyAccountRestServiceTest {
         account.FirstName = 'John';
         account.LastName = 'Doe';
         account.ITR_ID__c = 6265722;
-        upsert account; 
+        upsert account;
         VelocifyResponseWrapper response = velocifyAccountRestService.createAccount();
         Test.stopTest();
 
@@ -356,7 +357,7 @@ private class velocifyAccountRestServiceTest {
 
     @IsTest
     static void testCreateAccount_withFlippedClient_UpdateExistingAccount_Success() {
-        
+
         Test.startTest();
         Account initialAccount = new Account();
         initialAccount.FirstName = 'Enmanuel';
@@ -367,7 +368,7 @@ private class velocifyAccountRestServiceTest {
         initialAccount.Gender__pc = 'Male';
         initialAccount.Date_of_Birth__pc = Date.parse('5/1/2025');
         initialAccount.PersonMobilePhone = '(561) 247-0457';
-        
+
         initialAccount.Spouse_First_Name__pc = 'Spouse Name test';
         initialAccount.Spouse_Last_Name__pc = 'Spouse Lastname test';
         initialAccount.Spouse_Email__pc = 'spouse@spouse.com';
@@ -376,13 +377,10 @@ private class velocifyAccountRestServiceTest {
         initialAccount.Spouse_Gender__pc = 'Female';
         initialAccount.Spouse_Date_of_Birth__pc = Date.parse('5/15/2025');
         initialAccount.Spouse_Mobile__pc = '(561) 247-0457';
-        
+
         initialAccount.ITR_Id__c = 6265722;
         insert initialAccount;
-        
-        System.debug('Primary: ' + initialAccount.FirstName + ' ' + initialAccount.LastName + ' - ' + initialAccount.PersonEmail);
-        System.debug('Spouse: ' + initialAccount.Spouse_First_Name__pc + ' ' + initialAccount.Spouse_Last_Name__pc + ' - ' + initialAccount.Spouse_Email__pc);
-        
+
         String flippedJsonBody = '{' +
             '"api_version": "0.0.3",' +
             '"token": "1VtC_1pqQojIKJKJjsxNbmDYS4qp8BWk",' +
@@ -403,7 +401,6 @@ private class velocifyAccountRestServiceTest {
                 '"date_of_marriage_to_current_spouse": "",' +
                 '"occupation": "teacher",' +
                 '"occupation_category": "Other",' +
-                '"time_zone": "Hawaii",' +
                 '"state": "AL",' +
                 '"city": "Santiago",' +
                 '"street": "Testing Address",' +
@@ -423,10 +420,10 @@ private class velocifyAccountRestServiceTest {
                 '"spouse_occupation": "Pirate King",' +
                 '"spouse_occupation_category": "Driving and Transportation",' +
                 '"notes": "Test",' +
-                '"profile_id": "6265722",' + 
+                '"profile_id": "6265722",' +
                 '"priority": 3,' +
                 '"lead_source": "Training",' +
-                '"flipped_client": "Yes"' + 
+                '"flipped_client": "Yes"' +
             '}' +
         '}';
 
@@ -435,14 +432,11 @@ private class velocifyAccountRestServiceTest {
         req.requestBody = Blob.valueOf(flippedJsonBody);
         RestContext.request = req;
         RestContext.response = res;
-        
+
         VelocifyResponseWrapper response = velocifyAccountRestService.createAccount();
-        
+
         Test.stopTest();
 
-        System.debug('Response success: ' + response.success);
-        System.debug('Response message: ' + response.message);
-        
         Assert.isTrue(response.success, 'Update with flipped_client should succeed. Error: ' + response.message);
         Assert.areEqual('Account updated successfully with flipped data', response.message, 'Should return flipped update message');
         Assert.isNotNull(response.data, 'Response data should not be null');
@@ -450,19 +444,16 @@ private class velocifyAccountRestServiceTest {
         String updatedAccountId = response.data.values()[0];
         Assert.areEqual(initialAccount.Id, updatedAccountId, 'Should be updating the same account');
 
-        List<Account> updatedAccount = [SELECT Id, FirstName, LastName, PersonEmail, 
+        List<Account> updatedAccount = [SELECT Id, FirstName, LastName, PersonEmail,
                                             Occupation__pc, SSN__pc, PersonMobilePhone, Gender__pc,
                                             Date_of_Birth__pc,
-                                            Spouse_First_Name__pc, Spouse_Last_Name__pc, 
-                                            Spouse_Email__pc, Spouse_Occupation__c, 
+                                            Spouse_First_Name__pc, Spouse_Last_Name__pc,
+                                            Spouse_Email__pc, Spouse_Occupation__c,
                                             Spouse_Social__pc, Spouse_Mobile__pc, Spouse_Gender__pc,
                                             Spouse_Date_of_Birth__pc
-                                    FROM Account 
+                                    FROM Account
                                     WHERE Id = :updatedAccountId LIMIT 1];
-        
-        System.debug('Primary: ' + updatedAccount[0].FirstName + ' ' + updatedAccount[0].LastName + ' - ' + updatedAccount[0].PersonEmail);
-        System.debug('Spouse: ' + updatedAccount[0].Spouse_First_Name__pc + ' ' + updatedAccount[0].Spouse_Last_Name__pc + ' - ' + updatedAccount[0].Spouse_Email__pc);
-        
+
         Assert.areEqual('Spouse Name test', updatedAccount[0].FirstName, 'Primary firstname should now be Spouse Name test');
         Assert.areEqual('Spouse Lastname test', updatedAccount[0].LastName, 'Primary lastname should now be Spouse Lastname test');
         Assert.areEqual('spouse@spouse.com', updatedAccount[0].PersonEmail, 'Primary email should now be spouse@spouse.com');
@@ -470,7 +461,7 @@ private class velocifyAccountRestServiceTest {
         Assert.areEqual('000-00-0000', updatedAccount[0].SSN__pc, 'Primary SSN should now be spouse SSN');
         Assert.areEqual('Female', updatedAccount[0].Gender__pc, 'Primary gender should now be Female');
         Assert.areEqual(Date.parse('5/15/2025'), updatedAccount[0].Date_of_Birth__pc, 'Primary DOB should now be spouse DOB');
-        
+
         Assert.areEqual('Enmanuel', updatedAccount[0].Spouse_First_Name__pc, 'Spouse firstname should now be Enmanuel');
         Assert.areEqual('Jerez22', updatedAccount[0].Spouse_Last_Name__pc, 'Spouse lastname should now be Jerez22');
         Assert.areEqual('docs@innovativetaxreliefllc.com', updatedAccount[0].Spouse_Email__pc, 'Spouse email should now be Enmanuel email');
@@ -478,10 +469,10 @@ private class velocifyAccountRestServiceTest {
         Assert.areEqual('111-11-1111', updatedAccount[0].Spouse_Social__pc, 'Spouse SSN should now be Enmanuel SSN');
         Assert.areEqual('Male', updatedAccount[0].Spouse_Gender__pc, 'Spouse gender should now be Male');
         Assert.areEqual(Date.parse('5/1/2025'), updatedAccount[0].Spouse_Date_of_Birth__pc, 'Spouse DOB should now be Enmanuel DOB');
-        
-        List<bt_stripe__Payment_Method__c> paymentMethods = [SELECT Id FROM bt_stripe__Payment_Method__c 
+
+        List<bt_stripe__Payment_Method__c> paymentMethods = [SELECT Id FROM bt_stripe__Payment_Method__c
                                                             WHERE bt_stripe__Account__c = :updatedAccountId];
         Assert.areEqual(0, paymentMethods.size(), 'Should not create payment method on flipped update');
     }
-    
+
 }
