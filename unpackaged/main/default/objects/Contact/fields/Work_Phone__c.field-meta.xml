@@ -4,5 +4,6 @@
     <label>Work Phone</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
     <type>Phone</type>
 </CustomField>

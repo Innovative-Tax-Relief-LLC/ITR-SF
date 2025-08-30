@@ -4,5 +4,6 @@
     <label>Last letter from the IRS Notes</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
     <type>TextArea</type>
 </CustomField>

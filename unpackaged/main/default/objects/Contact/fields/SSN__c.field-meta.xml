@@ -6,5 +6,6 @@
     <maskChar>asterisk</maskChar>
     <maskType>ssn</maskType>
     <required>false</required>
+    <trackHistory>false</trackHistory>
     <type>EncryptedText</type>
 </CustomField>

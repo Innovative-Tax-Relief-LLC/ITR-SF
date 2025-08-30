@@ -9,5 +9,6 @@
     <maskChar>asterisk</maskChar>
     <maskType>all</maskType>
     <required>false</required>
+    <trackHistory>false</trackHistory>
     <type>EncryptedText</type>
 </CustomField>

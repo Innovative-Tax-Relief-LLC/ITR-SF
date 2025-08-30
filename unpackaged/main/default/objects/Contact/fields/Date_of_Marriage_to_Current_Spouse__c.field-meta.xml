@@ -4,5 +4,6 @@
     <label>Date of Marriage to Current Spouse</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
     <type>Date</type>
 </CustomField>

@@ -4,5 +4,6 @@
     <defaultValue>false</defaultValue>
     <label>Returning Client</label>
     <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
     <type>Checkbox</type>
 </CustomField>

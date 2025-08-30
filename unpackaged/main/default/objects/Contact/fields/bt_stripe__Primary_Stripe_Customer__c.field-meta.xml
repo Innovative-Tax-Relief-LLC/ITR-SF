@@ -5,5 +5,6 @@
     <deprecated>false</deprecated>
     <label>Primary Stripe Customer</label>
     <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
     <type>Checkbox</type>
 </CustomField>
