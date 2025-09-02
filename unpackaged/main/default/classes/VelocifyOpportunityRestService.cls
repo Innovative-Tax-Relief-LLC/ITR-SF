@@ -1,9 +1,9 @@
 @RestResource(UrlMapping='/VelocifyCreateOpportunity')
 global with sharing class VelocifyOpportunityRestService {
-	private static final Id achRecordTypeId = Schema.SObjectType.bt_stripe__Payment_Method__c.getRecordTypeInfosByDeveloperName().get('ACH').getRecordTypeId();
-    private static final Id creditCardRecordTypeId = Schema.SObjectType.bt_stripe__Payment_Method__c.getRecordTypeInfosByDeveloperName().get('Charge_Card').getRecordTypeId();
-    private static final Id secondTradersOppRecordTypeId = Schema.SObjectType.Opportunity.getRecordTypeInfosByDeveloperName().get('Second_Trade').getRecordTypeId();
-    private static final Id thirdTradersOppRecordTypeId = Schema.SObjectType.Opportunity.getRecordTypeInfosByDeveloperName().get('Third_Trade').getRecordTypeId();
+	private static final Id ACH_RECORD_TYPE_ID = Schema.SObjectType.bt_stripe__Payment_Method__c.getRecordTypeInfosByDeveloperName().get('ACH').getRecordTypeId();
+    private static final Id CREDIT_CARD_RECORD_TYPE_ID = Schema.SObjectType.bt_stripe__Payment_Method__c.getRecordTypeInfosByDeveloperName().get('Charge_Card').getRecordTypeId();
+    private static final Id SECOND_TRADERS_OPP_RECORD_TYPE_ID = Schema.SObjectType.Opportunity.getRecordTypeInfosByDeveloperName().get('Second_Trade').getRecordTypeId();
+    private static final Id THIRD_TRADERS_OPP_RECORD_TYPE_ID = Schema.SObjectType.Opportunity.getRecordTypeInfosByDeveloperName().get('Third_Trade').getRecordTypeId();
 
     private static Account findAccountByCellphoneAndEmail(String cellphone, String email) {
         if (!Schema.SObjectType.Account.isAccessible()) {
@@ -40,7 +40,7 @@ global with sharing class VelocifyOpportunityRestService {
 
             Opportunity existingOpportunity = findExistingOpportunity(account.Id);
             if(existingOpportunity != null && existingOpportunity.CreatedDate > Date.today().addDays(-90)
-            && (existingOpportunity.RecordTypeId == secondTradersOppRecordTypeId || existingOpportunity.RecordTypeId == thirdTradersOppRecordTypeId)) 
+            && (existingOpportunity.RecordTypeId == SECOND_TRADERS_OPP_RECORD_TYPE_ID || existingOpportunity.RecordTypeId == THIRD_TRADERS_OPP_RECORD_TYPE_ID)) 
             {
                 return new VelocifyResponseWrapper(400, false, 'An Opportunity has been created in the last 3 months for this record type; cannot create a new one.', null);
             }
@@ -82,10 +82,10 @@ global with sharing class VelocifyOpportunityRestService {
             newPaymentMethod.bt_stripe__Account__c = accountId;
             
             if (newPaymentMethod.bt_stripe__Routing_Number__c != null) {
-                newPaymentMethod.RecordTypeId = achRecordTypeId;
+                newPaymentMethod.RecordTypeId = ACH_RECORD_TYPE_ID;
                 newPaymentMethod.bt_stripe__Send_to_Gateway__c = false;
             } else if (newPaymentMethod.bt_stripe__Card_Number__c != null) {
-                newPaymentMethod.RecordTypeId = creditCardRecordTypeId;
+                newPaymentMethod.RecordTypeId = CREDIT_CARD_RECORD_TYPE_ID;
                 newPaymentMethod.bt_stripe__Send_to_Gateway__c = !Test.isRunningTest();
             } 
 
@@ -118,7 +118,11 @@ global with sharing class VelocifyOpportunityRestService {
         
         Set<String> paymentFields = new Set<String>{'Down_Payment_1__c', 'Down_Payment_2__c', 'Down_Payment_3__c', 'Down_Payment_4__c', 'Financining_Amount_Approved__c', 'Amount'};
         Set<String> dateFields = new Set<String>{'Down_Payment_1_Date__c', 'Down_Payment_2_Date__c', 'Down_Payment_3_Date__c', 'Down_Payment_4_Date__c', 'Representation_Start_Date__c'};
-        
+        Set<String> booleanFields = new Set<String>{'client_is_homeowner',
+                'client_owns_more_than_1_real_estate_property', 'client_wage_and_income_shows_form_1098',
+                'spouse_is_a_homeowner', 'spouse_owns_more_than_1_real_estate_property',
+                'spouse_wage_and_income_shows_form_1098'};
+
         for(ITR_Opportunity_Field_Mapping__mdt cmd: opportunityFieldMappings) {
             String sfField = cmd.SFDC_Field__c;
             Object value = clientDataInfoDataMap.get(cmd.ITR_XML_Field__c);
@@ -146,6 +150,10 @@ global with sharing class VelocifyOpportunityRestService {
                     String valueString = (String)value;
                     valueString = valueString.replaceAll('[$,\\s]', '');
                     newOpportunity.put(sfField, Decimal.valueOf(valueString));
+                } else if (booleanFields.contains(cmd.ITR_XML_Field__c)) {
+                    String valueString = String.valueOf(value).toLowerCase();
+                    Boolean boolValue = (valueString == 'yes' || valueString == 'true' || valueString == '1');
+                    newOpportunity.put(sfField, boolValue);
                 } else {
                     newOpportunity.put(sfField, value);
                 }
@@ -168,9 +176,9 @@ global with sharing class VelocifyOpportunityRestService {
 
     private static Opportunity setOpportunityRecordType(Opportunity newOpportunity, String opportunityType) {
         if (opportunityType == '2nd Trade') {
-            newOpportunity.RecordTypeId = secondTradersOppRecordTypeId;
+            newOpportunity.RecordTypeId = SECOND_TRADERS_OPP_RECORD_TYPE_ID;
         } else if (opportunityType == '3rd Trade') {
-            newOpportunity.RecordTypeId = thirdTradersOppRecordTypeId;
+            newOpportunity.RecordTypeId = THIRD_TRADERS_OPP_RECORD_TYPE_ID;
         } else {
             return null;
         }

@@ -60,6 +60,12 @@ global with sharing class VelocifyClientPayload {
         public String spouse_social_security;
         public String spouse_occupation;
         public String spouse_occupation_category;
+        public String client_is_homeowner;
+        public String client_owns_more_than_1_real_estate_property;
+        public String client_wage_and_income_shows_form_1098;
+        public String spouse_is_a_homeowner;
+        public String spouse_owns_more_than_1_real_estate_property;
+        public String spouse_wage_and_income_shows_form_1098;
     }
 
     global class Services {

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <description>This flow updates Representation Start Date based on 2T Received Agreement Timestamp.</description>
+    <environments>Default</environments>
+    <interviewLabel>[Opportunity] - {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>[Opportunity] -Populate Representation Start Date</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_2T_Representation_Start_Date</name>
+        <label>Update 2T Representation Start Date</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Representation_Start_Date__c</field>
+            <value>
+                <elementReference>$Record.X2T_Received_Agreement_Timestamp__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_2T_Representation_Start_Date</targetReference>
+        </connector>
+        <filterFormula>ISCHANGED({!$Record.X2T_Received_Agreement_Timestamp__c})=TRUE 
+&amp;&amp;
+ISNULL({!$Record.X2T_Received_Agreement_Timestamp__c})=FALSE
+&amp;&amp;
+ISNULL({!$Record.Representation_Start_Date__c})=TRUE
+||
+ISNEW()
+&amp;&amp;
+ISNULL({!$Record.X2T_Received_Agreement_Timestamp__c})=FALSE 
+&amp;&amp;
+ISNULL({!$Record.Representation_Start_Date__c})=TRUE</filterFormula>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

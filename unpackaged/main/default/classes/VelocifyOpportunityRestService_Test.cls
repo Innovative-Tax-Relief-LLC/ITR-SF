@@ -34,6 +34,12 @@ private class VelocifyOpportunityRestService_Test {
                 '"solution_type": "Tax Negotiation Only",' +
                 '"first_trader": "James, Coy",' +
                 '"second_trader": "Maryana Gomez",' +
+                '"client_is_homeowner": "Yes",' +
+                '"client_owns_more_than_1_real_estate_property": "Yes",' +
+                '"client_wage_and_income_shows_form_1098": "Yes",' +
+                '"spouse_is_a_homeowner": "Yes",' +
+                '"spouse_owns_more_than_1_real_estate_property": "Yes",' +
+                '"spouse_wage_and_income_shows_form_1098": "Yes",' +
                 '"lender_info": {' +
                     '"financing_lender_used": "Afterpay",' +
                     '"offered_client_financing": "YES",' +
