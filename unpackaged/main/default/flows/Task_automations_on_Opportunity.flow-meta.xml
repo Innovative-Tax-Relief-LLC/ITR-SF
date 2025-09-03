@@ -556,6 +556,9 @@
             <conditions>
                 <leftValueReference>$Record.Tax_Negotiation_Created__c</leftValueReference>
                 <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
             </conditions>
             <label>Yes</label>
         </rules>

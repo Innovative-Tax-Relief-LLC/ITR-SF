@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <assignments>
+        <name>Assign_AccountId</name>
+        <label>Assign AccountId</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>AccountRecord.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Account.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_Latest_Record_Created</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Latest_Record_Created</name>
+        <label>Set Latest Record Created</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>AccountRecord.Latest_Opp_Created__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Account</targetReference>
+        </connector>
+    </assignments>
+    <environments>Default</environments>
+    <formulas>
+        <name>StageSubstage</name>
+        <dataType>String</dataType>
+        <expression>text({!$Record.StageName})&amp;&quot; - &quot;&amp;text({!$Record.Sub_Stage__c})</expression>
+    </formulas>
+    <interviewLabel>[Opportunity] - Populate Account Latest Stage {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>[Opportunity] - Populate Account Latest Stage</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Account</name>
+        <label>Update Account</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputReference>AccountRecord</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Assign_AccountId</targetReference>
+        </connector>
+        <object>Opportunity</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>AccountRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+</Flow>
