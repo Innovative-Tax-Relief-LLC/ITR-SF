@@ -95,6 +95,11 @@
                 <default>false</default>
                 <label>Monterey</label>
             </value>
+            <value>
+                <fullName>Finturf</fullName>
+                <default>false</default>
+                <label>Finturf</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>
