@@ -2,13 +2,10 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>63.0</apiVersion>
     <decisions>
-        <name>Completed_Transactions</name>
-        <label>Completed Transactions?</label>
-        <locationX>176</locationX>
+        <name>Has_First_Transaction</name>
+        <label>Has First Transaction?</label>
+        <locationX>182</locationX>
         <locationY>395</locationY>
-        <defaultConnector>
-            <targetReference>Update_as_first_transaction</targetReference>
-        </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>Yes</name>
@@ -20,6 +17,9 @@
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
+            <connector>
+                <targetReference>Update_as_first_transaction</targetReference>
+            </connector>
             <label>Yes</label>
         </rules>
     </decisions>
@@ -48,11 +48,11 @@
     <recordLookups>
         <name>Get_Payment_Schedule_Transactions</name>
         <label>Get Payment Schedule Transactions</label>
-        <locationX>176</locationX>
+        <locationX>182</locationX>
         <locationY>287</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Completed_Transactions</targetReference>
+            <targetReference>Has_First_Transaction</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -76,6 +76,13 @@
                 <elementReference>$Record.bt_stripe__Payment_Schedule__c</elementReference>
             </value>
         </filters>
+        <filters>
+            <field>First_Completed_Captured_Transaction__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>bt_stripe__Transaction__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -83,7 +90,7 @@
     <recordUpdates>
         <name>Update_as_first_transaction</name>
         <label>Update as first transaction</label>
-        <locationX>308</locationX>
+        <locationX>50</locationX>
         <locationY>503</locationY>
         <inputAssignments>
             <field>First_Completed_Captured_Transaction__c</field>
@@ -94,7 +101,7 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>50</locationX>
+        <locationX>56</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Payment_Schedule_Transactions</targetReference>
@@ -115,9 +122,16 @@
                 <stringValue>Captured</stringValue>
             </value>
         </filters>
+        <filters>
+            <field>First_Completed_Captured_Transaction__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
         <object>bt_stripe__Transaction__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
 </Flow>
