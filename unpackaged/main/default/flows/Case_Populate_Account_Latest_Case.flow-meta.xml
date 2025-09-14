@@ -42,7 +42,7 @@
             <assignToReference>AccountRecord.Id</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>$Record.Opportunity__r.Id</elementReference>
+                <elementReference>$Record.Opportunity__r.Account.Id</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -118,7 +118,7 @@
         <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
     <variables>
         <name>AccountRecord</name>
         <dataType>SObject</dataType>
