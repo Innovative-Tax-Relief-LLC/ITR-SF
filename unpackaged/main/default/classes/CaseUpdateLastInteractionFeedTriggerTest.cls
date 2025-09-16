@@ -1,54 +1,117 @@
 @isTest
 private class CaseUpdateLastInteractionFeedTriggerTest {
 
-    @TestSetup
+    @testSetup
     static void makeData(){
-        Profile p = [SELECT Id FROM Profile WHERE Name='Standard User' LIMIT 1];
-        User uS = new User( 
-            Alias = 'testu',
-            Email = 'testuseraa@example.com',
+        User ownerUser = new User(
+            ProfileId = [SELECT Id FROM Profile WHERE Name = 'Standard User'].Id,
+            LastName = 'Owner',
+            Email = 'testowner@testorg.com',
+            Username = 'testowner.user@testorg.com' + System.currentTimeMillis(),
+            Alias = 'owner',
+            TimeZoneSidKey = 'America/New_York',
             EmailEncodingKey = 'UTF-8',
-            LastName = 'Test',
-            LanguageLocaleKey = 'en_US', 
-            LocaleSidKey = 'en_US',
-            ProfileId = p.Id,
-            TimeZoneSidKey = 'America/Los_Angeles',
-            UserName = 'test09881@example.com'
+            LanguageLocaleKey = 'en_US',
+            LocaleSidKey = 'en_US'
         );
-        insert uS;
+        insert ownerUser;
+
+        User nonOwnerUser = new User(
+            ProfileId = [SELECT Id FROM Profile WHERE Name = 'Standard User'].Id,
+            LastName = 'NonOwner',
+            Email = 'nonowner@testorg.com',
+            Username = 'nonowner.user@testorg.com' + System.currentTimeMillis(),
+            Alias = 'nonown',
+            TimeZoneSidKey = 'America/New_York',
+            EmailEncodingKey = 'UTF-8',
+            LanguageLocaleKey = 'en_US',
+            LocaleSidKey = 'en_US'
+        );
+        insert nonOwnerUser;
     }
 
     @isTest
-    static void testTriggerAfterInsert() {
-        User u = [SELECT Id FROM User WHERE LastName = 'Test' LIMIT 1];
-        Case testCase = new Case(Subject = 'Test Case', Status = 'In progress');
+    static void testPostInsertByOwner_ShouldUpdateField() {
+        User ownerUser = [SELECT Id FROM User WHERE LastName = 'Owner' LIMIT 1];
+        Case testCase = new Case(
+            Subject = 'Test Case',
+            Status = 'New',
+            Origin = 'Web',
+            OwnerId = ownerUser.Id
+        );
         insert testCase;
 
-        FeedItem testFeedItem = new FeedItem(ParentId = testCase.Id, Body = 'Test Feed Item', CreatedById = u.Id);
-        insert testFeedItem;
+        System.runAs(ownerUser) {
+            Test.startTest();
+            FeedItem post = new FeedItem(
+                ParentId = testCase.Id,
+                Body = 'This is a test post from the owner.'
+            );
+            insert post;
+            Test.stopTest();
+        }
 
-        Case updatedCase = [SELECT Id, LastOutreachDate__c FROM Case WHERE Id = :testCase.Id];
-
-        Assert.isNotNull(updatedCase.LastOutreachDate__c, 'LastOutreachDate__c should be updated');
-        Assert.areEqual(Date.today(), updatedCase.LastOutreachDate__c, 'LastOutreachDate__c should be today\'s date');
+        Case resultCase = [SELECT LastOutreachDate__c FROM Case WHERE Id = :testCase.Id];
+        System.assertEquals(Date.today(), resultCase.LastOutreachDate__c);
     }
 
     @isTest
-    static void testTriggerAfterUpdate() {
-        User u = [SELECT Id FROM User WHERE LastName = 'Test' LIMIT 1];
+    static void testPostInsertByNonOwner_ShouldNotUpdateField() {
+        User ownerUser = [SELECT Id FROM User WHERE LastName = 'Owner' LIMIT 1];
+        User nonOwnerUser = [SELECT Id FROM User WHERE LastName = 'NonOwner' LIMIT 1];
 
-        Case testCase = new Case(Subject = 'Test Case', Status = 'In progress');
+        Case testCase = new Case(
+            Subject = 'Test Case',
+            Status = 'New',
+            Origin = 'Web',
+            OwnerId = ownerUser.Id
+        );
         insert testCase;
 
-        FeedItem testFeedItem = new FeedItem(ParentId = testCase.Id, Body = 'Test Feed Item', CreatedById = u.Id);
-        insert testFeedItem;
+        // CORRECCIÓN AQUÍ: Otorgar acceso de lectura al usuario no propietario
+        CaseShare nonOwnerAccess = new CaseShare();
+        nonOwnerAccess.CaseId = testCase.Id;
+        nonOwnerAccess.UserOrGroupId = nonOwnerUser.Id;
+        nonOwnerAccess.CaseAccessLevel = 'Read';
+        insert nonOwnerAccess;
 
-        testFeedItem.Body = 'Updated Test Feed Item';
-        update testFeedItem;
+        System.runAs(nonOwnerUser) {
+            Test.startTest();
+            FeedItem post = new FeedItem(
+                ParentId = testCase.Id,
+                Body = 'This is a test post from a non-owner.'
+            );
+            insert post;
+            Test.stopTest();
+        }
 
-        Case updatedCase = [SELECT Id, LastOutreachDate__c FROM Case WHERE Id = :testCase.Id];
+        Case resultCase = [SELECT LastOutreachDate__c FROM Case WHERE Id = :testCase.Id];
+        System.assertEquals(null, resultCase.LastOutreachDate__c);
+    }
+    
+    @isTest
+    static void testPostUpdateByOwner_ShouldUpdateField() {
+        User ownerUser = [SELECT Id FROM User WHERE LastName = 'Owner' LIMIT 1];
+        Case testCase = new Case(Subject = 'Test Case', Status = 'New', OwnerId = ownerUser.Id);
+        insert testCase;
 
-        Assert.isNotNull(updatedCase.LastOutreachDate__c, 'LastOutreachDate__c should be updated');
-        Assert.areEqual(Date.today(), updatedCase.LastOutreachDate__c, 'LastOutreachDate__c should be today\'s date');
+        FeedItem postToUpdate;
+        System.runAs(ownerUser) {
+            postToUpdate = new FeedItem(ParentId = testCase.Id, Body = 'Initial post.');
+            insert postToUpdate;
+        }
+
+        testCase.LastOutreachDate__c = null;
+        update testCase;
+
+        System.runAs(ownerUser) {
+            postToUpdate.Body = 'This is an updated post.';
+            Test.startTest();
+            update postToUpdate;
+            Test.stopTest();
+        }
+
+        Case resultCase = [SELECT LastOutreachDate__c FROM Case WHERE Id = :testCase.Id];
+        System.assertEquals(Date.today(), resultCase.LastOutreachDate__c);
     }
 }
