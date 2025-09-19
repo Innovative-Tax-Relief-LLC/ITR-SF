@@ -25,9 +25,9 @@
         <value>Open,Completed,Canceled,Failed</value>
     </filters>
     <filters>
-        <field>bt_stripe__Opportunity2__c</field>
+        <field>bt_stripe__Payment_Schedule__c</field>
         <operation>equals</operation>
-        <value>Michael Dake - 2T Feb 2022</value>
+        <value>PS-000744</value>
     </filters>
     <label>Historial Data Migration Updates-LD</label>
 </ListView>
