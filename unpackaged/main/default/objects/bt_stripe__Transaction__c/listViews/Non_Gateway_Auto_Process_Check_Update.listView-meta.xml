@@ -18,14 +18,24 @@
         <value>bt_stripe__Transaction__c.bt_stripe__Charge</value>
     </filters>
     <filters>
-        <field>RECORDTYPE</field>
+        <field>bt_stripe__Transaction_Sub_Type__c</field>
         <operation>equals</operation>
-        <value>bt_stripe__Transaction__c.bt_stripe__Charge</value>
+        <value>Late Fee</value>
     </filters>
     <filters>
-        <field>bt_stripe__Payment_Schedule__c</field>
+        <field>bt_stripe__Transaction_Status__c</field>
         <operation>equals</operation>
-        <value>PS-004160</value>
+        <value>Open</value>
+    </filters>
+    <filters>
+        <field>Payment_Method_Record_Type__c</field>
+        <operation>notEqual</operation>
+        <value>Card</value>
+    </filters>
+    <filters>
+        <field>Payment_Method_Record_Type__c</field>
+        <operation>notEqual</operation>
+        <value>ACH</value>
     </filters>
     <label>Non-Gateway / Auto-Process Check Update</label>
 </ListView>
