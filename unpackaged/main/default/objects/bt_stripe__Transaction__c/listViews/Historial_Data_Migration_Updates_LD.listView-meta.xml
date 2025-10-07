@@ -22,12 +22,12 @@
     <filters>
         <field>bt_stripe__Transaction_Status__c</field>
         <operation>contains</operation>
-        <value>Open,Completed,Canceled,Failed</value>
+        <value>Open</value>
     </filters>
     <filters>
         <field>bt_stripe__Payment_Schedule__c</field>
         <operation>equals</operation>
-        <value>PS-000744</value>
+        <value>PS-003361</value>
     </filters>
-    <label>Historial Data Migration Updates-LD</label>
+    <label>Data Updates-Billing</label>
 </ListView>

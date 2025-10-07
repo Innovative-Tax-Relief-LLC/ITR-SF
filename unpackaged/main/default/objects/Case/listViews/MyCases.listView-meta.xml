@@ -9,11 +9,6 @@
     <columns>CASES.PRIORITY</columns>
     <columns>CASES.CREATED_DATE</columns>
     <columns>CORE.USERS.ALIAS</columns>
-    <filterScope>Queue</filterScope>
-    <filters>
-        <field>Velocify_ID__c</field>
-        <operation>notEqual</operation>
-    </filters>
+    <filterScope>Mine</filterScope>
     <label>My Cases</label>
-    <queue>Tax_Prep_Negotiation_Cases</queue>
 </ListView>
