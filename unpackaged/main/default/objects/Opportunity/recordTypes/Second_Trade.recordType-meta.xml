@@ -259,6 +259,10 @@
             <fullName>Denied</fullName>
             <default>false</default>
         </values>
+        <values>
+            <fullName>Not Used</fullName>
+            <default>false</default>
+        </values>
     </picklistValues>
     <picklistValues>
         <picklist>Failed_Transaction__c</picklist>
