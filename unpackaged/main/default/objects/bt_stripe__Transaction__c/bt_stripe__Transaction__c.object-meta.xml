@@ -169,6 +169,7 @@
     <profileSearchLayouts>
         <fields>NAME</fields>
         <fields>bt_stripe__Amount__c</fields>
+        <fields>bt_stripe__Transaction_Status__c</fields>
         <fields>bt_stripe__Payment_Status__c</fields>
         <fields>bt_stripe__Processed_Date__c</fields>
         <fields>bt_stripe__Payment_Method__c</fields>

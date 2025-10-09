@@ -22,12 +22,12 @@
     <filters>
         <field>bt_stripe__Transaction_Status__c</field>
         <operation>contains</operation>
-        <value>Open,Failed</value>
+        <value>Completed</value>
     </filters>
     <filters>
-        <field>bt_stripe__Payment_Schedule__c</field>
+        <field>bt_stripe__Opportunity2__c</field>
         <operation>equals</operation>
-        <value>PS-003993</value>
+        <value>Sheldon Higginbotham - 2T Jan 2026</value>
     </filters>
     <label>Data Updates-Billing</label>
 </ListView>
