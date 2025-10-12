@@ -71,6 +71,20 @@
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
+        <actionName>EnableUnifiedEmployeeUserAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EnableUnifiedEmployeeUserAction</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EnableUnifiedEmployeeUserAction</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>FreezeUserAction</actionName>
         <type>Default</type>
     </actionOverrides>
@@ -193,6 +207,20 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>UserActivationAction</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ViewUnifiedEmployeeUserAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ViewUnifiedEmployeeUserAction</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ViewUnifiedEmployeeUserAction</actionName>
         <formFactor>Small</formFactor>
         <type>Default</type>
     </actionOverrides>

@@ -4,6 +4,7 @@
     <label>Signature</label>
     <length>70000</length>
     <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
     <type>Html</type>
     <visibleLines>25</visibleLines>
 </CustomField>

@@ -99,20 +99,6 @@
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>MassApprovePosts</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>MassApprovePosts</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>MassApprovePosts</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
         <actionName>MassCreateCase</actionName>
         <type>Default</type>
     </actionOverrides>
@@ -137,20 +123,6 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>MassIgnore</actionName>
-        <formFactor>Small</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>MassRejectPosts</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>MassRejectPosts</actionName>
-        <formFactor>Large</formFactor>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>MassRejectPosts</actionName>
         <formFactor>Small</formFactor>
         <type>Default</type>
     </actionOverrides>

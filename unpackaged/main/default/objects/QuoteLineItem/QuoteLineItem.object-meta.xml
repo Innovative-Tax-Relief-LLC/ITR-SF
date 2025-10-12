@@ -101,5 +101,15 @@
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>false</enableFeeds>
     <externalSharingModel>ControlledByParent</externalSharingModel>
+    <searchLayouts>
+        <searchResultsAdditionalFields>QUOTE_LI.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>QUOTE.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>QUOTE_LI.PRODUCT2</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OPPORTUNITY.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>QUOTE_LI.QUANTITY</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>QUOTE_LI.UNIT_PRICE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>QUOTE_LI.DISCOUNT</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>QUOTE_LI.TOTAL_PRICE</searchResultsAdditionalFields>
+    </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
 </CustomObject>
