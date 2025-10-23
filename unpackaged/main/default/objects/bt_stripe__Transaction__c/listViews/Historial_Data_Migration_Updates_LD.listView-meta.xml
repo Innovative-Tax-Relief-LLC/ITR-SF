@@ -26,7 +26,7 @@
     <filters>
         <field>bt_stripe__Opportunity2__c</field>
         <operation>equals</operation>
-        <value>Christopher Slade - 2T Jan 2026</value>
+        <value>Carl Christiansen - 2T Jan 2026</value>
     </filters>
     <label>Data Updates-Billing</label>
 </ListView>
