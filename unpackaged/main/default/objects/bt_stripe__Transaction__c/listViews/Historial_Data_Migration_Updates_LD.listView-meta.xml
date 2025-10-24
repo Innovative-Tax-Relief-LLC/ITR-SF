@@ -26,7 +26,12 @@
     <filters>
         <field>bt_stripe__Opportunity2__c</field>
         <operation>equals</operation>
-        <value>Carl Christiansen - 2T Jan 2026</value>
+        <value>Darkis Ramos - 2T Jan 2026</value>
+    </filters>
+    <filters>
+        <field>bt_stripe__Payment_Schedule__c</field>
+        <operation>equals</operation>
+        <value>PS-004682</value>
     </filters>
     <label>Data Updates-Billing</label>
 </ListView>
