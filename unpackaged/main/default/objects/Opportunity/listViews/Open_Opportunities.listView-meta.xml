@@ -13,5 +13,14 @@
         <operation>equals</operation>
         <value>0</value>
     </filters>
+    <filters>
+        <field>X1T_Opportunity__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>IRS_Revenue_Officer_on_Case__c</field>
+        <operation>equals</operation>
+        <value>Yes,No</value>
+    </filters>
     <label>All Open Opportunities</label>
 </ListView>
