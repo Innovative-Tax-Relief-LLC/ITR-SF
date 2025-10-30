@@ -1015,6 +1015,21 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Resolution_Coordinator__c</picklist>
+        <values>
+            <fullName>John Sanchez</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manny Martinez</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Miguel Coronado</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Section_Filled__c</picklist>
         <values>
             <fullName>Billing IRS Info</fullName>

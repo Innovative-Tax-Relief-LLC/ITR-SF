@@ -2,233 +2,54 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>62.0</apiVersion>
     <assignments>
-        <name>Add_1T_to_Collection</name>
-        <label>Add 1T to Collection</label>
-        <locationX>622</locationX>
+        <name>Assign_IRS_Officer_Value</name>
+        <label>Assign IRS Officer Value</label>
+        <locationX>264</locationX>
+        <locationY>539</locationY>
+        <assignmentItems>
+            <assignToReference>Loop_Cases.IRS_Revenue_Officer_on_Case__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.IRS_Revenue_Officer_on_Case__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_to_Collection</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_to_Collection</name>
+        <label>Assign to Collection</label>
+        <locationX>264</locationX>
         <locationY>647</locationY>
         <assignmentItems>
-            <assignToReference>OpportunityCollection</assignToReference>
+            <assignToReference>CaseCollection</assignToReference>
             <operator>Add</operator>
             <value>
-                <elementReference>FTOpportunity</elementReference>
+                <elementReference>Loop_Cases</elementReference>
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Get_1T_Case</targetReference>
+            <targetReference>Loop_Cases</targetReference>
         </connector>
     </assignments>
-    <assignments>
-        <name>Add_2T_to_Collection</name>
-        <label>Add 2T to Collection</label>
-        <locationX>622</locationX>
-        <locationY>1463</locationY>
-        <assignmentItems>
-            <assignToReference>OpportunityCollection</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>STOpportunity</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Get_2T_Case</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>X1T_Opportunity_Update</name>
-        <label>1T Opportunity Update</label>
-        <locationX>622</locationX>
-        <locationY>539</locationY>
-        <assignmentItems>
-            <assignToReference>FTOpportunity.Id</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.X1T_Opportunity__r.Id</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>FTOpportunity.IRS_Revenue_Officer_on_Case__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.IRS_Revenue_Officer_on_Case__c</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Add_1T_to_Collection</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>X2T_Opportunity_Update</name>
-        <label>2T Opportunity Update</label>
-        <locationX>622</locationX>
-        <locationY>1355</locationY>
-        <assignmentItems>
-            <assignToReference>STOpportunity.Id</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.X2T_Opportunity__r.Id</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>STOpportunity.IRS_Revenue_Officer_on_Case__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.IRS_Revenue_Officer_on_Case__c</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Add_2T_to_Collection</targetReference>
-        </connector>
-    </assignments>
-    <decisions>
-        <name>Found</name>
-        <label>Found?</label>
-        <locationX>622</locationX>
-        <locationY>863</locationY>
-        <defaultConnector>
-            <targetReference>X2T_Opportunity_Populated_Decision</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>No</defaultConnectorLabel>
-        <rules>
-            <name>Yes</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Get_1T_Case</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Update_1TCase</targetReference>
-            </connector>
-            <label>Yes</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>Found_3T_Case</name>
-        <label>Found 3T Case?</label>
-        <locationX>182</locationX>
-        <locationY>539</locationY>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Yes_found3tcase</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Get_3T_Case</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Update_3T_Case</targetReference>
-            </connector>
-            <label>Yes</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>Triggering_is_3T</name>
-        <label>Triggering is 3T?</label>
-        <locationX>479</locationX>
-        <locationY>323</locationY>
-        <defaultConnector>
-            <targetReference>X1T_Opportunity_Populated</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Yes_3t</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.RecordType.Name</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Third Trade</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Get_3T_Case</targetReference>
-            </connector>
-            <label>Yes</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>X1T_Opportunity_Populated</name>
-        <label>1T Opportunity Populated?</label>
-        <locationX>776</locationX>
-        <locationY>431</locationY>
-        <defaultConnector>
-            <targetReference>X2T_Opportunity_Populated_Decision</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>1T Not Populated</defaultConnectorLabel>
-        <rules>
-            <name>X1T_Populated</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.X1T_Opportunity__c</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>X1T_Opportunity_Update</targetReference>
-            </connector>
-            <label>1T Populated</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>X2T_Case_Found</name>
-        <label>2T Case Found?</label>
-        <locationX>622</locationX>
-        <locationY>1679</locationY>
-        <defaultConnector>
-            <targetReference>Update_Collection</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>No</defaultConnectorLabel>
-        <rules>
-            <name>Yes_found</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Get_2T_Case</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Update_2T_Case</targetReference>
-            </connector>
-            <label>Yes</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>X2T_Opportunity_Populated_Decision</name>
-        <label>2T Opportunity Populated?</label>
-        <locationX>776</locationX>
-        <locationY>1247</locationY>
-        <defaultConnector>
-            <targetReference>Update_Collection</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>2T Not Populated</defaultConnectorLabel>
-        <rules>
-            <name>x2T_Opportunity_Populated</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.X2T_Opportunity__c</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>X2T_Opportunity_Update</targetReference>
-            </connector>
-            <label>2T Opportunity Populated</label>
-        </rules>
-    </decisions>
     <environments>Default</environments>
     <interviewLabel>Opportunity - Populate IRS Officer on Related Opps {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Opportunity - Populate IRS Officer on Related Opps</label>
+    <loops>
+        <name>Loop_Cases</name>
+        <label>Loop Cases</label>
+        <locationX>176</locationX>
+        <locationY>431</locationY>
+        <collectionReference>Get_Related_Cases</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_IRS_Officer_Value</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Update_Case_Collection</targetReference>
+        </noMoreValuesConnector>
+    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -249,55 +70,13 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordLookups>
-        <name>Get_1T_Case</name>
-        <label>Get 1T Case</label>
-        <locationX>622</locationX>
-        <locationY>755</locationY>
+        <name>Get_Related_Cases</name>
+        <label>Get Related Cases</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Found</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Opportunity__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>FTOpportunity.Id</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Case</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
-        <name>Get_2T_Case</name>
-        <label>Get 2T Case</label>
-        <locationX>622</locationX>
-        <locationY>1571</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>X2T_Case_Found</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Opportunity__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>STOpportunity.Id</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Case</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
-        <name>Get_3T_Case</name>
-        <label>Get 3T Case</label>
-        <locationX>182</locationX>
-        <locationY>431</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Found_3T_Case</targetReference>
+            <targetReference>Loop_Cases</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -307,93 +86,24 @@
                 <elementReference>$Record.Id</elementReference>
             </value>
         </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>Case</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
-        <name>Update_1TCase</name>
-        <label>Update 1T Case</label>
-        <locationX>490</locationX>
-        <locationY>971</locationY>
-        <connector>
-            <targetReference>X2T_Opportunity_Populated_Decision</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>Get_1T_Case.Id</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>IRS_Revenue_Officer_on_Case__c</field>
-            <value>
-                <elementReference>$Record.IRS_Revenue_Officer_on_Case__c</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Case</object>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Update_2T_Case</name>
-        <label>Update 2T Case</label>
-        <locationX>490</locationX>
-        <locationY>1787</locationY>
-        <connector>
-            <targetReference>Update_Collection</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>Get_2T_Case.Id</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>IRS_Revenue_Officer_on_Case__c</field>
-            <value>
-                <elementReference>$Record.IRS_Revenue_Officer_on_Case__c</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Case</object>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Update_3T_Case</name>
-        <label>Update 3T Case</label>
-        <locationX>50</locationX>
-        <locationY>647</locationY>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>Get_3T_Case.Id</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>IRS_Revenue_Officer_on_Case__c</field>
-            <value>
-                <elementReference>$Record.IRS_Revenue_Officer_on_Case__c</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Case</object>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Update_Collection</name>
+        <name>Update_Case_Collection</name>
         <label>Update Collection</label>
-        <locationX>776</locationX>
-        <locationY>2063</locationY>
-        <inputReference>OpportunityCollection</inputReference>
+        <locationX>176</locationX>
+        <locationY>839</locationY>
+        <inputReference>CaseCollection</inputReference>
     </recordUpdates>
     <start>
-        <locationX>353</locationX>
+        <locationX>50</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Triggering_is_3T</targetReference>
+            <targetReference>Get_Related_Cases</targetReference>
         </connector>
-        <filterLogic>1 AND ( 2 OR 3)</filterLogic>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>IRS_Revenue_Officer_on_Case__c</field>
             <operator>IsChanged</operator>
@@ -401,25 +111,19 @@
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
-        <filters>
-            <field>X1T_Opportunity__c</field>
-            <operator>IsNull</operator>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </filters>
-        <filters>
-            <field>X2T_Opportunity__c</field>
-            <operator>IsNull</operator>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </filters>
         <object>Opportunity</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
+    <variables>
+        <name>CaseCollection</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
     <variables>
         <name>FTOpportunity</name>
         <dataType>SObject</dataType>
