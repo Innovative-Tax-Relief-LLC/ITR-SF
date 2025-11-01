@@ -26,12 +26,12 @@
     <filters>
         <field>bt_stripe__Opportunity2__c</field>
         <operation>equals</operation>
-        <value>Bryant Besteda - 2T Jan 2026</value>
+        <value>Laron Mcdougald - 2T Jan 2026</value>
     </filters>
     <filters>
         <field>bt_stripe__Payment_Schedule__c</field>
         <operation>equals</operation>
-        <value>PS-004829</value>
+        <value>PS-004865</value>
     </filters>
     <label>Data Updates-Billing</label>
 </ListView>
