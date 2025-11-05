@@ -100,6 +100,11 @@
         <default>false</default>
         <label>Automotive/ Automobile Industry</label>
     </customValue>
+    <customValue>
+        <fullName>Airlines / Aviation</fullName>
+        <default>false</default>
+        <label>Airlines / Aviation</label>
+    </customValue>
     <masterLabel>Occupation Category</masterLabel>
     <sorted>false</sorted>
 </GlobalValueSet>
