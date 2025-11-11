@@ -27,7 +27,7 @@
     <filters>
         <field>bt_stripe__Payment_Schedule__c</field>
         <operation>equals</operation>
-        <value>PS-004997</value>
+        <value>PS-005034</value>
     </filters>
     <filters>
         <field>RECORDTYPE</field>
