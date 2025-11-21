@@ -198,6 +198,7 @@
             <label>12</label>
         </rules>
     </decisions>
+    <description>Updated email template folder Ids to match prod.</description>
     <environments>Default</environments>
     <formulas>
         <name>NextNumberEmail</name>
@@ -462,7 +463,7 @@
             <field>FolderId</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>00lOu0000021BgDIAU</stringValue>
+                <stringValue>00lPo000009jFwzIAE</stringValue>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
@@ -490,7 +491,7 @@
             <field>FolderId</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>00lOu0000021JNdIAM</stringValue>
+                <stringValue>00lPo000009jFx0IAE</stringValue>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
