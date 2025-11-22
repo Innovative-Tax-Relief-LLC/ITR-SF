@@ -60,6 +60,9 @@ global with sharing class VelocifyClientPayload {
         public String spouse_social_security;
         public String spouse_occupation;
         public String spouse_occupation_category;
+        public String nickname_goes_by;
+        public String spouse_nickname_goes_by;
+        public String poas_in_the_past;
         public String client_is_homeowner;
         public String client_owns_more_than_1_real_estate_property;
         public String client_wage_and_income_shows_form_1098;
@@ -88,6 +91,8 @@ global with sharing class VelocifyClientPayload {
         public String YearsToFile4;
         public String GrossResolutionCosts;
         public String NetResolutionCost;
+        public String irs_revenue_officer_on_case;
+        public String resolution_coordinator;
     }
 
     global class PaymentsDetails {
