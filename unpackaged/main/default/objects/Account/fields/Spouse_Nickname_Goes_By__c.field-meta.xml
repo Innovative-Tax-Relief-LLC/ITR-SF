@@ -3,7 +3,7 @@
     <fullName>Spouse_Nickname_Goes_By__c</fullName>
     <externalId>false</externalId>
     <label>Spouse Nickname Goes By</label>
-    <length>100</length>
+    <length>30</length>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>

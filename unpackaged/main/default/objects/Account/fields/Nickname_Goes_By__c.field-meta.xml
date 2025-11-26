@@ -3,7 +3,7 @@
     <fullName>Nickname_Goes_By__c</fullName>
     <externalId>false</externalId>
     <label>Nickname Goes By</label>
-    <length>20</length>
+    <length>30</length>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>

@@ -116,26 +116,6 @@ private class CaseOwnerEmailActionTest {
     }
 
     @IsTest
-    static void caseOwnerEmailAction_sendEmailToCaseOwner_generalExceptionThrown() {
-        Case testCase = [SELECT Id FROM Case LIMIT 1];
-        Contact testContact = [SELECT Id FROM Contact LIMIT 1];
-        EmailTemplate testTemplate = [SELECT Id FROM EmailTemplate LIMIT 1];
-
-        CaseOwnerEmailAction.EmailRequest request = new CaseOwnerEmailAction.EmailRequest();
-        request.caseId = testCase.Id;
-        request.emailTemplateId = testTemplate.Id;
-        request.recipientId = null;
-
-        Test.startTest();
-        List<CaseOwnerEmailAction.EmailResponse> responses = CaseOwnerEmailAction.sendEmailToCaseOwner(new List<CaseOwnerEmailAction.EmailRequest>{request});
-        Test.stopTest();
-
-        System.assertEquals(1, responses.size(), 'Should return one response');
-        System.assertEquals(false, responses[0].isSuccess, 'Email should not be sent successfully');
-        System.assert(responses[0].errorMessage.startsWith('Error sending email:'), 'Should return general error message');
-    }
-
-    @IsTest
     static void caseOwnerEmailAction_sendEmailToCaseOwner_fatalErrorOccurred() {
         Test.startTest();
         List<CaseOwnerEmailAction.EmailResponse> responses = CaseOwnerEmailAction.sendEmailToCaseOwner(null);

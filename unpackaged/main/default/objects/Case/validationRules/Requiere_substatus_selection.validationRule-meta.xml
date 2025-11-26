@@ -2,7 +2,9 @@
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Requiere_substatus_selection</fullName>
     <active>true</active>
-    <description>Requiere sub-status selection when status is &quot;Case Completed Failed&quot;</description>
-    <errorConditionFormula>AND(ISPICKVAL(Status , &quot;Case Completed Failed&quot;),   ISPICKVAL(Sub_status__c, &quot;&quot;))</errorConditionFormula>
+    <description>Requiere sub-status selection when status is changed to &quot;Case Completed Failed&quot;</description>
+    <errorConditionFormula>AND(
+ISCHANGED(Status), 
+ISPICKVAL(Status , &quot;Case Completed Failed&quot;),  ISPICKVAL(Sub_status__c, &quot;&quot;))</errorConditionFormula>
     <errorMessage>If status is &quot;Case Completed Failed&quot;, please select a sub-status (reason for failure).</errorMessage>
 </ValidationRule>
