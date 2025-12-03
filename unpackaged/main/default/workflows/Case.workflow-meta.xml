@@ -11,4 +11,14 @@
         <senderType>CurrentUser</senderType>
         <template>ITRCaseManagementEmails/Case_Manager_Queue_notification_on_new_case_record_1728417689950</template>
     </alerts>
+    <alerts>
+        <fullName>Case_assigned_unassigned_alert</fullName>
+        <description>Case assigned/unassigned alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Case_Assignment_Notification</template>
+    </alerts>
 </Workflow>

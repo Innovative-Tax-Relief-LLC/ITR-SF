@@ -22,12 +22,12 @@
     <filters>
         <field>bt_stripe__Opportunity2__c</field>
         <operation>contains</operation>
-        <value>Mayra Pena - 2T Aug 2022</value>
+        <value>Ramon Drew - 2T Mar 2026</value>
     </filters>
     <filters>
         <field>bt_stripe__Transaction_Status__c</field>
         <operation>equals</operation>
-        <value>Completed</value>
+        <value>Open</value>
     </filters>
     <label>Data Updates-Billing</label>
 </ListView>
