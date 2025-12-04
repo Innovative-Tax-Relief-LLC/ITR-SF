@@ -11,7 +11,7 @@
         <inputParameters>
             <name>SObjectRowId</name>
             <value>
-                <elementReference>$Record.Id</elementReference>
+                <elementReference>$Record.Case_ID__c</elementReference>
             </value>
         </inputParameters>
         <nameSegment>Case.Case_assigned_unassigned_alert</nameSegment>
