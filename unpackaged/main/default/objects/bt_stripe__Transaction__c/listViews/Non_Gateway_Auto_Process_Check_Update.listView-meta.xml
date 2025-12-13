@@ -18,21 +18,17 @@
     <filters>
         <field>bt_stripe__Transaction_Status__c</field>
         <operation>equals</operation>
-        <value>Open</value>
+        <value>Completed</value>
     </filters>
     <filters>
         <field>bt_stripe__Payment_Status__c</field>
         <operation>equals</operation>
+        <value>Captured</value>
     </filters>
     <filters>
         <field>bt_stripe__Payment_Schedule__c</field>
         <operation>equals</operation>
-        <value>PS-005222</value>
-    </filters>
-    <filters>
-        <field>bt_stripe__Opportunity2__c</field>
-        <operation>contains</operation>
-        <value>Mayra Pena - 2T Aug 2022</value>
+        <value>PS-002639</value>
     </filters>
     <label>Non-Gateway / Auto-Process Check Update</label>
 </ListView>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <description>Swiss Franc</description>
+    <label>Swiss Franc</label>
+    <protected>false</protected>
+    <values>
+        <field>bt_stripe__ISO_Code__c</field>
+        <value xsi:type="xsd:string">CHF</value>
+    </values>
+    <values>
+        <field>bt_stripe__ISO_Number__c</field>
+        <value xsi:type="xsd:string">756</value>
+    </values>
+    <values>
+        <field>bt_stripe__Major_Name__c</field>
+        <value xsi:type="xsd:string">franc</value>
+    </values>
+    <values>
+        <field>bt_stripe__Major_Symbol__c</field>
+        <value xsi:type="xsd:string">CHF</value>
+    </values>
+    <values>
+        <field>bt_stripe__Minor_Name__c</field>
+        <value xsi:type="xsd:string">rappen</value>
+    </values>
+    <values>
+        <field>bt_stripe__Minor_Symbol__c</field>
+        <value xsi:type="xsd:string">Rp.</value>
+    </values>
+    <values>
+        <field>bt_stripe__Minor_Unit__c</field>
+        <value xsi:type="xsd:double">2.0</value>
+    </values>
+    <values>
+        <field>bt_stripe__Rate_Type__c</field>
+        <value xsi:type="xsd:string">Fixed</value>
+    </values>
+    <values>
+        <field>bt_stripe__Rate__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>bt_stripe__Stripe_Minimum_Amount__c</field>
+        <value xsi:type="xsd:double">0.5</value>
+    </values>
+    <values>
+        <field>bt_stripe__Stripe_Supported_Bank_Accounts__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>bt_stripe__Stripe_Supported_Cards__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>bt_stripe__Stripe_Unsupported_on_American_Express__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>bt_stripe__Stripe_Zero_Decimal__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+</CustomMetadata>

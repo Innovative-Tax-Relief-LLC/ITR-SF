@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>ITR Livevox</label>
+    <protected>false</protected>
+    <values>
+        <field>Access_Token__c</field>
+        <value xsi:type="xsd:string">736df396-85e1-4d83-a74b-2d1ac1eda9b6</value>
+    </values>
+    <values>
+        <field>clientName__c</field>
+        <value xsi:type="xsd:string">LV_NA6_0107</value>
+    </values>
+    <values>
+        <field>password__c</field>
+        <value xsi:type="xsd:string">49$QTSVvsytMqYs</value>
+    </values>
+    <values>
+        <field>userName__c</field>
+        <value xsi:type="xsd:string">itsupport@innovativetaxreliefllc.com</value>
+    </values>
+</CustomMetadata>

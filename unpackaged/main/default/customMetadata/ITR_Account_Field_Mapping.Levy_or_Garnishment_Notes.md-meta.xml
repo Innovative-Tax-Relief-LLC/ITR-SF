@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Levy or Garnishment Notes</label>
+    <protected>false</protected>
+    <values>
+        <field>ITR_XML_Field__c</field>
+        <value xsi:type="xsd:string">levy_or_garnishment_notes</value>
+    </values>
+    <values>
+        <field>SFDC_Field__c</field>
+        <value xsi:type="xsd:string">Levy_or_Garnishment_Notes__pc</value>
+    </values>
+</CustomMetadata>

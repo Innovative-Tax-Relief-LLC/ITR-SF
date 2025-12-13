@@ -1,240 +1,280 @@
-@isTest
-public class CaseAssignmentServiceTest {
+@IsTest
+private class CaseAssignmentServiceTest {
     
-    @testSetup
+    @TestSetup
     static void setup() {
-        Profile standardProfile = [SELECT Id FROM Profile WHERE Name = 'Standard User' LIMIT 1];
+        Profile p = [SELECT Id FROM Profile WHERE Name = 'Standard User' LIMIT 1];
+        String ts = String.valueOf(System.currentTimeMillis());
         
-        User testOwner1 = new User(
-            FirstName = 'Test', LastName = 'Owner1', Email = 'testowner1@test.com',
-            Username = 'testowner1@test.com.unique' + System.currentTimeMillis(),
-            Alias = 'towner1', ProfileId = standardProfile.Id,
-            TimeZoneSidKey = 'America/New_York', EmailEncodingKey = 'UTF-8',
-            LanguageLocaleKey = 'en_US', LocaleSidKey = 'en_US'
+        User caseOwnerUser = new User(
+            FirstName = 'User',
+            LastName  = 'CaseOwner',
+            Email = 'caseowner' + ts + '@test.com',
+            Username = 'caseowner' + ts + '@test.com',
+            Alias = 'cown',
+            ProfileId = p.Id,
+            TimeZoneSidKey = 'America/New_York',
+            EmailEncodingKey = 'UTF-8',
+            LanguageLocaleKey = 'en_US',
+            LocaleSidKey = 'en_US'
         );
         
-        User testTaxPro1 = new User(
-            FirstName = 'Test', LastName = 'TaxPro1', Email = 'testtaxpro1@test.com',
-            Username = 'testtaxpro1@test.com.unique' + System.currentTimeMillis(),
-            Alias = 'ttaxpr1', ProfileId = standardProfile.Id,
-            TimeZoneSidKey = 'America/New_York', EmailEncodingKey = 'UTF-8',
-            LanguageLocaleKey = 'en_US', LocaleSidKey = 'en_US'
+        User taxProUser = new User(
+            FirstName = 'User',
+            LastName  = 'TaxPro',
+            Email = 'taxpro' + ts + '@test.com',
+            Username = 'taxpro' + ts + '@test.com',
+            Alias = 'tpro',
+            ProfileId = p.Id,
+            TimeZoneSidKey = 'America/New_York',
+            EmailEncodingKey = 'UTF-8',
+            LanguageLocaleKey = 'en_US',
+            LocaleSidKey = 'en_US'
         );
-        insert new List<User>{testOwner1, testTaxPro1};
         
-        List<Case_User_Pool__c> userPools = new List<Case_User_Pool__c>();
-        userPools.add(new Case_User_Pool__c(
-            Owner_Type__c = 'Case Owner', User__c = testOwner1.Id,
-            Stage__c = 'Stage 1', Number_Cases_Open__c = 0, Automate__c = true
-        ));
-        userPools.add(new Case_User_Pool__c(
-            Owner_Type__c = 'Case Owner', User__c = testOwner1.Id,
-            Stage__c = 'Stage 3', Number_Cases_Open__c = 1, Automate__c = true
-        ));
-        userPools.add(new Case_User_Pool__c(
-            Owner_Type__c = 'Tax Pro', User__c = testTaxPro1.Id,
-            Stage__c = 'Stage 1', Number_Cases_Open__c = 0, Automate__c = true
-        ));
-        userPools.add(new Case_User_Pool__c(
-            Owner_Type__c = 'Tax Pro', User__c = testTaxPro1.Id,
-            Stage__c = 'Stage 3', Number_Cases_Open__c = 2, Automate__c = true
-        ));
-        insert userPools;
+        insert new List<User>{ caseOwnerUser, taxProUser };
         
-        Product2 product1 = new Product2(
-            Name = 'Product Stage 1', Stage_Case_Owner__c = 'Stage 1',
-            Stage_Tax_Pro__c = 'Stage 1', IsActive = true
+        List<Case_User_Pool__c> pools = new List<Case_User_Pool__c>{
+            new Case_User_Pool__c(
+                Owner_Type__c = 'Case Owner',
+                User__c = caseOwnerUser.Id,
+                Stage__c = 'Stage 1',
+                Number_Cases_Open__c = 0,
+                Automate__c = true
+            ),
+            new Case_User_Pool__c(
+                Owner_Type__c = 'Case Owner',
+                User__c = caseOwnerUser.Id,
+                Stage__c = 'Stage 3',
+                Number_Cases_Open__c = 1,
+                Automate__c = true
+            ),
+            new Case_User_Pool__c(
+                Owner_Type__c = 'Tax Pro',
+                User__c = taxProUser.Id,
+                Stage__c = 'Stage 1',
+                Number_Cases_Open__c = 0,
+                Automate__c = true
+            ),
+            new Case_User_Pool__c(
+                Owner_Type__c = 'Tax Pro',
+                User__c = taxProUser.Id,
+                Stage__c = 'Stage 3',
+                Number_Cases_Open__c = 2,
+                Automate__c = true
+            )
+        };
+        insert pools;
+        
+        Product2 prod1 = new Product2(
+            Name = 'Product Stage 1',
+            Stage_Case_Owner__c = 'Stage 1',
+            Stage_Tax_Pro__c = 'Stage 1',
+            IsActive = true
         );
-        Product2 product3 = new Product2(
-            Name = 'Product Stage 3', Stage_Case_Owner__c = 'Stage 3',
-            Stage_Tax_Pro__c = 'Stage 3', IsActive = true
+        Product2 prod3 = new Product2(
+            Name = 'Product Stage 3',
+            Stage_Case_Owner__c = 'Stage 3',
+            Stage_Tax_Pro__c = 'Stage 3',
+            IsActive = true
         );
-        insert new List<Product2>{product1, product3};
+        insert new List<Product2>{ prod1, prod3 };
         
-        Account testAccount = new Account(Name = 'Test Account');
-        insert testAccount;
+        Account acc = new Account(Name = 'Test Account');
+        insert acc;
         
-        Opportunity testOpp = new Opportunity(
-            Name = 'Test Opportunity', AccountId = testAccount.Id,
-            StageName = 'Closed Won', CloseDate = Date.today()
+        Opportunity opp = new Opportunity(
+            Name = 'Test Opportunity',
+            AccountId = acc.Id,
+            StageName = 'Closed Won',
+            CloseDate = Date.today()
         );
-        insert testOpp;
+        insert opp;
         
-        Id standardPricebookId = Test.getStandardPricebookId();
+        Id stdPbId = Test.getStandardPricebookId();
         
-        List<PricebookEntry> pbes = new List<PricebookEntry>();
-        pbes.add(new PricebookEntry(
-            Pricebook2Id = standardPricebookId, Product2Id = product1.Id,
-            UnitPrice = 100, IsActive = true
-        ));
-        pbes.add(new PricebookEntry(
-            Pricebook2Id = standardPricebookId, Product2Id = product3.Id,
-            UnitPrice = 200, IsActive = true
-        ));
-        insert pbes;
+        PricebookEntry pbe1 = new PricebookEntry(
+            Pricebook2Id = stdPbId,
+            Product2Id = prod1.Id,
+            UnitPrice = 100,
+            IsActive = true
+        );
+        PricebookEntry pbe3 = new PricebookEntry(
+            Pricebook2Id = stdPbId,
+            Product2Id = prod3.Id,
+            UnitPrice = 200,
+            IsActive = true
+        );
+        insert new List<PricebookEntry>{ pbe1, pbe3 };
         
-        List<OpportunityLineItem> olis = new List<OpportunityLineItem>();
-        olis.add(new OpportunityLineItem(
-            OpportunityId = testOpp.Id, Product2Id = product1.Id,
-            PricebookEntryId = pbes[0].Id, Quantity = 1, UnitPrice = 100
-        ));
-        olis.add(new OpportunityLineItem(
-            OpportunityId = testOpp.Id, Product2Id = product3.Id,
-            PricebookEntryId = pbes[1].Id, Quantity = 1, UnitPrice = 200
-        ));
-        insert olis;
+        OpportunityLineItem oli1 = new OpportunityLineItem(
+            OpportunityId = opp.Id,
+            Product2Id = prod1.Id,
+            PricebookEntryId = pbe1.Id,
+            Quantity = 1,
+            UnitPrice = 100
+        );
+        OpportunityLineItem oli3 = new OpportunityLineItem(
+            OpportunityId = opp.Id,
+            Product2Id = prod3.Id,
+            PricebookEntryId = pbe3.Id,
+            Quantity = 1,
+            UnitPrice = 200
+        );
+        insert new List<OpportunityLineItem>{ oli1, oli3 };
     }
     
-    @isTest
-    static void testHighestStageAssignment() {
-        Opportunity testOpp = [SELECT Id FROM Opportunity LIMIT 1];
-        User testOwner1 = [SELECT Id FROM User WHERE LastName = 'Owner1' LIMIT 1];
-        User testTaxPro1 = [SELECT Id FROM User WHERE LastName = 'TaxPro1' LIMIT 1];
+    @IsTest
+    static void testAssignOwnersBeforeInsert_SingleCase() {
+        Opportunity opp = [SELECT Id FROM Opportunity LIMIT 1];
+        User expectedOwner = [SELECT Id FROM User WHERE LastName = 'CaseOwner' LIMIT 1];
+        User expectedTaxPro = [SELECT Id FROM User WHERE LastName = 'TaxPro' LIMIT 1];
+        
+        Case c = new Case(
+            Subject = 'Test Case Assignment',
+            Opportunity__c = opp.Id
+        );
+        List<Case> cases = new List<Case>{ c };
         
         Test.startTest();
-        
-        Case testCase = new Case(
-            Subject = 'Test Highest Stage Case',
-            Opportunity__c = testOpp.Id
-        );
-        insert testCase;
-        
+        CaseAssignmentService.assignOwnersBeforeInsert(cases);
         Test.stopTest();
         
-        Case insertedCase = [SELECT Id, OwnerId, Enrolled_Agent__c FROM Case WHERE Id = :testCase.Id];
-        
-        System.assertNotEquals(null, insertedCase.OwnerId, 'Case Owner should be assigned');
-        System.assertNotEquals(null, insertedCase.Enrolled_Agent__c, 'Enrolled Agent should be assigned');
-        System.assertEquals(testOwner1.Id, insertedCase.OwnerId, 'Should assign owner eligible for highest stage');
-        System.assertEquals(testTaxPro1.Id, insertedCase.Enrolled_Agent__c, 'Should assign enrolled agent eligible for highest stage');
+        System.assertNotEquals(null, c.OwnerId, 'Case Owner should be assigned');
+        System.assertNotEquals(null, c.Enrolled_Agent__c, 'Enrolled Agent should be assigned');
+        System.assertEquals(expectedOwner.Id, c.OwnerId, 'Owner should be the expected Case Owner user');
+        System.assertEquals(expectedTaxPro.Id, c.Enrolled_Agent__c, 'Enrolled Agent should be the expected Tax Pro user');
     }
     
-    @isTest
-    static void testDirectAssignOwnersCall() {
-        Opportunity testOpp = [SELECT Id FROM Opportunity LIMIT 1];
-        
-        Case testCase = new Case(
-            Subject = 'Direct Assignment Test',
-            Opportunity__c = testOpp.Id
-        );
-        insert testCase;
+    @IsTest
+    static void testAssignOwnersBeforeInsert_NoOpportunity() {
+        Case c = new Case(Subject = 'Case Without Opportunity');
+        List<Case> cases = new List<Case>{ c };
         
         Test.startTest();
-        CaseAssignmentService.assignOwners(new List<Case>{testCase});
+        CaseAssignmentService.assignOwnersBeforeInsert(cases);
         Test.stopTest();
         
-        Case updatedCase = [SELECT Id, OwnerId, Enrolled_Agent__c FROM Case WHERE Id = :testCase.Id];
-        
-        System.assertNotEquals(null, updatedCase.OwnerId, 'Case Owner should be assigned');
-        System.assertNotEquals(null, updatedCase.Enrolled_Agent__c, 'Enrolled Agent should be assigned');
+        System.assertEquals(null, c.OwnerId, 'Owner should not be assigned when there is no Opportunity');
+        System.assertEquals(null, c.Enrolled_Agent__c, 'Enrolled Agent should not be assigned when there is no Opportunity');
     }
     
-    @isTest
-    static void testBulkAssignment() {
-        Opportunity testOpp = [SELECT Id FROM Opportunity LIMIT 1];
+    @IsTest
+    static void testAssignOwnersBeforeInsert_BulkCases() {
+        Opportunity opp = [SELECT Id FROM Opportunity LIMIT 1];
         
-        // Debug setup más completo
-        List<Case_User_Pool__c> debugPools = [
-            SELECT Id, Owner_Type__c, Stage__c, User__c, Number_Cases_Open__c 
-            FROM Case_User_Pool__c
-        ];
-        System.debug('=== AVAILABLE POOLS ===');
-        for (Case_User_Pool__c pool : debugPools) {
-            System.debug('Pool: ' + pool.Owner_Type__c + ' - Stage: ' + pool.Stage__c + ' - User: ' + pool.User__c + ' - Cases: ' + pool.Number_Cases_Open__c);
-        }
-        
-        List<OpportunityLineItem> debugProducts = [
-            SELECT Id, Product2.Name, Product2.Stage_Case_Owner__c, Product2.Stage_Tax_Pro__c 
-            FROM OpportunityLineItem 
-            WHERE OpportunityId = :testOpp.Id
-        ];
-        System.debug('=== PRODUCTS ===');
-        for (OpportunityLineItem oli : debugProducts) {
-            System.debug('Product: ' + oli.Product2.Name + ' - Owner Stage: ' + oli.Product2.Stage_Case_Owner__c + ' - Tax Pro Stage: ' + oli.Product2.Stage_Tax_Pro__c);
-        }
-        
-        Test.startTest();
-        
-        List<Case> testCases = new List<Case>();
-        for (Integer i = 0; i < 3; i++) {
-            testCases.add(new Case(
-                Subject = 'Bulk Test Case ' + i,
-                Opportunity__c = testOpp.Id
+        List<Case> cases = new List<Case>();
+        for (Integer i = 0; i < 5; i++) {
+            cases.add(new Case(
+                Subject = 'Bulk Case ' + i,
+                Opportunity__c = opp.Id
             ));
         }
-        insert testCases;
-        
-        Test.stopTest();
-        
-        List<Case> insertedCases = [SELECT Id, Subject, OwnerId, Enrolled_Agent__c FROM Case WHERE Id IN :testCases];
-        
-        System.debug('=== ASSIGNED CASES ===');
-        for (Case c : insertedCases) {
-            System.debug('Case: ' + c.Subject + ' - Owner: ' + c.OwnerId + ' - Enrolled Agent: ' + c.Enrolled_Agent__c);
-        }
-        
-        for (Case c : insertedCases) {
-            System.assertNotEquals(null, c.OwnerId, 'Each case should have owner assigned');
-            System.assertNotEquals(null, c.Enrolled_Agent__c, 'Each case should have enrolled agent assigned - Check Stage eligibility');
-        }
-    }
-    
-    @isTest
-    static void testCaseWithoutOpportunity() {
-        Test.startTest();
-        
-        Case testCase = new Case(Subject = 'No Opportunity Case');
-        insert testCase;
-        
-        Test.stopTest();
-        
-        Case insertedCase = [SELECT Id, OwnerId, Enrolled_Agent__c FROM Case WHERE Id = :testCase.Id];
-        
-        System.assertNotEquals(null, insertedCase.OwnerId, 'Case should have default owner');
-        System.assertEquals(null, insertedCase.Enrolled_Agent__c, 'Enrolled Agent should not be assigned without opportunity');
-    }
-    
-    @isTest
-    static void testCounterServiceMethods() {
-        User testOwner1 = [SELECT Id FROM User WHERE LastName = 'Owner1' LIMIT 1];
-        
-        List<Case> testCases = new List<Case>();
-        testCases.add(new Case(
-            Subject = 'Counter Test',
-            OwnerId = testOwner1.Id,
-            Enrolled_Agent__c = testOwner1.Id
-        ));
         
         Test.startTest();
-        CaseCounterService.updateCountersAfterAssignment(testCases);
+        CaseAssignmentService.assignOwnersBeforeInsert(cases);
         Test.stopTest();
         
-        List<Case_User_Pool__c> pools = [
-            SELECT User__c, Owner_Type__c, Number_Cases_Open__c 
-            FROM Case_User_Pool__c 
-            WHERE User__c = :testOwner1.Id
+        for (Case c : cases) {
+            System.assertNotEquals(null, c.OwnerId, 'Bulk case should have an Owner assigned');
+            System.assertNotEquals(null, c.Enrolled_Agent__c, 'Bulk case should have an Enrolled Agent assigned');
+        }
+    }
+
+        @IsTest
+    static void testAssignOwnersBeforeInsert_SyncsPoolCounters() {
+        Opportunity opp = [SELECT Id FROM Opportunity LIMIT 1];
+        User caseOwner = [SELECT Id FROM User WHERE LastName = 'CaseOwner' LIMIT 1];
+    
+        Case existing = new Case(
+            Subject = 'Existing Open Case',
+            OwnerId = caseOwner.Id
+        );
+        insert existing;
+    
+        Case_User_Pool__c pool = [
+            SELECT Id, Number_Cases_Open__c
+            FROM Case_User_Pool__c
+            WHERE Owner_Type__c = 'Case Owner'
+            AND User__c = :caseOwner.Id
+            LIMIT 1
+        ];
+        pool.Number_Cases_Open__c = 0;
+        update pool;
+    
+        Case toAssign = new Case(
+            Subject = 'Sync Trigger Case',
+            Opportunity__c = opp.Id
+        );
+        List<Case> cases = new List<Case>{ toAssign };
+    
+        Test.startTest();
+        CaseAssignmentService.assignOwnersBeforeInsert(cases);
+        Test.stopTest();
+    
+        Case_User_Pool__c updatedPool = [
+            SELECT Number_Cases_Open__c
+            FROM Case_User_Pool__c
+            WHERE Id = :pool.Id
+        ];
+    
+        System.assertEquals(
+            1,
+            updatedPool.Number_Cases_Open__c,
+            'Pool counter should be synced to the actual number of open cases'
+        );
+    }
+	
+        @IsTest
+    static void testIncrementCaseCounters_UpdatesPoolCounters() {
+        Case_User_Pool__c ownerPool = [
+            SELECT Id, User__c, Number_Cases_Open__c
+            FROM Case_User_Pool__c
+            WHERE Owner_Type__c = 'Case Owner'
+            AND Automate__c = true
+            LIMIT 1
         ];
         
-        System.assertNotEquals(0, pools.size(), 'Should have pool records');
-    }
-    
-    @isTest
-    static void testLegacyMethod() {
-        Opportunity testOpp = [SELECT Id FROM Opportunity LIMIT 1];
+        Case_User_Pool__c taxProPool = [
+            SELECT Id, User__c, Number_Cases_Open__c
+            FROM Case_User_Pool__c
+            WHERE Owner_Type__c = 'Tax Pro'
+            AND Automate__c = true
+            LIMIT 1
+        ];
         
-        Case testCase = new Case(
-            Subject = 'Legacy Test',
-            Opportunity__c = testOpp.Id
-        );
-        insert testCase;
+        Decimal ownerBefore   = ownerPool.Number_Cases_Open__c == null ? 0 : ownerPool.Number_Cases_Open__c;
+        Decimal taxProBefore  = taxProPool.Number_Cases_Open__c == null ? 0 : taxProPool.Number_Cases_Open__c;
+        
+        List<Case> assignedCases = new List<Case>{
+            new Case(OwnerId = ownerPool.User__c),
+            new Case(OwnerId = ownerPool.User__c, Enrolled_Agent__c = taxProPool.User__c)
+        };
         
         Test.startTest();
-        CaseAssignmentService.assignCaseOwnersAndTaxPros(new List<Case>{testCase});
+        CaseCounterService.incrementCaseCounters(assignedCases);
         Test.stopTest();
         
-        Case updatedCase = [SELECT Id, OwnerId, Enrolled_Agent__c FROM Case WHERE Id = :testCase.Id];
+        ownerPool = [
+            SELECT Number_Cases_Open__c
+            FROM Case_User_Pool__c
+            WHERE Id = :ownerPool.Id
+        ];
+        taxProPool = [
+            SELECT Number_Cases_Open__c
+            FROM Case_User_Pool__c
+            WHERE Id = :taxProPool.Id
+        ];
         
-        System.assertNotEquals(null, updatedCase.OwnerId, 'Legacy method should work');
-        System.assertNotEquals(null, updatedCase.Enrolled_Agent__c, 'Legacy method should assign enrolled agent');
+        System.assertEquals(
+            ownerBefore + 2,
+            ownerPool.Number_Cases_Open__c,
+            'Owner pool counter should be incremented by 2'
+        );
+        System.assertEquals(
+            taxProBefore + 1,
+            taxProPool.Number_Cases_Open__c,
+            'Tax Pro pool counter should be incremented by 1'
+        );
     }
 }

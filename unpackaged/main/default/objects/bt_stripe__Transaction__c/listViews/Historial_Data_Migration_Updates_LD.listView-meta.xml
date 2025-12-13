@@ -20,14 +20,14 @@
         <value>bt_stripe__Transaction__c.bt_stripe__Charge</value>
     </filters>
     <filters>
-        <field>bt_stripe__Opportunity2__c</field>
+        <field>bt_stripe__Payment_Schedule__c</field>
         <operation>contains</operation>
-        <value>Paul Eny Amedee - 2T Mar 2026</value>
+        <value>PS-001617</value>
     </filters>
     <filters>
         <field>bt_stripe__Transaction_Status__c</field>
         <operation>equals</operation>
-        <value>Open</value>
+        <value>Completed</value>
     </filters>
     <label>Data Updates-Billing</label>
 </ListView>

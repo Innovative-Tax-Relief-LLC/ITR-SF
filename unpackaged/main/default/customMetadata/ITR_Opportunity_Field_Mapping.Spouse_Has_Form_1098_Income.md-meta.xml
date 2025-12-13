@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Spouse Has Form 1098 Income</label>
+    <protected>false</protected>
+    <values>
+        <field>ITR_XML_Field__c</field>
+        <value xsi:type="xsd:string">spouse_wage_and_income_shows_form_1098</value>
+    </values>
+    <values>
+        <field>SFDC_Field__c</field>
+        <value xsi:type="xsd:string">Spouse_Has_Form_1098_Income__c</value>
+    </values>
+</CustomMetadata>

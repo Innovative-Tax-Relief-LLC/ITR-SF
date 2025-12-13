@@ -645,7 +645,7 @@
             <name>Yes_found</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_2T_Case</leftValueReference>
+                <leftValueReference>Get_2T_Case.Id</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>

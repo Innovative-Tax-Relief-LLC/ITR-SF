@@ -4,6 +4,12 @@
     <columns>NAME</columns>
     <columns>CREATED_DATE</columns>
     <columns>LAST_UPDATE</columns>
+    <columns>Account_Name__c</columns>
     <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account_Name__c</field>
+        <operation>contains</operation>
+        <value>Joanne Satchell</value>
+    </filters>
     <label>All</label>
 </ListView>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>SD.BalanceDue -&gt; Trans.Account</label>
+    <protected>false</protected>
+    <values>
+        <field>bt_stripe__Screen__c</field>
+        <value xsi:type="xsd:string">Single Transaction</value>
+    </values>
+    <values>
+        <field>bt_stripe__Source_Field__c</field>
+        <value xsi:type="xsd:string">bt_stripe__Balance_Due_Amount__c</value>
+    </values>
+    <values>
+        <field>bt_stripe__Source_Object__c</field>
+        <value xsi:type="xsd:string">bt_stripe__Sales_Document__c</value>
+    </values>
+    <values>
+        <field>bt_stripe__Source_Parent_Field__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>bt_stripe__Source_Parent_Object__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>bt_stripe__Target_Field__c</field>
+        <value xsi:type="xsd:string">bt_stripe__Amount__c</value>
+    </values>
+    <values>
+        <field>bt_stripe__Target_Object__c</field>
+        <value xsi:type="xsd:string">bt_stripe__Transaction__c</value>
+    </values>
+</CustomMetadata>

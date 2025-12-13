@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>CAMPAIGN MANAGER</label>
+    <protected>false</protected>
+    <values>
+        <field>smagicinteract__Description__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>smagicinteract__Do_Not_Create_Conversation__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>smagicinteract__Interface_Category__c</field>
+        <value xsi:type="xsd:string">smagicinteract__BULK</value>
+    </values>
+    <values>
+        <field>smagicinteract__Source_Code__c</field>
+        <value xsi:type="xsd:string">11001</value>
+    </values>
+    <values>
+        <field>smagicinteract__isInactive__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+</CustomMetadata>
