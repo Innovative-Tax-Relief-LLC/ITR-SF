@@ -16,6 +16,11 @@ public with sharing class TransactionTriggerHandler extends TriggerHandler{
     }
 	
     public override void afterUpdate(){
+        FirstPaymentDeclinedService.markFirstDeclinedTransactions(
+        this.newTransactions, 
+        this.oldTransactionsMap
+        );
+        
         List<bt_stripe__Transaction__c> transactions = this.newTransactions;
         Map<Id, bt_stripe__Transaction__c> transactionMap = this.oldTransactionsMap;
         List<Task> tasksToCreate = new List<Task>();
@@ -151,5 +156,4 @@ public with sharing class TransactionTriggerHandler extends TriggerHandler{
             PaymentScheduleHelper.processTransactions(validTransactions);
         }
     }
-    
 }
