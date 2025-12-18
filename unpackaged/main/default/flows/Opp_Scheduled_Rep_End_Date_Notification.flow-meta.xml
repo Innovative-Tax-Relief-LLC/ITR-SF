@@ -315,7 +315,7 @@
         </schedule>
         <triggerType>Scheduled</triggerType>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
     <variables>
         <name>ConverseAppTaskRecord</name>
         <dataType>SObject</dataType>

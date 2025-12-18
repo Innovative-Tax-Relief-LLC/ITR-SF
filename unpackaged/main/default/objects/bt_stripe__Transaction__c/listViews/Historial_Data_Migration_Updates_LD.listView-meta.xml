@@ -22,7 +22,7 @@
     <filters>
         <field>bt_stripe__Payment_Schedule__c</field>
         <operation>contains</operation>
-        <value>PS-005739</value>
+        <value>PS-005777</value>
     </filters>
     <filters>
         <field>bt_stripe__Transaction_Status__c</field>
